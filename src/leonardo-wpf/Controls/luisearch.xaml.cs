@@ -78,16 +78,16 @@ namespace leonardo.Controls
             mainbutton.Inverse = inverse;
             if (inverse)
             {                
-                maingrid.Background= LUIPalette.GRAYSCALE40;
+                maingrid.Background= LUIPalette.Brushes.GRAYSCALE40;
                 mainbutton.LUIScheme = LUISchemeEnum.InvertedSearchbox;
-                mainicon.Foreground = LUIPalette.GRAYSCALE80;
+                mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE80;
                 
             }
             else
             {
                 maingrid.Background = new SolidColorBrush(Colors.Transparent);
                 mainbutton.LUIScheme = LUISchemeEnum.Default;
-                mainicon.Foreground = LUIPalette.GRAYSCALE0;
+                mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE0;
             }
         }
         #endregion

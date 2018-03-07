@@ -144,7 +144,7 @@ namespace leonardo.Controls
             {
                 mainBorder = border;
                 SetCornerRadius();
-                mainBorder.BorderBrush = LUIPalette.GRAYSCALE90;               
+                mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE90;               
                 SetButtonSize();
                 SetBorderThicknes();
 
@@ -427,76 +427,114 @@ namespace leonardo.Controls
             {
                 if (iconLeft != null)
                 {
-                    iconLeft.Foreground = LUIPalette.GRAYSCALE100;
+                    iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (iconRight != null)
                 {
-                    iconRight.Foreground = LUIPalette.GRAYSCALE100;
+                    iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (contentTextBlock != null)
                 {
-                    contentTextBlock.Foreground = LUIPalette.GRAYSCALE100;
+                    contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 switch (scheme)
                 {
                     case LUISchemeEnum.Info:
-                        mainBorder.Background = LUIPalette.BLUE;
-                        mainBorder.BorderBrush = LUIPalette.BLUE;
+                        mainBorder.Background = LUIPalette.Brushes.BLUE;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.BLUE;
                         break;
                     case LUISchemeEnum.InvertedSearchbox:
-                        mainBorder.Background = LUIPalette.GRAYSCALE40;
-                        mainBorder.BorderBrush = LUIPalette.GRAYSCALE40;
+                        mainBorder.Background = LUIPalette.Brushes.GRAYSCALE40;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
                         break;
                     case LUISchemeEnum.Error:
-                        mainBorder.Background = LUIPalette.RED;
-                        mainBorder.BorderBrush = LUIPalette.RED;
+                        mainBorder.Background = LUIPalette.Brushes.RED;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.RED;
                         break;
                     case LUISchemeEnum.Warning:
-                        mainBorder.Background = LUIPalette.ORANGE;
-                        mainBorder.BorderBrush = LUIPalette.ORANGE;
+                        mainBorder.Background = LUIPalette.Brushes.ORANGE;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.ORANGE;
                         break;
                     case LUISchemeEnum.Success:
-                        mainBorder.Background = LUIPalette.GREEN;
-                        mainBorder.BorderBrush = LUIPalette.GREEN;
+                        mainBorder.Background = LUIPalette.Brushes.GREEN;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GREEN;
                         break;
                     default:
-                    case LUISchemeEnum.Default:
-                    case LUISchemeEnum.Toolbar:
+                    case LUISchemeEnum.Default:                    
                         if (inverse)
                         {
-                            mainBorder.Background = LUIPalette.GRAYSCALE30;
-                            mainBorder.BorderBrush = LUIPalette.GRAYSCALE40;
+                            mainBorder.Background = LUIPalette.Brushes.GRAYSCALE30;
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
 
 
                             if (iconLeft != null)
                             {
-                                iconLeft.Foreground = LUIPalette.GRAYSCALE100;
+                                iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                             }
                             if (iconRight != null)
                             {
-                                iconRight.Foreground = LUIPalette.GRAYSCALE100;
+                                iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                             }
                             if (contentTextBlock != null)
                             {
-                                contentTextBlock.Foreground = LUIPalette.GRAYSCALE100;
+                                contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                             }
                         }
                         else
                         {
-                            mainBorder.Background = LUIPalette.GRAYSCALE100;
-                            mainBorder.BorderBrush = LUIPalette.GRAYSCALE80;
+                            mainBorder.Background = LUIPalette.Brushes.GRAYSCALE100;
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
 
                             if (iconLeft != null)
                             {
-                                iconLeft.Foreground = LUIPalette.GRAYSCALE28;
+                                iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE28;
                             }
                             if (iconRight != null)
                             {
-                                iconRight.Foreground = LUIPalette.GRAYSCALE28;
+                                iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE28;
                             }
                             if (contentTextBlock != null)
                             {
-                                contentTextBlock.Foreground = LUIPalette.GRAYSCALE28;
+                                contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE28;
+                            }
+                        }
+                        break;
+                    case LUISchemeEnum.Toolbar:
+                        if (inverse)
+                        {
+                            //mainBorder.Background = new LinearGradientBrush()
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
+
+
+                            if (iconLeft != null)
+                            {
+                                iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE100;
+                            }
+                            if (iconRight != null)
+                            {
+                                iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE100;
+                            }
+                            if (contentTextBlock != null)
+                            {
+                                contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE100;
+                            }
+                        }
+                        else
+                        {
+                            mainBorder.Background = LUIPalette.Brushes.GRAYSCALE100;
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
+
+                            if (iconLeft != null)
+                            {
+                                iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE28;
+                            }
+                            if (iconRight != null)
+                            {
+                                iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE28;
+                            }
+                            if (contentTextBlock != null)
+                            {
+                                contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE28;
                             }
                         }
                         break;
@@ -508,44 +546,44 @@ namespace leonardo.Controls
         {
             if (mainBorder != null)
             {
-                mainBorder.BorderBrush = LUIPalette.BLUE;
+                mainBorder.BorderBrush = LUIPalette.Brushes.BLUE;
             }
             if (inverse)
             {
                 if (mainBorder != null)
                 {
-                    mainBorder.Background = LUIPalette.GRAYSCALE5;
+                    mainBorder.Background = LUIPalette.Brushes.GRAYSCALE5;
                 }
                 if (iconLeft != null)
                 {
-                    iconLeft.Foreground = LUIPalette.GRAYSCALE100;
+                    iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (iconRight != null)
                 {
-                    iconRight.Foreground = LUIPalette.GRAYSCALE100;
+                    iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (contentTextBlock != null)
                 {
-                    contentTextBlock.Foreground = LUIPalette.GRAYSCALE100;
+                    contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
             }
             else
             {
                 if (mainBorder != null)
                 {
-                    mainBorder.Background = LUIPalette.GRAYSCALE30;
+                    mainBorder.Background = LUIPalette.Brushes.GRAYSCALE30;
                 }
                 if (iconLeft != null)
                 {
-                    iconLeft.Foreground = LUIPalette.GRAYSCALE100;
+                    iconLeft.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (iconRight != null)
                 {
-                    iconRight.Foreground = LUIPalette.GRAYSCALE100;
+                    iconRight.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
                 if (contentTextBlock != null)
                 {
-                    contentTextBlock.Foreground = LUIPalette.GRAYSCALE100;
+                    contentTextBlock.Foreground = LUIPalette.Brushes.GRAYSCALE100;
                 }
             }
         }
@@ -553,19 +591,26 @@ namespace leonardo.Controls
         private void MainButton_MouseUp(object sender, MouseButtonEventArgs e)
         {
             SetColors();
+            if (mainButton.IsFocused)
+            {
+                if (mainBorder != null)
+                {
+                    mainBorder.BorderBrush = LUIPalette.Brushes.BLUE;
+                }
+            }
         }
 
         private void MainButton_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (inverse)
-            {
-                mainBorder.BorderBrush = LUIPalette.GRAYSCALE90;
-            }
-            else
-            {
-                mainBorder.BorderBrush = LUIPalette.GRAYSCALE28;
-
-            }
+            //if (inverse)
+            //{
+            //    mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE90;
+            //}
+            //else
+            //{
+            //    mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE28;
+            //}
+            SetColors();
         }
 
         private void MainButton_MouseEnter(object sender, MouseEventArgs e)
@@ -580,11 +625,11 @@ namespace leonardo.Controls
                 {
                     if (inverse)
                     {
-                        mainBorder.BorderBrush = LUIPalette.GRAYSCALE100;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE100;
                     }
                     else
                     {
-                        mainBorder.BorderBrush = LUIPalette.GRAYSCALE5;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE5;
                     }
                     e.Handled = true;
 
@@ -613,11 +658,11 @@ namespace leonardo.Controls
                 {
                     if (inverse)
                     {
-                        mainBorder.BorderBrush = LUIPalette.GRAYSCALE40;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
                     }
                     else
                     {
-                        mainBorder.BorderBrush = LUIPalette.GRAYSCALE80;
+                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
                     }
                     e.Handled = true;
                 }

@@ -17,13 +17,34 @@
         <TabItem Header="Icons">
             <StackPanel Orientation="Horizontal">
 
-                <controls:LuiIcon Margin="4" Icon="lui_icon_table" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_menu" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_bottom" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_table" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_calendar" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_bottom" />
-                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_right" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_table"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_menu"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_triangle_bottom"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_table"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_calendar"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_triangle_bottom"
+                    IconSize="Large" />
+                <controls:LuiIcon
+                    Margin="4"
+                    Icon="lui_icon_triangle_right"
+                    IconSize="Large" />
             </StackPanel>
         </TabItem>
         <TabItem Header="Button">

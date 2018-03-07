@@ -23,6 +23,8 @@
                 Cursor="Hand"
                 Foreground="#4D4D4D"
                 LostFocus="MainButton_LostFocus"
+                MouseEnter="MainButton_MouseEnter"
+                MouseLeave="MainButton_MouseLeave"
                 PreviewMouseLeftButtonUp="MainButton_MouseUp">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -49,7 +51,7 @@
                                                 <BeginStoryboard Storyboard="{StaticResource sbFadeIn}" />
                                             </EventTrigger>
                                         </Border.Triggers>-->
-                                        <Grid MouseEnter="MainButton_MouseEnter" MouseLeave="MainButton_MouseLeave">
+                                        <Grid>
                                             <controls:LuiIcon
                                                 x:Name="PART_IconLeft"
                                                 HorizontalAlignment="Left"

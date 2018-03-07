@@ -70,19 +70,19 @@ namespace leonardo.Controls
         {
             if (inverse)
             {
-                MainStackpanel.Background = LUIPalette.GRAYSCALE28;
-                MainLabel.Foreground = LUIPalette.GRAYSCALE100;
-                MainTextBox.Background = LUIPalette.GRAYSCALE40;
-                MainTextBox.Foreground = LUIPalette.GRAYSCALE100;
-                MainTextBox.BorderBrush = LUIPalette.GRAYSCALE40;
+                MainStackpanel.Background = LUIPalette.Brushes.GRAYSCALE28;
+                MainLabel.Foreground = LUIPalette.Brushes.GRAYSCALE100;
+                MainTextBox.Background = LUIPalette.Brushes.GRAYSCALE40;
+                MainTextBox.Foreground = LUIPalette.Brushes.GRAYSCALE100;
+                MainTextBox.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
             }
             else
             {
                 MainStackpanel.Background = new SolidColorBrush(Colors.Transparent);
-                MainLabel.Foreground = LUIPalette.GRAYSCALE80;
-                MainTextBox.Background = LUIPalette.GRAYSCALE100;
-                MainTextBox.Foreground = LUIPalette.GRAYSCALE80;
-                MainTextBox.BorderBrush = LUIPalette.GRAYSCALE80;
+                MainLabel.Foreground = LUIPalette.Brushes.GRAYSCALE80;
+                MainTextBox.Background = LUIPalette.Brushes.GRAYSCALE100;
+                MainTextBox.Foreground = LUIPalette.Brushes.GRAYSCALE80;
+                MainTextBox.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
             }
         }
         #endregion
