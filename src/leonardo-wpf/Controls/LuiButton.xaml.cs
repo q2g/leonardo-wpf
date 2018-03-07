@@ -502,8 +502,8 @@ namespace leonardo.Controls
                     case LUISchemeEnum.Toolbar:
                         if (inverse)
                         {
-                            //mainBorder.Background = new LinearGradientBrush()
-                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
+                            mainBorder.Background = LUIPalette.Brushes.GRAYSCALE40;
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE0;
 
 
                             if (iconLeft != null)
@@ -521,8 +521,8 @@ namespace leonardo.Controls
                         }
                         else
                         {
-                            mainBorder.Background = LUIPalette.Brushes.GRAYSCALE100;
-                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
+                            mainBorder.Background = new LinearGradientBrush(LUIPalette.Colors.GRAYSCALE100,LUIPalette.Colors.GRAYSCALE90,90);
+                            mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE60;
 
                             if (iconLeft != null)
                             {
@@ -601,27 +601,15 @@ namespace leonardo.Controls
         }
 
         private void MainButton_LostFocus(object sender, RoutedEventArgs e)
-        {
-            //if (inverse)
-            //{
-            //    mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE90;
-            //}
-            //else
-            //{
-            //    mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE28;
-            //}
+        {           
             SetColors();
         }
 
         private void MainButton_MouseEnter(object sender, MouseEventArgs e)
         {
-
-            //var aa =(Storyboard) mainBorder.FindResource("sbFadeIn");
-            //aa.Begin();
-
             if (sender is Button button)
             {
-                if (button == mainButton && !button.IsFocused && (scheme == LUISchemeEnum.Default || scheme == LUISchemeEnum.Toolbar))
+                if (button == mainButton && !button.IsFocused && scheme == LUISchemeEnum.Default)
                 {
                     if (inverse)
                     {
@@ -631,20 +619,20 @@ namespace leonardo.Controls
                     {
                         mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE5;
                     }
+                    e.Handled = true;                    
+                }
+
+                if (button == mainButton && !button.IsFocused && scheme == LUISchemeEnum.Toolbar) 
+                {
+                    if (inverse)
+                    {
+                        mainBorder.Background = LUIPalette.Brushes.GRAYSCALE50;
+                    }
+                    else
+                    {
+                        mainBorder.Background = new LinearGradientBrush(LUIPalette.Colors.GRAYSCALE95, LUIPalette.Colors.GRAYSCALE85, 90);
+                    }
                     e.Handled = true;
-
-
-                    //        var animation = new ColorAnimation();                    
-                    //        animation.From = Colors.Orange;                    
-                    //        animation.To = Colors.Gray;
-                    //        animation.Duration = new Duration(TimeSpan.FromSeconds(1));
-                    //        Storyboard sb = new Storyboard();
-                    //        sb.Children.Add(animation);
-                    //        Storyboard.SetTarget(animation, mainBorder.BorderBrush);
-                    //        Storyboard.SetTargetProperty(animation, new PropertyPath(SolidColorBrush.ColorProperty));
-
-                    //        sb.Begin(mainBorder);
-                    //        //mainBorder.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
                 }
             }
         }
@@ -656,15 +644,7 @@ namespace leonardo.Controls
             {
                 if (button == mainButton && !button.IsFocused)
                 {
-                    if (inverse)
-                    {
-                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE40;
-                    }
-                    else
-                    {
-                        mainBorder.BorderBrush = LUIPalette.Brushes.GRAYSCALE80;
-                    }
-                    e.Handled = true;
+                    SetColors();
                 }
             }
         }
