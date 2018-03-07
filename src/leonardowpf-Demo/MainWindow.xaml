@@ -1,0 +1,490 @@
+﻿<Window
+    x:Class="leonardowpf_Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:leonardo.Controls;assembly=leonardo-wpf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:leonardowpf_Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
+    </Window.Resources>
+    <TabControl TabStripPlacement="Left">
+        <TabItem Header="Icons">
+            <StackPanel Orientation="Horizontal">
+
+                <controls:LuiIcon Margin="4" Icon="lui_icon_table" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_menu" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_bottom" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_table" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_calendar" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_bottom" />
+                <controls:LuiIcon Margin="4" Icon="lui_icon_triangle_right" />
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Button">
+            <StackPanel>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Default"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Toolbar"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Toolbar" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Info"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Info" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Error"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Error" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Warning"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Warning" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Success"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Success" />
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}" Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Default"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Toolbar"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Toolbar" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Info"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Info" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Error"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Error" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Warning"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Warning" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Success"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Success" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Default"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Toolbar"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Toolbar"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Info"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Info"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Error"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Error"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Warning"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Warning"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Success"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Success"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}" Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Default"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Toolbar"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Toolbar"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Info"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Info"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Error"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Error"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Warning"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Warning"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                ButtonText="Success"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Success"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_triangle_bottom"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_triangle_bottom"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}" Orientation="Horizontal">
+                            <controls:LuiButton
+                                Margin="3,15,3,15"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_triangle_bottom"
+                                Inverse="True"
+                                LUIScheme="Default" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                Inverse="True"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                            <controls:LuiButton
+                                Width="170"
+                                Margin="3,15,3,15"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_triangle_bottom"
+                                Inverse="True"
+                                LUIScheme="Default"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel>
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none" />
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none" />
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="lui_icon_none"
+                                IconRight="ui_icon_plus"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="lui_icon_none"
+                                IconRight="lui_icon_none"
+                                Inverse="True" />
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="ui_icon_plus"
+                                IconRight="lui_icon_none"
+                                Inverse="True" />
+                            <controls:LuiButton
+                                Margin="3"
+                                ButtonText="Add Item"
+                                IconLeft="lui_icon_none"
+                                IconRight="ui_icon_plus"
+                                Inverse="True"
+                                Rounded="True" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <StackPanel Orientation="Horizontal">
+                    <controls:LuiButton
+                        Margin="3"
+                        ButtonText="Default"
+                        IconLeft="lui_icon_none"
+                        IconRight="lui_icon_none"
+                        LUIButtonSize="Default" />
+                    <controls:LuiButton
+                        Margin="3"
+                        ButtonText="Large"
+                        IconLeft="lui_icon_none"
+                        IconRight="lui_icon_none"
+                        LUIButtonSize="Large" />
+                    <controls:LuiButton
+                        Margin="3"
+                        ButtonText="Extra Large"
+                        IconLeft="lui_icon_none"
+                        IconRight="lui_icon_none"
+                        LUIButtonSize="ExtraLarge" />
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="ButtonGroup">
+            <StackPanel>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel>
+                            <controls:LuiControlGroup Margin="3,15,3,15">
+                                <controls:LuiButton ButtonText="First Button" />
+                                <controls:LuiButton ButtonText="Second Button" />
+                                <controls:LuiButton ButtonText="Third Button" />
+                            </controls:LuiControlGroup>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                            <controls:LuiControlGroup Margin="3,15,3,15">
+                                <controls:LuiButton ButtonText="First Button" Inverse="True" />
+                                <controls:LuiButton ButtonText="Second Button" Inverse="True" />
+                                <controls:LuiButton ButtonText="Third Button" Inverse="True" />
+                            </controls:LuiControlGroup>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+
+                <TabControl>
+                    <TabItem Header="Default">
+                        <StackPanel>
+                            <controls:LuiControlGroup Margin="3,15,3,15" Rounded="True">
+                                <controls:LuiButton
+                                    Width="170"
+                                    ButtonText="First Button"
+                                    IconRight="lui_icon_info" />
+                                <controls:LuiButton ButtonText="Second Button" />
+                                <controls:LuiButton ButtonText="Third Button" LUIScheme="Info" />
+                            </controls:LuiControlGroup>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                            <controls:LuiControlGroup Margin="3,15,3,15" Rounded="True">
+                                <controls:LuiButton
+                                    Width="170"
+                                    ButtonText="First Button"
+                                    IconRight="lui_icon_info"
+                                    Inverse="True" />
+                                <controls:LuiButton ButtonText="Second Button" Inverse="True" />
+                                <controls:LuiButton
+                                    ButtonText="Third Button"
+                                    Inverse="True"
+                                    LUIScheme="Info" />
+                            </controls:LuiControlGroup>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Input">
+            <StackPanel>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <controls:LuiInput Margin="3,15,3,15" />
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                            <controls:LuiInput Margin="3,15,3,15" Inverse="True" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <TabControl>
+                    <TabItem Header="Default">
+                        <controls:LuiInput Margin="3,15,3,15" LabelText="Label" />
+                    </TabItem>
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                            <controls:LuiInput
+                                Margin="3,15,3,15"
+                                Inverse="True"
+                                LabelText="Label" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <controls:LuiInput
+                    Margin="3,15,3,15"
+                    LUIInputSize="Default"
+                    LabelText="Label" />
+                <controls:LuiInput
+                    Margin="3,15,3,15"
+                    LUIInputSize="Large"
+                    LabelText="Label" />
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Search">
+            <TabControl>
+                <TabItem Header="Default">
+                    <StackPanel>
+                        <controls:LuiSearch Margin="3,15,3,15" />
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                        <controls:LuiSearch Margin="3,15,3,15" Inverse="True" />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
+        <TabItem Header="CheckBox">
+            <TabControl>
+                <TabItem Header="Default">
+                    <StackPanel>
+                        <controls:LuiCheckbox Margin="3,15,3,15" />
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Grayscale28}">
+                        <controls:LuiCheckbox Margin="3,15,3,15" />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
+    </TabControl>
+</Window>
