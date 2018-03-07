@@ -3,7 +3,7 @@
 
 ## Button
 ### Regular Styles
-![Regular Styles](docs/Pictures/Buttons.png)
+[[docs/Pictures/Buttons.png|alt=Regular Styles]]
 ### Round Styles
 ![Round Styles](docs/Pictures/Buttons_round.png)
 ### Icon Styles 
