@@ -3,7 +3,7 @@
 
 ## Button
 ### Regular Styles
-[[Docs/Pictures/Buttons.png|alt=Regular Styles]]
+![Regular Styles](https://github.com/q2g/leonardo-wpf/blob/master/Docs/Pictures/Buttons.png)
 ### Round Styles
 ![Round Styles](docs/Pictures/Buttons_round.png)
 ### Icon Styles 
