@@ -17,5 +17,5 @@
 
         </ResourceDictionary>
     </UserControl.Resources>
-    <CheckBox  Style="{StaticResource LUI_CheckBoxStyle}" />
+    <CheckBox x:Name="MainCheckbox" Style="{StaticResource LUI_CheckBoxStyle}" />
 </UserControl>

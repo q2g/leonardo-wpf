@@ -80,14 +80,14 @@ namespace leonardo.Controls
             {                
                 maingrid.Background= LUIPalette.Brushes.GRAYSCALE40;
                 mainbutton.LUIScheme = LUISchemeEnum.InvertedSearchbox;
-                mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE80;
+                //mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE80;
                 
             }
             else
             {
                 maingrid.Background = new SolidColorBrush(Colors.Transparent);
                 mainbutton.LUIScheme = LUISchemeEnum.Default;
-                mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE0;
+                //mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE0;
             }
         }
         #endregion

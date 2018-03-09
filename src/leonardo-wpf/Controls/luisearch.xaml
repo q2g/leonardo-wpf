@@ -22,12 +22,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
-        <local:LuiIcon
+        <local:LuiCheckbox IsChecked="False" Text="hjhjjhj" />
+        <!--<local:LuiIcon
             x:Name="mainicon"
             VerticalAlignment="Center"
             CornerRadius="3,0,0,3"
             Icon="lui_icon_search"
-            IconSize="Large" />
+            IconSize="Large" />-->
         <local:LuiInput
             x:Name="maininput"
             Grid.Column="1"

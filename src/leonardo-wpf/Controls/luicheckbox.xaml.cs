@@ -64,11 +64,11 @@ namespace leonardo.Controls
         {
             if (inverse)
             {
-               
+
             }
             else
             {
-               
+
             }
         }
         #endregion
@@ -82,7 +82,8 @@ namespace leonardo.Controls
             {
                 if (text != value)
                 {
-                    text = value;                 
+                    text = value;
+                    MainCheckbox.Content = value;
                 }
             }
         }
@@ -93,10 +94,10 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-         "InputText", typeof(string), typeof(LuiCheckbox), new PropertyMetadata("", new PropertyChangedCallback(OnInputTextChanged)));
+         "Text", typeof(string), typeof(LuiCheckbox), new PropertyMetadata("", new PropertyChangedCallback(OnTextChanged)));
 
 
-        private static void OnInputTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is LuiCheckbox obj)
             {
@@ -106,12 +107,44 @@ namespace leonardo.Controls
                 }
             }
         }
-        private void MainTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        #endregion
+
+        #region IsChecked DP
+        private bool isChecked;
+        internal bool IsChecked_Internal
         {
-            
+            get { return isChecked; }
+            set
+            {
+                if (isChecked != value)
+                {
+                    isChecked = value;
+                    MainCheckbox.IsChecked = value;
+                }
+            }
+        }
+        public bool IsChecked
+        {
+            get { return (bool)this.GetValue(IsCheckedProperty); }
+            set { this.SetValue(IsCheckedProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register(
+         "IsChecked", typeof(bool), typeof(LuiCheckbox), new PropertyMetadata(false, new PropertyChangedCallback(OnIsCheckedChanged)));
+
+
+        private static void OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is LuiCheckbox obj)
+            {
+                if (e.NewValue is bool newvalue)
+                {
+                    obj.IsChecked_Internal = newvalue;
+                }
+            }
         }
         #endregion
+
+
     }
-
-
 }
