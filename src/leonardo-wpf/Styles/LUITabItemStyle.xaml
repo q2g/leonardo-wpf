@@ -6,7 +6,7 @@
     <Style x:Key="LUITabItemStyle" TargetType="{x:Type TabItem}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{StaticResource LUI.Grayscale30}" />
+        <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
@@ -14,7 +14,7 @@
                         x:Name="PART_Border"
                         Width="100"
                         Height="40"
-                        Background="White"
+                        Background="{StaticResource LUI.Brush.Grayscale100}"
                         BorderBrush="LightGray"
                         BorderThickness="1">
                         <Grid>
@@ -44,7 +44,7 @@
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
                                 <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource LUI.Grayscale95}" />
+                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource LUI.Brush.Grayscale95}" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

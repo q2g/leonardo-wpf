@@ -72,7 +72,7 @@ namespace leonardo.Resources
             public static readonly Color GRAYSCALE5 = (Color)ColorConverter.ConvertFromString("#0D0D0D");
             public static readonly Color GRAYSCALE0 = (Color)ColorConverter.ConvertFromString("#000000");
 
-
+            
             public static readonly Color BLUE = (Color)ColorConverter.ConvertFromString("#52a2cc");
 
             public static readonly Color RED = (Color)ColorConverter.ConvertFromString("#f05555");

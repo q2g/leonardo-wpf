@@ -44,7 +44,7 @@
             VerticalContentAlignment="Center"
             Cursor="IBeam"
             FontStyle="Italic"
-            Foreground="{StaticResource LUI.Grayscale80}"
+            Foreground="{StaticResource LUI.Brush.Grayscale80}"
             PreviewMouseLeftButtonDown="PalceHolder_PreviewMouseLeftButtonDown">
             Search
             <Label.Style>
