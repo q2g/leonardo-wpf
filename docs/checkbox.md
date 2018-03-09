@@ -4,6 +4,11 @@ Leonardo Styled Checkbox
 # Regular
 ![Regular Style](https://github.com/q2g/leonardo-wpf/blob/master/docs/pictures/checkbox_regular.png)
 #### Usage
+Import the control-Namespace in your Containig Control:
+````
+xmlns:controls="clr-namespace:leonardo.Controls;assembly=leonardo-wpf"
+````
+
 ```
 <controls:LuiCheckbox  Text="Label" />
 <controls:LuiCheckbox  Text="Label" IsChecked="True"/>
