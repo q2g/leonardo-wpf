@@ -9,7 +9,7 @@ WPF-Button with different Styling-Properties
 ## Button Sizing
 ![Icon Styles](https://github.com/q2g/leonardo-wpf/blob/master/docs/pictures/Buttons_size.png)
  
-You can control the size of buttons by adding a class. The following sizing options are available:
-* default - 28px
-* arge - 38px
-* extra large - 54px
+You can control the size of buttons by changing the ButtonSize Property. The following sizing options are available:
+* Default - 28px
+* Large - 38px
+* Extra Large - 54px
