@@ -12,6 +12,7 @@ Leonardo Styled Checkbox
 ```
 # Inverted
 Activate Inverted-Look on all leonardo-wpf Controls via the Inverted Attached Property
+
 ![Inverted Style](https://github.com/q2g/leonardo-wpf/blob/master/docs/pictures/checkbox_inverted.png)
 #### Usage
 Import the Inverted Attached Property to activate the Inverted-Look on Lui-Controls.
