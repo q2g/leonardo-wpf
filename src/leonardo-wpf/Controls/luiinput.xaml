@@ -7,6 +7,11 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <StackPanel x:Name="MainStackpanel">
         <TextBlock
             x:Name="MainLabel"
@@ -15,6 +20,8 @@
         <TextBox
             x:Name="MainTextBox"
             VerticalContentAlignment="Center"
+            FontFamily="{StaticResource QlikViewSans}"
+            FontWeight="Normal"
             GotFocus="MainTextBox_GotFocus"
             LostFocus="MainTextBox_LostFocus"
             TextChanged="MainTextBox_TextChanged">

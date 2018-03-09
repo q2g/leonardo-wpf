@@ -6,6 +6,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
+    <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
 
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
@@ -43,7 +44,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">

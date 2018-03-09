@@ -13,8 +13,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/Lui_CheckboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-
         </ResourceDictionary>
     </UserControl.Resources>
     <CheckBox x:Name="MainCheckbox" Style="{StaticResource LUI_CheckBoxStyle}" />

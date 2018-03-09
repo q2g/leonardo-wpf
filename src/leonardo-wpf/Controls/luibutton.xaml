@@ -8,6 +8,11 @@
     d:DesignHeight="300"
     d:DesignWidth="300"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <UserControl.Template>
         <ControlTemplate>
             <Button
@@ -44,7 +49,8 @@
                                                 x:Name="PART_Text"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
-                                                FontSize="16"
+                                                FontFamily="{StaticResource QlikViewSans}"
+                                                FontSize="12"
                                                 FontWeight="Bold" />
                                         </Grid>
                                     </Border>
