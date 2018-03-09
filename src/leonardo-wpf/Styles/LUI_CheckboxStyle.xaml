@@ -37,16 +37,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF" />
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF" />
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6" />
-    <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC" />
-    <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070" />
-    <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#4D4D4D" />
-    <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD" />
-    <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121" />
+
     <Style x:Key="LUI_CheckBoxStyle" TargetType="{x:Type CheckBox}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
@@ -106,12 +97,7 @@
                             <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}" />
                             <Setter Property="Padding" Value="4,-1,0,0" />
                         </Trigger>
-                        <!--<Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="#4D4D4D" />
-                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource OptionMark.Disabled.Glyph}" />
-                            <Setter TargetName="indeterminateMark" Property="Fill" Value="{StaticResource OptionMark.Disabled.Glyph}" />
 
-                        </Trigger>-->
 
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
                             <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
@@ -119,7 +105,6 @@
 
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="indeterminateMark" Property="Fill" Value="{StaticResource OptionMark.Pressed.Glyph}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
