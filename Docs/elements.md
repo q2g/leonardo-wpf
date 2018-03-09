@@ -12,6 +12,6 @@
 ![Icon Styles](https://github.com/q2g/leonardo-wpf/blob/master/Docs/Pictures/Buttons_size.png)
  
 You can control the size of buttons by adding a class. The following sizing options are available:
-default - 28px
-large - 38px
-extra large - 54px
+* default - 28px
+* arge - 38px
+* extra large - 54px
