@@ -25,53 +25,7 @@ namespace leonardo.Controls
             InitializeComponent();
         }
 
-        #region Inverse - DP
-        private bool inverse;
-        internal bool Inverse_Internal
-        {
-            get { return inverse; }
-            set
-            {
-                if (inverse != value)
-                {
-                    inverse = value;
-                    SetColors();
-                }
-            }
-        }
-        public bool Inverse
-        {
-            get { return (bool)this.GetValue(InverseProperty); }
-            set { this.SetValue(InverseProperty, value); }
-        }
-
-        public static readonly DependencyProperty InverseProperty = DependencyProperty.Register(
-         "Inverse", typeof(bool), typeof(LuiCheckbox), new PropertyMetadata(false, new PropertyChangedCallback(OnInverseChanged)));
-
-
-        private static void OnInverseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is LuiCheckbox obj)
-            {
-                if (e.NewValue is bool newvalue)
-                {
-                    obj.Inverse_Internal = newvalue;
-                }
-            }
-        }
-
-        private void SetColors()
-        {
-            if (inverse)
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-        #endregion
+        
 
         #region Text - DP
         private string text;

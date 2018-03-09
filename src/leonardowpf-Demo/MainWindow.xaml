@@ -549,7 +549,45 @@
             </TabControl>
         </TabItem>
 
-        <TabItem Header=" Test" />
+        <TabItem Header="Radiobutton">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
+                    <StackPanel>
+                        <controls:LuiRadioButton GroupName="1" Text="First Button" />
+                        <controls:LuiRadioButton IsChecked="True" Text="Second Button" />
+                        <controls:LuiRadioButton IsEnabled="False" Text="Third Button" />
+                        <controls:LuiRadioButton
+                            IsChecked="True"
+                            IsEnabled="False"
+                            Text="Fourth Button" />
+                    </StackPanel>
 
+                </TabItem>
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            Text="First Button" />
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            IsChecked="True"
+                            Text="Second Button" />
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            IsEnabled="False"
+                            Text="Third Button" />
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            IsChecked="True"
+                            IsEnabled="False"
+                            Text="Fourth Button" />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
     </TabControl>
 </Window>
