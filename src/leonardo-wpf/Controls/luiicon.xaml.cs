@@ -38,7 +38,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
-         "Icon", typeof(LUIiconsEnum), typeof(LuiIcon), new PropertyMetadata(DEFAULT, new PropertyChangedCallback(OnIconChanged)));
+         "Icon", typeof(LUIiconsEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(DEFAULT, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconChanged)));
 
 
         private static void OnIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -90,7 +90,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
-         "IconSize", typeof(LUIFontSizeEnum), typeof(LuiIcon), new PropertyMetadata(LUIFontSizeEnum.Normal, new PropertyChangedCallback(OnIconSizeChanged)));
+         "IconSize", typeof(LUIFontSizeEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(LUIFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconSizeChanged)));
 
 
         private static void OnIconSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -129,7 +129,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
-         "CornerRadius", typeof(CornerRadius), typeof(LuiIcon), new PropertyMetadata(new CornerRadius(1.01), new PropertyChangedCallback(OnCornerRadiusChanged)));
+         "CornerRadius", typeof(CornerRadius), typeof(LuiIcon), new FrameworkPropertyMetadata(new CornerRadius(1.01), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCornerRadiusChanged)));
 
 
         private static void OnCornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -16,14 +18,14 @@ using System.Windows.Shapes;
 namespace leonardo.Controls
 {
     /// <summary>
-    /// Interaktionslogik für LuiRadioButton.xaml
+    /// Interaktionslogik für LuiCombobox.xaml
     /// </summary>
-    public partial class LuiRadioButton : RadioButton
+
+    public partial class LuiCombobox : ComboBox
     {
-        
-        public LuiRadioButton()
+        public LuiCombobox()
         {
-            InitializeComponent();
-        }
+            InitializeComponent();            
+        }    
     }
 }

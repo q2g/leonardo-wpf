@@ -456,7 +456,9 @@
             <StackPanel>
                 <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                     <TabItem Header="Default">
-                        <controls:LuiInput Margin="3,15,3,15" />
+
+                        <controls:LuiInput Margin="3,15,3,15" InputText="{Binding SingleText.Text}" />
+
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
@@ -466,7 +468,7 @@
                 </TabControl>
                 <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                     <TabItem Header="Default">
-                        <controls:LuiInput Margin="3,15,3,15" LabelText="Label" />
+                        <controls:LuiInput Margin="3,15,3,15" LabelText="{Binding SingleText.Text}" />
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
@@ -505,20 +507,20 @@
             <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiCheckbox Margin="3,15,3,3" Text="Label" />
+                        <controls:LuiCheckbox Margin="3,15,3,3" Content="Label" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,3"
-                            IsChecked="True"
-                            Text="Label" />
+                            Content="Label"
+                            IsChecked="True" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,3"
-                            IsEnabled="False"
-                            Text="Label" />
+                            Content="Label"
+                            IsEnabled="False" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,15"
+                            Content="Label"
                             IsChecked="True"
-                            IsEnabled="False"
-                            Text="Label" />
+                            IsEnabled="False" />
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">
@@ -526,24 +528,24 @@
                         <controls:LuiCheckbox
                             Margin="3,15,3,3"
                             attached:ThemeProperties.Inverted="True"
-                            Text="Label" />
+                            Content="Label" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,3"
                             attached:ThemeProperties.Inverted="True"
-                            IsChecked="True"
-                            Text="Label" />
+                            Content="Label"
+                            IsChecked="True" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,3"
                             attached:ThemeProperties.Inverted="True"
+                            Content="Label"
                             IsChecked="False"
-                            IsEnabled="false"
-                            Text="Label" />
+                            IsEnabled="false" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,15"
                             attached:ThemeProperties.Inverted="True"
+                            Content="Label"
                             IsChecked="True"
-                            IsEnabled="false"
-                            Text="Label" />
+                            IsEnabled="false" />
                     </StackPanel>
                 </TabItem>
             </TabControl>
@@ -553,13 +555,13 @@
             <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiRadioButton GroupName="1" Text="First Button" />
-                        <controls:LuiRadioButton IsChecked="True" Text="Second Button" />
-                        <controls:LuiRadioButton IsEnabled="False" Text="Third Button" />
+                        <controls:LuiRadioButton Content="First Button" />
+                        <controls:LuiRadioButton Content="Second Button" IsChecked="True" />
+                        <controls:LuiRadioButton Content="Third Button" IsEnabled="False" />
                         <controls:LuiRadioButton
+                            Content="Fourth Button"
                             IsChecked="True"
-                            IsEnabled="False"
-                            Text="Fourth Button" />
+                            IsEnabled="False" />
                     </StackPanel>
 
                 </TabItem>
@@ -568,23 +570,57 @@
                         <controls:LuiRadioButton
                             Margin="3,3,0,0"
                             attached:ThemeProperties.Inverted="True"
-                            Text="First Button" />
+                            Content="First Button" />
                         <controls:LuiRadioButton
                             Margin="3,3,0,0"
                             attached:ThemeProperties.Inverted="True"
+                            Content="Second Button"
+                            IsChecked="True" />
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            Content="Third Button"
+                            IsEnabled="False" />
+                        <controls:LuiRadioButton
+                            Margin="3,3,0,0"
+                            attached:ThemeProperties.Inverted="True"
+                            Content="Fourth Button"
                             IsChecked="True"
-                            Text="Second Button" />
-                        <controls:LuiRadioButton
-                            Margin="3,3,0,0"
-                            attached:ThemeProperties.Inverted="True"
-                            IsEnabled="False"
-                            Text="Third Button" />
-                        <controls:LuiRadioButton
-                            Margin="3,3,0,0"
-                            attached:ThemeProperties.Inverted="True"
-                            IsChecked="True"
-                            IsEnabled="False"
-                            Text="Fourth Button" />
+                            IsEnabled="False" />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
+
+        <TabItem Header="Combobox">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
+                    <StackPanel>
+                        <controls:LuiCombobox>
+                            <ComboBoxItem>First</ComboBoxItem>
+                            <ComboBoxItem>Second</ComboBoxItem>
+                            <ComboBoxItem>Third</ComboBoxItem>
+                        </controls:LuiCombobox>
+                        <controls:LuiCombobox>
+                            <ComboBoxItem>First</ComboBoxItem>
+                            <ComboBoxItem>Second</ComboBoxItem>
+                            <ComboBoxItem>Third</ComboBoxItem>
+                        </controls:LuiCombobox>
+                    </StackPanel>
+
+                </TabItem>
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <controls:LuiCombobox>
+                            <ComboBoxItem>First</ComboBoxItem>
+                            <ComboBoxItem>Second</ComboBoxItem>
+                            <ComboBoxItem>Third</ComboBoxItem>
+                        </controls:LuiCombobox>
+                        <controls:LuiCombobox>
+                            <ComboBoxItem>First</ComboBoxItem>
+                            <ComboBoxItem>Second</ComboBoxItem>
+                            <ComboBoxItem>Third</ComboBoxItem>
+                        </controls:LuiCombobox>
                     </StackPanel>
                 </TabItem>
             </TabControl>

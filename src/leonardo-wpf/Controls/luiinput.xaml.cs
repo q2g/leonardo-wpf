@@ -52,7 +52,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty InverseProperty = DependencyProperty.Register(
-         "Inverse", typeof(bool), typeof(LuiInput), new PropertyMetadata(false, new PropertyChangedCallback(OnInverseChanged)));
+         "Inverse", typeof(bool), typeof(LuiInput), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnInverseChanged)));
 
 
         private static void OnInverseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -108,7 +108,8 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty InputTextProperty = DependencyProperty.Register(
-         "InputText", typeof(string), typeof(LuiInput), new PropertyMetadata("", new PropertyChangedCallback(OnInputTextChanged)));
+         "InputText", typeof(string), typeof(LuiInput), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnInputTextChanged)));
+        //
 
 
         private static void OnInputTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -149,7 +150,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUIInputSizeProperty = DependencyProperty.Register(
-         "LUIInputSize", typeof(LUIInputSizeEnum), typeof(LuiInput), new PropertyMetadata(LUIInputSizeEnum.Default, new PropertyChangedCallback(OnLUIInputSizeChanged)));
+         "LUIInputSize", typeof(LUIInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LUIInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLUIInputSizeChanged)));
 
 
         private static void OnLUIInputSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -194,7 +195,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register(
-         "LabelText", typeof(string), typeof(LuiInput), new PropertyMetadata("", new PropertyChangedCallback(OnLabelTextChanged)));
+         "LabelText", typeof(string), typeof(LuiInput), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLabelTextChanged)));
 
 
         private static void OnLabelTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -235,7 +236,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUICornerRadiusProperty = DependencyProperty.Register(
-         "LUICornerRadius", typeof(CornerRadius), typeof(LuiInput), new PropertyMetadata(new CornerRadius(1.01), new PropertyChangedCallback(OnCornerRadiusChanged)));
+         "LUICornerRadius", typeof(CornerRadius), typeof(LuiInput), new FrameworkPropertyMetadata(new CornerRadius(1.01), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCornerRadiusChanged)));
 
 
         private static void OnCornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -280,7 +281,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUIBorderThicknessProperty = DependencyProperty.Register(
-         "LUIBorderThickness", typeof(Thickness), typeof(LuiInput), new PropertyMetadata(new Thickness(1.01), new PropertyChangedCallback(OnBorderThicknessChanged)));
+         "LUIBorderThickness", typeof(Thickness), typeof(LuiInput), new FrameworkPropertyMetadata(new Thickness(1.01), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnBorderThicknessChanged)));
 
 
         private static void OnBorderThicknessChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -326,7 +327,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty TextBoxFocusedProperty = DependencyProperty.Register(
- "TextBoxFocused", typeof(bool), typeof(LuiInput), new PropertyMetadata(false, new PropertyChangedCallback(OnTextBoxFocusedChanged)));
+ "TextBoxFocused", typeof(bool), typeof(LuiInput), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnTextBoxFocusedChanged)));
 
 
         private static void OnTextBoxFocusedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

@@ -76,7 +76,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty RoundedProperty = DependencyProperty.Register(
-         "Rounded", typeof(bool), typeof(LuiControlGroup), new PropertyMetadata(false, new PropertyChangedCallback(OnRoundedChanged)));
+         "Rounded", typeof(bool), typeof(LuiControlGroup), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnRoundedChanged)));
 
 
         private static void OnRoundedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

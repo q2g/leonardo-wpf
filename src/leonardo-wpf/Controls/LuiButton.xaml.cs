@@ -179,7 +179,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty ButtonTextProperty = DependencyProperty.Register(
-         "ButtonText", typeof(string), typeof(LuiButton), new PropertyMetadata("", new PropertyChangedCallback(OnButtonTextChanged)));
+         "ButtonText", typeof(string), typeof(LuiButton), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnButtonTextChanged)));
 
 
         private static void OnButtonTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -202,7 +202,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty IconRightProperty = DependencyProperty.Register(
-         "IconRight", typeof(LUIiconsEnum), typeof(LuiButton), new PropertyMetadata(LUIiconsEnum.lui_icon_none, new PropertyChangedCallback(OnIconRightChanged)));
+         "IconRight", typeof(LUIiconsEnum), typeof(LuiButton), new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconRightChanged)));
 
 
         private static void OnIconRightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -225,7 +225,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty IconLeftProperty = DependencyProperty.Register(
-         "IconLeft", typeof(LUIiconsEnum), typeof(LuiButton), new PropertyMetadata(LUIiconsEnum.lui_icon_none, new PropertyChangedCallback(OnIconLeftChanged)));
+         "IconLeft", typeof(LUIiconsEnum), typeof(LuiButton), new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconLeftChanged)));
 
 
         private static void OnIconLeftChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -248,7 +248,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty CommandProperty = DependencyProperty.Register(
-         "Command", typeof(ICommand), typeof(LuiButton), new PropertyMetadata(null, new PropertyChangedCallback(OnCommandChanged)));
+         "Command", typeof(ICommand), typeof(LuiButton), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCommandChanged)));
 
 
         private static void OnCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -271,7 +271,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty CommandParameterProperty = DependencyProperty.Register(
-         "CommandParameter", typeof(object), typeof(LuiButton), new PropertyMetadata(null, new PropertyChangedCallback(OnCommandParameterChanged)));
+         "CommandParameter", typeof(object), typeof(LuiButton), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCommandParameterChanged)));
 
 
         private static void OnCommandParameterChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -308,7 +308,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty RoundedProperty = DependencyProperty.Register(
-         "Rounded", typeof(bool), typeof(LuiButton), new PropertyMetadata(false, new PropertyChangedCallback(OnRoundedChanged)));
+         "Rounded", typeof(bool), typeof(LuiButton), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnRoundedChanged)));
 
 
         private static void OnRoundedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -370,7 +370,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty InverseProperty = DependencyProperty.Register(
-         "Inverse", typeof(bool), typeof(LuiButton), new PropertyMetadata(false, new PropertyChangedCallback(OnInverseChanged)));
+         "Inverse", typeof(bool), typeof(LuiButton), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnInverseChanged)));
 
 
         private static void OnInverseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -406,7 +406,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUISchemeProperty = DependencyProperty.Register(
-         "LUIScheme", typeof(LUISchemeEnum), typeof(LuiButton), new PropertyMetadata(LUISchemeEnum.Default, new PropertyChangedCallback(OnLUISchemeChanged)));
+         "LUIScheme", typeof(LUISchemeEnum), typeof(LuiButton), new FrameworkPropertyMetadata(LUISchemeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLUISchemeChanged)));
 
 
         private static void OnLUISchemeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -671,7 +671,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
-         "CornerRadius", typeof(CornerRadius), typeof(LuiButton), new PropertyMetadata(new CornerRadius(1.11), new PropertyChangedCallback(OnCornerRadiusChanged)));
+         "CornerRadius", typeof(CornerRadius), typeof(LuiButton), new FrameworkPropertyMetadata(new CornerRadius(1.11), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCornerRadiusChanged)));
 
 
         private static void OnCornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -707,7 +707,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUIButtonSizeProperty = DependencyProperty.Register(
-         "LUIButtonSize", typeof(LUIButtonSizeEnum), typeof(LuiButton), new PropertyMetadata(LUIButtonSizeEnum.Default, new PropertyChangedCallback(OnLUIButtonSizeChanged)));
+         "LUIButtonSize", typeof(LUIButtonSizeEnum), typeof(LuiButton), new FrameworkPropertyMetadata(LUIButtonSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLUIButtonSizeChanged)));
 
 
         private static void OnLUIButtonSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -751,7 +751,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LUIBorderThicknessProperty = DependencyProperty.Register(
-         "LUIBorderThickness", typeof(Thickness), typeof(LuiButton), new PropertyMetadata(new Thickness(1.01), new PropertyChangedCallback(OnBorderThicknessChanged)));
+         "LUIBorderThickness", typeof(Thickness), typeof(LuiButton), new FrameworkPropertyMetadata(new Thickness(1.01), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnBorderThicknessChanged)));
 
 
         private static void OnBorderThicknessChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

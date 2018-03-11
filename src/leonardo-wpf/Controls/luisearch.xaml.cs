@@ -58,7 +58,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty InverseProperty = DependencyProperty.Register(
-         "Inverse", typeof(bool), typeof(LuiSearch), new PropertyMetadata(false, new PropertyChangedCallback(OnInverseChanged)));
+         "Inverse", typeof(bool), typeof(LuiSearch), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnInverseChanged)));
 
 
         private static void OnInverseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -113,7 +113,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty SearchTextProperty = DependencyProperty.Register(
-         "SearchText", typeof(string), typeof(LuiSearch), new PropertyMetadata("", new PropertyChangedCallback(OnSearchTextChanged)));
+         "SearchText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSearchTextChanged)));
 
 
         private static void OnSearchTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

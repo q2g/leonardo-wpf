@@ -51,6 +51,9 @@
     <Compile Include="Controls\LuiCheckbox.xaml.cs">
       <DependentUpon>LuiCheckbox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiCombobox.xaml.cs">
+      <DependentUpon>LuiCombobox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiControlGroup.xaml.cs">
       <DependentUpon>LuiControlGroup.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\LuiCombobox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LuiControlGroup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -120,6 +127,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\LUITabItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_ComboboxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
