@@ -70,6 +70,9 @@
     <Compile Include="Controls\LuiSearch.xaml.cs">
       <DependentUpon>LuiSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiSwitch.xaml.cs">
+      <DependentUpon>LuiSwitch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiTabItem.xaml.cs">
       <DependentUpon>LuiTabItem.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\LuiSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LuiTabItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +135,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\LUITabItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_SwitchStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

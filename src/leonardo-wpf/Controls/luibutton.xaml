@@ -10,7 +10,10 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
-            <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+            <FontFamily
+                x:Key="QlikViewSans">
+                pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+            </FontFamily>
         </ResourceDictionary>
     </UserControl.Resources>
     <UserControl.Template>
@@ -24,10 +27,12 @@
                 MouseLeave="MainButton_MouseLeave"
                 PreviewMouseLeftButtonUp="MainButton_MouseUp">
                 <Button.Style>
-                    <Style TargetType="{x:Type Button}">
+                    <Style
+                        TargetType="{x:Type Button}">
                         <Setter Property="Template">
                             <Setter.Value>
-                                <ControlTemplate TargetType="Button">
+                                <ControlTemplate
+                                    TargetType="Button">
                                     <Border
                                         Name="PART_Border"
                                         Padding="15,2,15,2"

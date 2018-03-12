@@ -4,11 +4,16 @@
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary
+            Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+    <FontFamily
+        x:Key="QlikViewSans">
+        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+    </FontFamily>
 
-    <Style x:Key="FocusVisual">
+    <Style
+        x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -22,9 +27,14 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070" />
-    <Style x:Key="OptionMarkFocusVisual">
+    <SolidColorBrush
+        x:Key="RadioButton.Static.Background"
+        Color="#FFFFFFFF" />
+    <SolidColorBrush
+        x:Key="RadioButton.Static.Border"
+        Color="#FF707070" />
+    <Style
+        x:Key="OptionMarkFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -38,17 +48,39 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFF3F9FF" />
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF" />
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF212121" />
-    <Style x:Key="Lui_RadioButtonStyle" TargetType="{x:Type RadioButton}">
+    <SolidColorBrush
+        x:Key="RadioButton.MouseOver.Background"
+        Color="#FFF3F9FF" />
+    <SolidColorBrush
+        x:Key="RadioButton.MouseOver.Border"
+        Color="#FF5593FF" />
+    <SolidColorBrush
+        x:Key="RadioButton.MouseOver.Glyph"
+        Color="#FF212121" />
+    <SolidColorBrush
+        x:Key="RadioButton.Disabled.Background"
+        Color="#FFE6E6E6" />
+    <SolidColorBrush
+        x:Key="RadioButton.Disabled.Border"
+        Color="#FFBCBCBC" />
+    <SolidColorBrush
+        x:Key="RadioButton.Disabled.Glyph"
+        Color="#FF707070" />
+    <SolidColorBrush
+        x:Key="RadioButton.Pressed.Background"
+        Color="#FFD9ECFF" />
+    <SolidColorBrush
+        x:Key="RadioButton.Pressed.Border"
+        Color="#FF3C77DD" />
+    <SolidColorBrush
+        x:Key="RadioButton.Pressed.Glyph"
+        Color="#FF212121" />
+    <SolidColorBrush
+        x:Key="RadioButton.Static.Glyph"
+        Color="#FF212121" />
+    <Style
+        x:Key="Lui_RadioButtonStyle"
+        TargetType="{x:Type RadioButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource RadioButton.Static.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}" />
@@ -58,14 +90,17 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RadioButton}">
+                <ControlTemplate
+                    TargetType="{x:Type RadioButton}">
                     <Grid
                         x:Name="templateRoot"
                         Background="Transparent"
                         SnapsToDevicePixels="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border
                             x:Name="radioButtonBorder"
@@ -76,7 +111,9 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="100">
-                            <Grid x:Name="markGrid" Margin="5">
+                            <Grid
+                                x:Name="markGrid"
+                                Margin="5">
                                 <Ellipse
                                     x:Name="optionMark"
                                     Width="10"

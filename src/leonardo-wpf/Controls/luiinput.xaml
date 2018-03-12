@@ -9,10 +9,14 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
-            <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+            <FontFamily
+                x:Key="QlikViewSans">
+                pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+            </FontFamily>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel x:Name="MainStackpanel">
+    <StackPanel
+        x:Name="MainStackpanel">
         <TextBlock
             x:Name="MainLabel"
             Margin="0,0,0,3"
@@ -26,7 +30,8 @@
             LostFocus="MainTextBox_LostFocus"
             TextChanged="MainTextBox_TextChanged">
             <TextBox.Resources>
-                <Style TargetType="{x:Type Border}">
+                <Style
+                    TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>

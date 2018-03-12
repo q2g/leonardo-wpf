@@ -10,10 +10,13 @@
     mc:Ignorable="d">
     <Grid>
 
-        <ItemsControl Name="_itemsControl" ItemsSource="{Binding ItemsSource, ElementName=control}">
+        <ItemsControl
+            Name="_itemsControl"
+            ItemsSource="{Binding ItemsSource, ElementName=control}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
+                    <StackPanel
+                        Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>

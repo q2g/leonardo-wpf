@@ -736,5 +736,31 @@
                 </TabItem>
             </TabControl>
         </TabItem>
+
+        <TabItem
+            Header="Switch">
+            <TabControl
+                ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem
+                    Header="Default">
+                    <StackPanel>
+                        <controls:LuiSwitch
+                            Margin="5" />
+
+                    </StackPanel>
+
+                </TabItem>
+                <TabItem
+                    Header="Inverse">
+                    <StackPanel
+                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <controls:LuiSwitch
+                            Margin="5"
+                            attached:ThemeProperties.Inverted="True" />
+
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
     </TabControl>
 </Window>

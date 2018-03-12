@@ -1,8 +1,7 @@
 ﻿<CheckBox
-    x:Class="leonardo.Controls.LuiCheckbox"
+    x:Class="leonardo.Controls.LuiSwitch"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:attachedP="clr-namespace:leonardo.AttachedProperties"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
@@ -12,13 +11,14 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary
-                    Source="../Styles/Lui_CheckboxStyle.xaml" />
+                    Source="../Styles/Lui_SwitchStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </CheckBox.Resources>
     <CheckBox.Style>
         <Style
-            BasedOn="{StaticResource LUI_CheckBoxStyle}"
+            BasedOn="{StaticResource CheckBoxSliderStyle}"
             TargetType="CheckBox" />
     </CheckBox.Style>
+
 </CheckBox>

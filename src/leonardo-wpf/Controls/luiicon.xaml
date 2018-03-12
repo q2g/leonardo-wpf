@@ -9,8 +9,13 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
-            <FontFamily x:Key="QlikIcons">pack://application:,,,/leonardo-wpf;component/#LUIicons</FontFamily>
+            <FontFamily
+                x:Key="QlikIcons">
+                pack://application:,,,/leonardo-wpf;component/#LUIicons
+            </FontFamily>
         </ResourceDictionary>
     </UserControl.Resources>
-    <TextBlock x:Name="mainText" FontFamily="{StaticResource QlikIcons}" />
+    <TextBlock
+        x:Name="mainText"
+        FontFamily="{StaticResource QlikIcons}" />
 </UserControl>

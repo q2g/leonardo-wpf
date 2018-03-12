@@ -11,16 +11,21 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Resources/palette.xaml" />
+                <ResourceDictionary
+                    Source="../Resources/palette.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid x:Name="maingrid">
+    <Grid
+        x:Name="maingrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition
+                Width="auto" />
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="auto" />
         </Grid.ColumnDefinitions>
         <local:LuiIcon
             x:Name="mainicon"
@@ -48,7 +53,8 @@
             PreviewMouseLeftButtonDown="PalceHolder_PreviewMouseLeftButtonDown">
             Search
             <Label.Style>
-                <Style TargetType="{x:Type Label}">
+                <Style
+                    TargetType="{x:Type Label}">
                     <Setter Property="Visibility" Value="Collapsed" />
                     <Style.Triggers>
                         <MultiDataTrigger>

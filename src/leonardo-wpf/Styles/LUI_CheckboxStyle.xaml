@@ -4,11 +4,16 @@
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary
+            Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <FontFamily x:Key="QlikViewSans">pack://application:,,,/leonardo-wpf;component/#QlikView Sans</FontFamily>
+    <FontFamily
+        x:Key="QlikViewSans">
+        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+    </FontFamily>
 
-    <Style x:Key="FocusVisual">
+    <Style
+        x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -22,9 +27,14 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070" />
-    <Style x:Key="OptionMarkFocusVisual">
+    <SolidColorBrush
+        x:Key="OptionMark.Static.Background"
+        Color="#FFFFFFFF" />
+    <SolidColorBrush
+        x:Key="OptionMark.Static.Border"
+        Color="#FF707070" />
+    <Style
+        x:Key="OptionMarkFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -39,7 +49,9 @@
         </Setter>
     </Style>
 
-    <Style x:Key="LUI_CheckBoxStyle" TargetType="{x:Type CheckBox}">
+    <Style
+        x:Key="LUI_CheckBoxStyle"
+        TargetType="{x:Type CheckBox}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
@@ -47,14 +59,17 @@
         <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type CheckBox}">
+                <ControlTemplate
+                    TargetType="{x:Type CheckBox}">
                     <Grid
                         x:Name="templateRoot"
                         Background="Transparent"
                         SnapsToDevicePixels="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border
                             x:Name="checkBoxBorder"
@@ -67,7 +82,8 @@
                             BorderThickness="1"
                             CornerRadius="2">
 
-                            <Grid x:Name="markGrid">
+                            <Grid
+                                x:Name="markGrid">
                                 <Path
                                     x:Name="optionMark"
                                     Margin="1"
