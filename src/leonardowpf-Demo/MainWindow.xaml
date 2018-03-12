@@ -13,14 +13,20 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUITabItemStyle.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/leonardo-wpf;component/Styles/LUITabItemStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}" TabStripPlacement="Left">
-        <TabItem Header="Icons">
-            <StackPanel Orientation="Horizontal">
+    <TabControl
+        ItemContainerStyle="{StaticResource LUITabItemStyle}"
+        TabStripPlacement="Left">
+        <TabItem
+            Header="Icons">
+            <StackPanel
+                Orientation="Horizontal">
 
                 <controls:LuiIcon
                     Margin="4"
@@ -52,11 +58,15 @@
                     IconSize="Large" />
             </StackPanel>
         </TabItem>
-        <TabItem Header="Button">
+        <TabItem
+            Header="Button">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
-                        <StackPanel Orientation="Horizontal">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
+                        <StackPanel
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 ButtonText="Default"
@@ -99,7 +109,9 @@
                         BorderBrush="{StaticResource LUI.Brush.Grayscale28}"
                         BorderThickness="0"
                         Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}" Orientation="Horizontal">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 ButtonText="Default"
@@ -145,9 +157,12 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
-                        <StackPanel Orientation="Horizontal">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
+                        <StackPanel
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 ButtonText="Default"
@@ -192,8 +207,11 @@
                                 Rounded="True" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}" Orientation="Horizontal">
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 ButtonText="Default"
@@ -245,9 +263,12 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
-                        <StackPanel Orientation="Horizontal">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
+                        <StackPanel
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 IconLeft="ui_icon_plus"
@@ -285,8 +306,11 @@
                                 Rounded="True" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}" Orientation="Horizontal">
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 IconLeft="ui_icon_plus"
@@ -330,8 +354,10 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
                         <StackPanel>
                             <controls:LuiButton
                                 Margin="3"
@@ -351,8 +377,10 @@
                                 Rounded="True" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiButton
                                 Margin="3"
                                 ButtonText="Add Item"
@@ -375,7 +403,8 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel
+                    Orientation="Horizontal">
                     <controls:LuiButton
                         Margin="3"
                         ButtonText="Default"
@@ -397,51 +426,80 @@
                 </StackPanel>
             </StackPanel>
         </TabItem>
-        <TabItem Header="ButtonGroup">
+        <TabItem
+            Header="ButtonGroup">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
                         <StackPanel>
-                            <controls:LuiControlGroup Margin="3,15,3,15">
-                                <controls:LuiButton ButtonText="First Button" />
-                                <controls:LuiButton ButtonText="Second Button" />
-                                <controls:LuiButton ButtonText="Third Button" />
+                            <controls:LuiControlGroup
+                                Margin="3,15,3,15">
+                                <controls:LuiButton
+                                    ButtonText="First Button" />
+                                <controls:LuiButton
+                                    ButtonText="Second Button" />
+                                <controls:LuiButton
+                                    ButtonText="Third Button" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiControlGroup Margin="3,15,3,15">
-                                <controls:LuiButton ButtonText="First Button" Inverse="True" />
-                                <controls:LuiButton ButtonText="Second Button" Inverse="True" />
-                                <controls:LuiButton ButtonText="Third Button" Inverse="True" />
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                            <controls:LuiControlGroup
+                                Margin="3,15,3,15">
+                                <controls:LuiButton
+                                    ButtonText="First Button"
+                                    Inverse="True" />
+                                <controls:LuiButton
+                                    ButtonText="Second Button"
+                                    Inverse="True" />
+                                <controls:LuiButton
+                                    ButtonText="Third Button"
+                                    Inverse="True" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
 
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
                         <StackPanel>
-                            <controls:LuiControlGroup Margin="3,15,3,15" Rounded="True">
+                            <controls:LuiControlGroup
+                                Margin="3,15,3,15"
+                                Rounded="True">
                                 <controls:LuiButton
                                     Width="170"
                                     ButtonText="First Button"
                                     IconRight="lui_icon_info" />
-                                <controls:LuiButton ButtonText="Second Button" />
-                                <controls:LuiButton ButtonText="Third Button" LUIScheme="Info" />
+                                <controls:LuiButton
+                                    ButtonText="Second Button" />
+                                <controls:LuiButton
+                                    ButtonText="Third Button"
+                                    LUIScheme="Info" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiControlGroup Margin="3,15,3,15" Rounded="True">
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                            <controls:LuiControlGroup
+                                Margin="3,15,3,15"
+                                Rounded="True">
                                 <controls:LuiButton
                                     Width="170"
                                     ButtonText="First Button"
                                     IconRight="lui_icon_info"
                                     Inverse="True" />
-                                <controls:LuiButton ButtonText="Second Button" Inverse="True" />
+                                <controls:LuiButton
+                                    ButtonText="Second Button"
+                                    Inverse="True" />
                                 <controls:LuiButton
                                     ButtonText="Third Button"
                                     Inverse="True"
@@ -452,26 +510,41 @@
                 </TabControl>
             </StackPanel>
         </TabItem>
-        <TabItem Header="Input">
+        <TabItem
+            Header="Input">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
 
-                        <controls:LuiInput Margin="3,15,3,15" InputText="{Binding SingleText.Text}" />
+                        <controls:LuiInput
+                            Margin="3,15,3,15"
+                            InputText="{Binding SingleText.Text}" />
 
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiInput Margin="3,15,3,15" Inverse="True" />
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                            <controls:LuiInput
+                                Margin="3,15,3,15"
+                                Inverse="True" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem Header="Default">
-                        <controls:LuiInput Margin="3,15,3,15" LabelText="{Binding SingleText.Text}" />
+                <TabControl
+                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem
+                        Header="Default">
+                        <controls:LuiInput
+                            Margin="3,15,3,15"
+                            LabelText="{Binding SingleText.Text}" />
                     </TabItem>
-                    <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem
+                        Header="Inverse">
+                        <StackPanel
+                            Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiInput
                                 Margin="3,15,3,15"
                                 Inverse="True"
@@ -489,25 +562,38 @@
                     LabelText="Label" />
             </StackPanel>
         </TabItem>
-        <TabItem Header="Search">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem Header="Default">
+        <TabItem
+            Header="Search">
+            <TabControl
+                ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem
+                    Header="Default">
                     <StackPanel>
-                        <controls:LuiSearch Margin="3,15,3,15" />
+                        <controls:LuiSearch
+                            Margin="3,15,3,15" />
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                        <controls:LuiSearch Margin="3,15,3,15" Inverse="True" />
+                <TabItem
+                    Header="Inverse">
+                    <StackPanel
+                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <controls:LuiSearch
+                            Margin="3,15,3,15"
+                            Inverse="True" />
                     </StackPanel>
                 </TabItem>
             </TabControl>
         </TabItem>
-        <TabItem Header="CheckBox">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem Header="Default">
+        <TabItem
+            Header="CheckBox">
+            <TabControl
+                ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem
+                    Header="Default">
                     <StackPanel>
-                        <controls:LuiCheckbox Margin="3,15,3,3" Content="Label" />
+                        <controls:LuiCheckbox
+                            Margin="3,15,3,3"
+                            Content="Label" />
                         <controls:LuiCheckbox
                             Margin="3,3,3,3"
                             Content="Label"
@@ -523,8 +609,10 @@
                             IsEnabled="False" />
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem
+                    Header="Inverse">
+                    <StackPanel
+                        Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiCheckbox
                             Margin="3,15,3,3"
                             attached:ThemeProperties.Inverted="True"
@@ -551,13 +639,21 @@
             </TabControl>
         </TabItem>
 
-        <TabItem Header="Radiobutton">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem Header="Default">
+        <TabItem
+            Header="Radiobutton">
+            <TabControl
+                ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem
+                    Header="Default">
                     <StackPanel>
-                        <controls:LuiRadioButton Content="First Button" />
-                        <controls:LuiRadioButton Content="Second Button" IsChecked="True" />
-                        <controls:LuiRadioButton Content="Third Button" IsEnabled="False" />
+                        <controls:LuiRadioButton
+                            Content="First Button" />
+                        <controls:LuiRadioButton
+                            Content="Second Button"
+                            IsChecked="True" />
+                        <controls:LuiRadioButton
+                            Content="Third Button"
+                            IsEnabled="False" />
                         <controls:LuiRadioButton
                             Content="Fourth Button"
                             IsChecked="True"
@@ -565,8 +661,10 @@
                     </StackPanel>
 
                 </TabItem>
-                <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem
+                    Header="Inverse">
+                    <StackPanel
+                        Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiRadioButton
                             Margin="3,3,0,0"
                             attached:ThemeProperties.Inverted="True"
@@ -592,16 +690,22 @@
             </TabControl>
         </TabItem>
 
-        <TabItem Header="Combobox">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem Header="Default">
+        <TabItem
+            Header="Combobox">
+            <TabControl
+                ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem
+                    Header="Default">
                     <StackPanel>
-                        <controls:LuiCombobox>
+                        <controls:LuiCombobox
+                            Margin="5">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
                         </controls:LuiCombobox>
-                        <controls:LuiCombobox>
+                        <controls:LuiCombobox
+                            Margin="5"
+                            attached:ThemeProperties.Gradient="True">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
@@ -609,14 +713,21 @@
                     </StackPanel>
 
                 </TabItem>
-                <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                        <controls:LuiCombobox>
+                <TabItem
+                    Header="Inverse">
+                    <StackPanel
+                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <controls:LuiCombobox
+                            Margin="5"
+                            attached:ThemeProperties.Inverted="True">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
                         </controls:LuiCombobox>
-                        <controls:LuiCombobox>
+                        <controls:LuiCombobox
+                            Margin="5"
+                            attached:ThemeProperties.Gradient="True"
+                            attached:ThemeProperties.Inverted="True">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>

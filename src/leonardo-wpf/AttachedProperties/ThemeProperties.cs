@@ -10,8 +10,9 @@ using System.Windows.Media;
 namespace leonardo.AttachedProperties
 {  
     public static class ThemeProperties
-    {       
-        public static bool InvertedBrush(DependencyObject obj)
+    {
+        #region Inverted AP
+        public static bool GetInverted(DependencyObject obj)
         {
             return (bool)obj.GetValue(InvertedProperty);
         }
@@ -27,5 +28,25 @@ namespace leonardo.AttachedProperties
                 typeof(bool),
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
+
+        #region Gradient AP
+        public static bool GetGradient(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(GradientProperty);
+        }
+
+        public static void SetGradient(DependencyObject obj, bool value)
+        {
+            obj.SetValue(GradientProperty, value);
+        }
+
+        public static readonly DependencyProperty GradientProperty =
+            DependencyProperty.RegisterAttached(
+                "Gradient",
+                typeof(bool),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 }
