@@ -1,4 +1,5 @@
-﻿<Window
+﻿
+<Window
     x:Class="leonardowpf_Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -761,6 +762,85 @@
                     </StackPanel>
                 </TabItem>
             </TabControl>
+        </TabItem>
+
+        <TabItem
+            Header="Dialog">
+            <StackPanel>
+                <controls:LuiDialog
+                    IsOpen="{Binding IsChecked, ElementName=BLeft}"
+                    PanelHeight="60"
+                    PanelWidth="60"
+                    Placement="Left"
+                    PlacementTarget="{Binding ElementName=BLeft}">
+                    <TextBlock
+                        Text="put Context Here" />
+                </controls:LuiDialog>
+                <ToggleButton
+                    x:Name="BLeft"
+                    Width="100"
+                    Height="100"
+                    Content="Left" />
+                <ToggleButton
+                    x:Name="BTop"
+                    Width="100"
+                    Height="100"
+                    Content="Top" />
+                <controls:LuiDialog
+                    IsOpen="{Binding IsChecked, ElementName=BTop}"
+                    PanelHeight="50"
+                    PanelWidth="50"
+                    Placement="Top"
+                    PlacementTarget="{Binding ElementName=BTop}">
+                    <TextBlock
+                        Text="put Context Here" />
+                </controls:LuiDialog>
+                <Grid>
+                    <ToggleButton
+                        x:Name="BRight"
+                        Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        Content="Right" />
+                </Grid>
+                <controls:LuiDialog
+                    IsOpen="{Binding IsChecked, ElementName=BRight}"
+                    PanelHeight="40"
+                    PanelWidth="150"
+                    Placement="Right"
+                    PlacementTarget="{Binding ElementName=BRight}">
+                    <TextBlock
+                        Text="put Context Here" />
+                </controls:LuiDialog>
+                <ToggleButton
+                    x:Name="BBottom"
+                    Width="100"
+                    Height="100"
+                    Content="Bottom" />
+                <controls:LuiDialog
+                    IsOpen="{Binding IsChecked, ElementName=BBottom}"
+                    PanelHeight="150"
+                    PanelWidth="150"
+                    Placement="Bottom"
+                    PlacementTarget="{Binding ElementName=BBottom}">
+                    <TextBlock
+                        Text="put Context Here" />
+                </controls:LuiDialog>
+                <ToggleButton
+                    x:Name="BMouse"
+                    Width="80"
+                    Height="80"
+                    Content="Mouse" />
+                <controls:LuiDialog
+                    IsOpen="{Binding IsChecked, ElementName=BMouse}"
+                    PanelHeight="150"
+                    PanelWidth="150"
+                    Placement="MousePoint"
+                    PlacementTarget="{Binding ElementName=BMouse}">
+                    <TextBlock
+                        Text="put Context Here" />
+                </controls:LuiDialog>
+            </StackPanel>
         </TabItem>
     </TabControl>
 </Window>
