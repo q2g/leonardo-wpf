@@ -24,7 +24,12 @@ namespace leonardowpf_Demo
     {
         public testclass SingleText { get; set; } = new testclass();
         public List<testclass> TextList { get; set;}
-        
+        public ICommand TestCommand { get; set; } = new RelayCommand((s) => true, (o) =>
+             {
+                 object tt = o;
+             });
+
+
         public MainWindow()
         {
             TextList = new List<testclass>
@@ -45,6 +50,10 @@ namespace leonardowpf_Demo
             SingleText.Text = DateTime.Now.ToLongTimeString();
         }
     }
+
+
+
+
     public class testclass:INotifyPropertyChanged
     {
         private string text;

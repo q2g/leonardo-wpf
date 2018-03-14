@@ -13,7 +13,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Resources/palette.xaml" />
+                <ResourceDictionary Source="../Styles/LUI_ButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
 
         </ResourceDictionary>
     </UserControl.Resources>
@@ -29,16 +31,16 @@
             VerticalAlignment="Center"
             Icon="lui_icon_search"
             IconSize="Large">
-            <!--<local:LuiIcon.Style>
-                <Style>
+            <local:LuiIcon.Style>
+                <Style TargetType="local:LuiIcon">
                     <Style.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>
-            </local:LuiIcon.Style>-->
-
+            </local:LuiIcon.Style>
         </local:LuiIcon>
         <local:LuiInput
             x:Name="maininput"
@@ -48,15 +50,38 @@
             attachedP:ThemeProperties.CornerRadius="0"
             HintText="Search..."
             Text="{Binding SearchText, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}" />
-
         <local:LuiButton
             x:Name="mainbutton"
             Grid.Column="2"
             attachedP:ThemeProperties.BorderThickness="0"
             attachedP:ThemeProperties.ButtonSize="Default"
             attachedP:ThemeProperties.CornerRadius="0,3,3,0"
-            attachedP:ThemeProperties.IconRight="lui_icon_cross" />
-
-
+            attachedP:ThemeProperties.IconRight="lui_icon_cross"
+            Command="{Binding Command, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}"
+            CommandParameter="{Binding CommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}">
+            <local:LuiButton.Style>
+                <Style
+                    BasedOn="{StaticResource LUI_ButtonStyle}"
+                    TargetType="local:LuiButton">
+                    <Style.Triggers>
+                        <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
+                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </local:LuiButton.Style>
+        </local:LuiButton>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
+                        <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
     </Grid>
 </UserControl>

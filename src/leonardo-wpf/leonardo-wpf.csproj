@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="AttachedProperties\MouseEventProperties.cs" />
     <Compile Include="AttachedProperties\ThemeProperties.cs" />
+    <Compile Include="Controls\LuiAccordion.xaml.cs">
+      <DependentUpon>LuiAccordion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiButton.xaml.cs">
       <DependentUpon>LuiButton.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
     <Resource Include="lui-icons.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\LuiAccordion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LuiButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\palette.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_AccordionStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

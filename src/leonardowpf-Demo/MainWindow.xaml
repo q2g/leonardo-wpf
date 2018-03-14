@@ -506,7 +506,10 @@
             <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiSearch Margin="3,15,3,15" />
+                        <controls:LuiSearch
+                            Margin="3,15,3,15"
+                            Command="{Binding TestCommand}"
+                            CommandParameter="TestWert" />
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">
@@ -744,6 +747,11 @@
                     PlacementTarget="{Binding ElementName=BMouse}">
                     <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Accordion">
+            <StackPanel>
+                <TextBlock Text=" coming soon..." />
             </StackPanel>
         </TabItem>
     </TabControl>
