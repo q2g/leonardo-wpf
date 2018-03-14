@@ -23,89 +23,10 @@ namespace leonardo.Controls
     {
         public LuiSearch()
         {
-            InitializeComponent();
-            maininput.InputTextChanged += Maininput_InputTextChanged;
+            InitializeComponent();           
         }
 
-        private void Maininput_InputTextChanged(object sender, EventArgs e)
-        {
-            SearchText = maininput.InputText;
-        }
-
-        private void PalceHolder_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            maininput.TextBoxFocused=true;
-        }
-
-        #region Inverse - DP
-        private bool inverse;
-        internal bool Inverse_Internal
-        {
-            get { return inverse; }
-            set
-            {
-                if (inverse != value)
-                {
-                    inverse = value;
-                    SetColors();
-                }
-            }
-        }
-        public bool Inverse
-        {
-            get { return (bool)this.GetValue(InverseProperty); }
-            set { this.SetValue(InverseProperty, value); }
-        }
-
-        public static readonly DependencyProperty InverseProperty = DependencyProperty.Register(
-         "Inverse", typeof(bool), typeof(LuiSearch), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnInverseChanged)));
-
-
-        private static void OnInverseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is LuiSearch obj)
-            {
-                if (e.NewValue is bool newvalue)
-                {
-                    obj.Inverse_Internal = newvalue;
-                }
-            }
-        }
-
-        private void SetColors()
-        {
-            maininput.Inverse = inverse;
-            mainbutton.Inverse = inverse;
-            if (inverse)
-            {                
-                maingrid.Background= LUIPalette.Brushes.GRAYSCALE40;
-                mainbutton.LUIScheme = LUISchemeEnum.InvertedSearchbox;
-                //mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE80;
-                
-            }
-            else
-            {
-                maingrid.Background = new SolidColorBrush(Colors.Transparent);
-                mainbutton.LUIScheme = LUISchemeEnum.Default;
-                //mainicon.Foreground = LUIPalette.Brushes.GRAYSCALE0;
-            }
-        }
-        #endregion
-
-        #region SearchText - DP
-        private string searchText;
-        internal string SearchText_Internal
-        {
-            get { return searchText; }
-            set
-            {
-                if (searchText != value)
-                {
-                    searchText = value;
-                    maininput.InputText = value;
-                }
-            }
-        }
+        #region SearchText - DP        
         public string SearchText
         {
             get { return (string)this.GetValue(SearchTextProperty); }
@@ -113,23 +34,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty SearchTextProperty = DependencyProperty.Register(
-         "SearchText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSearchTextChanged)));
-
-
-        private static void OnSearchTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is LuiSearch obj)
-            {
-                if (e.NewValue is string newvalue)
-                {
-                    obj.SearchText_Internal = newvalue;
-                }
-            }
-        }
-        private void MainTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SearchText = maininput.InputText;
-        }
+         "SearchText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
     }
 }

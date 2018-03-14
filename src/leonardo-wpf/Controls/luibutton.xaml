@@ -1,70 +1,23 @@
-﻿<UserControl
+﻿<Button
     x:Class="leonardo.Controls.LuiButton"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:leonardo.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="300"
-    d:DesignWidth="300"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
     mc:Ignorable="d">
-    <UserControl.Resources>
+    <Button.Resources>
         <ResourceDictionary>
-            <FontFamily
-                x:Key="QlikViewSans">
-                pack://application:,,,/leonardo-wpf;component/#QlikView Sans
-            </FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="../Styles/Lui_ButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </UserControl.Resources>
-    <UserControl.Template>
-        <ControlTemplate>
-            <Button
-                Name="MainButton"
-                Cursor="Hand"
-                Foreground="#4D4D4D"
-                LostFocus="MainButton_LostFocus"
-                MouseEnter="MainButton_MouseEnter"
-                MouseLeave="MainButton_MouseLeave"
-                PreviewMouseLeftButtonUp="MainButton_MouseUp">
-                <Button.Style>
-                    <Style
-                        TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate
-                                    TargetType="Button">
-                                    <Border
-                                        Name="PART_Border"
-                                        Padding="15,2,15,2"
-                                        BorderThickness="1"
-                                        CornerRadius="3"
-                                        MouseDown="MainButton_MouseDown">
-                                        <Grid>
-                                            <controls:LuiIcon
-                                                x:Name="PART_IconLeft"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-                                                IconSize="Normal" />
-                                            <controls:LuiIcon
-                                                x:Name="PART_IconRight"
-                                                HorizontalAlignment="Right"
-                                                VerticalAlignment="Center"
-                                                IconSize="Normal" />
-                                            <TextBlock
-                                                x:Name="PART_Text"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"
-                                                FontFamily="{StaticResource QlikViewSans}"
-                                                FontSize="12"
-                                                FontWeight="Bold" />
-                                        </Grid>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </ControlTemplate>
-    </UserControl.Template>
-</UserControl>
+    </Button.Resources>
+    <Button.Style>
+        <Style
+            BasedOn="{StaticResource LUI_ButtonStyle}"
+            TargetType="Button" />
+    </Button.Style>
+</Button>

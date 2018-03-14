@@ -9,25 +9,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="800"
-    Height="450"
+    Height="650"
     mc:Ignorable="d">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
-                <ResourceDictionary
-                    Source="pack://application:,,,/leonardo-wpf;component/Styles/LUITabItemStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_TabItemStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_ButtonStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_TextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <TabControl
         ItemContainerStyle="{StaticResource LUITabItemStyle}"
         TabStripPlacement="Left">
-        <TabItem
-            Header="Icons">
-            <StackPanel
-                Orientation="Horizontal">
+        <TabItem Header="Icons">
+            <StackPanel Orientation="Horizontal">
 
                 <controls:LuiIcon
                     Margin="4"
@@ -59,51 +57,47 @@
                     IconSize="Large" />
             </StackPanel>
         </TabItem>
-        <TabItem
-            Header="Button">
+        <TabItem Header="Button">
             <StackPanel>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
-                        <StackPanel
-                            Orientation="Horizontal">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Default"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Default" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Toolbar"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Toolbar" />
+                                attached:ThemeProperties.ButtonScheme="Toolbar"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Toolbar" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Info"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Info" />
+                                attached:ThemeProperties.ButtonScheme="Info"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Info" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Error"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Error" />
+                                attached:ThemeProperties.ButtonScheme="Error"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Error" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Warning"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Warning" />
+                                attached:ThemeProperties.ButtonScheme="Warning"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Warning" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Success"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Success" />
+                                attached:ThemeProperties.ButtonScheme="Success"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Success" />
                         </StackPanel>
                     </TabItem>
                     <TabItem
@@ -115,440 +109,380 @@
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Default"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Default" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Toolbar"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Toolbar" />
+                                attached:ThemeProperties.ButtonScheme="Toolbar"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Toolbar" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Info"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Info" />
+                                attached:ThemeProperties.ButtonScheme="Info"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Info" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Error"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Error" />
+                                attached:ThemeProperties.ButtonScheme="Error"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Error" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Warning"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Warning" />
+                                attached:ThemeProperties.ButtonScheme="Warning"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Warning" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Success"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Success" />
+                                attached:ThemeProperties.ButtonScheme="Success"
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Success" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
-                        <StackPanel
-                            Orientation="Horizontal">
+
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Default"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Default" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Toolbar"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Toolbar"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Toolbar"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Toolbar" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Info"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Info"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Info"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Info" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Error"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Error"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Error"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Error" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Warning"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Warning"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Warning"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Warning" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Success"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Success"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Success"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Success" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
+                    <TabItem Header="Inverse">
                         <StackPanel
                             Background="{StaticResource LUI.Brush.Grayscale28}"
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Default"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Default" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Toolbar"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Toolbar"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Toolbar"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Toolbar" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Info"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Info"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Info"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Info" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Error"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Error"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Error"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Error" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Warning"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Warning"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Warning"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Warning" />
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                ButtonText="Success"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Success"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Success"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Success" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
-                        <StackPanel
-                            Orientation="Horizontal">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
+                        <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_triangle_bottom"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_triangle_bottom"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
+                    <TabItem Header="Inverse">
                         <StackPanel
                             Background="{StaticResource LUI.Brush.Grayscale28}"
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_triangle_bottom"
-                                Inverse="True"
-                                LUIScheme="Default" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                Inverse="True"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_triangle_bottom"
-                                Inverse="True"
-                                LUIScheme="Default"
-                                Rounded="True" />
+                                attached:ThemeProperties.ButtonScheme="Default"
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none" />
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none" />
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="lui_icon_none"
-                                IconRight="ui_icon_plus"
-                                Rounded="True" />
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="ui_icon_plus"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                         </StackPanel>
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
-                        <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="lui_icon_none"
-                                IconRight="lui_icon_none"
-                                Inverse="True" />
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="ui_icon_plus"
-                                IconRight="lui_icon_none"
-                                Inverse="True" />
+                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_none"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                ButtonText="Add Item"
-                                IconLeft="lui_icon_none"
-                                IconRight="ui_icon_plus"
-                                Inverse="True"
-                                Rounded="True" />
+                                attached:ThemeProperties.IconLeft="lui_icon_none"
+                                attached:ThemeProperties.IconRight="ui_icon_plus"
+                                attached:ThemeProperties.Inverted="True"
+                                attached:ThemeProperties.Rounded="True"
+                                Content="Add Item" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <StackPanel
-                    Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                     <controls:LuiButton
                         Margin="3"
-                        ButtonText="Default"
-                        IconLeft="lui_icon_none"
-                        IconRight="lui_icon_none"
-                        LUIButtonSize="Default" />
+                        attached:ThemeProperties.ButtonSize="Default"
+                        attached:ThemeProperties.IconLeft="lui_icon_none"
+                        attached:ThemeProperties.IconRight="lui_icon_none"
+                        Content="Default" />
                     <controls:LuiButton
                         Margin="3"
-                        ButtonText="Large"
-                        IconLeft="lui_icon_none"
-                        IconRight="lui_icon_none"
-                        LUIButtonSize="Large" />
+                        attached:ThemeProperties.ButtonSize="Large"
+                        attached:ThemeProperties.IconLeft="lui_icon_none"
+                        attached:ThemeProperties.IconRight="lui_icon_none"
+                        Content="Large" />
                     <controls:LuiButton
                         Margin="3"
-                        ButtonText="Extra Large"
-                        IconLeft="lui_icon_none"
-                        IconRight="lui_icon_none"
-                        LUIButtonSize="ExtraLarge" />
+                        attached:ThemeProperties.ButtonSize="ExtraLarge"
+                        attached:ThemeProperties.IconLeft="lui_icon_none"
+                        attached:ThemeProperties.IconRight="lui_icon_none"
+                        Content="Extra Large" />
                 </StackPanel>
             </StackPanel>
         </TabItem>
-        <TabItem
-            Header="ButtonGroup">
+        <TabItem Header="ButtonGroup">
             <StackPanel>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
                         <StackPanel>
-                            <controls:LuiControlGroup
-                                Margin="3,15,3,15">
-                                <controls:LuiButton
-                                    ButtonText="First Button" />
-                                <controls:LuiButton
-                                    ButtonText="Second Button" />
-                                <controls:LuiButton
-                                    ButtonText="Third Button" />
+                            <controls:LuiControlGroup Margin="3,15,3,15">
+                                <controls:LuiButton Content="First Button" />
+                                <controls:LuiButton Content="Second Button" />
+                                <controls:LuiButton Content="Third Button" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
-                        <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiControlGroup
-                                Margin="3,15,3,15">
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                            <controls:LuiControlGroup Margin="3,15,3,15">
                                 <controls:LuiButton
-                                    ButtonText="First Button"
-                                    Inverse="True" />
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="First Button" />
                                 <controls:LuiButton
-                                    ButtonText="Second Button"
-                                    Inverse="True" />
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="Second Button" />
                                 <controls:LuiButton
-                                    ButtonText="Third Button"
-                                    Inverse="True" />
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="Third Button" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
 
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiControlGroup
                                 Margin="3,15,3,15"
-                                Rounded="True">
+                                attached:ThemeProperties.Rounded="True">
                                 <controls:LuiButton
                                     Width="170"
-                                    ButtonText="First Button"
-                                    IconRight="lui_icon_info" />
+                                    attached:ThemeProperties.IconRight="lui_icon_info"
+                                    Content="First Button" />
+                                <controls:LuiButton Content="Second Button" />
                                 <controls:LuiButton
-                                    ButtonText="Second Button" />
-                                <controls:LuiButton
-                                    ButtonText="Third Button"
-                                    LUIScheme="Info" />
+                                    attached:ThemeProperties.ButtonScheme="Info"
+                                    Content="Third Button" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
-                        <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiControlGroup
                                 Margin="3,15,3,15"
-                                Rounded="True">
+                                attached:ThemeProperties.Rounded="True">
                                 <controls:LuiButton
                                     Width="170"
-                                    ButtonText="First Button"
-                                    IconRight="lui_icon_info"
-                                    Inverse="True" />
+                                    attached:ThemeProperties.IconRight="lui_icon_info"
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="First Button" />
                                 <controls:LuiButton
-                                    ButtonText="Second Button"
-                                    Inverse="True" />
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="Second Button" />
                                 <controls:LuiButton
-                                    ButtonText="Third Button"
-                                    Inverse="True"
-                                    LUIScheme="Info" />
+                                    attached:ThemeProperties.ButtonScheme="Info"
+                                    attached:ThemeProperties.Inverted="True"
+                                    Content="Third Button" />
                             </controls:LuiControlGroup>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
             </StackPanel>
         </TabItem>
-        <TabItem
-            Header="Input">
+        <TabItem Header="Input">
             <StackPanel>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
 
                         <controls:LuiInput
                             Margin="3,15,3,15"
-                            InputText="{Binding SingleText.Text}" />
+                            Text="{Binding SingleText.Text}" />
 
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
-                        <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiInput
                                 Margin="3,15,3,15"
-                                Inverse="True" />
+                                attached:ThemeProperties.Inverted="True" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl
-                    ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                    <TabItem
-                        Header="Default">
+                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                    <TabItem Header="Default">
                         <controls:LuiInput
                             Margin="3,15,3,15"
-                            LabelText="{Binding SingleText.Text}" />
+                            LabelText="Label" />
                     </TabItem>
-                    <TabItem
-                        Header="Inverse">
-                        <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <TabItem Header="Inverse">
+                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                             <controls:LuiInput
                                 Margin="3,15,3,15"
-                                Inverse="True"
+                                attached:ThemeProperties.Inverted="True"
                                 LabelText="Label" />
                         </StackPanel>
                     </TabItem>
@@ -556,41 +490,37 @@
                 <controls:LuiInput
                     Margin="3,15,3,15"
                     LUIInputSize="Default"
-                    LabelText="Label" />
+                    LabelText="Size Default" />
                 <controls:LuiInput
                     Margin="3,15,3,15"
                     LUIInputSize="Large"
-                    LabelText="Label" />
+                    LabelText="Size Large" />
+
+
+
+
+
             </StackPanel>
         </TabItem>
-        <TabItem
-            Header="Search">
-            <TabControl
-                ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem
-                    Header="Default">
+        <TabItem Header="Search">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiSearch
-                            Margin="3,15,3,15" />
+                        <controls:LuiSearch Margin="3,15,3,15" />
                     </StackPanel>
                 </TabItem>
-                <TabItem
-                    Header="Inverse">
-                    <StackPanel
-                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiSearch
                             Margin="3,15,3,15"
-                            Inverse="True" />
+                            attached:ThemeProperties.Inverted="True" />
                     </StackPanel>
                 </TabItem>
             </TabControl>
         </TabItem>
-        <TabItem
-            Header="CheckBox">
-            <TabControl
-                ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem
-                    Header="Default">
+        <TabItem Header="CheckBox">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiCheckbox
                             Margin="3,15,3,3"
@@ -610,10 +540,8 @@
                             IsEnabled="False" />
                     </StackPanel>
                 </TabItem>
-                <TabItem
-                    Header="Inverse">
-                    <StackPanel
-                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiCheckbox
                             Margin="3,15,3,3"
                             attached:ThemeProperties.Inverted="True"
@@ -640,15 +568,11 @@
             </TabControl>
         </TabItem>
 
-        <TabItem
-            Header="Radiobutton">
-            <TabControl
-                ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem
-                    Header="Default">
+        <TabItem Header="Radiobutton">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiRadioButton
-                            Content="First Button" />
+                        <controls:LuiRadioButton Content="First Button" />
                         <controls:LuiRadioButton
                             Content="Second Button"
                             IsChecked="True" />
@@ -662,10 +586,8 @@
                     </StackPanel>
 
                 </TabItem>
-                <TabItem
-                    Header="Inverse">
-                    <StackPanel
-                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiRadioButton
                             Margin="3,3,0,0"
                             attached:ThemeProperties.Inverted="True"
@@ -691,15 +613,11 @@
             </TabControl>
         </TabItem>
 
-        <TabItem
-            Header="Combobox">
-            <TabControl
-                ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem
-                    Header="Default">
+        <TabItem Header="Combobox">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiCombobox
-                            Margin="5">
+                        <controls:LuiCombobox Margin="5">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
@@ -714,10 +632,8 @@
                     </StackPanel>
 
                 </TabItem>
-                <TabItem
-                    Header="Inverse">
-                    <StackPanel
-                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiCombobox
                             Margin="5"
                             attached:ThemeProperties.Inverted="True">
@@ -738,23 +654,17 @@
             </TabControl>
         </TabItem>
 
-        <TabItem
-            Header="Switch">
-            <TabControl
-                ItemContainerStyle="{StaticResource LUITabItemStyle}">
-                <TabItem
-                    Header="Default">
+        <TabItem Header="Switch">
+            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiSwitch
-                            Margin="5" />
+                        <controls:LuiSwitch Margin="5" />
 
                     </StackPanel>
 
                 </TabItem>
-                <TabItem
-                    Header="Inverse">
-                    <StackPanel
-                        Background="{StaticResource LUI.Brush.Grayscale28}">
+                <TabItem Header="Inverse">
+                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiSwitch
                             Margin="5"
                             attached:ThemeProperties.Inverted="True" />
@@ -764,8 +674,7 @@
             </TabControl>
         </TabItem>
 
-        <TabItem
-            Header="Dialog">
+        <TabItem Header="Dialog">
             <StackPanel>
                 <controls:LuiDialog
                     IsOpen="{Binding IsChecked, ElementName=BLeft}"
@@ -773,8 +682,7 @@
                     PanelWidth="60"
                     Placement="Left"
                     PlacementTarget="{Binding ElementName=BLeft}">
-                    <TextBlock
-                        Text="put Context Here" />
+                    <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
                 <ToggleButton
                     x:Name="BLeft"
@@ -792,8 +700,7 @@
                     PanelWidth="50"
                     Placement="Top"
                     PlacementTarget="{Binding ElementName=BTop}">
-                    <TextBlock
-                        Text="put Context Here" />
+                    <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
                 <Grid>
                     <ToggleButton
@@ -809,8 +716,7 @@
                     PanelWidth="150"
                     Placement="Right"
                     PlacementTarget="{Binding ElementName=BRight}">
-                    <TextBlock
-                        Text="put Context Here" />
+                    <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
                 <ToggleButton
                     x:Name="BBottom"
@@ -823,8 +729,7 @@
                     PanelWidth="150"
                     Placement="Bottom"
                     PlacementTarget="{Binding ElementName=BBottom}">
-                    <TextBlock
-                        Text="put Context Here" />
+                    <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
                 <ToggleButton
                     x:Name="BMouse"
@@ -837,8 +742,7 @@
                     PanelWidth="150"
                     Placement="MousePoint"
                     PlacementTarget="{Binding ElementName=BMouse}">
-                    <TextBlock
-                        Text="put Context Here" />
+                    <TextBlock Text="put Context Here" />
                 </controls:LuiDialog>
             </StackPanel>
         </TabItem>

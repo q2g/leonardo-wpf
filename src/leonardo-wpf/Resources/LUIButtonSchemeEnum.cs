@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace leonardo.Resources
 {
-    public enum LUISchemeEnum
+    public enum LUIButtonSchemeEnum
     {
         Default,
         Toolbar,
