@@ -11,15 +11,5 @@
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
     </FontFamily>
 
-    <Style TargetType="ItemsControl">
-        <Setter Property="ItemTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <Expander>
-                        
-                    </Expander>
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+
 </ResourceDictionary>

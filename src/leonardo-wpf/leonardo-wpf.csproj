@@ -50,6 +50,9 @@
     <Compile Include="Controls\LuiAccordion.xaml.cs">
       <DependentUpon>LuiAccordion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiAccordionItem.xaml.cs">
+      <DependentUpon>LuiAccordionItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiButton.xaml.cs">
       <DependentUpon>LuiButton.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\LuiAccordionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LuiButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,6 +158,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\LUI_AccordionStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_AccordionItemStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace leonardowpf_Demo
     public partial class MainWindow : Window
     {
         public testclass SingleText { get; set; } = new testclass();
-        public List<testclass> TextList { get; set;}
+        public ObservableCollection<object> TextList { get; set;}
         public ICommand TestCommand { get; set; } = new RelayCommand((s) => true, (o) =>
              {
                  object tt = o;
@@ -32,22 +33,37 @@ namespace leonardowpf_Demo
 
         public MainWindow()
         {
-            TextList = new List<testclass>
+            TextList = new ObservableCollection<object>
             {
-                new testclass(),
-                new testclass(),
-                new testclass()
+                new testclass(){HeaderText="Item1" },
+                new testclass(){HeaderText="Item2" },
+                new TestControl(){ LabelText="Item3"},
+                new testclass(){HeaderText="Item4" },
+                
             };
 
             InitializeComponent();
 
             DataContext = this;
             
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SingleText.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TextList.Add(new testclass() { HeaderText = "Item neu" });
+            
+
+        }
+
+        private void Button_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 
@@ -69,6 +85,7 @@ namespace leonardowpf_Demo
             // timer.Change(1000, Timeout.Infinite);
         }
 
+        public string HeaderText { get; set; }
         public string Text
         {
             get { return text; }            
