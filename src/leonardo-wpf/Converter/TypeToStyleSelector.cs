@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace leonardowpf_Demo
+namespace leonardo.Converter
 {
     public class TypeToStyleSelector : StyleSelector
     {
@@ -14,16 +14,15 @@ namespace leonardowpf_Demo
         public Type ItemType1 { get; set; }
         public Style ItemStyle2 { get; set; }
         public Type ItemType2 { get; set; }
+        public Style ItemStyle3 { get; set; }
+        public Type ItemType3 { get; set; }
+        public Style ItemStyle4 { get; set; }
+        public Type ItemType4 { get; set; }
         public Style DefaultStyle { get; set; }
 
 
         public override Style SelectStyle(object item, DependencyObject container)
-        {
-            //var key =  item.GetType().ToString();
-            //if (container is FrameworkElement ele)
-            //{
-            //    return (Style)ele.FindResource(key);
-            //}
+        {        
 
             if (item != null)
             {
@@ -34,6 +33,14 @@ namespace leonardowpf_Demo
                 if (item.GetType() == ItemType2)
                 {
                     return ItemStyle2;
+                }
+                if (item.GetType() == ItemType3)
+                {
+                    return ItemStyle3;
+                }
+                if (item.GetType() == ItemType4)
+                {
+                    return ItemStyle4;
                 }
             }
             return DefaultStyle;

@@ -38,15 +38,16 @@ namespace leonardowpf_Demo
                 new testclass(){HeaderText="Item1" },
                 new testclass(){HeaderText="Item2" },
                 new TestControl(){ LabelText="Item3"},
-                new testclass(){HeaderText="Item4" },
-                
+                new testclass(){HeaderText="Item4" }
             };
 
+           
+           
             InitializeComponent();
 
             DataContext = this;
-            
-            
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,6 +58,7 @@ namespace leonardowpf_Demo
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             TextList.Add(new testclass() { HeaderText = "Item neu" });
+            
             
 
         }

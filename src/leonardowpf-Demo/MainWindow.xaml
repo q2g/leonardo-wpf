@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attached="clr-namespace:leonardo.AttachedProperties;assembly=leonardo-wpf"
     xmlns:controls="clr-namespace:leonardo.Controls;assembly=leonardo-wpf"
+    xmlns:converter="clr-namespace:leonardo.Converter;assembly=leonardo-wpf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:leonardowpf_Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -751,15 +752,15 @@
             </StackPanel>
         </TabItem>
         <TabItem Header="Accordion">
-            <StackPanel>
+            <StackPanel x:Name="sp">
                 <StackPanel.Resources>
+                    <Style x:Key="{x:Type local:TestControl}" />
                     <Style
                         x:Key="aa"
                         BasedOn="{StaticResource Lui_AccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding HeaderText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Text}" />
-                        <!--<Setter Property="controls:LuiAccordionItem.IsExpanded" Value="True" />-->
                     </Style>
 
                     <Style
@@ -768,28 +769,51 @@
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding LabelText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding}" />
-                        <!--<Setter Property="controls:LuiAccordionItem.IsExpanded" Value="True" />-->
                     </Style>
 
-                    <local:TypeToStyleSelector
+                    <Style
+                        x:Key="cc"
+                        BasedOn="{StaticResource Lui_AccordionItemStyle}"
+                        TargetType="controls:LuiAccordionItem">
+                        <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding Header}" />
+                        <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Content}" />
+                    </Style>
+
+
+                    <converter:TypeToStyleSelector
                         x:Key="TypeToStyleSelector"
                         DefaultStyle="{StaticResource aa}"
                         ItemStyle1="{StaticResource aa}"
                         ItemStyle2="{StaticResource bb}"
+                        ItemStyle3="{StaticResource cc}"
                         ItemType1="{x:Type local:testclass}"
-                        ItemType2="{x:Type local:TestControl}" />
+                        ItemType2="{x:Type local:TestControl}"
+                        ItemType3="{x:Type controls:LuiAccordionItem}" />
+
+
                 </StackPanel.Resources>
+
+
                 <Button
                     Height="40"
                     Click="Button_Click_1"
                     Content="Add" />
+
                 <controls:LuiAccordion
                     x:Name="Accordion"
+                    CollapseAllOnExpandSingle="True"
+                    IsDragDropEnabled="True"
                     ItemContainerStyleSelector="{StaticResource TypeToStyleSelector}"
                     ItemsSource="{Binding TextList}"
                     Loaded="Button_Loaded">
                     <!--<local:TestControl LabelText="erster" />
                     <local:TestControl LabelText="zweiter" />-->
+                    <!--<controls:LuiAccordionItem
+                        Content="Inhalt"
+                        Header="erstes" />
+                    <controls:LuiAccordionItem
+                        Content="Inhalt"
+                        Header="zweites"-->
                 </controls:LuiAccordion>
 
             </StackPanel>

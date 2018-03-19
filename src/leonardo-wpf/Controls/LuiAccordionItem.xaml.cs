@@ -23,7 +23,7 @@ namespace leonardo.Controls
         public LuiAccordionItem()
         {
             InitializeComponent();
-            //DataContext = this;
+      
         }
 
         #region IsExpanded - DP
@@ -36,7 +36,42 @@ namespace leonardo.Controls
         public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(
          "IsExpanded", typeof(bool), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
-       
+
+        #region Index - DP
+        private int index;
+        internal int Index_Internal
+        {
+            get { return index; }
+            set
+            {
+                if (index!= value)
+                {
+                    index = value;
+                }
+            }
+        }
+        public int Index
+        {
+            get { return (int)this.GetValue(IndexProperty); }
+           internal set { this.SetValue(IndexProperty, value); }
+        }
+
+        public static readonly DependencyProperty IndexProperty = DependencyProperty.Register(
+         "Index", typeof(int), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIndexChanged)));
+
+
+        private static void OnIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is LuiAccordionItem obj)
+            {
+                if (e.NewValue is int newvalue)
+                {
+                    obj.Index_Internal = newvalue;
+                }
+            }
+        }
+        #endregion
+
 
 
     }

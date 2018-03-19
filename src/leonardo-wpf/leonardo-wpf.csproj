@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GongSolutions.Wpf.DragDrop, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\gong-wpf-dragdrop.1.1.0\lib\net46\GongSolutions.Wpf.DragDrop.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero2" />
@@ -86,8 +89,10 @@
     <Compile Include="Controls\LuiTabItem.xaml.cs">
       <DependentUpon>LuiTabItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\IndexOfConverter.cs" />
     <Compile Include="Converter\PlacementCorrectionConverter.cs" />
     <Compile Include="Converter\BooleanToObjectConverter.cs" />
+    <Compile Include="Converter\TypeToStyleSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\IHasCornerRadius.cs" />
     <Compile Include="Resources\LUIButtonSizeEnum.cs" />
@@ -196,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="qlikview-sans.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

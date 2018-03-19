@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace leonardo_wpf.Converter
+namespace leonardo.Converter
 {
     [ValueConversion(typeof(PlacementMode), typeof(PlacementMode))]
     public class PlacementModeCorrectionConverter : IValueConverter

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace leonardo_wpf.Converter
+namespace leonardo.Converter
 {
     [ValueConversion(typeof(bool), typeof(object))]
     public class BooleanToObjectConverter : IValueConverter
