@@ -1,4 +1,5 @@
-﻿using System;
+﻿using leonardo.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -25,6 +26,7 @@ namespace leonardowpf_Demo
     {
         public testclass SingleText { get; set; } = new testclass();
         public ObservableCollection<object> TextList { get; set;}
+        public ObservableCollection<LuiAccordionItem> ItemList { get; set; }
         public ICommand TestCommand { get; set; } = new RelayCommand((s) => true, (o) =>
              {
                  object tt = o;
@@ -39,6 +41,12 @@ namespace leonardowpf_Demo
                 new testclass(){HeaderText="Item2" },
                 new TestControl(){ LabelText="Item3"},
                 new testclass(){HeaderText="Item4" }
+            };
+
+            ItemList = new ObservableCollection<LuiAccordionItem>()
+            {
+                new LuiAccordionItem(){ Header="Item1", Content=new TestControl(){LabelText="Item1" } },
+                new LuiAccordionItem(){ Header="Item2", Content=new testclass(){HeaderText="Item2" } }
             };
 
            

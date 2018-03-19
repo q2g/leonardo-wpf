@@ -813,7 +813,7 @@
                         Header="erstes" />
                     <controls:LuiAccordionItem
                         Content="Inhalt"
-                        Header="zweites"-->
+                        Header="zweites" />-->
                 </controls:LuiAccordion>
 
             </StackPanel>

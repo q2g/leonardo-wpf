@@ -23,7 +23,7 @@ namespace leonardo.Controls
         public LuiAccordionItem()
         {
             InitializeComponent();
-      
+            DataContext = this;
         }
 
         #region IsExpanded - DP
