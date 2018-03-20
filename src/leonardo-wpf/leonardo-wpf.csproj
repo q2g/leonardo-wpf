@@ -80,6 +80,9 @@
     <Compile Include="Controls\LuiRadioButton.xaml.cs">
       <DependentUpon>LuiRadioButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiInputGroup.xaml.cs">
+      <DependentUpon>LuiInputGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiSearch.xaml.cs">
       <DependentUpon>LuiSearch.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
     <Page Include="Controls\LuiRadioButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LuiInputGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\LuiSearch.xaml">
       <Generator>MSBuild:Compile</Generator>
