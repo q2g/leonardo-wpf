@@ -89,6 +89,9 @@
     <Compile Include="Controls\LuiTabItem.xaml.cs">
       <DependentUpon>LuiTabItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiToggleButton.xaml.cs">
+      <DependentUpon>LuiToggleButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\IndexOfConverter.cs" />
     <Compile Include="Converter\PlacementCorrectionConverter.cs" />
     <Compile Include="Converter\BooleanToObjectConverter.cs" />
@@ -158,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\LuiToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\palette.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -167,6 +174,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\LUI_AccordionItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_ToggleButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

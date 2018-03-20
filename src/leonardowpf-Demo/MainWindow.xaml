@@ -385,6 +385,12 @@
                         attached:ThemeProperties.IconRight="lui_icon_none"
                         Content="Extra Large" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <controls:LuiToggleButton
+                        attached:ThemeProperties.IconLeft="lui_icon_none"
+                        attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
+                        Content="Toggle" />
+                </StackPanel>
             </StackPanel>
         </TabItem>
         <TabItem Header="ButtonGroup">

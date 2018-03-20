@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attachedP="clr-namespace:leonardo.AttachedProperties"
+    xmlns:controls="clr-namespace:leonardo.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/Lui_ButtonStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <FontFamily x:Key="QlikViewSans">
+        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+    </FontFamily>
+
+    <Style
+        x:Key="LUI_ToggleButtonStyle"
+        BasedOn="{StaticResource LUI_ButtonStyle}"
+        TargetType="ToggleButton">
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
+                <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
