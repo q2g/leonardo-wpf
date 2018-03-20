@@ -15,11 +15,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Resources/palette.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_TabItemStyle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_ButtonStyle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_TextboxStyle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUI_AccordionItemStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUIStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>

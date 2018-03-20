@@ -63,6 +63,7 @@
             VerticalAlignment="Center"
             attachedP:ThemeProperties.BorderThickness="1"
             attachedP:ThemeProperties.CornerRadius="3,0,0,3"
+            LabelText="{Binding LabelText, RelativeSource={RelativeSource Self}}"
             Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}" />
         <local:LuiButton
             x:Name="mainbuttonRight"

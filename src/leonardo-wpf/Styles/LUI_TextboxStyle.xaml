@@ -85,9 +85,6 @@
                         </Border>
                     </StackPanel>
                     <ControlTemplate.Triggers>
-
-
-
                         <Trigger Property="controls:LuiInput.LUIInputSize" Value="Default">
                             <Setter TargetName="border" Property="Height" Value="28" />
                         </Trigger>
@@ -152,19 +149,6 @@
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
                         </Trigger>
-
-                        <!--<Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="hint" Property="Opacity" Value="0.56" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="border" Property="Opacity" Value="0.56" />
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBox.MouseOver.Border}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBox.Focus.Border}" />
-                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

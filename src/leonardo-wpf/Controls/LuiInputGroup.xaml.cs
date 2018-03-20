@@ -27,7 +27,7 @@ namespace leonardo.Controls
             InitializeComponent();           
         }
 
-        #region SearchText - DP        
+        #region Text - DP        
         public string Text
         {
             get { return (string)this.GetValue(TextProperty); }
@@ -36,7 +36,7 @@ namespace leonardo.Controls
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
          "Text", typeof(string), typeof(LuiInputGroup), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion
+        #endregion        
 
         #region LeftCommand - DP        
         public ICommand LeftCommand
