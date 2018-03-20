@@ -385,6 +385,7 @@
                         attached:ThemeProperties.IconRight="lui_icon_none"
                         Content="Extra Large" />
                 </StackPanel>
+                <controls:LuiSeparator Height="3" />
                 <StackPanel Orientation="Horizontal">
                     <controls:LuiToggleButton
                         attached:ThemeProperties.IconLeft="lui_icon_none"

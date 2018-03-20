@@ -83,6 +83,9 @@
     <Compile Include="Controls\LuiSearch.xaml.cs">
       <DependentUpon>LuiSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiSeparator.xaml.cs">
+      <DependentUpon>LuiSeparator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiSwitch.xaml.cs">
       <DependentUpon>LuiSwitch.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\LuiSeparator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\LuiSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +185,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\LUI_ToggleButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LUI_SeparatorStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
