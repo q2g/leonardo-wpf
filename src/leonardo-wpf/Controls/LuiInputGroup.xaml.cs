@@ -94,7 +94,7 @@ namespace leonardo.Controls
                     leftCommandIcon = value;
                     if (leftCommandIcon!=LUIiconsEnum.lui_icon_none)
                     {
-                        maininputleftrounded.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0));
+                        maininputleftrounded.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0));                  
                     }
                 }
             }

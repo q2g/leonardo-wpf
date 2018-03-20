@@ -64,31 +64,6 @@
             attachedP:ThemeProperties.BorderThickness="1"
             attachedP:ThemeProperties.CornerRadius="3,0,0,3"
             Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}" />
-        <!--<local:LuiInput
-            x:Name="maininputrectangle"
-            Grid.Column="2"
-            VerticalAlignment="Center"
-            attachedP:ThemeProperties.BorderThickness="1"
-            attachedP:ThemeProperties.CornerRadius="0"
-            Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-            Visibility="Visible">
-
-            <local:LuiInput.Style>
-                <Style
-                    BasedOn="{StaticResource LUI_TextboxStyle}"
-                    TargetType="local:LuiInput">
-                    <Style.Triggers>
-                        <DataTrigger
-                            Binding="{Binding LeftCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                            Value="lui_icon_none">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                            <Setter Property="Background" Value="Red" />
-                        </DataTrigger>
-
-                    </Style.Triggers>
-                </Style>
-            </local:LuiInput.Style>
-        </local:LuiInput>-->
         <local:LuiButton
             x:Name="mainbuttonRight"
             Grid.Column="2"
