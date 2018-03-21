@@ -18,7 +18,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <controls:LuiAccordion ItemContainerStyle="{StaticResource LUI_ColumnOrderAccordionItemStyle}">
+        <controls:LuiAccordion ItemContainerStyle="{StaticResource LUI_PresentationAccordionItemStyle}">
             <controls:LuiAccordionItem Header="Item1">
                 <local:TestControl2 />
             </controls:LuiAccordionItem>

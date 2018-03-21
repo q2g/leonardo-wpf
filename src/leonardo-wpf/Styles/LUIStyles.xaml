@@ -9,6 +9,7 @@
         <ResourceDictionary Source="../Resources/palette.xaml" />
         <ResourceDictionary Source="../Styles/LUI_MainAccordionItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_ColumnOrderAccordionItemStyle.xaml" />
+        <ResourceDictionary Source="../Styles/LUI_PresentationAccordionItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_AccordionStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_ButtonStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_CheckboxStyle.xaml" />
