@@ -36,7 +36,18 @@ namespace leonardo.Controls
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
          "Text", typeof(string), typeof(LuiInputGroup), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion        
+        #endregion
+
+        #region LabelText - DP        
+        public string LabelText
+        {
+            get { return (string)this.GetValue(LabelTextProperty); }
+            set { this.SetValue(LabelTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register(
+         "LabelText", typeof(string), typeof(LuiInputGroup), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
 
         #region LeftCommand - DP        
         public ICommand LeftCommand

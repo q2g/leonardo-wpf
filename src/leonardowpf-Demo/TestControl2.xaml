@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="leonardowpf_Demo.TestControl"
+    x:Class="leonardowpf_Demo.TestControl2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:leonardo.Controls;assembly=leonardo-wpf"
@@ -18,10 +18,11 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <controls:LuiAccordion ItemContainerStyle="{StaticResource LUI_ColumnOrderAccordionItemStyle}">
-            <controls:LuiAccordionItem Header="Item1">
-                <local:TestControl2 />
-            </controls:LuiAccordionItem>
-        </controls:LuiAccordion>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Inhalt der Textbox:" />
+            <TextBlock Text="{Binding ElementName=control, Path=LabelText}" />
+        </StackPanel>
+        <TextBox Text="{Binding ElementName=control, Path=LabelText, Mode=TwoWay}" />
+
     </StackPanel>
 </UserControl>

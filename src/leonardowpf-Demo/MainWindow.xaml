@@ -511,9 +511,11 @@
                                 Text="abcd" />
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
+                                LabelText="Label"
                                 LeftCommandIcon="lui_icon_none"
                                 RightCommandIcon="lui_icon_fx"
                                 Text="abcd" />
+
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
@@ -527,6 +529,7 @@
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True"
+                                LabelText="Label"
                                 LeftCommandIcon="lui_icon_none"
                                 RightCommandIcon="lui_icon_fx"
                                 Text="abcd" />
@@ -794,7 +797,7 @@
                     <Style x:Key="{x:Type local:TestControl}" />
                     <Style
                         x:Key="aa"
-                        BasedOn="{StaticResource LUI_AccordionItemStyle}"
+                        BasedOn="{StaticResource LUI_MainAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding HeaderText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Text}" />
@@ -802,7 +805,7 @@
 
                     <Style
                         x:Key="bb"
-                        BasedOn="{StaticResource LUI_AccordionItemStyle}"
+                        BasedOn="{StaticResource LUI_MainAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding LabelText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding}" />
@@ -810,7 +813,7 @@
 
                     <Style
                         x:Key="cc"
-                        BasedOn="{StaticResource LUI_AccordionItemStyle}"
+                        BasedOn="{StaticResource LUI_MainAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding Header}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Content}" />

@@ -7,7 +7,8 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Resources/palette.xaml" />
-        <ResourceDictionary Source="../Styles/LUI_AccordionItemStyle.xaml" />
+        <ResourceDictionary Source="../Styles/LUI_MainAccordionItemStyle.xaml" />
+        <ResourceDictionary Source="../Styles/LUI_ColumnOrderAccordionItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_AccordionStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_ButtonStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_CheckboxStyle.xaml" />

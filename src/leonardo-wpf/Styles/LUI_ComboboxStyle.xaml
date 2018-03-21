@@ -6,16 +6,13 @@
     xmlns:controls="clr-namespace:leonardo.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary
-            Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <FontFamily
-        x:Key="QlikViewSans">
+    <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
     </FontFamily>
 
-    <Style
-        x:Key="FocusVisual">
+    <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -133,12 +130,12 @@
         TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Focusable" Value="false" />
         <Setter Property="ClickMode" Value="Press" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type ToggleButton}">
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border
                         x:Name="templateRoot"
                         Height="28"
@@ -159,31 +156,18 @@
                                 x:Name="arrow"
                                 VerticalAlignment="Center"
                                 VerticalContentAlignment="Center"
+                                Foreground="{StaticResource LUI.Brush.Grayscale30}"
                                 Icon="lui_icon_triangle_bottom" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <!--<MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true" />
-                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="false" />
-                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false" />
-                                <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="true" />
-                            </MultiDataTrigger.Conditions>
-                            <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource ComboBox.Static.Editable.Background}" />
-                            <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource ComboBox.Static.Editable.Border}" />
-                            <Setter TargetName="splitBorder" Property="Background" Value="{StaticResource ComboBox.Static.Editable.Button.Background}" />
-                            <Setter TargetName="splitBorder" Property="BorderBrush" Value="{StaticResource ComboBox.Static.Editable.Button.Border}" />
-                        </MultiDataTrigger>-->
-
-
-
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="False" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
                         </MultiTrigger>
@@ -193,6 +177,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="False" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale70}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
                         </MultiTrigger>
@@ -202,6 +187,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="True" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI_ComboBox.Gradient}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
                         </MultiTrigger>
@@ -211,6 +197,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="True" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI_ComboBox.Gradient.Dark}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                         </MultiTrigger>
@@ -220,6 +207,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="False" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
                         </MultiTrigger>
@@ -229,6 +217,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="False" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
                         </MultiTrigger>
@@ -238,6 +227,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="True" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI_ComboBox.Gradient}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                         </MultiTrigger>
@@ -247,6 +237,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Gradient" Value="True" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
+                            <Setter TargetName="arrow" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource LUI_ComboBox.Gradient.Dark}" />
                             <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                         </MultiTrigger>
@@ -345,8 +336,7 @@
             x:Name="templateRoot"
             SnapsToDevicePixels="true">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition
-                    Width="*" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition
                     Width="0"
                     MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
@@ -369,8 +359,7 @@
                         Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
                         BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"
                         BorderThickness="1">
-                        <ScrollViewer
-                            x:Name="DropDownScrollViewer">
+                        <ScrollViewer x:Name="DropDownScrollViewer">
                             <Grid
                                 x:Name="grid"
                                 RenderOptions.ClearTypeHint="Enabled">
@@ -462,8 +451,7 @@
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type TextBox}">
+                <ControlTemplate TargetType="{x:Type TextBox}">
                     <ScrollViewer
                         x:Name="PART_ContentHost"
                         Background="Transparent"
@@ -481,8 +469,7 @@
             x:Name="templateRoot"
             SnapsToDevicePixels="true">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition
-                    Width="*" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition
                     Width="0"
                     MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
@@ -504,8 +491,7 @@
                         Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
                         BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"
                         BorderThickness="1">
-                        <ScrollViewer
-                            x:Name="DropDownScrollViewer">
+                        <ScrollViewer x:Name="DropDownScrollViewer">
                             <Grid
                                 x:Name="grid"
                                 RenderOptions.ClearTypeHint="Enabled">
@@ -596,8 +582,7 @@
         <Setter Property="Template" Value="{StaticResource ComboBoxTemplate}" />
         <Setter Property="ItemContainerStyle">
             <Setter.Value>
-                <Style
-                    TargetType="{x:Type ComboBoxItem}">
+                <Style TargetType="{x:Type ComboBoxItem}">
                     <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                 </Style>
             </Setter.Value>

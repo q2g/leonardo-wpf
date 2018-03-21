@@ -37,7 +37,7 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border
                         Padding="{TemplateBinding Padding}"
-                        Background="#4D4D4D"
+                        Background="{StaticResource LUI.Brush.Grayscale30}"
                         BorderThickness="0.1">
                         <Grid
                             Background="Transparent"
@@ -54,31 +54,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style
-        x:Key="ContextmenuAccordion"
-        TargetType="{x:Type ContextMenu}">
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ContextMenu}">
-                    <Border
-                        x:Name="Border"
-                        Height="40"
-                        Background="White"
-                        BorderBrush="Black">
-                        <StackPanel
-                            ClipToBounds="True"
-                            IsItemsHost="True"
-                            Orientation="Vertical" />
-                    </Border>
-
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
 
     <Style
         x:Key="AccordionExpanderStyle"
@@ -116,7 +91,7 @@
                                                 <DataTrigger
                                                     Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Expander}, Path=IsExpanded}"
                                                     Value="False">
-                                                    <Setter Property="Stroke" Value="#4D4D4D" />
+                                                    <Setter Property="Stroke" Value="{StaticResource LUI.Brush.Grayscale30}" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
@@ -182,7 +157,7 @@
     </DataTemplate>
 
     <Style
-        x:Key="LUI_AccordionItemStyle"
+        x:Key="LUI_MainAccordionItemStyle"
         TargetType="controls:LuiAccordionItem">
         <Setter Property="Template">
             <Setter.Value>
