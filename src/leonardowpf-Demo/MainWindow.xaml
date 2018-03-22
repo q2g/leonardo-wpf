@@ -662,14 +662,18 @@
             <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
-                        <controls:LuiCombobox Margin="5">
+                        <controls:LuiCombobox
+                            Margin="5"
+                            LabelText="Label">
+
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
                         </controls:LuiCombobox>
                         <controls:LuiCombobox
                             Margin="5"
-                            attached:ThemeProperties.Gradient="True">
+                            attached:ThemeProperties.Gradient="True"
+                            LabelText="Label">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
@@ -681,7 +685,8 @@
                     <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
                         <controls:LuiCombobox
                             Margin="5"
-                            attached:ThemeProperties.Inverted="True">
+                            attached:ThemeProperties.Inverted="True"
+                            LabelText="Label">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>
@@ -689,7 +694,8 @@
                         <controls:LuiCombobox
                             Margin="5"
                             attached:ThemeProperties.Gradient="True"
-                            attached:ThemeProperties.Inverted="True">
+                            attached:ThemeProperties.Inverted="True"
+                            LabelText="Label">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>

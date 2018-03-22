@@ -26,6 +26,17 @@ namespace leonardo.Controls
         public LuiCombobox()
         {
             InitializeComponent();            
-        }    
+        }
+
+        #region LabelText - DP        
+        public string LabelText
+        {
+            get { return (string)this.GetValue(LabelTextProperty); }
+            set { this.SetValue(LabelTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register(
+         "LabelText", typeof(string), typeof(LuiCombobox), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
     }
 }
