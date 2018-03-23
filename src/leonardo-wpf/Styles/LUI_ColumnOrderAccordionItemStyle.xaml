@@ -184,6 +184,7 @@
                             <controls:LuiButton
                                 x:Name="ExpandSiteDeleteButton"
                                 Margin="0,15,20,20"
+                                attachedP:ThemeProperties.IconRight="lui_icon_bin"
                                 Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
                                 CommandParameter="{Binding}"
                                 Content="Löschen"

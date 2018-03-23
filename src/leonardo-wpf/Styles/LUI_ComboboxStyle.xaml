@@ -335,7 +335,9 @@
         <StackPanel x:Name="templateRoot">
             <TextBlock
                 Name="label"
+                Margin="0,0,0,7"
                 FontFamily="{StaticResource QlikViewSans}"
+                FontSize="14"
                 FontWeight="Thin"
                 Foreground="{StaticResource LUI.Brush.Grayscale30}"
                 Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />

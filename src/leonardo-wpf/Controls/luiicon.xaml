@@ -9,8 +9,7 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
-            <FontFamily
-                x:Key="QlikIcons">
+            <FontFamily x:Key="QlikIcons">
                 pack://application:,,,/leonardo-wpf;component/#LUIicons
             </FontFamily>
         </ResourceDictionary>

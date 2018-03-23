@@ -11,8 +11,7 @@
     <CheckBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="../Styles/Lui_CheckboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/Lui_CheckboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </CheckBox.Resources>

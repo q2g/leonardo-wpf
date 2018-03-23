@@ -10,8 +10,7 @@
     <RadioButton.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="../Styles/Lui_RadioButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/Lui_RadioButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </RadioButton.Resources>

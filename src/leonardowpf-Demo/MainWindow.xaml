@@ -395,26 +395,26 @@
                 <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
-                            <controls:LuiControlGroup Margin="3,15,3,15">
-                                <controls:LuiButton Content="First Button" />
-                                <controls:LuiButton Content="Second Button" />
-                                <controls:LuiButton Content="Third Button" />
-                            </controls:LuiControlGroup>
+                            <controls:LuiButtonGroup Margin="3,15,3,15">
+                                <controls:LuiToggleButton Content="First Button" />
+                                <controls:LuiToggleButton Content="Second Button" />
+                                <controls:LuiToggleButton Content="Third Button" />
+                            </controls:LuiButtonGroup>
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiControlGroup Margin="3,15,3,15">
-                                <controls:LuiButton
+                            <controls:LuiButtonGroup Margin="3,15,3,15">
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.Inverted="True"
                                     Content="First Button" />
-                                <controls:LuiButton
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.Inverted="True"
                                     Content="Second Button" />
-                                <controls:LuiButton
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.Inverted="True"
                                     Content="Third Button" />
-                            </controls:LuiControlGroup>
+                            </controls:LuiButtonGroup>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
@@ -422,38 +422,38 @@
                 <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
-                            <controls:LuiControlGroup
+                            <controls:LuiButtonGroup
                                 Margin="3,15,3,15"
-                                attached:ThemeProperties.Rounded="True">
-                                <controls:LuiButton
+                                Rounded="True">
+                                <controls:LuiToggleButton
                                     Width="170"
                                     attached:ThemeProperties.IconRight="lui_icon_info"
                                     Content="First Button" />
-                                <controls:LuiButton Content="Second Button" />
-                                <controls:LuiButton
+                                <controls:LuiToggleButton Content="Second Button" />
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.ButtonScheme="Info"
                                     Content="Third Button" />
-                            </controls:LuiControlGroup>
+                            </controls:LuiButtonGroup>
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
-                            <controls:LuiControlGroup
+                            <controls:LuiButtonGroup
                                 Margin="3,15,3,15"
-                                attached:ThemeProperties.Rounded="True">
-                                <controls:LuiButton
+                                Rounded="True">
+                                <controls:LuiToggleButton
                                     Width="170"
                                     attached:ThemeProperties.IconRight="lui_icon_info"
                                     attached:ThemeProperties.Inverted="True"
                                     Content="First Button" />
-                                <controls:LuiButton
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.Inverted="True"
                                     Content="Second Button" />
-                                <controls:LuiButton
+                                <controls:LuiToggleButton
                                     attached:ThemeProperties.ButtonScheme="Info"
                                     attached:ThemeProperties.Inverted="True"
                                     Content="Third Button" />
-                            </controls:LuiControlGroup>
+                            </controls:LuiButtonGroup>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
@@ -507,13 +507,13 @@
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 LeftCommandIcon="lui_icon_calendar"
-                                RightCommandIcon="lui_icon_fx"
+                                RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 LabelText="Label"
                                 LeftCommandIcon="lui_icon_none"
-                                RightCommandIcon="lui_icon_fx"
+                                RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
 
                         </StackPanel>
@@ -524,14 +524,14 @@
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True"
                                 LeftCommandIcon="lui_icon_calendar"
-                                RightCommandIcon="lui_icon_fx"
+                                RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True"
                                 LabelText="Label"
                                 LeftCommandIcon="lui_icon_none"
-                                RightCommandIcon="lui_icon_fx"
+                                RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
                         </StackPanel>
                     </TabItem>

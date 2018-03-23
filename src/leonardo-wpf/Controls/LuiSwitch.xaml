@@ -10,8 +10,7 @@
     <CheckBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="../Styles/Lui_SwitchStyle.xaml" />
+                <ResourceDictionary Source="../Styles/Lui_SwitchStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </CheckBox.Resources>

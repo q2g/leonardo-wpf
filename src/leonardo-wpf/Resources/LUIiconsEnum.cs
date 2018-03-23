@@ -17,7 +17,9 @@ namespace leonardo.Resources
         lui_icon_triangle_bottom,
         lui_icon_triangle_right,
         lui_icon_info,
-        lui_icon_fx,
+        lui_icon_expression,
+        lui_icon_bin,
+        lui_icon_link,
         lui_icon_search,
         lui_icon_cross
     }    
@@ -53,8 +55,14 @@ public static class LUIiconsEnumExtensions
             case LUIiconsEnum.lui_icon_info:
                 icontext = "]";
                 break;
-            case LUIiconsEnum.lui_icon_fx:
+            case LUIiconsEnum.lui_icon_expression:
                 icontext = "3";
+                break;
+            case LUIiconsEnum.lui_icon_bin:
+                icontext = "Ö";
+                break;
+            case LUIiconsEnum.lui_icon_link:
+                icontext = "é";
                 break;
             case LUIiconsEnum.lui_icon_search:
                 icontext = "F";

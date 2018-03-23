@@ -24,7 +24,9 @@
     </UserControl.Resources>
     <StackPanel>
         <TextBlock
+            Margin="0,0,0,7"
             FontFamily="{StaticResource QlikViewSans}"
+            FontSize="14"
             FontWeight="Thin"
             Foreground="{StaticResource LUI.Brush.Grayscale30}"
             Text="{Binding ElementName=control, Path=LabelText}">
@@ -82,6 +84,7 @@
                 VerticalAlignment="Center"
                 attachedP:ThemeProperties.BorderThickness="1"
                 attachedP:ThemeProperties.CornerRadius="3,0,0,3"
+                IsEnabled="{Binding ElementName=control, Path=IsInputEnabled}"
                 Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}" />
             <local:LuiButton
                 x:Name="mainbuttonRight"

@@ -16,6 +16,8 @@
         x:Key="LUI_ToggleButtonStyle"
         BasedOn="{StaticResource LUI_ButtonStyle}"
         TargetType="ToggleButton">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />

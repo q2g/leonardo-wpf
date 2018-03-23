@@ -11,8 +11,7 @@
     <ComboBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="../Styles/Lui_ComboboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/Lui_ComboboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ComboBox.Resources>

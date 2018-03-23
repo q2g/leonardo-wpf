@@ -10,8 +10,7 @@
     <Button.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="../Styles/Lui_ButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/Lui_ButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Button.Resources>

@@ -142,5 +142,16 @@ namespace leonardo.Controls
         public static readonly DependencyProperty RightCommandIconProperty = DependencyProperty.Register(
          "RightCommandIcon", typeof(LUIiconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+        #region IsInputEnabled - DP        
+        public bool IsInputEnabled
+        {
+            get { return (bool)this.GetValue(IsInputEnabledProperty); }
+            set { this.SetValue(IsInputEnabledProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsInputEnabledProperty = DependencyProperty.Register(
+         "IsInputEnabled", typeof(bool), typeof(LuiInputGroup), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
     }
 }

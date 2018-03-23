@@ -65,6 +65,9 @@
     <Compile Include="Controls\LuiCombobox.xaml.cs">
       <DependentUpon>LuiCombobox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiButtonGroup.xaml.cs">
+      <DependentUpon>LuiButtonGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiControlGroup.xaml.cs">
       <DependentUpon>LuiControlGroup.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
     <Page Include="Controls\LuiCombobox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LuiButtonGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\LuiControlGroup.xaml">
       <Generator>MSBuild:Compile</Generator>

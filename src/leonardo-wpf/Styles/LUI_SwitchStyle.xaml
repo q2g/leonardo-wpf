@@ -5,11 +5,9 @@
     xmlns:controls="clr-namespace:leonardo.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary
-            Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <FontFamily
-        x:Key="QlikViewSans">
+    <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
     </FontFamily>
 
@@ -20,11 +18,9 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type CheckBox}">
+                <ControlTemplate TargetType="{x:Type CheckBox}">
                     <ControlTemplate.Resources>
-                        <Storyboard
-                            x:Key="OnChecking">
+                        <Storyboard x:Key="OnChecking">
                             <DoubleAnimationUsingKeyFrames
                                 BeginTime="00:00:0.15"
                                 Storyboard.TargetName="slider"
@@ -54,8 +50,7 @@
                                 To="Orange"
                                 Duration="0:0:0" />-->
                         </Storyboard>
-                        <Storyboard
-                            x:Key="OnUnchecking">
+                        <Storyboard x:Key="OnUnchecking">
                             <!--<ColorAnimation
                                 FillBehavior="HoldEnd"
                                 Storyboard.TargetName="slide"
@@ -94,8 +89,7 @@
                             </ThicknessAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
-                    <StackPanel
-                        Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
                         <ContentPresenter
                             Canvas.Left="0"
                             Canvas.Top="18"

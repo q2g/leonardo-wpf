@@ -42,6 +42,8 @@
                     <StackPanel>
                         <TextBlock
                             Name="label"
+                            Margin="0,0,0,7"
+                            FontSize="14"
                             Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />
                         <Border
                             x:Name="border"
@@ -148,6 +150,10 @@
 
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -4,16 +4,13 @@
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary
-            Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <FontFamily
-        x:Key="QlikViewSans">
+    <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
     </FontFamily>
 
-    <Style
-        x:Key="FocusVisual">
+    <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -33,8 +30,7 @@
     <SolidColorBrush
         x:Key="RadioButton.Static.Border"
         Color="#FF707070" />
-    <Style
-        x:Key="OptionMarkFocusVisual">
+    <Style x:Key="OptionMarkFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -90,17 +86,14 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type RadioButton}">
+                <ControlTemplate TargetType="{x:Type RadioButton}">
                     <Grid
                         x:Name="templateRoot"
                         Background="Transparent"
                         SnapsToDevicePixels="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-                                Width="Auto" />
-                            <ColumnDefinition
-                                Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border
                             x:Name="radioButtonBorder"
