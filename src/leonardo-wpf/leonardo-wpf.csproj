@@ -101,6 +101,7 @@
     <Compile Include="Controls\LuiToggleButton.xaml.cs">
       <DependentUpon>LuiToggleButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\ConfigDataTypetoDataIdentConverter.cs" />
     <Compile Include="Converter\DictionaryValueConverter.cs" />
     <Compile Include="Converter\IndexOfConverter.cs" />

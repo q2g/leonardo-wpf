@@ -57,7 +57,8 @@
                 attachedP:ThemeProperties.CornerRadius="3,0,0,3"
                 attachedP:ThemeProperties.IconRight="{Binding LeftCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
                 Command="{Binding LeftCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                CommandParameter="{Binding LeftCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}">
+                CommandParameter="{Binding LeftCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
+                Foreground="{Binding ElementName=control, Path=LeftCommandForeground}">
                 <local:LuiButton.Style>
                     <Style
                         BasedOn="{StaticResource LUI_ButtonStyle}"
@@ -94,7 +95,8 @@
                 attachedP:ThemeProperties.CornerRadius="0,3,3,0"
                 attachedP:ThemeProperties.IconRight="{Binding RightCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
                 Command="{Binding RightCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                CommandParameter="{Binding RightCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}">
+                CommandParameter="{Binding RightCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
+                Foreground="{Binding ElementName=control, Path=RightCommandForeground}">
                 <local:LuiButton.Style>
                     <Style
                         BasedOn="{StaticResource LUI_ButtonStyle}"

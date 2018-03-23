@@ -56,12 +56,23 @@ namespace leonardo.Controls
             foreach (object item in Items)
             {
                 if (item is LuiToggleButton tbutton)
-                {
-                    tbutton.Width = ActualWidth / Items.Count;
+                {                    
                     tbutton.Click += (s,ea)=> { CheckThis(tbutton); };
                 }
             }
-        }     
+        }
+
+        private void control_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            foreach (object item in Items)
+            {
+                if (item is LuiToggleButton tbutton)
+                {
+                    tbutton.Width = ActualWidth / Items.Count;                   
+                }
+            }
+        }
 
         #region Rounded - DP
         private bool rounded;

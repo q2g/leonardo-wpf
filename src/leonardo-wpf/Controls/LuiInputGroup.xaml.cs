@@ -153,5 +153,27 @@ namespace leonardo.Controls
         public static readonly DependencyProperty IsInputEnabledProperty = DependencyProperty.Register(
          "IsInputEnabled", typeof(bool), typeof(LuiInputGroup), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+        #region RightCommandForeground - DP        
+        public Brush RightCommandForeground
+        {
+            get { return (Brush)this.GetValue(RightCommandForegroundProperty); }
+            set { this.SetValue(RightCommandForegroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty RightCommandForegroundProperty = DependencyProperty.Register(
+         "RightCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region LeftCommandForeground - DP        
+        public Brush LeftCommandForeground
+        {
+            get { return (Brush)this.GetValue(LeftCommandForegroundProperty); }
+            set { this.SetValue(LeftCommandForegroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty LeftCommandForegroundProperty = DependencyProperty.Register(
+         "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
     }
 }

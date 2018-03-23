@@ -17,6 +17,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUIStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converter:BooleanToVisibilityConverter
+                x:Key="BoolToVisibilityCollapsedConverter"
+                FalseValue="Collapsed"
+                TrueValue="Visible" />
         </ResourceDictionary>
     </Window.Resources>
     <TabControl
@@ -507,6 +511,7 @@
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 LeftCommandIcon="lui_icon_calendar"
+                                RightCommandForeground="{StaticResource LUI.Brush.ORANGE}"
                                 RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
                             <controls:LuiInputGroup
@@ -568,6 +573,7 @@
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiCheckbox
+                            Name="firstcheck"
                             Margin="3,15,3,3"
                             Content="Label" />
                         <controls:LuiCheckbox
@@ -582,7 +588,8 @@
                             Margin="3,3,3,15"
                             Content="Label"
                             IsChecked="True"
-                            IsEnabled="False" />
+                            IsEnabled="False"
+                            Visibility="{Binding IsChecked, ElementName=firstcheck, Converter={StaticResource BoolToVisibilityCollapsedConverter}}" />
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">
