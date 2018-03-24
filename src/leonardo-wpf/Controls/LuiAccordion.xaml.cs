@@ -1,4 +1,5 @@
 ﻿using GongSolutions.Wpf.DragDrop;
+using leonardo.Resources;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -35,6 +36,29 @@ namespace leonardo.Controls
                             RefreshAllIndexes();    
                         }
                     };
+
+            DeleteCommand = new RelayCommand((o) => true,
+                (o) =>
+                {
+                    if (ItemContainerGenerator.ContainerFromItem(o) is LuiAccordionItem container)
+                    {
+                        int deleteIndex = ItemContainerGenerator.IndexFromContainer(container);
+                        if (deleteIndex>=0)
+                        {
+                            if (ItemsSource != null)
+                            {
+                                if (ItemsSource is System.Collections.IList list)
+                                {
+                                    list.RemoveAt(deleteIndex);
+                                }
+                                else
+                                {
+                                    Items.RemoveAt(deleteIndex);
+                                }
+                            }
+                        }
+                    }
+                });
         }
 
         protected override bool IsItemItsOwnContainerOverride(object item)
@@ -44,6 +68,8 @@ namespace leonardo.Controls
                 DependencyPropertyDescriptor
                 .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
                 .AddValueChanged(accordionitem, IsExpandedChanged);
+                //accordionitem.SetValue(DockPanel.DockProperty, Dock.Top);
+
                 return true;
             }
             return false;
@@ -52,6 +78,7 @@ namespace leonardo.Controls
         protected override DependencyObject GetContainerForItemOverride()
         {
             var retval = new LuiAccordionItem();
+            //retval.SetValue(DockPanel.DockProperty, Dock.Top);
             DependencyPropertyDescriptor
              .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
              .AddValueChanged(retval, IsExpandedChanged);
@@ -78,18 +105,38 @@ namespace leonardo.Controls
                 return;
             }
 
+            
+
             foreach (var item in Items)
             {
-                if (sender is LuiAccordionItem accordionitem)
-                    if (item != accordionitem.DataContext)
-                    {
-                        if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-                        {
-                            itemContainer.IsExpanded = false;
-                        }
-                    }
-            }
 
+                if (item != sender.DataContext)
+                {
+                    if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                    {
+                        itemContainer.IsExpanded = false;                        
+                    }
+                }
+            }
+            //foreach (var item in Items)
+            //{
+            //    if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+            //    {
+            //        itemContainer.SetValue(DockPanel.DockProperty, Dock.Top);
+            //    }
+            //}
+
+            //for (int i = Items.Count - 1; i > ItemContainerGenerator.IndexFromContainer(sender); i--)
+            ////for (int i = ItemContainerGenerator.IndexFromContainer(sender)+1; i < Items.Count ; i++)
+            //{
+            //    if (ItemContainerGenerator.ContainerFromItem(Items[i]) is LuiAccordionItem itemContainer)
+            //    {
+            //        if (itemContainer.Index > sender.Index)
+            //        {
+            //            itemContainer.SetValue(DockPanel.DockProperty, Dock.Bottom);
+            //        }
+            //    }
+            //}           
         }
 
         #region CollapseAllOnExpandSingle
@@ -192,7 +239,7 @@ namespace leonardo.Controls
 
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {
-            RefreshAllIndexes();
+            RefreshAllIndexes();           
         }
 
         private void SwapItems(LuiAccordionItem source, LuiAccordionItem target)
@@ -224,6 +271,10 @@ namespace leonardo.Controls
             }
             
         }
+        #endregion
+
+        #region DeleteCommand
+        public ICommand DeleteCommand { get; set; }
         #endregion
 
 

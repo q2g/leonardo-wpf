@@ -64,7 +64,7 @@
                         Background="{StaticResource LUI.Brush.Grayscale95}"
                         BorderBrush="{StaticResource LUI.Brush.Grayscale30}"
                         BorderThickness="0.3"
-                        Tag="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext}">
+                        Tag="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:LuiAccordion}}, Path=.}">
                         <Border.ContextMenu>
                             <ContextMenu Style="{StaticResource ContextmenuAccordion}">
                                 <MenuItem
@@ -185,7 +185,7 @@
                                 x:Name="ExpandSiteDeleteButton"
                                 Margin="0,15,20,20"
                                 attachedP:ThemeProperties.IconRight="lui_icon_bin"
-                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
+                                Command="{Binding DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:LuiAccordion}}}"
                                 CommandParameter="{Binding}"
                                 Content="Löschen"
                                 DockPanel.Dock="Bottom"

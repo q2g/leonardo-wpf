@@ -116,6 +116,7 @@
     <Compile Include="Resources\LUIInputSizeEnum.cs" />
     <Compile Include="Resources\LUIPalette.cs" />
     <Compile Include="Resources\LUIButtonSchemeEnum.cs" />
+    <Compile Include="Resources\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lui-icons.ttf" />
