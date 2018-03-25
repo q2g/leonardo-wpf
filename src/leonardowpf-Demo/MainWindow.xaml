@@ -239,27 +239,27 @@
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 attached:ThemeProperties.Rounded="True"
                                 Content="Add Item" />
@@ -267,7 +267,7 @@
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
                                 attached:ThemeProperties.Rounded="True"
                                 Content="Add Item" />
@@ -280,14 +280,14 @@
                             <controls:LuiButton
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 attached:ThemeProperties.Inverted="True" />
                             <controls:LuiButton
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 attached:ThemeProperties.Inverted="True"
                                 Content="Add Item" />
@@ -295,7 +295,7 @@
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
                                 attached:ThemeProperties.Inverted="True"
                                 Content="Add Item" />
@@ -303,7 +303,7 @@
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 attached:ThemeProperties.Inverted="True"
                                 attached:ThemeProperties.Rounded="True"
@@ -312,7 +312,7 @@
                                 Width="170"
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.ButtonScheme="Default"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_triangle_bottom"
                                 attached:ThemeProperties.Inverted="True"
                                 attached:ThemeProperties.Rounded="True"
@@ -330,13 +330,13 @@
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
                                 attached:ThemeProperties.IconLeft="lui_icon_none"
-                                attached:ThemeProperties.IconRight="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_plus"
                                 attached:ThemeProperties.Rounded="True"
                                 Content="Add Item" />
                         </StackPanel>
@@ -351,14 +351,14 @@
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
-                                attached:ThemeProperties.IconLeft="ui_icon_plus"
+                                attached:ThemeProperties.IconLeft="lui_icon_plus"
                                 attached:ThemeProperties.IconRight="lui_icon_none"
                                 attached:ThemeProperties.Inverted="True"
                                 Content="Add Item" />
                             <controls:LuiButton
                                 Margin="3"
                                 attached:ThemeProperties.IconLeft="lui_icon_none"
-                                attached:ThemeProperties.IconRight="ui_icon_plus"
+                                attached:ThemeProperties.IconRight="lui_icon_plus"
                                 attached:ThemeProperties.Inverted="True"
                                 attached:ThemeProperties.Rounded="True"
                                 Content="Add Item" />

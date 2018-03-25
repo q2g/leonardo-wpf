@@ -99,5 +99,10 @@ namespace leonardo.Controls
         public static readonly DependencyProperty CancelCommandProperty = DependencyProperty.Register(
          "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+        private void mainbutton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            maininput.Text = "";
+        }
     }
 }

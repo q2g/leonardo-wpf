@@ -10,17 +10,19 @@ namespace leonardo.Resources
     public enum LUIiconsEnum
     {
         lui_icon_none,
-        ui_icon_plus,
+        lui_icon_plus,
         lui_icon_calendar,
         lui_icon_menu,
         lui_icon_table,
         lui_icon_triangle_bottom,
         lui_icon_triangle_right,
+        lui_icon_triangle_left,
         lui_icon_info,
         lui_icon_expression,
         lui_icon_bin,
         lui_icon_link,
         lui_icon_search,
+        lui_icon_select_alternative,
         lui_icon_cross
     }    
 }
@@ -37,7 +39,7 @@ public static class LUIiconsEnumExtensions
             case LUIiconsEnum.lui_icon_calendar:
                 icontext="G";
                 break;
-            case LUIiconsEnum.ui_icon_plus:
+            case LUIiconsEnum.lui_icon_plus:
                 icontext = "P";
                 break;
             case LUIiconsEnum.lui_icon_menu:
@@ -51,6 +53,9 @@ public static class LUIiconsEnumExtensions
                 break;
             case LUIiconsEnum.lui_icon_triangle_right:
                 icontext = "U";
+                break;
+            case LUIiconsEnum.lui_icon_triangle_left:
+                icontext = "T";
                 break;
             case LUIiconsEnum.lui_icon_info:
                 icontext = "]";
@@ -69,6 +74,9 @@ public static class LUIiconsEnumExtensions
                 break;
             case LUIiconsEnum.lui_icon_cross:
                 icontext = "‰";
+                break;
+            case LUIiconsEnum.lui_icon_select_alternative:
+                icontext = "ö";
                 break;
             default:
                 icontext = "";

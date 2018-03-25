@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace leonardo.Resources
 {
-    class RelayCommand:ICommand
+    public class RelayCommand:ICommand
     {
         private Predicate<object> _canExecute;
         private Action<object> _execute;
