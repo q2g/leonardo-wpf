@@ -151,7 +151,7 @@
                 Padding="4"
                 HorizontalAlignment="Stretch"
                 DockPanel.Dock="Left"
-                FontSize="16"
+                FontSize="12"
                 Text="{Binding}" />
         </Grid>
     </DataTemplate>

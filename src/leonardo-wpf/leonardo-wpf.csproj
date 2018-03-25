@@ -48,7 +48,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttachedProperties\MouseEventProperties.cs" />
     <Compile Include="AttachedProperties\ThemeProperties.cs" />
     <Compile Include="Controls\LuiAccordion.xaml.cs">
       <DependentUpon>LuiAccordion.xaml</DependentUpon>
@@ -104,7 +103,6 @@
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\ConfigDataTypetoDataIdentConverter.cs" />
     <Compile Include="Converter\DictionaryValueConverter.cs" />
-    <Compile Include="Converter\IndexOfConverter.cs" />
     <Compile Include="Converter\PlacementCorrectionConverter.cs" />
     <Compile Include="Converter\BooleanToObjectConverter.cs" />
     <Compile Include="Converter\TypeToStyleSelector.cs" />
@@ -256,6 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Resource Include="qlikview-sans-bold-italic.ttf" />
+    <Resource Include="qlikview-sans-bold.ttf" />
+    <Resource Include="qlikview-sans-italic.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

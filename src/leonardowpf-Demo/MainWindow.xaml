@@ -554,9 +554,13 @@
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiSearch
+                            Name="search"
                             Margin="3,15,3,15"
+                            CancelCommand="{Binding TestCommand}"
                             Command="{Binding TestCommand}"
-                            CommandParameter="TestWert" />
+                            CommandParameter="TestWert"
+                            SearchCommand="{Binding TestCommand}" />
+                        <TextBlock Text="{Binding SearchText, ElementName=search}" />
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">

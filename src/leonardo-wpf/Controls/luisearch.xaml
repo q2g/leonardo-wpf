@@ -49,7 +49,15 @@
             attachedP:ThemeProperties.BorderThickness="0"
             attachedP:ThemeProperties.CornerRadius="0"
             HintText="Search..."
-            Text="{Binding SearchText, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}" />
+            PreviewKeyDown="maininput_PreviewKeyDown"
+            Text="{Binding SearchText, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}, Mode=TwoWay}">
+            <local:LuiInput.InputBindings>
+                <KeyBinding
+                    Key="Return"
+                    Command="{Binding SearchCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}"
+                    CommandParameter="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=TextBox}}" />
+            </local:LuiInput.InputBindings>
+        </local:LuiInput>
         <local:LuiButton
             x:Name="mainbutton"
             Grid.Column="2"

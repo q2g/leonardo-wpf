@@ -58,5 +58,46 @@ namespace leonardo.Controls
         public static readonly DependencyProperty CommandParameterProperty = DependencyProperty.Register(
          "CommandParameter", typeof(object), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+
+        private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key== Key.Escape)
+            {
+                if (string.IsNullOrEmpty(maininput.Text))
+                {
+                    if (CancelCommand != null)
+                    {
+                        CancelCommand.Execute(null);
+                    }
+                }
+                else
+                {
+                    maininput.Text = "";
+                }
+            }
+        }
+
+        #region SearchCommand - DP        
+        public ICommand SearchCommand
+        {
+            get { return (ICommand)this.GetValue(SearchCommandProperty); }
+            set { this.SetValue(SearchCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty SearchCommandProperty = DependencyProperty.Register(
+         "SearchCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region CancelCommand - DP        
+        public ICommand CancelCommand
+        {
+            get { return (ICommand)this.GetValue(CancelCommandProperty); }
+            set { this.SetValue(CancelCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty CancelCommandProperty = DependencyProperty.Register(
+         "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
     }
 }

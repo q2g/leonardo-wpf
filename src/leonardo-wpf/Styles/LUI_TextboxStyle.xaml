@@ -71,7 +71,6 @@
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="Visibility" Value="Collapsed" />
-                                            <Setter Property="attachedP:MouseEventProperties.IsEnabled" Value="True" />
                                             <Style.Triggers>
                                                 <MultiDataTrigger>
                                                     <MultiDataTrigger.Conditions>
