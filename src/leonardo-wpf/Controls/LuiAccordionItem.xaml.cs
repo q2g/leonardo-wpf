@@ -53,7 +53,7 @@ namespace leonardo.Controls
         public int Index
         {
             get { return (int)this.GetValue(IndexProperty); }
-           internal set { this.SetValue(IndexProperty, value); }
+            set { this.SetValue(IndexProperty, value); }
         }
 
         public static readonly DependencyProperty IndexProperty = DependencyProperty.Register(
