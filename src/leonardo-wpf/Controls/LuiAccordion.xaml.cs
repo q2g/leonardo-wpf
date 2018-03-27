@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace leonardo.Controls
 {
@@ -45,7 +46,7 @@ namespace leonardo.Controls
                         {
                             foreach (var item in e.OldItems)
                             {
-                                Dictionary<int, LuiAccordionItem> indexDict = GetIndexDextionary();
+                                Dictionary<int, LuiAccordionItem> indexDict = GetIndexDictionary();
                                 if (indexDict.Count != 0)
                                 {
                                     for (int i = 1; i <= Items.Count; i++)
@@ -83,7 +84,7 @@ namespace leonardo.Controls
             }
         }
 
-        private Dictionary<int, LuiAccordionItem> GetIndexDextionary()
+        private Dictionary<int, LuiAccordionItem> GetIndexDictionary()
         {
             Dictionary<int, LuiAccordionItem> retval = new Dictionary<int, LuiAccordionItem>();
 
@@ -91,7 +92,10 @@ namespace leonardo.Controls
             {
                 if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
                 {
-                    retval.Add(itemContainer.Index, itemContainer);
+                    if (!retval.ContainsKey(itemContainer.Index))
+                    {
+                        retval.Add(itemContainer.Index, itemContainer);
+                    }
                 }
             }
             return retval;
@@ -438,8 +442,12 @@ namespace leonardo.Controls
                 if (sourceIndex != targetIndex)
                 {
                     object valueToMove = list[sourceIndex];
-                    list.RemoveAt(sourceIndex);
-                    list.Insert(targetIndex, valueToMove);
+                    //list.RemoveAt(sourceIndex);
+                    //list.Insert(targetIndex, valueToMove);
+                    if (list is ObservableCollection<object> olist)
+                    {
+                        olist.Move(sourceIndex, targetIndex);
+                    }
 
 
                     foreach (var listitem in list)
@@ -519,6 +527,7 @@ namespace leonardo.Controls
 
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {
+            return;
 
             if (customerView == null && Sorter != null)
             {
