@@ -108,7 +108,6 @@ namespace leonardo.Controls
                 DependencyPropertyDescriptor
                 .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
                 .AddValueChanged(accordionitem, IsExpandedChanged);
-                //accordionitem.SetValue(DockPanel.DockProperty, Dock.Top);
 
                 return true;
             }
@@ -118,7 +117,6 @@ namespace leonardo.Controls
         protected override DependencyObject GetContainerForItemOverride()
         {
             var retval = new LuiAccordionItem();
-            //retval.SetValue(DockPanel.DockProperty, Dock.Top);
             DependencyPropertyDescriptor
              .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
              .AddValueChanged(retval, IsExpandedChanged);
@@ -131,9 +129,24 @@ namespace leonardo.Controls
         {
             if (sender is LuiAccordionItem accitem)
             {
+
                 if (accitem.IsExpanded == true)
                 {
                     CollapseAllItems(accitem);
+                    if (!IsItemsStretchEnabled)
+                    {
+                        if (Items.Count > 0)
+                        {
+                            accitem.Height = Math.Max(ActualHeight - ((Items.Count - 1) * 39), 39);
+                        }
+                    }
+                }
+                else
+                {
+                    if (!IsItemsStretchEnabled)
+                    {
+                        accitem.Height = 39;
+                    }
                 }
             }
         }
@@ -158,25 +171,6 @@ namespace leonardo.Controls
                     }
                 }
             }
-            //foreach (var item in Items)
-            //{
-            //    if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-            //    {
-            //        itemContainer.SetValue(DockPanel.DockProperty, Dock.Top);
-            //    }
-            //}
-
-            //for (int i = Items.Count - 1; i > ItemContainerGenerator.IndexFromContainer(sender); i--)
-            ////for (int i = ItemContainerGenerator.IndexFromContainer(sender)+1; i < Items.Count ; i++)
-            //{
-            //    if (ItemContainerGenerator.ContainerFromItem(Items[i]) is LuiAccordionItem itemContainer)
-            //    {
-            //        if (itemContainer.Index > sender.Index)
-            //        {
-            //            itemContainer.SetValue(DockPanel.DockProperty, Dock.Bottom);
-            //        }
-            //    }
-            //}           
         }
 
         #region CollapseAllOnExpandSingle
@@ -257,6 +251,17 @@ namespace leonardo.Controls
 
         public static readonly DependencyProperty IsDragDropEnabledProperty = DependencyProperty.Register(
          "IsDragDropEnabled", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region IsItemsStretchEnabled DP
+        public bool IsItemsStretchEnabled
+        {
+            get { return (bool)this.GetValue(IsItemsStretchEnabledProperty); }
+            set { this.SetValue(IsItemsStretchEnabledProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsItemsStretchEnabledProperty = DependencyProperty.Register(
+         "IsItemsStretchEnabled", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region Sorter DP

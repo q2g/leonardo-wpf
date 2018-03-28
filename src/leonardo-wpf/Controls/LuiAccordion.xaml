@@ -12,10 +12,4 @@
     dd:DragDrop.IsDragSource="{Binding RelativeSource={RelativeSource Self}, Path=IsDragDropEnabled}"
     dd:DragDrop.IsDropTarget="{Binding RelativeSource={RelativeSource Self}, Path=IsDragDropEnabled}"
     Loaded="ItemsControl_Loaded"
-    mc:Ignorable="d">
-    <!--<ItemsControl.ItemsPanel>
-        <ItemsPanelTemplate>
-            <DockPanel LastChildFill="False" />
-        </ItemsPanelTemplate>
-    </ItemsControl.ItemsPanel>-->
-</ItemsControl>
+    mc:Ignorable="d" />
