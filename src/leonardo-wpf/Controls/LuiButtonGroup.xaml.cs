@@ -26,11 +26,11 @@ namespace leonardo.Controls
     public partial class LuiButtonGroup : UserControl
     {
         #region Member
-       
+
         #endregion
         public LuiButtonGroup()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
 
@@ -51,13 +51,13 @@ namespace leonardo.Controls
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            SetCornerRadius();            
+            SetCornerRadius();
 
             foreach (object item in Items)
             {
                 if (item is LuiToggleButton tbutton)
-                {                    
-                    tbutton.Click += (s,ea)=> { CheckThis(tbutton); };
+                {
+                    tbutton.Click += (s, ea) => { CheckThis(tbutton); };
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace leonardo.Controls
             {
                 if (item is LuiToggleButton tbutton)
                 {
-                    tbutton.Width = ActualWidth / Items.Count;                   
+                    tbutton.Width = ActualWidth / Items.Count;
                 }
             }
         }
@@ -134,7 +134,7 @@ namespace leonardo.Controls
                         }
                     }
                 }
-                else if (i == li.Count-1)
+                else if (i == li.Count - 1)
                 {
                     if (li[i] is FrameworkElement last)
                     {
@@ -157,19 +157,73 @@ namespace leonardo.Controls
 
                     }
                 }
-            }            
+            }
+        }
+        #endregion
+
+        #region SelectedIndex DP
+        private int selectedIndex;
+        internal int SelectedIndex_Internal
+        {
+            get { return selectedIndex; }
+            set
+            {
+                if (selectedIndex != value)
+                {
+                    selectedIndex = value;
+                    int counter = 0;
+                    foreach (object item in Items)
+                    {
+                        if (item is LuiToggleButton tbutton)
+                        {
+                            if (counter == selectedIndex)
+                            {
+                                CheckThis(tbutton);
+                            }
+                        }
+                        counter++;
+                    }
+                }
+            }
+        }
+        public int SelectedIndex
+        {
+            get { return (int)this.GetValue(SelectedIndexProperty); }
+            set { this.SetValue(SelectedIndexProperty, value); }
+        }
+
+        public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register(
+         "SelectedIndex", typeof(int), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedIndexChanged)));
+
+
+        private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is LuiButtonGroup obj)
+            {
+                if (e.NewValue is int newvalue)
+                {
+                    obj.SelectedIndex_Internal = newvalue;
+                }
+            }
         }
         #endregion
 
         #region Functions
         private void CheckThis(LuiToggleButton toCheck)
         {
+            int index = 0;
             foreach (object item in Items)
             {
                 if (item is LuiToggleButton tbutton)
                 {
+                    if (tbutton == toCheck)
+                    {
+                        SelectedIndex = index;
+                    }
                     tbutton.IsChecked = tbutton == toCheck;
+
                 }
+                index++;
             }
         }
         #endregion
