@@ -19,7 +19,7 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiAccordion : ItemsControl, IDropTarget
     {
-        ListCollectionView customerView;
+        //ListCollectionView customerView;
         public LuiAccordion()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace leonardo.Controls
                                     itemContainer.Index = Items.Count;
                                 }
                             }
-                            customerView?.Refresh();
+                            //customerView?.Refresh();
 
                         }
 
@@ -61,7 +61,7 @@ namespace leonardo.Controls
                                     }
                                 }
                             }
-                            customerView?.Refresh();
+                            //customerView?.Refresh();
                         }
 
                     };
@@ -228,6 +228,10 @@ namespace leonardo.Controls
 
         void IDropTarget.Drop(IDropInfo dropInfo)
         {
+            if (m_lastDragedOverElement != null)
+            {
+                m_lastDragedOverElement.Opacity = 1;
+            }
             if (ItemContainerGenerator.ContainerFromItem(dropInfo.Data) is LuiAccordionItem sourceContainer)
             {
                 if (ItemContainerGenerator.ContainerFromItem(dropInfo.TargetItem) is LuiAccordionItem targetContainer)
@@ -406,7 +410,7 @@ namespace leonardo.Controls
             if (GetList() is System.Collections.IList list)
             {
                 MoveItem(list, source, target);
-                customerView?.Refresh();
+                //customerView?.Refresh();
             }
         }
 
@@ -534,32 +538,32 @@ namespace leonardo.Controls
         {
             return;
 
-            if (customerView == null && Sorter != null)
-            {
+            //if (customerView == null && Sorter != null)
+            //{
 
-                if (ItemsSource != null)
-                {
-                    customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(ItemsSource);
-                }
-                else
-                {
-                    customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(Items);
-                }
-                //customerView.SortDescriptions.Add(new SortDescription(sortPropertyName, ListSortDirection.Ascending));
+            //    if (ItemsSource != null)
+            //    {
+            //        customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(ItemsSource);
+            //    }
+            //    else
+            //    {
+            //        customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(Items);
+            //    }
+            //    //customerView.SortDescriptions.Add(new SortDescription(sortPropertyName, ListSortDirection.Ascending));
 
-                if (Sorter != null)
-                {
-                    customerView.CustomSort = Sorter;
-                }
-                //if (sortPropertyName == "ColumnOrderIndex")
-                //{
-                //    //customerView.CustomSort = new ColumnOrderIndexSorter();
-                //}
-                //if (sortPropertyName == "SortOrderIndex")
-                //{
-                //    //customerView.CustomSort = new SortOrderIndexSorter();
-                //}
-            }
+            //    if (Sorter != null)
+            //    {
+            //        customerView.CustomSort = Sorter;
+            //    }
+            //    //if (sortPropertyName == "ColumnOrderIndex")
+            //    //{
+            //    //    //customerView.CustomSort = new ColumnOrderIndexSorter();
+            //    //}
+            //    //if (sortPropertyName == "SortOrderIndex")
+            //    //{
+            //    //    //customerView.CustomSort = new SortOrderIndexSorter();
+            //    //}
+            //}
 
         }
     }
