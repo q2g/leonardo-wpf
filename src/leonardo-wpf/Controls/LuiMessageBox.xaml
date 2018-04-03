@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attached="clr-namespace:leonardo.AttachedProperties"
     xmlns:controls="clr-namespace:leonardo.Controls"
+    xmlns:converter="clr-namespace:leonardo.Converter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:leonardo_wpf.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="300"
     Height="100"
@@ -21,9 +21,12 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/Lui_ButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
         </ResourceDictionary>
     </Window.Resources>
-    <Border CornerRadius="10">
+    <Border
+        BorderBrush="{StaticResource LUI.Brush.Grayscale30}"
+        CornerRadius="14">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="7" />
@@ -38,22 +41,27 @@
                 Grid.Row="0"
                 Grid.ColumnSpan="2"
                 Background="{StaticResource LUI.Brush.Grayscale30}" />
-
-            <controls:LuiIcon
+            <Border
                 Grid.Row="1"
-                Margin="15,0,0,0"
-                VerticalContentAlignment="Center"
-                Foreground="{StaticResource LUI.Brush.Grayscale30}"
-                Icon="lui_icon_link"
-                IconSize="Large" />
-            <TextBlock
+                Background="{StaticResource LUI.Brush.Grayscale100}">
+                <controls:LuiIcon
+                    Margin="15,0,0,0"
+                    VerticalContentAlignment="Center"
+                    Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                    Icon="lui_icon_link"
+                    IconSize="Large" />
+            </Border>
+            <Border
                 Grid.Row="1"
                 Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="{StaticResource QlikViewSans}"
-                Foreground="{StaticResource LUI.Brush.Grayscale30}"
-                Text="{Binding}"
-                TextWrapping="Wrap" />
+                Background="{StaticResource LUI.Brush.Grayscale100}">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontFamily="{StaticResource QlikViewSans}"
+                    Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                    Text="{Binding MessageText, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
+                    TextWrapping="Wrap" />
+            </Border>
             <Border
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
@@ -65,9 +73,10 @@
                             Margin="0,0,10,0"
                             HorizontalAlignment="Right"
                             attached:ThemeProperties.Inverted="True"
+                            Click="LuiButton_Click"
                             Content="OK"
                             DockPanel.Dock="Right"
-                            IsDefault="True" Click="LuiButton_Click" />
+                            IsDefault="True" />
                         <controls:LuiButton
                             Height="18"
                             Margin="0,0,10,0"
