@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties"
     xmlns:controls="clr-namespace:leonardo.Controls"
+    xmlns:converter="clr-namespace:leonardo.Converter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:leonardo.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -18,7 +19,7 @@
                 <ResourceDictionary Source="../Styles/LUI_ButtonStyle.xaml" />
                 <ResourceDictionary Source="../Styles/LUI_TextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
+            <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
 
         </ResourceDictionary>
     </UserControl.Resources>
@@ -56,7 +57,7 @@
                 attachedP:ThemeProperties.ButtonSize="Default"
                 attachedP:ThemeProperties.CornerRadius="3,0,0,3"
                 attachedP:ThemeProperties.IconRight="{Binding LeftCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                Command="{Binding LeftCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
+                Command="{Binding ElementName=control, Path=LeftCommand}"
                 CommandParameter="{Binding LeftCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
                 Foreground="{Binding ElementName=control, Path=LeftCommandForeground}">
                 <local:LuiButton.Style>
@@ -94,9 +95,10 @@
                 attachedP:ThemeProperties.ButtonSize="Default"
                 attachedP:ThemeProperties.CornerRadius="0,3,3,0"
                 attachedP:ThemeProperties.IconRight="{Binding RightCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                Command="{Binding RightCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
+                Command="{Binding ElementName=control, Path=RightCommand}"
                 CommandParameter="{Binding RightCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
                 Foreground="{Binding ElementName=control, Path=RightCommandForeground}">
+                <!--  Command="{Binding RightCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"  -->
                 <local:LuiButton.Style>
                     <Style
                         BasedOn="{StaticResource LUI_ButtonStyle}"
@@ -107,6 +109,7 @@
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
+                                <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>

@@ -79,6 +79,9 @@
     <Compile Include="Controls\LuiInput.xaml.cs">
       <DependentUpon>LuiInput.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiMessageBox.xaml.cs">
+      <DependentUpon>LuiMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiRadioButton.xaml.cs">
       <DependentUpon>LuiRadioButton.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,7 @@
     <Compile Include="Controls\LuiToggleButton.xaml.cs">
       <DependentUpon>LuiToggleButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\BindingDiagConverter.cs" />
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\ConfigDataTypetoDataIdentConverter.cs" />
     <Compile Include="Converter\DictionaryValueConverter.cs" />
@@ -157,6 +161,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\LuiInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LuiMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

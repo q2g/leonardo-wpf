@@ -24,7 +24,7 @@ namespace leonardo.Controls
     {
         public LuiInputGroup()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         #region Text - DP        
@@ -79,7 +79,19 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty RightCommandProperty = DependencyProperty.Register(
-         "RightCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "RightCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault/*, new PropertyChangedCallback(OnSelectedIndexChanged)*/));
+
+
+        private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is LuiInputGroup obj)
+            {
+                if (e.NewValue is ICommand newvalue)
+                {
+                    obj.mainbuttonRight.Command = newvalue;
+                }
+            }
+        }
         #endregion
 
         #region RightCommandParameter - DP        
@@ -94,18 +106,18 @@ namespace leonardo.Controls
         #endregion
 
         #region LeftCommandIcon - DP 
-        private LUIiconsEnum leftCommandIcon=LUIiconsEnum.lui_icon_none;
+        private LUIiconsEnum leftCommandIcon = LUIiconsEnum.lui_icon_none;
         internal LUIiconsEnum LeftCommandIcon_Internal
         {
             get { return leftCommandIcon; }
             set
             {
-                if (leftCommandIcon!=value)
+                if (leftCommandIcon != value)
                 {
                     leftCommandIcon = value;
-                    if (leftCommandIcon!=LUIiconsEnum.lui_icon_none)
+                    if (leftCommandIcon != LUIiconsEnum.lui_icon_none)
                     {
-                        maininputleftrounded.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0));                  
+                        maininputleftrounded.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0));
                     }
                 }
             }
@@ -175,5 +187,10 @@ namespace leonardo.Controls
         public static readonly DependencyProperty LeftCommandForegroundProperty = DependencyProperty.Register(
          "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+        private void mainbuttonRight_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
