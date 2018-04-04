@@ -183,12 +183,13 @@
 
                             <controls:LuiButton
                                 x:Name="ExpandSiteDeleteButton"
-                                Margin="0,15,20,20"
+                                Margin="5,15,5,20"
                                 attachedP:ThemeProperties.IconRight="lui_icon_bin"
                                 Command="{Binding DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:LuiAccordion}}}"
                                 CommandParameter="{Binding}"
                                 Content="Löschen"
                                 DockPanel.Dock="Bottom"
+                                FontWeight="Bold"
                                 Visibility="Collapsed" />
                             <ContentPresenter
                                 x:Name="ExpandSite"

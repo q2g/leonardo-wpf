@@ -79,19 +79,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty RightCommandProperty = DependencyProperty.Register(
-         "RightCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault/*, new PropertyChangedCallback(OnSelectedIndexChanged)*/));
-
-
-        private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            if (d is LuiInputGroup obj)
-            {
-                if (e.NewValue is ICommand newvalue)
-                {
-                    obj.mainbuttonRight.Command = newvalue;
-                }
-            }
-        }
+         "RightCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region RightCommandParameter - DP        

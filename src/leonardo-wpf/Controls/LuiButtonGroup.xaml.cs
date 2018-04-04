@@ -162,7 +162,7 @@ namespace leonardo.Controls
         #endregion
 
         #region SelectedIndex DP
-        private int selectedIndex;
+        private int selectedIndex = -1;
         internal int SelectedIndex_Internal
         {
             get { return selectedIndex; }
@@ -193,7 +193,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register(
-         "SelectedIndex", typeof(int), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedIndexChanged)));
+         "SelectedIndex", typeof(int), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(-1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedIndexChanged)));
 
 
         private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
