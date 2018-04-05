@@ -39,7 +39,7 @@ namespace leonardo.Controls
                 if (labelText != value)
                 {
                     labelText = value;
-                    this.SetValue(ThemeProperties.LabelTextProperty, labelText);
+                    this.SetValue(ThemeProperties.LabelTextAttachedProperty, labelText);
                 }
             }
         }

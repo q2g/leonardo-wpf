@@ -414,7 +414,7 @@
             </Grid>
         </StackPanel>
         <ControlTemplate.Triggers>
-            <Trigger Property="attachedP:ThemeProperties.LabelText" Value="">
+            <Trigger Property="attachedP:ThemeProperties.LabelTextAttached" Value="">
                 <Setter TargetName="label" Property="Visibility" Value="Collapsed" />
             </Trigger>
             <MultiTrigger>
