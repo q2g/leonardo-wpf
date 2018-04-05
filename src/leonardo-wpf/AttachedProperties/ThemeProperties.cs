@@ -219,7 +219,26 @@ namespace leonardo.AttachedProperties
                 typeof(LUIFontSizeEnum),
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(LUIFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.Inherits));
-        #endregion      
+        #endregion
+
+        #region LabelText AP Only used in Combobox, because can't get the visibility-trigger for the Label working right
+        public static string GetLabelText(DependencyObject obj)
+        {
+            return (string)obj.GetValue(LabelTextProperty);
+        }
+
+        public static void SetLabelText(DependencyObject obj, string value)
+        {
+            obj.SetValue(LabelTextProperty, value);
+        }
+
+        public static readonly DependencyProperty LabelTextProperty =
+            DependencyProperty.RegisterAttached(
+                "LabelText",
+                typeof(string),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }

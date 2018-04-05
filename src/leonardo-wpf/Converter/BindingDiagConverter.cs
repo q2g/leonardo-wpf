@@ -8,7 +8,6 @@ using System.Windows.Data;
 
 namespace leonardo.Converter
 {
-    [ValueConversion(typeof(object), typeof(object))]
     public class BindingDiagConverter : IValueConverter
     {
         public object Convert(object value, Type targetType,

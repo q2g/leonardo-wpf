@@ -3,11 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties"
-    xmlns:controls="clr-namespace:leonardo.Controls">
+    xmlns:controls="clr-namespace:leonardo.Controls"
+    xmlns:converter="clr-namespace:leonardo.Converter">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Resources/palette.xaml" />
     </ResourceDictionary.MergedDictionaries>
+    <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
     </FontFamily>
@@ -340,8 +342,7 @@
                 FontSize="14"
                 FontWeight="Thin"
                 Foreground="{StaticResource LUI.Brush.Grayscale30}"
-                Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}"
-                Visibility="Collapsed" />
+                Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />
             <Grid SnapsToDevicePixels="true">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -413,17 +414,15 @@
             </Grid>
         </StackPanel>
         <ControlTemplate.Triggers>
+            <Trigger Property="attachedP:ThemeProperties.LabelText" Value="">
+                <Setter TargetName="label" Property="Visibility" Value="Collapsed" />
+            </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="label" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
             </MultiTrigger>
-            <!--<DataTrigger
-                Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiCombobox}, Path=LabelText}"
-                Value="">
-                <Setter TargetName="label" Property="Visibility" Value="Collapsed" />
-            </DataTrigger>-->
             <Trigger SourceName="PART_Popup" Property="HasDropShadow" Value="true">
                 <Setter TargetName="shadow" Property="Margin" Value="0,0,5,5" />
                 <Setter TargetName="shadow" Property="Color" Value="#71000000" />

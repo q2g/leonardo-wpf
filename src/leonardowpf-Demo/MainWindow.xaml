@@ -683,8 +683,7 @@
                         </controls:LuiCombobox>
                         <controls:LuiCombobox
                             Margin="5"
-                            attached:ThemeProperties.Gradient="True"
-                            LabelText="Label">
+                            attached:ThemeProperties.Gradient="True">
                             <ComboBoxItem>First</ComboBoxItem>
                             <ComboBoxItem>Second</ComboBoxItem>
                             <ComboBoxItem>Third</ComboBoxItem>

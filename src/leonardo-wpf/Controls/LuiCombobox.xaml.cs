@@ -1,4 +1,5 @@
-﻿using System;
+﻿using leonardo.AttachedProperties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,23 @@ namespace leonardo.Controls
     {
         public LuiCombobox()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
-        #region LabelText - DP        
+        #region LabelText - DP  
+        private string labelText;
+        internal string LabelText_Internal
+        {
+            get { return labelText; }
+            set
+            {
+                if (labelText != value)
+                {
+                    labelText = value;
+                    this.SetValue(ThemeProperties.LabelTextProperty, labelText);
+                }
+            }
+        }
         public string LabelText
         {
             get { return (string)this.GetValue(LabelTextProperty); }
@@ -36,7 +50,19 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register(
-         "LabelText", typeof(string), typeof(LuiCombobox), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "LabelText", typeof(string), typeof(LuiCombobox), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLabelTextChanged)));
+
+
+        private static void OnLabelTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is LuiCombobox obj)
+            {
+                if (e.NewValue is string newvalue)
+                {
+                    obj.LabelText_Internal = newvalue;
+                }
+            }
+        }
         #endregion
     }
 }
