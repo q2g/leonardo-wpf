@@ -23,7 +23,7 @@ namespace leonardo.Controls
     {
         public LuiSearch()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         #region SearchText - DP        
@@ -62,7 +62,7 @@ namespace leonardo.Controls
 
         private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key== Key.Escape)
+            if (e.Key == Key.Escape)
             {
                 if (string.IsNullOrEmpty(maininput.Text))
                 {
@@ -104,5 +104,16 @@ namespace leonardo.Controls
         {
             maininput.Text = "";
         }
+
+        #region HintText - DP        
+        public string HintText
+        {
+            get { return (string)this.GetValue(HintTextProperty); }
+            set { this.SetValue(HintTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty HintTextProperty = DependencyProperty.Register(
+         "HintText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("Search...", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
     }
 }
