@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiMessageBox : Window
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiMessageBox()
         {
             InitializeComponent();
@@ -27,28 +30,35 @@ namespace leonardo.Controls
 
         public static bool ShowDialog(string text)
         {
-            Window dialog = new LuiMessageBox()
-            {
-                WindowStyle = WindowStyle.None,
-                AllowsTransparency = true,
-                Background = new SolidColorBrush(Colors.Transparent),
-                Owner = null,// Application.Current.MainWindow
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                MessageText = text
-            };
-            if (Application.Current.MainWindow != null)
-            {
-                Application.Current.MainWindow.Opacity = 0.5;
-            }
             bool returnvalue = false;
-            bool? result = dialog.ShowDialog();
-            returnvalue = (result.HasValue && result.Value);
-
-            if (Application.Current.MainWindow != null)
+            try
             {
-                Application.Current.MainWindow.Opacity = 1;
-            }
+                Window dialog = new LuiMessageBox()
+                {
+                    WindowStyle = WindowStyle.None,
+                    AllowsTransparency = true,
+                    Background = new SolidColorBrush(Colors.Transparent),
+                    Owner = null,// Application.Current.MainWindow
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    MessageText = text
+                };
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.Opacity = 0.5;
+                }
 
+                bool? result = dialog.ShowDialog();
+                returnvalue = (result.HasValue && result.Value);
+
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.Opacity = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
             return returnvalue;
         }
 

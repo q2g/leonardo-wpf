@@ -1,4 +1,5 @@
 ﻿using leonardo.AttachedProperties;
+using NLog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace leonardo.Controls
 
     public partial class LuiCombobox : ComboBox
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiCombobox()
         {
             InitializeComponent();
@@ -55,12 +58,19 @@ namespace leonardo.Controls
 
         private static void OnLabelTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiCombobox obj)
+            try
             {
-                if (e.NewValue is string newvalue)
+                if (d is LuiCombobox obj)
                 {
-                    obj.LabelText_Internal = newvalue;
+                    if (e.NewValue is string newvalue)
+                    {
+                        obj.LabelText_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion

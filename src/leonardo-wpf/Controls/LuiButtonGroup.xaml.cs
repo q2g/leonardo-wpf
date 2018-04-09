@@ -1,5 +1,6 @@
 ﻿using leonardo.AttachedProperties;
 using leonardo.Resources;
+using NLog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,14 +26,12 @@ namespace leonardo.Controls
     [ContentProperty("Items")]
     public partial class LuiButtonGroup : UserControl
     {
-        #region Member
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        #endregion
         public LuiButtonGroup()
         {
             InitializeComponent();
         }
-
 
         public static readonly DependencyProperty ItemsSourceProperty =
        ItemsControl.ItemsSourceProperty.AddOwner(typeof(LuiButtonGroup));
@@ -51,26 +50,39 @@ namespace leonardo.Controls
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            SetCornerRadius();
-
-            foreach (object item in Items)
+            try
             {
-                if (item is LuiToggleButton tbutton)
+                SetCornerRadius();
+
+                foreach (object item in Items)
                 {
-                    tbutton.Click += (s, ea) => { CheckThis(tbutton); };
+                    if (item is LuiToggleButton tbutton)
+                    {
+                        tbutton.Click += (s, ea) => { CheckThis(tbutton); };
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
         private void control_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-
-            foreach (object item in Items)
+            try
             {
-                if (item is LuiToggleButton tbutton)
+                foreach (object item in Items)
                 {
-                    tbutton.Width = ActualWidth / Items.Count;
+                    if (item is LuiToggleButton tbutton)
+                    {
+                        tbutton.Width = ActualWidth / Items.Count;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
@@ -101,12 +113,19 @@ namespace leonardo.Controls
 
         private static void OnRoundedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiButtonGroup obj)
+            try
             {
-                if (e.NewValue is bool newvalue)
+                if (d is LuiButtonGroup obj)
                 {
-                    obj.Rounded_Internal = newvalue;
+                    if (e.NewValue is bool newvalue)
+                    {
+                        obj.Rounded_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
@@ -198,17 +217,22 @@ namespace leonardo.Controls
 
         private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiButtonGroup obj)
+            try
             {
-                if (e.NewValue is int newvalue)
+                if (d is LuiButtonGroup obj)
                 {
-                    obj.SelectedIndex_Internal = newvalue;
+                    if (e.NewValue is int newvalue)
+                    {
+                        obj.SelectedIndex_Internal = newvalue;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
-        #endregion
 
-        #region Functions
         private void CheckThis(LuiToggleButton toCheck)
         {
             int index = 0;

@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Collections;
 using System.Collections.ObjectModel;
+using NLog;
 
 namespace leonardo.Controls
 {
@@ -19,7 +20,8 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiAccordion : ItemsControl, IDropTarget
     {
-        //ListCollectionView customerView;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiAccordion()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace leonardo.Controls
 
             (Items as INotifyCollectionChanged).CollectionChanged +=
                 (s, e) =>
+                {
+                    try
                     {
                         if (e.Action == NotifyCollectionChangedAction.Add)
                         {
@@ -38,7 +42,7 @@ namespace leonardo.Controls
                                     itemContainer.Index = Items.Count;
                                 }
                             }
-                            //customerView?.Refresh();
+
 
                         }
 
@@ -61,19 +65,29 @@ namespace leonardo.Controls
                                     }
                                 }
                             }
-                            //customerView?.Refresh();
                         }
-
-                    };
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error(ex);
+                    }
+                };
 
             DeleteCommand = new RelayCommand((o) => true,
                 (o) =>
+                {
+                    try
                     {
                         if (ItemContainerGenerator.ContainerFromItem(o) is LuiAccordionItem container)
                         {
                             Delete(container.DataContext);
                         }
-                    });
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error(ex);
+                    }
+                });
         }
 
         private void Delete(object toDelete)
@@ -87,29 +101,44 @@ namespace leonardo.Controls
         private Dictionary<int, LuiAccordionItem> GetIndexDictionary()
         {
             Dictionary<int, LuiAccordionItem> retval = new Dictionary<int, LuiAccordionItem>();
-
-            foreach (var item in Items)
+            try
             {
-                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                foreach (var item in Items)
                 {
-                    if (!retval.ContainsKey(itemContainer.Index))
+                    if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
                     {
-                        retval.Add(itemContainer.Index, itemContainer);
+                        if (!retval.ContainsKey(itemContainer.Index))
+                        {
+                            retval.Add(itemContainer.Index, itemContainer);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
             return retval;
         }
 
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            if (item is LuiAccordionItem accordionitem)
+            try
             {
-                DependencyPropertyDescriptor
-                .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
-                .AddValueChanged(accordionitem, IsExpandedChanged);
-
-                return true;
+                if (item is LuiAccordionItem accordionitem)
+                {
+                    if (collapseAllOnExpandSingle)
+                    {
+                        DependencyPropertyDescriptor
+                        .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
+                        .AddValueChanged(accordionitem, IsExpandedChanged);
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
             return false;
         }
@@ -117,10 +146,19 @@ namespace leonardo.Controls
         protected override DependencyObject GetContainerForItemOverride()
         {
             var retval = new LuiAccordionItem();
-            DependencyPropertyDescriptor
-             .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
-             .AddValueChanged(retval, IsExpandedChanged);
-
+            try
+            {
+                if (collapseAllOnExpandSingle)
+                {
+                    DependencyPropertyDescriptor
+                     .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
+                     .AddValueChanged(retval, IsExpandedChanged);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
             return retval;
 
         }
@@ -153,13 +191,6 @@ namespace leonardo.Controls
 
         private void CollapseAllItems(LuiAccordionItem sender)
         {
-            if (!collapseAllOnExpandSingle)
-            {
-                return;
-            }
-
-
-
             foreach (var item in Items)
             {
 
@@ -198,12 +229,19 @@ namespace leonardo.Controls
 
         private static void OnCollapseAllOnExpandSingleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiAccordion obj)
+            try
             {
-                if (e.NewValue is bool newvalue)
+                if (d is LuiAccordion obj)
                 {
-                    obj.CollapseAllOnExpandSingle_Intern = newvalue;
+                    if (e.NewValue is bool newvalue)
+                    {
+                        obj.CollapseAllOnExpandSingle_Intern = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -213,36 +251,46 @@ namespace leonardo.Controls
 
         void IDropTarget.DragOver(IDropInfo dropInfo)
         {
-            dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
-            dropInfo.Effects = DragDropEffects.Move;
-            if (dropInfo.VisualTargetItem != null)
+            try
             {
-                if (m_lastDragedOverElement != null)
+                dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
+                dropInfo.Effects = DragDropEffects.Move;
+                if (dropInfo.VisualTargetItem != null)
                 {
-                    m_lastDragedOverElement.Opacity = 1;
+                    if (m_lastDragedOverElement != null)
+                    {
+                        m_lastDragedOverElement.Opacity = 1;
+                    }
+                    m_lastDragedOverElement = dropInfo.VisualTargetItem;
+                    dropInfo.VisualTargetItem.Opacity = 0.5;
                 }
-                m_lastDragedOverElement = dropInfo.VisualTargetItem;
-                dropInfo.VisualTargetItem.Opacity = 0.5;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
         void IDropTarget.Drop(IDropInfo dropInfo)
         {
-            if (m_lastDragedOverElement != null)
+            try
             {
-                m_lastDragedOverElement.Opacity = 1;
-            }
-            if (ItemContainerGenerator.ContainerFromItem(dropInfo.Data) is LuiAccordionItem sourceContainer)
-            {
-                if (ItemContainerGenerator.ContainerFromItem(dropInfo.TargetItem) is LuiAccordionItem targetContainer)
+                if (m_lastDragedOverElement != null)
                 {
-                    SwapItems(sourceContainer, targetContainer);
-                    //RefreshAllIndexes();
+                    m_lastDragedOverElement.Opacity = 1;
+                }
+                if (ItemContainerGenerator.ContainerFromItem(dropInfo.Data) is LuiAccordionItem sourceContainer)
+                {
+                    if (ItemContainerGenerator.ContainerFromItem(dropInfo.TargetItem) is LuiAccordionItem targetContainer)
+                    {
+                        DropItem(sourceContainer, targetContainer);
+                    }
                 }
             }
-
-
-
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
         #endregion
 
@@ -305,12 +353,19 @@ namespace leonardo.Controls
 
         private static void OnSortPropertyNameChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiAccordion obj)
+            try
             {
-                if (e.NewValue is string newvalue)
+                if (d is LuiAccordion obj)
                 {
-                    obj.SortPropertyName_Internal = newvalue;
+                    if (e.NewValue is string newvalue)
+                    {
+                        obj.SortPropertyName_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -340,77 +395,29 @@ namespace leonardo.Controls
 
         private static void OnIsDragDropChangesUnderlyingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiAccordion obj)
+            try
             {
-                if (e.NewValue is bool newvalue)
+                if (d is LuiAccordion obj)
                 {
-                    obj.IsDragDropChangesUnderlyingCollection_Internal = newvalue;
+                    if (e.NewValue is bool newvalue)
+                    {
+                        obj.IsDragDropChangesUnderlyingCollection_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
 
         #region Functions
-        //private void RefreshAllIndexes()
-        //{
-        //    return;
-        //    if (!isRefreshIndexEnabled)
-        //    {
-        //        return;
-        //    }
-        //    if (ItemsSource is ListCollectionView view)
-        //    {
-        //        foreach (var item in view)
-        //        {
-
-        //            if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-        //            {
-        //                if (itemContainer.Index_Internal != (view.IndexOf(item) + 1))
-        //                {
-        //                    itemContainer.Index = view.IndexOf(item) + 1;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        System.Collections.IEnumerable itemsEnumerable = null;
-        //        if (ItemsSource != null)
-        //        {
-        //            if (ItemsSource is System.Collections.IEnumerable enumerable)
-        //            {
-        //                itemsEnumerable = enumerable;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            itemsEnumerable = Items;
-        //        }
-
-        //        if (itemsEnumerable != null)
-        //        {
-        //            foreach (var item in itemsEnumerable)
-        //            {
-        //                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-        //                {
-        //                    int index = ItemContainerGenerator.IndexFromContainer(itemContainer) + 1;
-        //                    if (itemContainer.Index_Internal != index)
-        //                    {
-        //                        itemContainer.Index = index;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        private void SwapItems(LuiAccordionItem source, LuiAccordionItem target)
+        private void DropItem(LuiAccordionItem source, LuiAccordionItem target)
         {
             if (GetList() is System.Collections.IList list)
             {
                 MoveItem(list, source, target);
-                //customerView?.Refresh();
             }
         }
 
@@ -448,14 +455,17 @@ namespace leonardo.Controls
 
             if (isDragDropChangesUnderlyingCollection)
             {
+                object valueToMove = list[sourceIndex];
                 if (sourceIndex != targetIndex)
                 {
-                    object valueToMove = list[sourceIndex];
-                    //list.RemoveAt(sourceIndex);
-                    //list.Insert(targetIndex, valueToMove);
                     if (list is ObservableCollection<object> olist)
                     {
                         olist.Move(sourceIndex, targetIndex);
+                    }
+                    else
+                    {
+                        list.RemoveAt(sourceIndex);
+                        list.Insert(targetIndex, valueToMove);
                     }
 
 

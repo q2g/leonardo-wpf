@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,14 +26,16 @@ namespace leonardo.Controls
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(ContentPresenter))]
     public partial class LuiDialog : UserControl
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         #region Member
-        //COntrols im Template
+        //Controls in Template
         private Path path;
         private ContentPresenter contentPresenter;
         private Popup mainPopup;
         private Panel canvas;
 
-        //Member für properties
+        //Member for properties
         private Brush pathFill;
         private double canvasHeight;
         private double canvasWidth;
@@ -41,9 +44,11 @@ namespace leonardo.Controls
         private PlacementMode popupPlacementMode;
 
         #endregion
+
         #region Event
         public event EventHandler PopupClosed;
         #endregion
+
         #region ctor
         public LuiDialog()
         {
@@ -51,6 +56,7 @@ namespace leonardo.Controls
 
         }
         #endregion
+
         #region Properties
         internal Brush PathFill
         {
@@ -130,63 +136,76 @@ namespace leonardo.Controls
             }
         }
         #endregion
+
         #region overrides
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            try
+            {
+                // Code to get the Template parts as instance member
+                mainPopup = GetTemplateChild("PART_Popup") as Popup;
+                canvas = GetTemplateChild("PART_Canvas") as Canvas;
+                path = GetTemplateChild("PART_Path") as Path;
+                contentPresenter = GetTemplateChild("PART_ContentPresenter") as ContentPresenter;
 
-            // Code to get the Template parts as instance member
-            mainPopup = GetTemplateChild("PART_Popup") as Popup;
-            canvas = GetTemplateChild("PART_Canvas") as Canvas;
-            path = GetTemplateChild("PART_Path") as Path;
-            contentPresenter = GetTemplateChild("PART_ContentPresenter") as ContentPresenter;
 
-
-            mainPopup.Closed += (sender, e) => { PopupClosed?.Invoke(sender, e); };
-            mainPopup.IsOpen = IsOpen;            
-            canvas.Width = PanelWidth;
-            canvas.Height = PanelHeight;
-            RefreshPath();
-            mainPopup.PlacementTarget = PlacementTarget;
-            mainPopup.Placement = Placement;
-            path.Fill = Fill;
+                mainPopup.Closed += (sender, e) => { PopupClosed?.Invoke(sender, e); };
+                mainPopup.IsOpen = IsOpen;
+                canvas.Width = PanelWidth;
+                canvas.Height = PanelHeight;
+                RefreshPath();
+                mainPopup.PlacementTarget = PlacementTarget;
+                mainPopup.Placement = Placement;
+                path.Fill = Fill;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
         #endregion
 
         #region Functions
         private void RefreshPath()
         {
-            if (path == null)
+            try
             {
-                return;
+                if (path == null)
+                {
+                    return;
+                }
+                Int32 width = Math.Max((Int32)Double.Parse(GetValue(PanelWidthProperty).ToString()), 30);
+                Int32 height = Math.Max((Int32)Double.Parse(GetValue(PanelHeightProperty).ToString()), 30);
+
+
+                path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L10,{1} Z", width - 10, height - 10));
+                //switch (Placement)
+                //{             
+                //    case PlacementMode.Right:                    
+                //        //path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L10,{1} L10,{2} L0,{3} L10,{4} Z", width - 10, height - 10, height / 2 + 10, height / 2, height / 2 - 10));
+                //        break;
+                //    case PlacementMode.Left:
+                //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{2} L{1},{3} L{0},{4} L{0},{5} L10,{5} Z", width - 10, width, height / 2 - 10, height / 2, height / 2 + 10, width - 10, height - 10, height - 10));
+                //        break;
+                //    case PlacementMode.Top:
+                //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L{2},{1} L{3},{4} L{5},{1} L10,{1} Z", width - 10, height - 10, width / 2 + 10, width / 2, height, width / 2 - 10));
+                //        break;
+                //    case PlacementMode.Bottom:
+                //    default:
+                //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{1},0 L{2},10 L{3},10  L{3},{4} L10,{4} Z", width / 2 - 10, width / 2, width / 2 + 10, width - 10, height - 10));
+                //        break;
+                //}
+
+                contentPresenter.Width = width - 30;
+                contentPresenter.Height = height - 30;
             }
-            Int32 width = Math.Max((Int32)Double.Parse(GetValue(PanelWidthProperty).ToString()), 30);
-            Int32 height = Math.Max((Int32)Double.Parse(GetValue(PanelHeightProperty).ToString()), 30);
-
-
-            path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L10,{1} Z", width - 10, height - 10));
-            //switch (Placement)
-            //{             
-            //    case PlacementMode.Right:                    
-            //        //path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L10,{1} L10,{2} L0,{3} L10,{4} Z", width - 10, height - 10, height / 2 + 10, height / 2, height / 2 - 10));
-            //        break;
-            //    case PlacementMode.Left:
-            //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{2} L{1},{3} L{0},{4} L{0},{5} L10,{5} Z", width - 10, width, height / 2 - 10, height / 2, height / 2 + 10, width - 10, height - 10, height - 10));
-            //        break;
-            //    case PlacementMode.Top:
-            //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{0},{1} L{2},{1} L{3},{4} L{5},{1} L10,{1} Z", width - 10, height - 10, width / 2 + 10, width / 2, height, width / 2 - 10));
-            //        break;
-            //    case PlacementMode.Bottom:
-            //    default:
-            //        path.Data = Geometry.Parse(String.Format("M10,10 L{0},10 L{1},0 L{2},10 L{3},10  L{3},{4} L10,{4} Z", width / 2 - 10, width / 2, width / 2 + 10, width - 10, height - 10));
-            //        break;
-            //}
-
-            contentPresenter.Width = width - 30;
-            contentPresenter.Height = height - 30;
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
         #endregion
-
 
         #region PlacementTarget - DP
         public UIElement PlacementTarget
@@ -201,12 +220,19 @@ namespace leonardo.Controls
 
         private static void OnPlacementTargetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiDialog obj)
+            try
             {
-                if (e.NewValue is UIElement newvalue)
+                if (d is LuiDialog obj)
                 {
-                    obj.PopUpPlacementTarget = newvalue;
+                    if (e.NewValue is UIElement newvalue)
+                    {
+                        obj.PopUpPlacementTarget = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -224,13 +250,20 @@ namespace leonardo.Controls
 
         private static void OnIsOpenChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var obj = d as LuiDialog;
-            if (d != null)
+            try
             {
-                if (e.NewValue is Boolean newvalue)
+                var obj = d as LuiDialog;
+                if (d != null)
                 {
-                    obj.IsPopupOpen = newvalue;
+                    if (e.NewValue is Boolean newvalue)
+                    {
+                        obj.IsPopupOpen = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion       
@@ -248,12 +281,19 @@ namespace leonardo.Controls
 
         private static void OnPanelWidthChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiDialog obj)
+            try
             {
-                if (e.NewValue is Double newvalue)
+                if (d is LuiDialog obj)
                 {
-                    obj.CanvasWidth = newvalue;
+                    if (e.NewValue is Double newvalue)
+                    {
+                        obj.CanvasWidth = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -271,12 +311,19 @@ namespace leonardo.Controls
 
         private static void OnPanelHeightChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiDialog obj)
+            try
             {
-                if (e.NewValue is Double newvalue)
+                if (d is LuiDialog obj)
                 {
-                    obj.CanvasHeight = newvalue;
+                    if (e.NewValue is Double newvalue)
+                    {
+                        obj.CanvasHeight = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -294,12 +341,19 @@ namespace leonardo.Controls
 
         private static void OnPlacementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiDialog obj)
+            try
             {
-                if (e.NewValue is PlacementMode newvalue)
+                if (d is LuiDialog obj)
                 {
-                    obj.PopUpPlacementMode = newvalue;
+                    if (e.NewValue is PlacementMode newvalue)
+                    {
+                        obj.PopUpPlacementMode = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -317,12 +371,19 @@ namespace leonardo.Controls
 
         private static void OnFillChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiDialog obj)
+            try
             {
-                if (e.NewValue is Brush newvalue)
+                if (d is LuiDialog obj)
                 {
-                    obj.PathFill = newvalue;
+                    if (e.NewValue is Brush newvalue)
+                    {
+                        obj.PathFill = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion

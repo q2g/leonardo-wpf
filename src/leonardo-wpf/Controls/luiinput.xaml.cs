@@ -48,7 +48,6 @@ namespace leonardo.Controls
          "HintText", typeof(string), typeof(LuiInput), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-
         #region LUIInputSize - DP       
         public LUIInputSizeEnum LUIInputSize
         {

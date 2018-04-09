@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace leonardo.Converter
     [ValueConversion(typeof(bool), typeof(object))]
     public class BooleanToObjectConverter : IValueConverter
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public object TrueValue { get; set; }
         public object FalseValue { get; set; }
         public object NullValue { get; set; }
@@ -18,23 +21,38 @@ namespace leonardo.Converter
         public object Convert(object value, Type targetType,
             object parameter, CultureInfo culture)
         {
-            if(value==null)
+            try
             {
-                return NullValue;
-            }
+                if (value == null)
+                {
+                    return NullValue;
+                }
 
-            if (!(value is bool))
-                return null;
-            return (bool)value ? TrueValue : FalseValue;
+                if (!(value is bool))
+                    return null;
+                return (bool)value ? TrueValue : FalseValue;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+            return NullValue;
         }
 
         public object ConvertBack(object value, Type targetType,
             object parameter, CultureInfo culture)
-        {            
-            if (IsEqual(value, TrueValue))
-                return true;
-            if (IsEqual(value, FalseValue))
-                return false;
+        {
+            try
+            {
+                if (IsEqual(value, TrueValue))
+                    return true;
+                if (IsEqual(value, FalseValue))
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
             return null;
         }
 

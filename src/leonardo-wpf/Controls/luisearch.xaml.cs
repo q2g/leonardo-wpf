@@ -1,4 +1,5 @@
 ﻿using leonardo.Resources;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiSearch : UserControl
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiSearch()
         {
             InitializeComponent();
@@ -62,19 +65,26 @@ namespace leonardo.Controls
 
         private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape)
+            try
             {
-                if (string.IsNullOrEmpty(maininput.Text))
+                if (e.Key == Key.Escape)
                 {
-                    if (CancelCommand != null)
+                    if (string.IsNullOrEmpty(maininput.Text))
                     {
-                        CancelCommand.Execute(null);
+                        if (CancelCommand != null)
+                        {
+                            CancelCommand.Execute(null);
+                        }
+                    }
+                    else
+                    {
+                        maininput.Text = "";
                     }
                 }
-                else
-                {
-                    maininput.Text = "";
-                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 

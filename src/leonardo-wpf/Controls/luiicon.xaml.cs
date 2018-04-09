@@ -1,4 +1,5 @@
 ﻿using leonardo.Resources;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,16 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiIcon : UserControl
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private const LUIiconsEnum DEFAULT = LUIiconsEnum.lui_icon_table;
         public LuiIcon()
         {
             InitializeComponent();
             mainText.Text = DEFAULT.GetIconText();
 
-        }     
-       
+        }
+
 
         #region Icon - DP
         public LUIiconsEnum Icon
@@ -43,21 +46,28 @@ namespace leonardo.Controls
 
         private static void OnIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiIcon obj)
+            try
             {
-                if (e.NewValue is LUIiconsEnum newvalue)
+                if (d is LuiIcon obj)
                 {
-                    obj.Icon_Internal = newvalue;
+                    if (e.NewValue is LUIiconsEnum newvalue)
+                    {
+                        obj.Icon_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
-        private LUIiconsEnum icon=DEFAULT;
+        private LUIiconsEnum icon = DEFAULT;
         internal LUIiconsEnum Icon_Internal
         {
             get { return icon; }
             set
-            {                
+            {
                 if (icon != value || DEFAULT.GetIconText().Equals(mainText.Text))
                 {
                     icon = value;
@@ -95,16 +105,23 @@ namespace leonardo.Controls
 
         private static void OnIconSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiIcon obj)
+            try
             {
-                if (e.NewValue is LUIFontSizeEnum newvalue)
+                if (d is LuiIcon obj)
                 {
-                    obj.IconSize_Internal = newvalue;
+                    if (e.NewValue is LUIFontSizeEnum newvalue)
+                    {
+                        obj.IconSize_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
-       
+
         #endregion
 
         #region CornerRadius - DP
@@ -134,12 +151,19 @@ namespace leonardo.Controls
 
         private static void OnCornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiIcon obj)
+            try
             {
-                if (e.NewValue is CornerRadius newvalue)
+                if (d is LuiIcon obj)
                 {
-                    obj.CornerRadius_Internal = newvalue;
+                    if (e.NewValue is CornerRadius newvalue)
+                    {
+                        obj.CornerRadius_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 

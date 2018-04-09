@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace leonardo.Converter
 {
     public class BindingDiagConverter : IValueConverter
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public object Convert(object value, Type targetType,
             object parameter, CultureInfo culture)
         {

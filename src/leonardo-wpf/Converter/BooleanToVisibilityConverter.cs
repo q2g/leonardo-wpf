@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,26 +13,42 @@ namespace leonardo.Converter
     [ValueConversion(typeof(bool), typeof(Visibility))]
     public class BooleanToVisibilityConverter : IValueConverter
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public Visibility TrueValue { get; set; }
         public Visibility FalseValue { get; set; }
-       
+
 
         public object Convert(object value, Type targetType,
             object parameter, CultureInfo culture)
         {
-          
-            if (!(value is bool))
-                return Visibility.Visible;
-            return (bool)value ? TrueValue : FalseValue;
+            try
+            {
+                if (!(value is bool))
+                    return Visibility.Visible;
+                return (bool)value ? TrueValue : FalseValue;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return FalseValue;
+            }
         }
 
         public object ConvertBack(object value, Type targetType,
             object parameter, CultureInfo culture)
-        {            
-            if (IsEqual(value, TrueValue))
-                return true;
-            if (IsEqual(value, FalseValue))
-                return false;
+        {
+            try
+            {
+                if (IsEqual(value, TrueValue))
+                    return true;
+                if (IsEqual(value, FalseValue))
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
             return null;
         }
 

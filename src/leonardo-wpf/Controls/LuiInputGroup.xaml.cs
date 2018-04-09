@@ -1,5 +1,6 @@
 ﻿using leonardo.AttachedProperties;
 using leonardo.Resources;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiInputGroup : UserControl
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiInputGroup()
         {
             InitializeComponent();
@@ -122,12 +125,19 @@ namespace leonardo.Controls
 
         private static void OnLeftCommandIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiInputGroup obj)
+            try
             {
-                if (e.NewValue is LUIiconsEnum newvalue)
+                if (d is LuiInputGroup obj)
                 {
-                    obj.LeftCommandIcon_Internal = newvalue;
+                    if (e.NewValue is LUIiconsEnum newvalue)
+                    {
+                        obj.LeftCommandIcon_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
@@ -174,11 +184,6 @@ namespace leonardo.Controls
 
         public static readonly DependencyProperty LeftCommandForegroundProperty = DependencyProperty.Register(
          "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion
-
-        private void mainbuttonRight_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+        #endregion        
     }
 }

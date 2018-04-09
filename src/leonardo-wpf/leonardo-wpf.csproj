@@ -33,11 +33,19 @@
     <Reference Include="GongSolutions.Wpf.DragDrop, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\gong-wpf-dragdrop.1.1.0\lib\net46\GongSolutions.Wpf.DragDrop.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\Users\CHoldschick\source\repos\Lui_daV\packages\NLog.4.5.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -66,9 +74,6 @@
     </Compile>
     <Compile Include="Controls\LuiButtonGroup.xaml.cs">
       <DependentUpon>LuiButtonGroup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiControlGroup.xaml.cs">
-      <DependentUpon>LuiControlGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LuiDialog.xaml.cs">
       <DependentUpon>LuiDialog.xaml</DependentUpon>
@@ -105,9 +110,6 @@
     </Compile>
     <Compile Include="Converter\BindingDiagConverter.cs" />
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\ConfigDataTypetoDataIdentConverter.cs" />
-    <Compile Include="Converter\DictionaryValueConverter.cs" />
-    <Compile Include="Converter\PlacementCorrectionConverter.cs" />
     <Compile Include="Converter\BooleanToObjectConverter.cs" />
     <Compile Include="Converter\TypeToStyleSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,10 +147,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\LuiButtonGroup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiControlGroup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

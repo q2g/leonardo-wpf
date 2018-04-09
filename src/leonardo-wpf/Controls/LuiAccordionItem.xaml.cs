@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace leonardo.Controls
     /// </summary>
     public partial class LuiAccordionItem : HeaderedContentControl
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public LuiAccordionItem()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace leonardo.Controls
             get { return index; }
             set
             {
-                if (index!= value)
+                if (index != value)
                 {
                     index = value;
                 }
@@ -62,12 +65,19 @@ namespace leonardo.Controls
 
         private static void OnIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is LuiAccordionItem obj)
+            try
             {
-                if (e.NewValue is int newvalue)
+                if (d is LuiAccordionItem obj)
                 {
-                    obj.Index_Internal = newvalue;
+                    if (e.NewValue is int newvalue)
+                    {
+                        obj.Index_Internal = newvalue;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion
