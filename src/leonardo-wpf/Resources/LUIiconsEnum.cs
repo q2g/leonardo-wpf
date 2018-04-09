@@ -23,8 +23,11 @@ namespace leonardo.Resources
         lui_icon_link,
         lui_icon_search,
         lui_icon_select_alternative,
-        lui_icon_cross
-    }    
+        lui_icon_cross,
+        lui_icon_sheet,
+        lui_icon_stream
+
+    }
 }
 public static class LUIiconsEnumExtensions
 {
@@ -37,7 +40,7 @@ public static class LUIiconsEnumExtensions
                 icontext = "";
                 break;
             case LUIiconsEnum.lui_icon_calendar:
-                icontext="G";
+                icontext = "G";
                 break;
             case LUIiconsEnum.lui_icon_plus:
                 icontext = "P";
@@ -46,7 +49,7 @@ public static class LUIiconsEnumExtensions
                 icontext = "o";
                 break;
             case LUIiconsEnum.lui_icon_table:
-                icontext = "'"; 
+                icontext = "'";
                 break;
             case LUIiconsEnum.lui_icon_triangle_bottom:
                 icontext = "S";
@@ -77,6 +80,12 @@ public static class LUIiconsEnumExtensions
                 break;
             case LUIiconsEnum.lui_icon_select_alternative:
                 icontext = "ö";
+                break;
+            case LUIiconsEnum.lui_icon_sheet:
+                icontext = "4";
+                break;
+            case LUIiconsEnum.lui_icon_stream:
+                icontext = "ã";
                 break;
             default:
                 icontext = "";
