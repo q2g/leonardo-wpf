@@ -6,6 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Checked="ToggleButton_Checked"
+    Unchecked="ToggleButton_Unchecked"
     mc:Ignorable="d">
     <ToggleButton.Resources>
         <ResourceDictionary>

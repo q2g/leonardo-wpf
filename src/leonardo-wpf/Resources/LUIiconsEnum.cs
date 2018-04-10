@@ -25,7 +25,15 @@ namespace leonardo.Resources
         lui_icon_select_alternative,
         lui_icon_cross,
         lui_icon_sheet,
-        lui_icon_stream
+        lui_icon_stream,
+        lui_icon_arrow_up,
+        lui_icon_arrow_down,
+        lui_icon_arrow_left,
+        lui_icon_arrow_right,
+        lui_icon_grid,
+        lui_icon_list,
+        lui_icon_ascending,
+        lui_icon_descending
 
     }
 }
@@ -86,6 +94,30 @@ public static class LUIiconsEnumExtensions
                 break;
             case LUIiconsEnum.lui_icon_stream:
                 icontext = "ã";
+                break;
+            case LUIiconsEnum.lui_icon_arrow_down:
+                icontext = "¯";
+                break;
+            case LUIiconsEnum.lui_icon_arrow_up:
+                icontext = "˜";
+                break;
+            case LUIiconsEnum.lui_icon_arrow_left:
+                icontext = "ê";
+                break;
+            case LUIiconsEnum.lui_icon_arrow_right:
+                icontext = "ë";
+                break;
+            case LUIiconsEnum.lui_icon_grid:
+                icontext = "ì";
+                break;
+            case LUIiconsEnum.lui_icon_list:
+                icontext = "î";
+                break;
+            case LUIiconsEnum.lui_icon_ascending:
+                icontext = "≈";
+                break;
+            case LUIiconsEnum.lui_icon_descending:
+                icontext = "∆";
                 break;
             default:
                 icontext = "";

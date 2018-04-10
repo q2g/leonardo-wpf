@@ -101,6 +101,12 @@
     <c:Color x:Key="LUI.Color.GREEN_lighten_15">
         #91c26a
     </c:Color>
+    <c:Color x:Key="LUI.Color.GREEN_darken_15">
+        #529a18
+    </c:Color>
+    <c:Color x:Key="LUI.Color.GREEN_darken_30">
+        #44751d
+    </c:Color>
 
 
 
@@ -201,5 +207,11 @@
     <SolidColorBrush
         x:Key="LUI.Brush.GREEN_lighten_15"
         Color="{StaticResource LUI.Color.GREEN_lighten_15}" />
+    <SolidColorBrush
+        x:Key="LUI.Brush.GREEN_darken_15"
+        Color="{StaticResource LUI.Color.GREEN_darken_15}" />
+    <SolidColorBrush
+        x:Key="LUI.Brush.GREEN_darken_30"
+        Color="{StaticResource LUI.Color.GREEN_darken_30}" />
 
 </ResourceDictionary>

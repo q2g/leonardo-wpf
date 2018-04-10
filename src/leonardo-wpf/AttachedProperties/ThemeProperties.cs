@@ -239,6 +239,25 @@ namespace leonardo.AttachedProperties
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.Inherits));
         #endregion
+
+        #region DisableCheckedStyle AP
+        public static bool GetDisableCheckedStyle(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(DisableCheckedStyleProperty);
+        }
+
+        public static void SetDisableCheckedStyle(DependencyObject obj, bool value)
+        {
+            obj.SetValue(DisableCheckedStyleProperty, value);
+        }
+
+        public static readonly DependencyProperty DisableCheckedStyleProperty =
+            DependencyProperty.RegisterAttached(
+                "DisableCheckedStyle",
+                typeof(bool),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }
