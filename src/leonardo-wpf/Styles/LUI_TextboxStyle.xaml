@@ -86,14 +86,14 @@
                         </Border>
                     </StackPanel>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="controls:LuiInput.LUIInputSize" Value="Default">
+                        <!--<Trigger Property="controls:LuiInput.LUIInputSize" Value="Default">
                             <Setter TargetName="border" Property="Height" Value="28" />
                         </Trigger>
                         <Trigger Property="controls:LuiInput.LUIInputSize" Value="Large">
                             <Setter TargetName="border" Property="Height" Value="38" />
                             <Setter Property="FontSize" Value="20" />
                             <Setter TargetName="label" Property="FontSize" Value="14" />
-                        </Trigger>
+                        </Trigger>-->
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

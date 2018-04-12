@@ -79,6 +79,11 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
                         </Trigger>
+                        <DataTrigger
+                            Binding="{Binding Text, ElementName=maininput}"
+                            Value="">
+                            <Setter Property="Visibility" Value="Hidden" />
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </local:LuiButton.Style>

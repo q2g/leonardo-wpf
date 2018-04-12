@@ -78,7 +78,7 @@ namespace leonardo.Controls
                     }
                     else
                     {
-                        maininput.Text = "";
+                        SearchText = "";
                     }
                 }
             }
@@ -112,7 +112,7 @@ namespace leonardo.Controls
 
         private void mainbutton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            maininput.Text = "";
+            SearchText = "";
         }
 
         #region HintText - DP        
