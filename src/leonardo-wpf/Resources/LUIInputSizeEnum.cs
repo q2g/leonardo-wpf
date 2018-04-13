@@ -9,28 +9,32 @@ namespace leonardo.Resources
     public enum LUIInputSizeEnum
     {
         Default,
-        Large
-        
+        Large,
+        Custom
+
     }
     public static class LUIInputSizeEnumExtensions
     {
-        public static double GetInputSize(this LUIInputSizeEnum i_iconsize)
+        public static double GetInputSize(this LUIInputSizeEnum i_inputsize)
         {
-            double iconsize = 28;
-            switch (i_iconsize)
+            double inputsize = 28;
+            switch (i_inputsize)
             {
                 case LUIInputSizeEnum.Default:
-                    iconsize = 28;
+                    inputsize = 28;
                     break;
                 case LUIInputSizeEnum.Large:
-                    iconsize = 38;
+                    inputsize = 38;
                     break;
-               
+                case LUIInputSizeEnum.Custom:
+                    inputsize = 0;
+                    break;
+
                 default:
-                    iconsize = 28;
+                    inputsize = 28;
                     break;
             }
-            return iconsize;
+            return inputsize;
         }
     }
 }

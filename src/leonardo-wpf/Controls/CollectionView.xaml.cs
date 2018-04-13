@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,12 +52,41 @@ namespace leonardo.Controls
                 if (itemsSource != value)
                 {
                     itemsSource = value;
+
+                    if (ItemsSource is INotifyCollectionChanged notifyCollection)
+                    {
+                        notifyCollection.CollectionChanged += NotifyCollection_CollectionChanged;
+                    }
+
                     ProcessedCollection.Clear();
                     foreach (var item in itemsSource)
                     {
                         ProcessedCollection.Add(item);
                     }
                 }
+            }
+        }
+
+        private void NotifyCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Action == NotifyCollectionChangedAction.Add)
+                {
+                    RefreshProcessedCollection();
+                }
+                if (e.Action == NotifyCollectionChangedAction.Remove)
+                {
+                    RefreshProcessedCollection();
+                }
+                if (e.Action == NotifyCollectionChangedAction.Reset)
+                {
+                    RefreshProcessedCollection();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
 
@@ -98,7 +128,7 @@ namespace leonardo.Controls
                 if (filterText != value)
                 {
                     filterText = value;
-                    FilterCollection();
+                    RefreshProcessedCollection();
                 }
             }
         }
@@ -128,23 +158,27 @@ namespace leonardo.Controls
                 logger.Error(Ex);
             }
         }
-        private void FilterCollection()
+
+        private void RefreshProcessedCollection()
         {
-            if (collectionViewFilter != null)
+            ProcessedCollection.Clear();
+            foreach (var item in itemsSource)
             {
-                if (!string.IsNullOrEmpty(filterText))
+                if (collectionViewFilter != null)
                 {
-                    ProcessedCollection.Clear();
-                    foreach (var item in itemsSource)
+                    if (collectionViewFilter.Filter(item, (filterText + "")))
                     {
-                        if (collectionViewFilter.Filter(item, filterText))
-                        {
-                            ProcessedCollection.Add(item);
-                        }
+                        ProcessedCollection.Add(item);
                     }
-                    SortCollection();
+                }
+                else
+                {
+                    ProcessedCollection.Add(item);
                 }
             }
+            SortCollection();
+
+
         }
         #endregion
 
@@ -158,7 +192,7 @@ namespace leonardo.Controls
                 if (collectionViewFilter != value)
                 {
                     collectionViewFilter = value;
-                    FilterCollection();
+                    RefreshProcessedCollection();
                 }
             }
         }
