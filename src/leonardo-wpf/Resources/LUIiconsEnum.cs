@@ -34,7 +34,9 @@ namespace leonardo.Resources
         lui_icon_list,
         lui_icon_ascending,
         lui_icon_descending,
-        lui_icon_person
+        lui_icon_person,
+        lui_icon_edit,
+        lui_icon_tick
 
     }
 }
@@ -122,6 +124,12 @@ public static class LUIiconsEnumExtensions
                 break;
             case LUIiconsEnum.lui_icon_person:
                 icontext = "y";
+                break;
+            case LUIiconsEnum.lui_icon_edit:
+                icontext = "@";
+                break;
+            case LUIiconsEnum.lui_icon_tick:
+                icontext = "m";
                 break;
             default:
                 icontext = "";

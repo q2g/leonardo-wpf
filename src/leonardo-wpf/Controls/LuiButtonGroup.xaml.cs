@@ -70,6 +70,10 @@ namespace leonardo.Controls
 
         private void control_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            if (loose)
+            {
+                return;
+            }
             try
             {
                 foreach (object item in Items)
@@ -131,6 +135,10 @@ namespace leonardo.Controls
 
         private void SetCornerRadius()
         {
+            if (loose)
+            {
+                return;
+            }
             List<object> li = new List<object>();
 
             foreach (object item in Items)
@@ -176,6 +184,50 @@ namespace leonardo.Controls
 
                     }
                 }
+            }
+        }
+        #endregion
+
+        #region IsLoose - DP
+        private bool loose;
+        internal bool IsLoose_Internal
+        {
+            get { return loose; }
+            set
+            {
+                if (loose != value)
+                {
+                    loose = value;
+
+                    SetCornerRadius();
+                }
+            }
+        }
+        public bool IsLoose
+        {
+            get { return (bool)this.GetValue(IsLooseProperty); }
+            set { this.SetValue(IsLooseProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsLooseProperty = DependencyProperty.Register(
+         "IsLoose", typeof(bool), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIsLooseChanged)));
+
+
+        private static void OnIsLooseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            try
+            {
+                if (d is LuiButtonGroup obj)
+                {
+                    if (e.NewValue is bool newvalue)
+                    {
+                        obj.IsLoose_Internal = newvalue;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
             }
         }
         #endregion

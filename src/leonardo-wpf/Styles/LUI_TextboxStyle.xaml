@@ -44,6 +44,7 @@
                             Name="label"
                             Margin="0,0,0,7"
                             FontSize="14"
+                            Foreground="white"
                             Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />
                         <Border
                             x:Name="border"

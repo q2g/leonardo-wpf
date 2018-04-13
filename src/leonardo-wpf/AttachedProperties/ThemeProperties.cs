@@ -258,6 +258,25 @@ namespace leonardo.AttachedProperties
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
+
+        #region LightCheckedStyle AP
+        public static bool GetLightCheckedStyle(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(LightCheckedStyleProperty);
+        }
+
+        public static void SetLightCheckedStyle(DependencyObject obj, bool value)
+        {
+            obj.SetValue(LightCheckedStyleProperty, value);
+        }
+
+        public static readonly DependencyProperty LightCheckedStyleProperty =
+            DependencyProperty.RegisterAttached(
+                "LightCheckedStyle",
+                typeof(bool),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }

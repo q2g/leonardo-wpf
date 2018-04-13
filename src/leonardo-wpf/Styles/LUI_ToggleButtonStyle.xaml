@@ -23,9 +23,19 @@
                 <MultiTrigger.Conditions>
                     <Condition Property="IsChecked" Value="True" />
                     <Condition Property="attachedP:ThemeProperties.DisableCheckedStyle" Value="False" />
+                    <Condition Property="attachedP:ThemeProperties.LightCheckedStyle" Value="False" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
                 <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="attachedP:ThemeProperties.DisableCheckedStyle" Value="False" />
+                    <Condition Property="attachedP:ThemeProperties.LightCheckedStyle" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
+                <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
             </MultiTrigger>
         </Style.Triggers>
     </Style>
