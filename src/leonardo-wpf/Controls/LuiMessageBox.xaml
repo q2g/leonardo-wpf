@@ -48,7 +48,7 @@
                     Margin="15,0,0,0"
                     VerticalContentAlignment="Center"
                     Foreground="{StaticResource LUI.Brush.Grayscale30}"
-                    Icon="lui_icon_link"
+                    Icon="{Binding MessageIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
                     IconSize="Large" />
             </Border>
             <Border

@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using leonardo.Resources;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,17 +29,19 @@ namespace leonardo.Controls
             InitializeComponent();
         }
 
-        public static bool ShowDialog(string text)
+        public static bool ShowDialog(string text, LUIiconsEnum messageIcon = LUIiconsEnum.lui_icon_none)
         {
             bool returnvalue = false;
             try
             {
+
                 Window dialog = new LuiMessageBox()
                 {
+                    MessageIcon = messageIcon,
                     WindowStyle = WindowStyle.None,
                     AllowsTransparency = true,
                     Background = new SolidColorBrush(Colors.Transparent),
-                    Owner = null,// Application.Current.MainWindow
+                    Owner = Application.Current.MainWindow,
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     MessageText = text
                 };
@@ -68,5 +71,16 @@ namespace leonardo.Controls
         {
             DialogResult = true;
         }
+
+        #region MessageIcon - DP
+        public LUIiconsEnum MessageIcon
+        {
+            get { return (LUIiconsEnum)this.GetValue(MessageIconProperty); }
+            set { this.SetValue(MessageIconProperty, value); }
+        }
+
+        public static readonly DependencyProperty MessageIconProperty = DependencyProperty.Register(
+         "MessageIcon", typeof(LUIiconsEnum), typeof(LuiMessageBox), new PropertyMetadata(LUIiconsEnum.lui_icon_none));
+        #endregion
     }
 }

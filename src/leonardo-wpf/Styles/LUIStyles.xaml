@@ -20,6 +20,7 @@
         <ResourceDictionary Source="../Styles/LUI_TabItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_TextboxStyle.xaml" />
         <ResourceDictionary Source="../Styles/LUI_ToggleButtonStyle.xaml" />
+        <ResourceDictionary Source="../Styles/LUI_SenseScrollviewerStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/leonardo-wpf;component/#QlikView Sans
