@@ -74,11 +74,9 @@ namespace leonardo.Controls
                         notifyCollection_new.CollectionChanged += NotifyCollection_CollectionChanged;
                     }
 
-                    ProcessedCollection.Clear();
-                    foreach (var item in itemsSource)
-                    {
-                        ProcessedCollection.Add(item);
-                    }
+                    RefreshProcessedCollection();
+
+
                 }
             }
         }
@@ -244,7 +242,7 @@ namespace leonardo.Controls
         }
         #endregion
 
-        #region CollectionViewFilter  
+        #region CollectionViewComparer  
         private IComparer collectionViewComparer;
         internal IComparer CollectionViewComparer_Internal
         {
@@ -258,9 +256,9 @@ namespace leonardo.Controls
                 }
             }
         }
-        public ICollectionViewFilter CollectionViewComparer
+        public IComparer CollectionViewComparer
         {
-            get { return (ICollectionViewFilter)this.GetValue(CollectionViewComparerProperty); }
+            get { return (IComparer)this.GetValue(CollectionViewComparerProperty); }
             set { this.SetValue(CollectionViewComparerProperty, value); }
         }
 
