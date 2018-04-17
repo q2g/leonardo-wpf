@@ -5,7 +5,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,16 +25,25 @@ namespace leonardo.Controls
     /// <summary>
     /// Interaction logic for CollectionView.xaml
     /// </summary>
-    public partial class CollectionView : UserControl
+    public partial class CollectionView : UserControl, INotifyPropertyChanged
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged([CallerMemberName] string caller = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
+        }
+        #endregion
 
         public CollectionView()
         {
             InitializeComponent();
+            SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
         }
 
-        #region ProcessedCollection - DP        
+        #region ProcessedCollection - DP
         public ObservableCollection<object> ProcessedCollection
         {
             get { return (ObservableCollection<object>)this.GetValue(ProcessedCollectionProperty); }
@@ -40,9 +51,10 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty ProcessedCollectionProperty = DependencyProperty.Register(
-         "ProcessedCollection", typeof(ObservableCollection<object>), typeof(CollectionView), new FrameworkPropertyMetadata(new ObservableCollection<object>(), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "ProcessedCollection", typeof(ObservableCollection<object>), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region ItemsSource DP
         private System.Collections.IEnumerable itemsSource;
         internal System.Collections.IEnumerable ItemsSource_Internal
         {
@@ -51,11 +63,15 @@ namespace leonardo.Controls
             {
                 if (itemsSource != value)
                 {
+                    if (itemsSource is INotifyCollectionChanged notifyCollection_old)
+                    {
+                        notifyCollection_old.CollectionChanged -= NotifyCollection_CollectionChanged;
+                    }
                     itemsSource = value;
 
-                    if (ItemsSource is INotifyCollectionChanged notifyCollection)
+                    if (value is INotifyCollectionChanged notifyCollection_new)
                     {
-                        notifyCollection.CollectionChanged += NotifyCollection_CollectionChanged;
+                        notifyCollection_new.CollectionChanged += NotifyCollection_CollectionChanged;
                     }
 
                     ProcessedCollection.Clear();
@@ -90,7 +106,12 @@ namespace leonardo.Controls
             }
         }
 
-        #region ItemsSource DP
+        //public System.Collections.IEnumerable ItemsSource
+        //{
+        //    get { return (System.Collections.IEnumerable)this.GetValue(ItemsSourceProperty); }
+        //    set { this.SetValue(ItemsSourceProperty, value); }
+        //}
+
         public System.Collections.IEnumerable ItemsSource
         {
             get { return (System.Collections.IEnumerable)this.GetValue(ItemsSourceProperty); }
