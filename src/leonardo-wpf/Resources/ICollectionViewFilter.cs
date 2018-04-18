@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace leonardo_wpf.Resources
+namespace leonardo.Resources
 {
     public interface ICollectionViewFilter
     {

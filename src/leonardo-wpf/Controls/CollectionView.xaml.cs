@@ -1,4 +1,4 @@
-﻿using leonardo_wpf.Resources;
+﻿using leonardo.Resources;
 using NLog;
 using System;
 using System.Collections;
