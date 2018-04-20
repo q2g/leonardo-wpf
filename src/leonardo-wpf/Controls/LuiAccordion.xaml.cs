@@ -73,7 +73,7 @@ namespace leonardo.Controls
                     }
                 };
 
-            DeleteCommand = new RelayCommand((o) => true,
+            DeleteCommand = new RelayCommand(
                 (o) =>
                 {
                     try
@@ -87,7 +87,7 @@ namespace leonardo.Controls
                     {
                         logger.Error(ex);
                     }
-                });
+                }, (o) => true);
         }
 
         private void Delete(object toDelete)

@@ -115,6 +115,11 @@
     <Compile Include="Converter\BindingDiagConverter.cs" />
     <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converter\BooleanToObjectConverter.cs" />
+    <Compile Include="Converter\CountToVisibilityConverter.cs" />
+    <Compile Include="Converter\Null2BooleanConverter.cs" />
+    <Compile Include="Converter\NullOrEmptyToVisibilityConverter.cs" />
+    <Compile Include="Converter\StringCompareConverter.cs" />
+    <Compile Include="Converter\ToStringAndAddStarConverter.cs" />
     <Compile Include="Converter\TypeToStyleSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ICollectionViewFilter.cs" />

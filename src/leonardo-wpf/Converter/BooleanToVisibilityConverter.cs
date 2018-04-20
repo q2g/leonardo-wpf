@@ -1,68 +1,57 @@
-﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Data;
-
-namespace leonardo.Converter
+﻿namespace leonardo.Converter
 {
-    [ValueConversion(typeof(bool), typeof(Visibility))]
+    using System;
+    using System.Globalization;
+    using System.Windows.Data;
+    using System.Windows;
+
     public class BooleanToVisibilityConverter : IValueConverter
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        public Visibility True { get; set; }
+        public Visibility False { get; set; }
 
-        public Visibility TrueValue { get; set; }
-        public Visibility FalseValue { get; set; }
-
-
-        public object Convert(object value, Type targetType,
-            object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            try
-            {
-                if (!(value is bool))
-                    return Visibility.Visible;
-                return (bool)value ? TrueValue : FalseValue;
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-                return FalseValue;
-            }
+            if (value is bool)
+                return ((bool)value) ? True : False;
+
+            return Binding.DoNothing;
         }
 
-        public object ConvertBack(object value, Type targetType,
-            object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            try
-            {
-                if (IsEqual(value, TrueValue))
-                    return true;
-                if (IsEqual(value, FalseValue))
-                    return false;
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-            return null;
+            throw new NotImplementedException();
         }
 
-        private static bool IsEqual(object x, object y)
+        public BooleanToVisibilityConverter()
         {
-            if (Equals(x, y))
-                return true;
+            True = Visibility.Visible;
+            False = Visibility.Collapsed;
+        }
+    }
 
-            IComparable c = x as IComparable;
-            if (c != null)
-                return (c.CompareTo(y) == 0);
+    public class BooleanToBrushConverter : IValueConverter
+    {
+        public System.Windows.Media.Brush True { get; set; }
+        public System.Windows.Media.Brush False { get; set; }
 
-            return false;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool)
+                return ((bool)value) ? True : False;
+
+            return Binding.DoNothing;
         }
 
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public BooleanToBrushConverter()
+        {
+            True = null;
+            False = null;
+        }
     }
 }
