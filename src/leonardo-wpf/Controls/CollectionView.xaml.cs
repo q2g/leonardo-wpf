@@ -40,10 +40,62 @@ namespace leonardo.Controls
         public CollectionView()
         {
             InitializeComponent();
+
             SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
         }
 
+        private void ProcessedCollectionChanged_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Action == NotifyCollectionChangedAction.Add)
+                {
+                    foreach (var item in e.NewItems)
+                    {
+                        itemsSource.Add(item);
+                    }
+                }
+                if (e.Action == NotifyCollectionChangedAction.Remove)
+                {
+                    foreach (var item in e.OldItems)
+                    {
+                        itemsSource.Remove(item);
+                    }
+                }
+                if (e.Action == NotifyCollectionChangedAction.Reset)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
         #region ProcessedCollection - DP
+        private ObservableCollection<object> processedCollection;
+        internal ObservableCollection<object> ProcessedCollection_Internal
+        {
+            get { return processedCollection; }
+            set
+            {
+                if (processedCollection != value)
+                {
+                    if (processedCollection is INotifyCollectionChanged notifyCollection_old)
+                    {
+                        notifyCollection_old.CollectionChanged -= ProcessedCollectionChanged_CollectionChanged;
+                    }
+                    processedCollection = value;
+                    RaisePropertyChanged(nameof(ProcessedCollection));
+                    if (processedCollection is INotifyCollectionChanged notifyCollection_new)
+                    {
+                        notifyCollection_new.CollectionChanged += ProcessedCollectionChanged_CollectionChanged;
+                    }
+
+                }
+            }
+        }
         public ObservableCollection<object> ProcessedCollection
         {
             get { return (ObservableCollection<object>)this.GetValue(ProcessedCollectionProperty); }
@@ -51,12 +103,29 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty ProcessedCollectionProperty = DependencyProperty.Register(
-         "ProcessedCollection", typeof(ObservableCollection<object>), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "ProcessedCollection", typeof(ObservableCollection<object>), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnProcessedCollectionChanged)));
+        private static void OnProcessedCollectionChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            try
+            {
+                if (d is CollectionView obj)
+                {
+                    if (e.NewValue is ObservableCollection<object> newvalue)
+                    {
+                        obj.ProcessedCollection_Internal = newvalue;
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                logger.Error(Ex);
+            }
+        }
         #endregion
 
         #region ItemsSource DP
-        private System.Collections.IEnumerable itemsSource;
-        internal System.Collections.IEnumerable ItemsSource_Internal
+        private System.Collections.IList itemsSource;
+        internal System.Collections.IList ItemsSource_Internal
         {
             get { return itemsSource; }
             set
@@ -104,27 +173,21 @@ namespace leonardo.Controls
             }
         }
 
-        //public System.Collections.IEnumerable ItemsSource
-        //{
-        //    get { return (System.Collections.IEnumerable)this.GetValue(ItemsSourceProperty); }
-        //    set { this.SetValue(ItemsSourceProperty, value); }
-        //}
-
-        public System.Collections.IEnumerable ItemsSource
+        public System.Collections.IList ItemsSource
         {
-            get { return (System.Collections.IEnumerable)this.GetValue(ItemsSourceProperty); }
+            get { return (System.Collections.IList)this.GetValue(ItemsSourceProperty); }
             set { this.SetValue(ItemsSourceProperty, value); }
         }
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
-         "ItemsSource", typeof(System.Collections.IEnumerable), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnItemsSourceChanged)));
+         "ItemsSource", typeof(System.Collections.IList), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnItemsSourceChanged)));
         private static void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
             {
                 if (d is CollectionView obj)
                 {
-                    if (e.NewValue is System.Collections.IEnumerable newvalue)
+                    if (e.NewValue is System.Collections.IList newvalue)
                     {
                         obj.ItemsSource_Internal = newvalue;
                     }
@@ -180,22 +243,24 @@ namespace leonardo.Controls
 
         private void RefreshProcessedCollection()
         {
-            ProcessedCollection.Clear();
+            var newList = new ObservableCollection<object>();
+
             foreach (var item in itemsSource)
             {
                 if (collectionViewFilter != null)
                 {
                     if (collectionViewFilter.Filter(item, (filterText + "")))
                     {
-                        ProcessedCollection.Add(item);
+                        newList.Add(item);
                     }
                 }
                 else
                 {
-                    ProcessedCollection.Add(item);
+                    newList.Add(item);
                 }
             }
-            SortCollection();
+            SortCollection(newList);
+            ProcessedCollection = newList;
 
 
         }
@@ -252,7 +317,7 @@ namespace leonardo.Controls
                 if (collectionViewComparer != value)
                 {
                     collectionViewComparer = value;
-                    SortCollection();
+                    SortCollection(processedCollection);
                 }
             }
         }
@@ -282,7 +347,7 @@ namespace leonardo.Controls
             }
         }
 
-        private void SortCollection()
+        private void SortCollection(ObservableCollection<object> list)
         {
             if (collectionViewComparer == null)
             {
@@ -290,32 +355,32 @@ namespace leonardo.Controls
             }
 
             //BubbleSort FTW!
-            for (int i = 0; i < ProcessedCollection.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                for (int j = 0; j < ProcessedCollection.Count; j++)
+                for (int j = 0; j < list.Count; j++)
                 {
                     if (i != j)
                     {
                         if (!sortDescending)
                         {
-                            if (collectionViewComparer.Compare(ProcessedCollection[i], ProcessedCollection[j]) > 0)
+                            if (collectionViewComparer.Compare(list[i], list[j]) > 0)
                             {
-                                ProcessedCollection.Move(j, i);
+                                list.Move(j, i);
                             }
-                            if (collectionViewComparer.Compare(ProcessedCollection[i], ProcessedCollection[j]) < 0)
+                            if (collectionViewComparer.Compare(list[i], list[j]) < 0)
                             {
-                                ProcessedCollection.Move(i, j);
+                                list.Move(i, j);
                             }
                         }
                         else
                         {
-                            if (collectionViewComparer.Compare(ProcessedCollection[i], ProcessedCollection[j]) < 0)
+                            if (collectionViewComparer.Compare(list[i], list[j]) < 0)
                             {
-                                ProcessedCollection.Move(j, i);
+                                list.Move(j, i);
                             }
-                            if (collectionViewComparer.Compare(ProcessedCollection[i], ProcessedCollection[j]) > 0)
+                            if (collectionViewComparer.Compare(list[i], list[j]) > 0)
                             {
-                                ProcessedCollection.Move(i, j);
+                                list.Move(i, j);
                             }
                         }
                     }
@@ -334,7 +399,7 @@ namespace leonardo.Controls
                 if (sortDescending != value)
                 {
                     sortDescending = value;
-                    SortCollection();
+                    SortCollection(processedCollection);
                 }
             }
         }

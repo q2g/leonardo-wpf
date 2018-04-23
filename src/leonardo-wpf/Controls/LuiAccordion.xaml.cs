@@ -26,53 +26,6 @@ namespace leonardo.Controls
         {
             InitializeComponent();
 
-
-
-            (Items as INotifyCollectionChanged).CollectionChanged +=
-                (s, e) =>
-                {
-                    try
-                    {
-                        if (e.Action == NotifyCollectionChangedAction.Add)
-                        {
-                            foreach (var item in e.NewItems)
-                            {
-                                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-                                {
-                                    itemContainer.Index = Items.Count;
-                                }
-                            }
-
-
-                        }
-
-                        if (e.Action == NotifyCollectionChangedAction.Remove)
-                        {
-                            foreach (var item in e.OldItems)
-                            {
-                                Dictionary<int, LuiAccordionItem> indexDict = GetIndexDictionary();
-                                if (indexDict.Count != 0)
-                                {
-                                    for (int i = 1; i <= Items.Count; i++)
-                                    {
-                                        if (!indexDict.ContainsKey(i))
-                                        {
-                                            foreach (var accitem in indexDict.Where(ele => ele.Key > i).Select(ele => ele.Value).ToList())
-                                            {
-                                                accitem.Index--;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.Error(ex);
-                    }
-                };
-
             DeleteCommand = new RelayCommand(
                 (o) =>
                 {
@@ -88,6 +41,86 @@ namespace leonardo.Controls
                         logger.Error(ex);
                     }
                 }, (o) => true);
+
+            DependencyPropertyDescriptor
+                       .FromProperty(LuiAccordion.ItemsSourceProperty, typeof(LuiAccordion))
+                       .AddValueChanged(this, ItemsSourceChanged);
+        }
+
+        private void ItemsSource_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Action == NotifyCollectionChangedAction.Add)
+                {
+                    foreach (var item in e.NewItems)
+                    {
+                        if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                        {
+                            itemContainer.Index = Items.Count;
+                        }
+                    }
+
+
+                }
+
+                if (e.Action == NotifyCollectionChangedAction.Remove)
+                {
+                    foreach (var item in e.OldItems)
+                    {
+                        Dictionary<int, LuiAccordionItem> indexDict = GetIndexDictionary();
+                        if (indexDict.Count != 0)
+                        {
+                            for (int i = 1; i <= Items.Count; i++)
+                            {
+                                if (!indexDict.ContainsKey(i))
+                                {
+                                    foreach (var accitem in indexDict.Where(ele => ele.Key > i).Select(ele => ele.Value).ToList())
+                                    {
+                                        accitem.Index--;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (e.Action == NotifyCollectionChangedAction.Reset)
+                {
+                    int counter = 1;
+                    foreach (var item in ItemsSource)
+                    {
+                        if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                        {
+                            itemContainer.Index = counter++;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+
+        private INotifyCollectionChanged lastItemssource = null;
+        private void ItemsSourceChanged(object sender, EventArgs e)
+        {
+            if (lastItemssource is INotifyCollectionChanged old_collectionchanged)
+            {
+                old_collectionchanged.CollectionChanged -= ItemsSource_CollectionChanged;
+            }
+
+            if (ItemsSource is INotifyCollectionChanged new_collectionchanged)
+            {
+                new_collectionchanged.CollectionChanged += ItemsSource_CollectionChanged;
+                lastItemssource = new_collectionchanged;
+            }
+
+
+
+
         }
 
         private void Delete(object toDelete)
