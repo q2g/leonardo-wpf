@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leonardo-wpf", "leonardo-wpf.csproj", "{2EE2AE07-61C6-43DC-805D-662AD526A430}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leonardo-wpf", "..\..\src\leonardo-wpf.csproj", "{2EE2AE07-61C6-43DC-805D-662AD526A430}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leonardowpf-Demo", "..\leonardowpf-Demo\leonardowpf-Demo.csproj", "{7E76C5D9-A686-4C4E-8C9B-6A28C42E6340}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leonardowpf-Demo", "leonardowpf-Demo.csproj", "{7E76C5D9-A686-4C4E-8C9B-6A28C42E6340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

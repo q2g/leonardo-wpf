@@ -94,6 +94,12 @@
     <Compile Include="Controls\LuiMessageBox.xaml.cs">
       <DependentUpon>LuiMessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LuiAbortButton.xaml.cs">
+      <DependentUpon>LuiAbortButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LuiOKButton.xaml.cs">
+      <DependentUpon>LuiOKButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LuiRadioButton.xaml.cs">
       <DependentUpon>LuiRadioButton.xaml</DependentUpon>
     </Compile>
@@ -181,6 +187,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\LuiMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LuiAbortButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LuiOKButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
