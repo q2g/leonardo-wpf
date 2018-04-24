@@ -84,18 +84,6 @@ namespace leonardo.Controls
                         }
                     }
                 }
-
-                if (e.Action == NotifyCollectionChangedAction.Reset)
-                {
-                    int counter = 1;
-                    foreach (var item in ItemsSource)
-                    {
-                        if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-                        {
-                            itemContainer.Index = counter++;
-                        }
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -118,8 +106,14 @@ namespace leonardo.Controls
                 lastItemssource = new_collectionchanged;
             }
 
-
-
+            int counter = 1;
+            foreach (var item in ItemsSource)
+            {
+                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                {
+                    itemContainer.Index = counter++;
+                }
+            }
 
         }
 

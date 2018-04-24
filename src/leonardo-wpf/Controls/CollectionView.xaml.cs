@@ -134,13 +134,13 @@ namespace leonardo.Controls
                 {
                     if (itemsSource is INotifyCollectionChanged notifyCollection_old)
                     {
-                        notifyCollection_old.CollectionChanged -= NotifyCollection_CollectionChanged;
+                        notifyCollection_old.CollectionChanged -= ItemsSource_CollectionChanged;
                     }
                     itemsSource = value;
 
                     if (value is INotifyCollectionChanged notifyCollection_new)
                     {
-                        notifyCollection_new.CollectionChanged += NotifyCollection_CollectionChanged;
+                        notifyCollection_new.CollectionChanged += ItemsSource_CollectionChanged;
                     }
 
                     RefreshProcessedCollection();
@@ -150,7 +150,7 @@ namespace leonardo.Controls
             }
         }
 
-        private void NotifyCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void ItemsSource_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             try
             {
