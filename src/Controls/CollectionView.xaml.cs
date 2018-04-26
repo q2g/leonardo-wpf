@@ -291,7 +291,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty CollectionViewFilterTextProperty = DependencyProperty.Register(
-         "CollectionViewFilterText", typeof(ICollectionViewFilter), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCollectionViewFilterChanged)));
+         "CollectionViewFilter", typeof(ICollectionViewFilter), typeof(CollectionView), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCollectionViewFilterChanged)));
         private static void OnCollectionViewFilterChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try

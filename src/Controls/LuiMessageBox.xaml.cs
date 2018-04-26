@@ -41,7 +41,7 @@ namespace leonardo.Controls
                     WindowStyle = WindowStyle.None,
                     AllowsTransparency = true,
                     Background = new SolidColorBrush(Colors.Transparent),
-                    Owner = Application.Current.MainWindow,
+                    Owner = null,//Application.Current.MainWindow,
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     MessageText = text
                 };
