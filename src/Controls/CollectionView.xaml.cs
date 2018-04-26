@@ -243,6 +243,10 @@ namespace leonardo.Controls
 
         private void RefreshProcessedCollection()
         {
+            if (itemsSource == null)
+            {
+                return;
+            }
             var newList = new ObservableCollection<object>();
 
             foreach (var item in itemsSource)
