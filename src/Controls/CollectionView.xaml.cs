@@ -143,7 +143,7 @@ namespace leonardo.Controls
                         notifyCollection_new.CollectionChanged += ItemsSource_CollectionChanged;
                     }
 
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
 
 
                 }
@@ -156,15 +156,15 @@ namespace leonardo.Controls
             {
                 if (e.Action == NotifyCollectionChangedAction.Add)
                 {
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
                 }
                 if (e.Action == NotifyCollectionChangedAction.Remove)
                 {
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
                 }
                 if (e.Action == NotifyCollectionChangedAction.Reset)
                 {
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
                 }
             }
             catch (Exception ex)
@@ -210,7 +210,7 @@ namespace leonardo.Controls
                 if (filterText != value)
                 {
                     filterText = value;
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
                 }
             }
         }
@@ -241,32 +241,51 @@ namespace leonardo.Controls
             }
         }
 
-        private void RefreshProcessedCollection()
+        private async void RefreshProcessedCollectionAsync()
         {
             if (itemsSource == null)
             {
                 return;
             }
-            var newList = new ObservableCollection<object>();
-
-            foreach (var item in itemsSource)
+            ObservableCollection<object> newlist = new ObservableCollection<object>();
+            try
             {
-                if (collectionViewFilter != null)
-                {
-                    if (collectionViewFilter.Filter(item, (filterText + "")))
-                    {
-                        newList.Add(item);
-                    }
-                }
-                else
-                {
-                    newList.Add(item);
-                }
+
+                newlist = await Task.Run<ObservableCollection<object>>(() =>
+               {
+                   try
+                   {
+                       foreach (var item in itemsSource)
+                       {
+                           if (collectionViewFilter != null)
+                           {
+                               if (collectionViewFilter.Filter(item, (filterText + "")))
+                               {
+                                   newlist.Add(item);
+                               }
+                           }
+                           else
+                           {
+                               newlist.Add(item);
+                           }
+                       }
+                       SortCollection(newlist);
+                   }
+                   catch (Exception ex)
+                   {
+                       logger.Error(ex);
+
+                   }
+                   return newlist;
+               });
             }
-            SortCollection(newList);
-            ProcessedCollection = newList;
+            catch (Exception ex)
+            {
+                logger.Error(ex);
 
+            }
 
+            ProcessedCollection = newlist;
         }
         #endregion
 
@@ -280,7 +299,7 @@ namespace leonardo.Controls
                 if (collectionViewFilter != value)
                 {
                     collectionViewFilter = value;
-                    RefreshProcessedCollection();
+                    RefreshProcessedCollectionAsync();
                 }
             }
         }
@@ -351,11 +370,11 @@ namespace leonardo.Controls
             }
         }
 
-        private void SortCollection(ObservableCollection<object> list)
+        private object SortCollection(ObservableCollection<object> list)
         {
             if (collectionViewComparer == null)
             {
-                return;
+                return null;
             }
 
             //BubbleSort FTW!
@@ -390,6 +409,7 @@ namespace leonardo.Controls
                     }
                 }
             }
+            return new object();
         }
         #endregion
 
