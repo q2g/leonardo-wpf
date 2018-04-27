@@ -250,39 +250,36 @@ namespace leonardo.Controls
             ObservableCollection<object> newlist = new ObservableCollection<object>();
             try
             {
-
-                newlist = await Task.Run<ObservableCollection<object>>(() =>
-               {
-                   try
-                   {
-                       foreach (var item in itemsSource)
-                       {
-                           if (collectionViewFilter != null)
-                           {
-                               if (collectionViewFilter.Filter(item, (filterText + "")))
-                               {
-                                   newlist.Add(item);
-                               }
-                           }
-                           else
-                           {
-                               newlist.Add(item);
-                           }
-                       }
-                       SortCollection(newlist);
-                   }
-                   catch (Exception ex)
-                   {
-                       logger.Error(ex);
-
-                   }
-                   return newlist;
-               });
+                //  newlist = await Task.Run<ObservableCollection<object>>(() =>
+                //{
+                try
+                {
+                    foreach (var item in itemsSource)
+                    {
+                        if (collectionViewFilter != null)
+                        {
+                            if (collectionViewFilter.Filter(item, (filterText + "")))
+                            {
+                                newlist.Add(item);
+                            }
+                        }
+                        else
+                        {
+                            newlist.Add(item);
+                        }
+                    }
+                    SortCollection(newlist);
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+                //return newlist;
+                //});
             }
             catch (Exception ex)
             {
                 logger.Error(ex);
-
             }
 
             ProcessedCollection = newlist;
