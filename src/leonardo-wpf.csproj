@@ -1,50 +1,79 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2EE2AE07-61C6-43DC-805D-662AD526A430}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>net452</TargetFramework>
     <RootNamespace>leonardo</RootNamespace>
-    <AssemblyName>leonardo-wpf</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <Authors>Konrad Mattheis and Christof Holdschick</Authors>    
+    <Copyright>Copyright (c) 2018</Copyright>
+    <Company>q2g</Company>
+    <PackageId>leonardo-wpf</PackageId>
+    <Product>leonardo</Product>
+    <Version>$(GitVersion_NuGetVersion)</Version>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!--<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>-->
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
   <ItemGroup>
-    <Reference Include="GongSolutions.Wpf.DragDrop, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\gong-wpf-dragdrop.1.1.0\lib\net45\GongSolutions.Wpf.DragDrop.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
-    </Reference>
+     <!-- XAML elements -->
+    <Page Include="**\*.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
+
+    <!-- Resources -->
+    <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
+
+    <!-- Settings -->
+    <None Update="Properties\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.cs" />
+    <Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
+  </ItemGroup>
+  
+  <Target Name="WriteVersion" AfterTargets="GetVersion" Condition="'$(Configuration)' == 'Release'">
+    <WriteLinesToFile File="$(SolutionDir)\obj\version.txt" Lines="$(GitVersion_NuGetVersion)" Overwrite="true" />
+  </Target>
+  <Target Name="SetPackageVersionFromFile" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="$(SolutionDir)\obj\version.txt">
+      <Output TaskParameter="Lines" PropertyName="PackageVersion" />
+    </ReadLinesFromFile>
+  </Target>
+
+  <Target Name="PublishToNugetWithAPIKey" AfterTargets="GenerateNuspec">
+    <ReadLinesFromFile File="$(SolutionDir)\..\..\nugetapikey.txt">
+      <Output TaskParameter="Lines" PropertyName="NugetAPIKey" />
+    </ReadLinesFromFile>
+    <Exec WorkingDirectory="$(BaseDir)" Command="dotnet nuget push $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg -k $(NugetAPIKey) -s https://api.nuget.org/v3/index.json" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="4.0.0-beta0008">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="gong-wpf-dragdrop" Version="1.1.0" />
+    <PackageReference Include="NLog" Version="4.5.3" />
+    <PackageReference Include="qlik-resources" Version="4.86.9"></PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero2" />
-    <Reference Include="qlik-resources, Version=4.86.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\qlik-resources.4.86.9\lib\net452\qlik-resources.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -61,240 +90,4 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AttachedProperties\ThemeProperties.cs" />
-    <Compile Include="Controls\CollectionView.xaml.cs">
-      <DependentUpon>CollectionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiAccordion.xaml.cs">
-      <DependentUpon>LuiAccordion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiAccordionItem.xaml.cs">
-      <DependentUpon>LuiAccordionItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiButton.xaml.cs">
-      <DependentUpon>LuiButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiCheckbox.xaml.cs">
-      <DependentUpon>LuiCheckbox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiCombobox.xaml.cs">
-      <DependentUpon>LuiCombobox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiButtonGroup.xaml.cs">
-      <DependentUpon>LuiButtonGroup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiDialog.xaml.cs">
-      <DependentUpon>LuiDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiIcon.xaml.cs">
-      <DependentUpon>LuiIcon.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiInput.xaml.cs">
-      <DependentUpon>LuiInput.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiMessageBox.xaml.cs">
-      <DependentUpon>LuiMessageBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiAbortButton.xaml.cs">
-      <DependentUpon>LuiAbortButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiOKButton.xaml.cs">
-      <DependentUpon>LuiOKButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiRadioButton.xaml.cs">
-      <DependentUpon>LuiRadioButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiInputGroup.xaml.cs">
-      <DependentUpon>LuiInputGroup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiSearch.xaml.cs">
-      <DependentUpon>LuiSearch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiSeparator.xaml.cs">
-      <DependentUpon>LuiSeparator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiSwitch.xaml.cs">
-      <DependentUpon>LuiSwitch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiTabItem.xaml.cs">
-      <DependentUpon>LuiTabItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\LuiToggleButton.xaml.cs">
-      <DependentUpon>LuiToggleButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\BindingDiagConverter.cs" />
-    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\BooleanToObjectConverter.cs" />
-    <Compile Include="Converter\CountToVisibilityConverter.cs" />
-    <Compile Include="Converter\Null2BooleanConverter.cs" />
-    <Compile Include="Converter\NullOrEmptyToVisibilityConverter.cs" />
-    <Compile Include="Converter\StringCompareConverter.cs" />
-    <Compile Include="Converter\ToStringAndAddStarConverter.cs" />
-    <Compile Include="Converter\TypeToStyleSelector.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\DimensionMeasure.cs" />
-    <Compile Include="Resources\ICollectionViewFilter.cs" />
-    <Compile Include="Resources\IHasCornerRadius.cs" />
-    <Compile Include="Resources\IIndexProvider.cs" />
-    <Compile Include="Resources\LUIButtonSizeEnum.cs" />
-    <Compile Include="Resources\LUIFontSizeEnum.cs" />
-    <Compile Include="Resources\LUIiconsEnum.cs" />
-    <Compile Include="Resources\LUIInputSizeEnum.cs" />
-    <Compile Include="Resources\LUIPalette.cs" />
-    <Compile Include="Resources\LUIButtonSchemeEnum.cs" />
-    <Compile Include="Resources\RelayCommand.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Controls\CollectionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiAccordion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiAccordionItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiCheckbox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiCombobox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiButtonGroup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiIcon.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiInput.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiMessageBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiAbortButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiOKButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiRadioButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiInputGroup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiSearch.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\LuiSeparator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiSwitch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiTabItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\LuiToggleButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\palette.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_AccordionStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_PresentationAccordionItemStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_ColumnOrderAccordionItemStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_MainAccordionItemStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_TextboxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_ToggleButtonStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_SeparatorStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUIStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_TabItemStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_ButtonStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_SwitchStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_ComboboxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_RadiobuttonStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_CheckboxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\LUI_SenseScrollviewerStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
