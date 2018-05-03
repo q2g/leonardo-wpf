@@ -7,11 +7,13 @@
     <ProjectGuid>{2EE2AE07-61C6-43DC-805D-662AD526A430}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>leonardo_wpf</RootNamespace>
+    <RootNamespace>leonardo</RootNamespace>
     <AssemblyName>leonardo-wpf</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,9 +143,6 @@
     <Compile Include="Resources\LUIPalette.cs" />
     <Compile Include="Resources\LUIButtonSchemeEnum.cs" />
     <Compile Include="Resources\RelayCommand.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="lui-icons.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\CollectionView.xaml">
@@ -290,14 +289,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="qlikview-sans.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="qlikview-sans-bold-italic.ttf" />
-    <Resource Include="qlikview-sans-bold.ttf" />
-    <Resource Include="qlikview-sans-italic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
