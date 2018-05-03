@@ -60,8 +60,6 @@ namespace leonardo.Controls
                             itemContainer.Index = Items.Count;
                         }
                     }
-
-
                 }
 
                 if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -105,17 +103,14 @@ namespace leonardo.Controls
                 new_collectionchanged.CollectionChanged += ItemsSource_CollectionChanged;
                 lastItemssource = new_collectionchanged;
             }
-
             int counter = 1;
             foreach (var item in ItemsSource)
             {
-                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
-                {
-                    itemContainer.Index = counter++;
-                }
+                SetItemIndex(item, counter++);
             }
-
         }
+
+
 
         private void Delete(object toDelete)
         {
@@ -354,6 +349,16 @@ namespace leonardo.Controls
          "Sorter", typeof(IComparer), typeof(LuiAccordion), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region IndexProvider DP
+        public IIndexProvider IndexProvider
+        {
+            get { return (IIndexProvider)this.GetValue(IndexProviderProperty); }
+            set { this.SetValue(IndexProviderProperty, value); }
+        }
+
+        public static readonly DependencyProperty IndexProviderProperty = DependencyProperty.Register(
+         "IndexProvider", typeof(IIndexProvider), typeof(LuiAccordion), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
 
         #region SortPropertyName DP
         private string sortPropertyName = "";
@@ -399,6 +404,7 @@ namespace leonardo.Controls
 
         #region IsDragDropChangesUnderlyingCollection DP
         private bool isDragDropChangesUnderlyingCollection = true;
+
         internal bool IsDragDropChangesUnderlyingCollection_Internal
         {
             get { return isDragDropChangesUnderlyingCollection; }
@@ -564,6 +570,36 @@ namespace leonardo.Controls
                 return index >= bound1 && index <= bound2;
             }
             return false;
+        }
+
+        private void SetItemIndex(object item, int index)
+        {
+            if (IndexProvider != null)
+            {
+                IndexProvider.SetIndex(item, index);
+            }
+            else
+            {
+                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                {
+                    itemContainer.Index = index;
+                }
+            }
+        }
+        private int GetItemIndex(object item)
+        {
+            if (IndexProvider != null)
+            {
+                return IndexProvider.GetIndex(item);
+            }
+            else
+            {
+                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                {
+                    return itemContainer.Index;
+                }
+            }
+            return -2;
         }
         #endregion
 

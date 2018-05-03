@@ -136,6 +136,7 @@
     <Compile Include="Resources\DimensionMeasure.cs" />
     <Compile Include="Resources\ICollectionViewFilter.cs" />
     <Compile Include="Resources\IHasCornerRadius.cs" />
+    <Compile Include="Resources\IIndexProvider.cs" />
     <Compile Include="Resources\LUIButtonSizeEnum.cs" />
     <Compile Include="Resources\LUIFontSizeEnum.cs" />
     <Compile Include="Resources\LUIiconsEnum.cs" />
