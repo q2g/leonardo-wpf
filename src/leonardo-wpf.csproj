@@ -38,6 +38,9 @@
 
     <!-- Resources -->
     <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <Compile Update="Controls\LuiIcon.xaml.cs">
+      <DependentUpon>LuiIcon.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
 
     <!-- Settings -->

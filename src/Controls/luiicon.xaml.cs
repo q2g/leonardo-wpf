@@ -32,7 +32,6 @@ namespace leonardo.Controls
 
         }
 
-
         #region Icon - DP
         public LUIiconsEnum Icon
         {

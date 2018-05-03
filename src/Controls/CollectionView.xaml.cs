@@ -1,27 +1,29 @@
-﻿using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using leonardo.Resources;
+    using NLog;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Navigation;
+    using System.Windows.Shapes;
+    #endregion
+
     /// <summary>
     /// Interaction logic for CollectionView.xaml
     /// </summary>
@@ -48,23 +50,20 @@ namespace leonardo.Controls
         {
             try
             {
-                if (e.Action == NotifyCollectionChangedAction.Add)
+                switch(e.Action)
                 {
-                    foreach (var item in e.NewItems)
-                    {
-                        itemsSource.Add(item);
-                    }
-                }
-                if (e.Action == NotifyCollectionChangedAction.Remove)
-                {
-                    foreach (var item in e.OldItems)
-                    {
-                        itemsSource.Remove(item);
-                    }
-                }
-                if (e.Action == NotifyCollectionChangedAction.Reset)
-                {
-
+                    case NotifyCollectionChangedAction.Add:
+                        foreach (var item in e.NewItems)
+                        {
+                            itemsSource.Add(item);
+                        }
+                        break;
+                    case NotifyCollectionChangedAction.Remove:
+                        foreach (var item in e.OldItems)
+                        {
+                            itemsSource.Remove(item);
+                        }
+                        break;
                 }
             }
             catch (Exception ex)

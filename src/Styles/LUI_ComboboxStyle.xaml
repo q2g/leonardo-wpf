@@ -11,7 +11,7 @@
     </ResourceDictionary.MergedDictionaries>
     <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
     <FontFamily x:Key="QlikViewSans">
-        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+        pack://application:,,,/qlik-resources;component/#QlikView Sans
     </FontFamily>
 
     <Style x:Key="FocusVisual">

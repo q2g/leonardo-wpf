@@ -23,11 +23,9 @@
         <ResourceDictionary Source="../Styles/LUI_SenseScrollviewerStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
-        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+        pack://application:,,,/qlik-resources;component/#QlikView Sans
     </FontFamily>
     <FontFamily x:Key="QlikIcons">
-        pack://application:,,,/leonardo-wpf;component/#LUIicons
+        pack://application:,,,/qlik-resources;component/#LUIicons
     </FontFamily>
-
-
 </ResourceDictionary>

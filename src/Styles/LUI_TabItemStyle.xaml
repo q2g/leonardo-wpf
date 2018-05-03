@@ -6,7 +6,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <FontFamily x:Key="QlikViewSans">
-        pack://application:,,,/leonardo-wpf;component/#QlikView Sans
+        pack://application:,,,/qlik-resources;component/#QlikView Sans
     </FontFamily>
 
     <Style

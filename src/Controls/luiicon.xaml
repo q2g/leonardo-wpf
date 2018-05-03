@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <FontFamily x:Key="QlikIcons">
-                pack://application:,,,/leonardo-wpf;component/#LUIicons
+                pack://application:,,,/qlik-resources;component/#LUIicons
             </FontFamily>
         </ResourceDictionary>
     </UserControl.Resources>
