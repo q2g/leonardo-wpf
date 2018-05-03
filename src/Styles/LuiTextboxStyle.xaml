@@ -6,7 +6,7 @@
     xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
@@ -22,7 +22,7 @@
         x:Key="TextBox.Focus.Border"
         Color="#FF569DE5" />
     <Style
-        x:Key="LUI_TextboxStyle"
+        x:Key="LuiTextboxStyle"
         TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />

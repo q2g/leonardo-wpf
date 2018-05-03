@@ -13,12 +13,12 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LUIStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/leonardo-wpf;component/Styles/LuiStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <controls:LuiAccordion ItemContainerStyle="{StaticResource LUI_PresentationAccordionItemStyle}">
+        <controls:LuiAccordion ItemContainerStyle="{StaticResource LuiPresentationAccordionItemStyle}">
             <controls:LuiAccordionItem Header="Item1">
                 <local:TestControl2 />
             </controls:LuiAccordionItem>

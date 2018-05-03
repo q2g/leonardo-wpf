@@ -70,12 +70,12 @@ namespace leonardo.AttachedProperties
         #endregion
 
         #region ButtonScheme AP
-        public static LUIButtonSchemeEnum GetButtonScheme(DependencyObject obj)
+        public static LuiButtonSchemeEnum GetButtonScheme(DependencyObject obj)
         {
-            return (LUIButtonSchemeEnum)obj.GetValue(ButtonSchemeProperty);
+            return (LuiButtonSchemeEnum)obj.GetValue(ButtonSchemeProperty);
         }
 
-        public static void SetButtonScheme(DependencyObject obj, LUIButtonSchemeEnum value)
+        public static void SetButtonScheme(DependencyObject obj, LuiButtonSchemeEnum value)
         {
             obj.SetValue(ButtonSchemeProperty, value);
         }
@@ -83,18 +83,18 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty ButtonSchemeProperty =
             DependencyProperty.RegisterAttached(
                 "ButtonScheme",
-                typeof(LUIButtonSchemeEnum),
+                typeof(LuiButtonSchemeEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIButtonSchemeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiButtonSchemeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region IconLeft AP
-        public static LUIiconsEnum GetIconLeft(DependencyObject obj)
+        public static LuiIconsEnum GetIconLeft(DependencyObject obj)
         {
-            return (LUIiconsEnum)obj.GetValue(IconLeftProperty);
+            return (LuiIconsEnum)obj.GetValue(IconLeftProperty);
         }
 
-        public static void SetIconLeft(DependencyObject obj, LUIiconsEnum value)
+        public static void SetIconLeft(DependencyObject obj, LuiIconsEnum value)
         {
             obj.SetValue(IconLeftProperty, value);
         }
@@ -102,18 +102,18 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty IconLeftProperty =
             DependencyProperty.RegisterAttached(
                 "IconLeft",
-                typeof(LUIiconsEnum),
+                typeof(LuiIconsEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region IconRight AP
-        public static LUIiconsEnum GetIconRight(DependencyObject obj)
+        public static LuiIconsEnum GetIconRight(DependencyObject obj)
         {
-            return (LUIiconsEnum)obj.GetValue(IconRightProperty);
+            return (LuiIconsEnum)obj.GetValue(IconRightProperty);
         }
 
-        public static void SetIconRight(DependencyObject obj, LUIiconsEnum value)
+        public static void SetIconRight(DependencyObject obj, LuiIconsEnum value)
         {
             obj.SetValue(IconRightProperty, value);
         }
@@ -121,18 +121,18 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty IconRightProperty =
             DependencyProperty.RegisterAttached(
                 "IconRight",
-                typeof(LUIiconsEnum),
+                typeof(LuiIconsEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region ButtonSize AP
-        public static LUIButtonSizeEnum GetButtonSize(DependencyObject obj)
+        public static LuiButtonSizeEnum GetButtonSize(DependencyObject obj)
         {
-            return (LUIButtonSizeEnum)obj.GetValue(ButtonSizeProperty);
+            return (LuiButtonSizeEnum)obj.GetValue(ButtonSizeProperty);
         }
 
-        public static void SetButtonSize(DependencyObject obj, LUIButtonSizeEnum value)
+        public static void SetButtonSize(DependencyObject obj, LuiButtonSizeEnum value)
         {
             obj.SetValue(ButtonSizeProperty, value);
         }
@@ -140,9 +140,9 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty ButtonSizeProperty =
             DependencyProperty.RegisterAttached(
                 "ButtonSize",
-                typeof(LUIButtonSizeEnum),
+                typeof(LuiButtonSizeEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIButtonSizeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiButtonSizeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region CornerRadius AP
@@ -184,12 +184,12 @@ namespace leonardo.AttachedProperties
         #endregion
 
         #region LuiTextboxSize AP
-        public static LUIInputSizeEnum GetLuiTextboxSize(DependencyObject obj)
+        public static LuiInputSizeEnum GetLuiTextboxSize(DependencyObject obj)
         {
-            return (LUIInputSizeEnum)obj.GetValue(LuiTextboxSizeProperty);
+            return (LuiInputSizeEnum)obj.GetValue(LuiTextboxSizeProperty);
         }
 
-        public static void SetLuiTextboxSize(DependencyObject obj, LUIInputSizeEnum value)
+        public static void SetLuiTextboxSize(DependencyObject obj, LuiInputSizeEnum value)
         {
             obj.SetValue(LuiTextboxSizeProperty, value);
         }
@@ -197,18 +197,18 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty LuiTextboxSizeProperty =
             DependencyProperty.RegisterAttached(
                 "LuiTextboxSize",
-                typeof(LUIInputSizeEnum),
+                typeof(LuiInputSizeEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIInputSizeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiInputSizeEnum.Default, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region LuiFontSize AP
-        public static LUIFontSizeEnum GetLuiFontSize(DependencyObject obj)
+        public static LuiFontSizeEnum GetLuiFontSize(DependencyObject obj)
         {
-            return (LUIFontSizeEnum)obj.GetValue(LuiFontSizeProperty);
+            return (LuiFontSizeEnum)obj.GetValue(LuiFontSizeProperty);
         }
 
-        public static void SetLuiFontSize(DependencyObject obj, LUIFontSizeEnum value)
+        public static void SetLuiFontSize(DependencyObject obj, LuiFontSizeEnum value)
         {
             obj.SetValue(LuiFontSizeProperty, value);
         }
@@ -216,9 +216,9 @@ namespace leonardo.AttachedProperties
         public static readonly DependencyProperty LuiFontSizeProperty =
             DependencyProperty.RegisterAttached(
                 "LuiFontSize",
-                typeof(LUIFontSizeEnum),
+                typeof(LuiFontSizeEnum),
                 typeof(ThemeProperties),
-                new FrameworkPropertyMetadata(LUIFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.Inherits));
+                new FrameworkPropertyMetadata(LuiFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region LabelTextAttached AP Only used in Combobox, because can't get the visibility-trigger for the Label working right

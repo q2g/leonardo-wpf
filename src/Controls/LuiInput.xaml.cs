@@ -1,30 +1,22 @@
-﻿using leonardo.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using System.Windows;
+    using leonardo.Resources;
+    using System.Windows.Controls; 
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiInput.xaml
     /// </summary>
     public partial class LuiInput : TextBox
     {
+        #region CTOR
         public LuiInput()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
         #region LabelText - DP       
         public string LabelText
@@ -49,14 +41,14 @@ namespace leonardo.Controls
         #endregion
 
         #region LUIInputSize - DP       
-        public LUIInputSizeEnum LUIInputSize
+        public LuiInputSizeEnum LUIInputSize
         {
-            get { return (LUIInputSizeEnum)this.GetValue(LUIInputSizeProperty); }
+            get { return (LuiInputSizeEnum)this.GetValue(LUIInputSizeProperty); }
             set { this.SetValue(LUIInputSizeProperty, value); }
         }
 
         public static readonly DependencyProperty LUIInputSizeProperty = DependencyProperty.Register(
-         "LUIInputSize", typeof(LUIInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LUIInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));       
+         "LUIInputSize", typeof(LuiInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LuiInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));       
         #endregion
 
     }

@@ -1,8 +1,10 @@
-﻿using System;
-using System.Windows.Input;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
+    #region Usings
+    using System;
+    using System.Windows.Input; 
+    #endregion
+
     /// <summary>
     /// The simple non-generic RelayCommand.
     /// </summary>

@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
-    public enum LUIButtonSizeEnum
+    public enum LuiButtonSizeEnum
     {
         Default,
         Large,
         ExtraLarge
     }
-    public static class LUIButtonSizeEnumExtensions
+    public static class LuiButtonSizeEnumExtensions
     {
-        public static double GetButtonSize(this LUIButtonSizeEnum i_iconsize)
+        public static double GetButtonSize(this LuiButtonSizeEnum i_iconsize)
         {
             double iconsize = 28;
             switch (i_iconsize)
             {
-                case LUIButtonSizeEnum.Default:
+                case LuiButtonSizeEnum.Default:
                     iconsize = 28;
                     break;
-                case LUIButtonSizeEnum.Large:
+                case LuiButtonSizeEnum.Large:
                     iconsize = 38;
                     break;
-                case LUIButtonSizeEnum.ExtraLarge:
+                case LuiButtonSizeEnum.ExtraLarge:
                     iconsize = 54;
                     break;
                 default:

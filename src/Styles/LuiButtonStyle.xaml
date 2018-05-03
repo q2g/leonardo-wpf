@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:leonardo.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
@@ -53,24 +53,24 @@
         x:Key="Button.Disabled.Foreground"
         Color="#FF838383" />
 
-    <LinearGradientBrush x:Key="LUI_Button.Gradient" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="LuiButton.Gradient" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale100}" />
         <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale90}" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LUI_Button.Gradient_Darker" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="LuiButton.Gradient_Darker" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale95}" />
         <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale85}" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LUI_Button.Gradient.Dark" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="LuiButton.Gradient.Dark" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale45}" />
         <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale35}" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LUI_Button.Gradient.Dark_lighter" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="LuiButton.Gradient.Dark_lighter" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale55}" />
         <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale45}" />
     </LinearGradientBrush>
     <Style
-        x:Key="LUI_ButtonStyle"
+        x:Key="LuiButtonStyle"
         TargetType="{x:Type ButtonBase}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
@@ -195,7 +195,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI_Button.Gradient}" />
+                            <Setter Property="Background" Value="{StaticResource LuiButton.Gradient}" />
                             <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
                         </MultiTrigger>
@@ -205,7 +205,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI_Button.Gradient_Darker}" />
+                            <Setter Property="Background" Value="{StaticResource LuiButton.Gradient_Darker}" />
                             <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
                         </MultiTrigger>
@@ -216,7 +216,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI_Button.Gradient.Dark}" />
+                            <Setter Property="Background" Value="{StaticResource LuiButton.Gradient.Dark}" />
                             <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                         </MultiTrigger>
@@ -226,7 +226,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI_Button.Gradient.Dark_lighter}" />
+                            <Setter Property="Background" Value="{StaticResource LuiButton.Gradient.Dark_lighter}" />
                             <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
                             <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
                         </MultiTrigger>

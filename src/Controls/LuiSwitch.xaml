@@ -10,13 +10,13 @@
     <CheckBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_SwitchStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiSwitchStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </CheckBox.Resources>
     <CheckBox.Style>
         <Style
-            BasedOn="{StaticResource CheckBoxSliderStyle}"
+            BasedOn="{StaticResource LuiSwitchStyle}"
             TargetType="CheckBox" />
     </CheckBox.Style>
 

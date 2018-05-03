@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
+    #region Usings
+    using System.Windows; 
+    #endregion
+
     public interface  IHasCornerRadius
     {
         CornerRadius CornerRadius { get; set; }

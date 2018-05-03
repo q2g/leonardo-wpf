@@ -1,25 +1,16 @@
-﻿using leonardo.AttachedProperties;
-using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using System.Collections;
+    using System.Windows.Markup;
+    using System.Windows.Controls;
+    using System.Collections.Generic;
+    using leonardo.AttachedProperties; 
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiButtonGroup.xaml
     /// </summary>
@@ -28,10 +19,12 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        #region CTOR
         public LuiButtonGroup()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
         public static readonly DependencyProperty ItemsSourceProperty =
        ItemsControl.ItemsSourceProperty.AddOwner(typeof(LuiButtonGroup));

@@ -1,9 +1,11 @@
 ﻿namespace leonardo.Converter
 {
+    #region Usings
     using System;
     using System.Globalization;
     using System.Windows.Data;
-    using System.Windows;
+    using System.Windows; 
+    #endregion
 
     public class BooleanToVisibilityConverter : IValueConverter
     {

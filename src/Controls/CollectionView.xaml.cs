@@ -39,11 +39,12 @@
         }
         #endregion
 
+        #region CTOR
         public CollectionView()
         {
             InitializeComponent();
-
-            SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
+            
+            #endregion SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
         }
 
         private void ProcessedCollectionChanged_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

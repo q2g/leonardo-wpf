@@ -15,9 +15,9 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Resources/palette.xaml" />
-                <ResourceDictionary Source="../Styles/LUI_ButtonStyle.xaml" />
-                <ResourceDictionary Source="../Styles/LUI_TextboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
+                <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiTextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
 
@@ -62,7 +62,7 @@
                 Foreground="{Binding ElementName=control, Path=LeftCommandForeground}">
                 <local:LuiButton.Style>
                     <Style
-                        BasedOn="{StaticResource LUI_ButtonStyle}"
+                        BasedOn="{StaticResource LuiButtonStyle}"
                         TargetType="local:LuiButton">
                         <Style.Triggers>
                             <DataTrigger
@@ -101,7 +101,7 @@
                 <!--  Command="{Binding RightCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"  -->
                 <local:LuiButton.Style>
                     <Style
-                        BasedOn="{StaticResource LUI_ButtonStyle}"
+                        BasedOn="{StaticResource LuiButtonStyle}"
                         TargetType="local:LuiButton">
                         <Style.Triggers>
                             <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">

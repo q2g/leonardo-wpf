@@ -11,13 +11,13 @@
     <ComboBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_ComboboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiComboboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ComboBox.Resources>
     <ComboBox.Style>
         <Style
-            BasedOn="{StaticResource LUI_ComboBoxStyle}"
+            BasedOn="{StaticResource LuiComboboxStyle}"
             TargetType="ComboBox" />
     </ComboBox.Style>
 </ComboBox>

@@ -10,13 +10,13 @@
     <RadioButton.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_RadioButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiRadiobuttonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </RadioButton.Resources>
     <RadioButton.Style>
         <Style
-            BasedOn="{StaticResource Lui_RadioButtonStyle}"
+            BasedOn="{StaticResource LuiRadiobuttonStyle}"
             TargetType="RadioButton" />
     </RadioButton.Style>
 </RadioButton>

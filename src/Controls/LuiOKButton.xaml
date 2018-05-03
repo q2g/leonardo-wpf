@@ -18,13 +18,13 @@
     <Button.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_ButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Button.Resources>
     <Button.Style>
         <Style
-            BasedOn="{StaticResource LUI_ButtonStyle}"
+            BasedOn="{StaticResource LuiButtonStyle}"
             TargetType="Button" />
     </Button.Style>
 </Button>

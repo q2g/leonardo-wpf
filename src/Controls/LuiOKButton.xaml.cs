@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using System.Windows.Controls; 
+    #endregion
+
     /// <summary>
     /// Interaction logic for LuiOK.xaml
     /// </summary>
     public partial class LuiOKButton : Button
     {
+        #region CTOR
         public LuiOKButton()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
     }
 }

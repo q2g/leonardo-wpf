@@ -19,7 +19,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_ButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
         </ResourceDictionary>

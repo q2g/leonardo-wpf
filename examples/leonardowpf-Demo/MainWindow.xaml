@@ -24,7 +24,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <TabControl
-        ItemContainerStyle="{StaticResource LUITabItemStyle}"
+        ItemContainerStyle="{StaticResource LuiTabItemStyle}"
         TabStripPlacement="Left">
         <TabItem Header="Icons">
             <StackPanel Orientation="Horizontal">
@@ -61,7 +61,7 @@
         </TabItem>
         <TabItem Header="Button">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
@@ -155,7 +155,7 @@
                     </TabItem>
                 </TabControl>
 
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
@@ -233,7 +233,7 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel Orientation="Horizontal">
                             <controls:LuiButton
@@ -320,7 +320,7 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiButton
@@ -396,7 +396,7 @@
         </TabItem>
         <TabItem Header="ButtonGroup">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiButtonGroup Margin="3,15,3,15">
@@ -423,7 +423,7 @@
                     </TabItem>
                 </TabControl>
 
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiButtonGroup
@@ -465,7 +465,7 @@
         </TabItem>
         <TabItem Header="Input">
             <StackPanel>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
 
                         <controls:LuiInput
@@ -481,7 +481,7 @@
                         </StackPanel>
                     </TabItem>
                 </TabControl>
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <controls:LuiInput
                             Margin="3,15,3,15"
@@ -505,7 +505,7 @@
                     LUIInputSize="Large"
                     LabelText="Size Large" />
 
-                <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+                <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                     <TabItem Header="Default">
                         <StackPanel>
                             <controls:LuiInputGroup
@@ -550,7 +550,7 @@
             </StackPanel>
         </TabItem>
         <TabItem Header="Search">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+            <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiSearch
@@ -573,7 +573,7 @@
             </TabControl>
         </TabItem>
         <TabItem Header="CheckBox">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+            <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiCheckbox
@@ -625,7 +625,7 @@
         </TabItem>
 
         <TabItem Header="Radiobutton">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+            <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiRadioButton Content="First Button" />
@@ -670,7 +670,7 @@
         </TabItem>
 
         <TabItem Header="Combobox">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+            <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiCombobox
@@ -716,7 +716,7 @@
         </TabItem>
 
         <TabItem Header="Switch">
-            <TabControl ItemContainerStyle="{StaticResource LUITabItemStyle}">
+            <TabControl ItemContainerStyle="{StaticResource LuiTabItemStyle}">
                 <TabItem Header="Default">
                     <StackPanel>
                         <controls:LuiSwitch Margin="5" />
@@ -813,7 +813,7 @@
                     <Style x:Key="{x:Type local:TestControl}" />
                     <Style
                         x:Key="aa"
-                        BasedOn="{StaticResource LUI_ColumnOrderAccordionItemStyle}"
+                        BasedOn="{StaticResource LuiColumnOrderAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding HeaderText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Text}" />
@@ -821,7 +821,7 @@
 
                     <Style
                         x:Key="bb"
-                        BasedOn="{StaticResource LUI_ColumnOrderAccordionItemStyle}"
+                        BasedOn="{StaticResource LuiColumnOrderAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding LabelText}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding}" />
@@ -829,7 +829,7 @@
 
                     <Style
                         x:Key="cc"
-                        BasedOn="{StaticResource LUI_ColumnOrderAccordionItemStyle}"
+                        BasedOn="{StaticResource LuiColumnOrderAccordionItemStyle}"
                         TargetType="controls:LuiAccordionItem">
                         <Setter Property="controls:LuiAccordionItem.Header" Value="{Binding Header}" />
                         <Setter Property="controls:LuiAccordionItem.Content" Value="{Binding Content}" />

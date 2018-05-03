@@ -7,7 +7,7 @@
     xmlns:converter="clr-namespace:leonardo.Converter">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
     <FontFamily x:Key="QlikViewSans">
@@ -572,7 +572,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style
-        x:Key="LUI_ComboBoxStyle"
+        x:Key="LuiComboboxStyle"
         TargetType="{x:Type ComboBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource ComboBox.Static.Background}" />

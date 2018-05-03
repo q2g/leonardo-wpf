@@ -10,13 +10,13 @@
     <TextBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/LUI_TextboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiTextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </TextBox.Resources>
     <TextBox.Style>
         <Style
-            BasedOn="{StaticResource LUI_TextboxStyle}"
+            BasedOn="{StaticResource LuiTextboxStyle}"
             TargetType="TextBox" />
     </TextBox.Style>
 </TextBox>

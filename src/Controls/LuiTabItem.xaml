@@ -10,9 +10,9 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/LUI_TabItemStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiTabItemStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <TabItem Style="{StaticResource LUITabItemStyle}" />
+    <TabItem Style="{StaticResource LuiTabItemStyle}" />
 </UserControl>

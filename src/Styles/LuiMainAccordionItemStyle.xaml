@@ -6,7 +6,7 @@
     xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
@@ -157,7 +157,7 @@
     </DataTemplate>
 
     <Style
-        x:Key="LUI_MainAccordionItemStyle"
+        x:Key="LuiMainAccordionItemStyle"
         TargetType="controls:LuiAccordionItem">
         <Setter Property="Template">
             <Setter.Value>

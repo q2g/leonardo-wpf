@@ -186,7 +186,7 @@
     </Style>
 
     <Style
-        x:Key="LUI_SenseScrollViewerStyle"
+        x:Key="LuiSenseScrollviewerStyle"
         TargetType="{x:Type ScrollViewer}">
         <!--<Setter Property="OverridesDefaultStyle" Value="True" />-->
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />

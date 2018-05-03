@@ -1,32 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
-    public enum LUIInputSizeEnum
+    public enum LuiInputSizeEnum
     {
         Default,
         Large,
         Custom
 
     }
-    public static class LUIInputSizeEnumExtensions
+    public static class LuiInputSizeEnumExtensions
     {
-        public static double GetInputSize(this LUIInputSizeEnum i_inputsize)
+        public static double GetInputSize(this LuiInputSizeEnum i_inputsize)
         {
             double inputsize = 28;
             switch (i_inputsize)
             {
-                case LUIInputSizeEnum.Default:
+                case LuiInputSizeEnum.Default:
                     inputsize = 28;
                     break;
-                case LUIInputSizeEnum.Large:
+                case LuiInputSizeEnum.Large:
                     inputsize = 38;
                     break;
-                case LUIInputSizeEnum.Custom:
+                case LuiInputSizeEnum.Custom:
                     inputsize = 0;
                     break;
 

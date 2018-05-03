@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
-    public class LUIPalette
-    {
-        //public static readonly Color
+    #region Usings
+    using System.Windows.Media; 
+    #endregion
 
+    public class LuiPalette
+    {
         public class Brushes
         {
             public static readonly Brush GRAYSCALE100 = new SolidColorBrush(Colors.GRAYSCALE100);
@@ -36,8 +31,7 @@ namespace leonardo.Resources
             public static readonly Brush GRAYSCALE10 = new SolidColorBrush(Colors.GRAYSCALE10);
             public static readonly Brush GRAYSCALE5 = new SolidColorBrush(Colors.GRAYSCALE5);
             public static readonly Brush GRAYSCALE0 = new SolidColorBrush(Colors.GRAYSCALE0);
-
-
+            
             public static readonly Brush BLUE = new SolidColorBrush(Colors.BLUE);
 
             public static readonly Brush RED = new SolidColorBrush(Colors.RED);
@@ -71,8 +65,7 @@ namespace leonardo.Resources
             public static readonly Color GRAYSCALE10 = (Color)ColorConverter.ConvertFromString("#1A1A1A");
             public static readonly Color GRAYSCALE5 = (Color)ColorConverter.ConvertFromString("#0D0D0D");
             public static readonly Color GRAYSCALE0 = (Color)ColorConverter.ConvertFromString("#000000");
-
-            
+                        
             public static readonly Color BLUE = (Color)ColorConverter.ConvertFromString("#52a2cc");
 
             public static readonly Color RED = (Color)ColorConverter.ConvertFromString("#f05555");

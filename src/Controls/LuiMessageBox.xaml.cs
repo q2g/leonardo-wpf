@@ -1,22 +1,13 @@
-﻿using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using leonardo.Resources;
+    using System.Windows.Media; 
+    #endregion
+
     /// <summary>
     /// Interaction logic for LuiMessageBox.xaml
     /// </summary>
@@ -24,12 +15,14 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        #region CTOR
         public LuiMessageBox()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
-        public static bool ShowDialog(string text, LUIiconsEnum messageIcon = LUIiconsEnum.lui_icon_none)
+        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none)
         {
             bool returnvalue = false;
             try
@@ -73,14 +66,14 @@ namespace leonardo.Controls
         }
 
         #region MessageIcon - DP
-        public LUIiconsEnum MessageIcon
+        public LuiIconsEnum MessageIcon
         {
-            get { return (LUIiconsEnum)this.GetValue(MessageIconProperty); }
+            get { return (LuiIconsEnum)this.GetValue(MessageIconProperty); }
             set { this.SetValue(MessageIconProperty, value); }
         }
 
         public static readonly DependencyProperty MessageIconProperty = DependencyProperty.Register(
-         "MessageIcon", typeof(LUIiconsEnum), typeof(LuiMessageBox), new PropertyMetadata(LUIiconsEnum.lui_icon_none));
+         "MessageIcon", typeof(LuiIconsEnum), typeof(LuiMessageBox), new PropertyMetadata(LuiIconsEnum.lui_icon_none));
         #endregion
     }
 }

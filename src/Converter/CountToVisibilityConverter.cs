@@ -1,10 +1,11 @@
 ﻿namespace leonardo.Converter
 {
-    using System.Windows.Data;
+    #region Usings
     using System;
     using System.Globalization;
-    using System.Collections;
     using System.Windows;
+    using System.Windows.Data; 
+    #endregion
 
     public class CountToVisibilityConverter : IValueConverter
     {

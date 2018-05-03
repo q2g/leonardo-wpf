@@ -1,14 +1,12 @@
-﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-
-namespace leonardo.Converter
+﻿namespace leonardo.Converter
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows.Data;
+    using System.Globalization; 
+    #endregion
+
     public class BindingDiagConverter : IValueConverter
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();

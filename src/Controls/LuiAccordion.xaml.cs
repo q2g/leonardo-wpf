@@ -1,20 +1,22 @@
-﻿using GongSolutions.Wpf.DragDrop;
-using leonardo.Resources;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Collections;
-using System.Collections.ObjectModel;
-using NLog;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using GongSolutions.Wpf.DragDrop;
+    using leonardo.Resources;
+    using NLog;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Input;
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiAccordion.xaml
     /// </summary>
@@ -22,6 +24,7 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        #region CTOR
         public LuiAccordion()
         {
             InitializeComponent();
@@ -45,7 +48,9 @@ namespace leonardo.Controls
             DependencyPropertyDescriptor
                        .FromProperty(LuiAccordion.ItemsSourceProperty, typeof(LuiAccordion))
                        .AddValueChanged(this, ItemsSourceChanged);
-        }
+        } 
+
+        #endregion
 
         private void ItemsSource_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {

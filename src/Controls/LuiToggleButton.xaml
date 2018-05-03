@@ -12,13 +12,13 @@
     <ToggleButton.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_ToggleButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiToggleButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ToggleButton.Resources>
     <ToggleButton.Style>
         <Style
-            BasedOn="{StaticResource LUI_ToggleButtonStyle}"
+            BasedOn="{StaticResource LuiToggleButtonStyle}"
             TargetType="ToggleButton" />
     </ToggleButton.Style>
 </ToggleButton>

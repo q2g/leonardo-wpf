@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace leonardo.Resources
+﻿namespace leonardo.Resources
 {
-    public enum LUIFontSizeEnum
+    public enum LuiFontSizeEnum
     {
         Small,
         Normal,
         Large
     }
-    public static class LUIFontSizeEnumExtensions
+    public static class LuiFontSizeEnumExtensions
     {
-        public static double GetFontSize(this LUIFontSizeEnum i_iconsize)
+        public static double GetFontSize(this LuiFontSizeEnum i_iconsize)
         {
             double iconsize = 16;
             switch (i_iconsize)
             {
-                case LUIFontSizeEnum.Small:
+                case LuiFontSizeEnum.Small:
                     iconsize = 12;
                     break;
-                case LUIFontSizeEnum.Normal:
+                case LuiFontSizeEnum.Normal:
                     iconsize = 16;
                     break;
-                case LUIFontSizeEnum.Large:
+                case LuiFontSizeEnum.Large:
                     iconsize = 20;
                     break;
                 default:

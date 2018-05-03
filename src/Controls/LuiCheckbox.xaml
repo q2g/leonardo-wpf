@@ -11,13 +11,13 @@
     <CheckBox.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Lui_CheckboxStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiCheckboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </CheckBox.Resources>
     <CheckBox.Style>
         <Style
-            BasedOn="{StaticResource LUI_CheckBoxStyle}"
+            BasedOn="{StaticResource LuiCheckboxStyle}"
             TargetType="CheckBox" />
     </CheckBox.Style>
 </CheckBox>

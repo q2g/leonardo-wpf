@@ -4,7 +4,7 @@
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
@@ -75,7 +75,7 @@
         x:Key="RadioButton.Static.Glyph"
         Color="#FF212121" />
     <Style
-        x:Key="Lui_RadioButtonStyle"
+        x:Key="LuiRadiobuttonStyle"
         TargetType="{x:Type RadioButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource RadioButton.Static.Background}" />

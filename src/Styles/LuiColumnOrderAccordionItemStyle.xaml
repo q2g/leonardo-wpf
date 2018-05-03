@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:leonardo.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -27,7 +27,32 @@
     </Style>
 
     <Style
-        x:Key="DarstellungExpanderDownHeaderStyle"
+        x:Key="ContextmenuAccordion"
+        TargetType="{x:Type ContextMenu}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContextMenu}">
+                    <Border
+                        x:Name="Border"
+                        Height="40"
+                        Background="White"
+                        BorderBrush="Black">
+                        <StackPanel
+                            ClipToBounds="True"
+                            IsItemsHost="True"
+                            Orientation="Vertical" />
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="InnerExpanderDownHeaderStyle"
         TargetType="{x:Type ToggleButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -36,7 +61,19 @@
                         Padding="{TemplateBinding Padding}"
                         Background="{StaticResource LUI.Brush.Grayscale95}"
                         BorderBrush="{StaticResource LUI.Brush.Grayscale30}"
-                        BorderThickness="0.3">
+                        BorderThickness="0.3"
+                        Tag="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:LuiAccordion}}, Path=.}">
+                        <Border.ContextMenu>
+                            <ContextMenu Style="{StaticResource ContextmenuAccordion}">
+                                <MenuItem
+                                    Height="40"
+                                    BorderBrush="{StaticResource LUI.Brush.Grayscale30}"
+                                    BorderThickness="1"
+                                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContextMenu}}, Path=PlacementTarget.Tag.DeleteCommand}"
+                                    CommandParameter="{Binding}"
+                                    Header="Löschen" />
+                            </ContextMenu>
+                        </Border.ContextMenu>
                         <Grid
                             Margin="10,0,0,0"
                             Background="Transparent"
@@ -44,6 +81,8 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
                             <controls:LuiIcon
                                 Grid.Column="0"
@@ -74,6 +113,24 @@
                                 VerticalAlignment="Center"
                                 RecognizesAccessKey="True"
                                 SnapsToDevicePixels="True" />
+                            <TextBlock
+                                Grid.Column="2"
+                                Margin="0,0,10,0"
+                                VerticalAlignment="Bottom"
+                                DockPanel.Dock="Right"
+                                FontSize="10"
+                                Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                                Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:LuiAccordionItem}}, Path=Index}" />
+                            <controls:LuiIcon
+                                Grid.Column="3"
+                                Margin="0,0,10,0"
+                                VerticalAlignment="Center"
+                                Cursor="SizeAll"
+                                DockPanel.Dock="Right"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                                Icon="lui_icon_menu" />
                         </Grid>
 
                     </Border>
@@ -82,7 +139,7 @@
         </Setter>
     </Style>
     <Style
-        x:Key="DarstellungAccordionExpanderStyle"
+        x:Key="InnerAccordionExpanderStyle"
         TargetType="{x:Type Expander}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
 
@@ -120,7 +177,18 @@
                                 FontWeight="{TemplateBinding FontWeight}"
                                 Foreground="{StaticResource LUI.Brush.Grayscale30}"
                                 IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                Style="{StaticResource DarstellungExpanderDownHeaderStyle}" />
+                                Style="{StaticResource InnerExpanderDownHeaderStyle}" />
+
+                            <controls:LuiButton
+                                x:Name="ExpandSiteDeleteButton"
+                                Margin="5,15,5,20"
+                                attachedP:ThemeProperties.IconRight="lui_icon_bin"
+                                Command="{Binding DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:LuiAccordion}}}"
+                                CommandParameter="{Binding}"
+                                Content="Löschen"
+                                DockPanel.Dock="Bottom"
+                                FontWeight="Bold"
+                                Visibility="Collapsed" />
                             <ContentPresenter
                                 x:Name="ExpandSite"
                                 Margin="{TemplateBinding Padding}"
@@ -134,6 +202,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsExpanded" Value="true">
                             <Setter TargetName="ExpandSite" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ExpandSiteDeleteButton" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
@@ -152,13 +221,13 @@
                 Padding="4"
                 HorizontalAlignment="Stretch"
                 DockPanel.Dock="Left"
-                FontSize="16"
+                FontSize="14"
                 Text="{Binding}" />
         </Grid>
     </DataTemplate>
 
     <Style
-        x:Key="LUI_PresentationAccordionItemStyle"
+        x:Key="LuiColumnOrderAccordionItemStyle"
         TargetType="controls:LuiAccordionItem">
         <Setter Property="Template">
             <Setter.Value>
@@ -168,10 +237,9 @@
                         Header="{TemplateBinding Header}"
                         HeaderTemplate="{StaticResource ExpanderHeaderDataTemplate}"
                         IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
-                        Style="{StaticResource DarstellungAccordionExpanderStyle}" />
+                        Style="{StaticResource InnerAccordionExpanderStyle}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
 </ResourceDictionary>

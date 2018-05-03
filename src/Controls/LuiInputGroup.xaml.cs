@@ -1,23 +1,16 @@
-﻿using leonardo.AttachedProperties;
-using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using leonardo.Resources;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Controls;
+    using leonardo.AttachedProperties; 
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiInputGroup.xaml
     /// </summary>
@@ -25,10 +18,12 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        #region CTOR
         public LuiInputGroup()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
         #region Text - DP        
         public string Text
@@ -97,8 +92,8 @@ namespace leonardo.Controls
         #endregion
 
         #region LeftCommandIcon - DP 
-        private LUIiconsEnum leftCommandIcon = LUIiconsEnum.lui_icon_none;
-        internal LUIiconsEnum LeftCommandIcon_Internal
+        private LuiIconsEnum leftCommandIcon = LuiIconsEnum.lui_icon_none;
+        internal LuiIconsEnum LeftCommandIcon_Internal
         {
             get { return leftCommandIcon; }
             set
@@ -106,21 +101,21 @@ namespace leonardo.Controls
                 if (leftCommandIcon != value)
                 {
                     leftCommandIcon = value;
-                    if (leftCommandIcon != LUIiconsEnum.lui_icon_none)
+                    if (leftCommandIcon != LuiIconsEnum.lui_icon_none)
                     {
                         maininputleftrounded.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0));
                     }
                 }
             }
         }
-        public LUIiconsEnum LeftCommandIcon
+        public LuiIconsEnum LeftCommandIcon
         {
-            get { return (LUIiconsEnum)this.GetValue(LeftCommandIconProperty); }
+            get { return (LuiIconsEnum)this.GetValue(LeftCommandIconProperty); }
             set { this.SetValue(LeftCommandIconProperty, value); }
         }
 
         public static readonly DependencyProperty LeftCommandIconProperty = DependencyProperty.Register(
-         "LeftCommandIcon", typeof(LUIiconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLeftCommandIconChanged)));
+         "LeftCommandIcon", typeof(LuiIconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLeftCommandIconChanged)));
 
 
         private static void OnLeftCommandIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -129,7 +124,7 @@ namespace leonardo.Controls
             {
                 if (d is LuiInputGroup obj)
                 {
-                    if (e.NewValue is LUIiconsEnum newvalue)
+                    if (e.NewValue is LuiIconsEnum newvalue)
                     {
                         obj.LeftCommandIcon_Internal = newvalue;
                     }
@@ -143,14 +138,14 @@ namespace leonardo.Controls
         #endregion
 
         #region RightCommandIcon - DP        
-        public LUIiconsEnum RightCommandIcon
+        public LuiIconsEnum RightCommandIcon
         {
-            get { return (LUIiconsEnum)this.GetValue(RightCommandIconProperty); }
+            get { return (LuiIconsEnum)this.GetValue(RightCommandIconProperty); }
             set { this.SetValue(RightCommandIconProperty, value); }
         }
 
         public static readonly DependencyProperty RightCommandIconProperty = DependencyProperty.Register(
-         "RightCommandIcon", typeof(LUIiconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIiconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "RightCommandIcon", typeof(LuiIconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region IsInputEnabled - DP        
@@ -172,7 +167,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty RightCommandForegroundProperty = DependencyProperty.Register(
-         "RightCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "RightCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region LeftCommandForeground - DP        
@@ -183,7 +178,7 @@ namespace leonardo.Controls
         }
 
         public static readonly DependencyProperty LeftCommandForegroundProperty = DependencyProperty.Register(
-         "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LUIPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion        
     }
 }

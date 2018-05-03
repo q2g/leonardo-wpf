@@ -10,13 +10,13 @@
     <Separator.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/LUI_SeparatorStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiSeparatorStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Separator.Resources>
     <Separator.Style>
         <Style
-            BasedOn="{StaticResource LUI_SeparatorStyle}"
+            BasedOn="{StaticResource LuiSeparatorStyle}"
             TargetType="Separator" />
     </Separator.Style>
 

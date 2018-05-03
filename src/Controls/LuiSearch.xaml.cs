@@ -1,22 +1,13 @@
-﻿using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using System.Windows.Input;
+    using System.Windows.Controls; 
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiSearch.xaml
     /// </summary>
@@ -24,10 +15,12 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        #region CTOR
         public LuiSearch()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
         #region SearchText - DP        
         public string SearchText
@@ -63,6 +56,7 @@ namespace leonardo.Controls
         #endregion
 
 
+        #region Events
         private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -88,6 +82,12 @@ namespace leonardo.Controls
             }
         }
 
+        private void mainbutton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SearchText = "";
+        } 
+        #endregion
+
         #region SearchCommand - DP        
         public ICommand SearchCommand
         {
@@ -110,10 +110,7 @@ namespace leonardo.Controls
          "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        private void mainbutton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            SearchText = "";
-        }
+       
 
         #region HintText - DP        
         public string HintText

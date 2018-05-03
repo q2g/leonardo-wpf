@@ -1,22 +1,13 @@
-﻿using leonardo.Resources;
-using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace leonardo.Controls
+﻿namespace leonardo.Controls
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using leonardo.Resources;
+    using System.Windows.Controls; 
+    #endregion
+
     /// <summary>
     /// Interaktionslogik für LuiIcon.xaml
     /// </summary>
@@ -24,23 +15,26 @@ namespace leonardo.Controls
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        private const LUIiconsEnum DEFAULT = LUIiconsEnum.lui_icon_table;
+        private const LuiIconsEnum DEFAULT = LuiIconsEnum.lui_icon_table;
+
+        #region CTOR
         public LuiIcon()
         {
             InitializeComponent();
             mainText.Text = DEFAULT.GetIconText();
 
-        }
+        } 
+        #endregion
 
         #region Icon - DP
-        public LUIiconsEnum Icon
+        public LuiIconsEnum Icon
         {
-            get { return (LUIiconsEnum)this.GetValue(IconProperty); }
+            get { return (LuiIconsEnum)this.GetValue(IconProperty); }
             set { this.SetValue(IconProperty, value); }
         }
 
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
-         "Icon", typeof(LUIiconsEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(DEFAULT, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconChanged)));
+         "Icon", typeof(LuiIconsEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(DEFAULT, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconChanged)));
 
 
         private static void OnIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -49,7 +43,7 @@ namespace leonardo.Controls
             {
                 if (d is LuiIcon obj)
                 {
-                    if (e.NewValue is LUIiconsEnum newvalue)
+                    if (e.NewValue is LuiIconsEnum newvalue)
                     {
                         obj.Icon_Internal = newvalue;
                     }
@@ -61,8 +55,8 @@ namespace leonardo.Controls
             }
         }
 
-        private LUIiconsEnum icon = DEFAULT;
-        internal LUIiconsEnum Icon_Internal
+        private LuiIconsEnum icon = DEFAULT;
+        internal LuiIconsEnum Icon_Internal
         {
             get { return icon; }
             set
@@ -77,8 +71,8 @@ namespace leonardo.Controls
         #endregion
 
         #region IconSize - DP
-        private LUIFontSizeEnum iconsize = LUIFontSizeEnum.Normal;
-        internal LUIFontSizeEnum IconSize_Internal
+        private LuiFontSizeEnum iconsize = LuiFontSizeEnum.Normal;
+        internal LuiFontSizeEnum IconSize_Internal
         {
             get { return iconsize; }
             set
@@ -92,14 +86,14 @@ namespace leonardo.Controls
                 }
             }
         }
-        public LUIFontSizeEnum IconSize
+        public LuiFontSizeEnum IconSize
         {
-            get { return (LUIFontSizeEnum)this.GetValue(IconSizeProperty); }
+            get { return (LuiFontSizeEnum)this.GetValue(IconSizeProperty); }
             set { this.SetValue(IconSizeProperty, value); }
         }
 
         public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
-         "IconSize", typeof(LUIFontSizeEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(LUIFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconSizeChanged)));
+         "IconSize", typeof(LuiFontSizeEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(LuiFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconSizeChanged)));
 
 
         private static void OnIconSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -108,7 +102,7 @@ namespace leonardo.Controls
             {
                 if (d is LuiIcon obj)
                 {
-                    if (e.NewValue is LUIFontSizeEnum newvalue)
+                    if (e.NewValue is LuiFontSizeEnum newvalue)
                     {
                         obj.IconSize_Internal = newvalue;
                     }

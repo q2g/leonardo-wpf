@@ -1,14 +1,12 @@
-﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-
-namespace leonardo.Converter
+﻿namespace leonardo.Converter
 {
+    #region Usings
+    using NLog;
+    using System;
+    using System.Windows;
+    using System.Windows.Controls; 
+    #endregion
+
     public class TypeToStyleSelector : StyleSelector
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();

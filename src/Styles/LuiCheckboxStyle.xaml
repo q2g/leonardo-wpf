@@ -4,7 +4,7 @@
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/palette.xaml" />
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
@@ -46,7 +46,7 @@
     </Style>
 
     <Style
-        x:Key="LUI_CheckBoxStyle"
+        x:Key="LuiCheckboxStyle"
         TargetType="{x:Type CheckBox}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
