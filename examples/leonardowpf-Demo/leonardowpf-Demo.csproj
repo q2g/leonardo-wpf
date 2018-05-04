@@ -34,15 +34,42 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <Reference Include="leonardo-wpf, Version=0.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\leonardo-wpf.0.9.1\lib\net452\leonardo-wpf.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>    
+    <Otherwise>
+      <ItemGroup>
+        <ProjectReference Include="..\..\src\leonardo-wpf.csproj">
+          <Project>{2ee2ae07-61c6-43dc-805d-662ad526a430}</Project>
+          <Name>leonardo-wpf</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
   <ItemGroup>
     <Reference Include="GongSolutions.Wpf.DragDrop, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\gong-wpf-dragdrop.1.1.0\lib\net45\GongSolutions.Wpf.DragDrop.dll</HintPath>
     </Reference>
+
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="qlik-resources, Version=4.86.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\qlik-resources.4.86.9\lib\net452\qlik-resources.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -116,12 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\leonardo-wpf.csproj">
-      <Project>{2ee2ae07-61c6-43dc-805d-662ad526a430}</Project>
-      <Name>leonardo-wpf</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

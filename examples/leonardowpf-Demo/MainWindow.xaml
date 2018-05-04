@@ -103,11 +103,11 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem
-                        BorderBrush="{StaticResource LUI.Brush.Grayscale28}"
+                        BorderBrush="{StaticResource Lui.Brush.Grayscale28}"
                         BorderThickness="0"
                         Header="Inverse">
                         <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Background="{StaticResource Lui.Brush.Grayscale28}"
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
@@ -192,7 +192,7 @@
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Background="{StaticResource Lui.Brush.Grayscale28}"
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
@@ -275,7 +275,7 @@
                     </TabItem>
                     <TabItem Header="Inverse">
                         <StackPanel
-                            Background="{StaticResource LUI.Brush.Grayscale28}"
+                            Background="{StaticResource Lui.Brush.Grayscale28}"
                             Orientation="Horizontal">
                             <controls:LuiButton
                                 Margin="3,15,3,15"
@@ -342,7 +342,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiButton
                                 Margin="3"
                                 attached:ThemeProperties.IconLeft="lui_icon_none"
@@ -407,7 +407,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiButtonGroup Margin="3,15,3,15">
                                 <controls:LuiToggleButton
                                     attached:ThemeProperties.Inverted="True"
@@ -441,7 +441,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiButtonGroup
                                 Margin="3,15,3,15"
                                 Rounded="True">
@@ -474,7 +474,7 @@
 
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiInput
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True" />
@@ -488,7 +488,7 @@
                             LabelText="Label" />
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiInput
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True"
@@ -511,7 +511,7 @@
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 LeftCommandIcon="lui_icon_calendar"
-                                RightCommandForeground="{StaticResource LUI.Brush.ORANGE}"
+                                RightCommandForeground="{StaticResource Lui.Brush.Orange}"
                                 RightCommandIcon="lui_icon_expression"
                                 Text="abcd" />
                             <controls:LuiInputGroup
@@ -524,7 +524,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Inverse">
-                        <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                        <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                             <controls:LuiInputGroup
                                 Margin="3,15,3,15"
                                 attached:ThemeProperties.Inverted="True"
@@ -564,7 +564,7 @@
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                         <controls:LuiSearch
                             Margin="3,15,3,15"
                             attached:ThemeProperties.Inverted="True" />
@@ -597,7 +597,7 @@
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                         <controls:LuiCheckbox
                             Margin="3,15,3,3"
                             attached:ThemeProperties.Inverted="True"
@@ -643,7 +643,7 @@
 
                 </TabItem>
                 <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                         <controls:LuiRadioButton
                             Margin="3,3,0,0"
                             attached:ThemeProperties.Inverted="True"
@@ -692,7 +692,7 @@
 
                 </TabItem>
                 <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                         <controls:LuiCombobox
                             Margin="5"
                             attached:ThemeProperties.Inverted="True"
@@ -725,7 +725,7 @@
 
                 </TabItem>
                 <TabItem Header="Inverse">
-                    <StackPanel Background="{StaticResource LUI.Brush.Grayscale28}">
+                    <StackPanel Background="{StaticResource Lui.Brush.Grayscale28}">
                         <controls:LuiSwitch
                             Margin="5"
                             attached:ThemeProperties.Inverted="True" />
