@@ -50,7 +50,7 @@
         TargetType="{x:Type CheckBox}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
-        <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
+        <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
         <Setter Property="Template">
@@ -71,7 +71,7 @@
                             Margin="1"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            BorderBrush="{StaticResource LUI.Brush.Grayscale75}"
+                            BorderBrush="{StaticResource Lui.Brush.Grayscale75}"
                             BorderThickness="1"
                             CornerRadius="2">
 
@@ -80,14 +80,14 @@
                                     x:Name="optionMark"
                                     Margin="1"
                                     Data="F1 M2,9.5 L3.5,7 L7.5,10.5 L14,3.5 L16,5.5 L7.5,14.5 Z "
-                                    Fill="{StaticResource LUI.Brush.Grayscale100}"
+                                    Fill="{StaticResource Lui.Brush.Grayscale100}"
                                     Opacity="0"
                                     Stretch="None"
                                     StrokeThickness="1" />
                                 <Rectangle
                                     x:Name="indeterminateMark"
                                     Margin="2"
-                                    Fill="{StaticResource LUI.Brush.Grayscale100}"
+                                    Fill="{StaticResource Lui.Brush.Grayscale100}"
                                     Opacity="0" />
                             </Grid>
                         </Border>
@@ -109,19 +109,19 @@
 
 
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsChecked" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE}" />
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
                             <Setter TargetName="indeterminateMark" Property="Opacity" Value="0" />
                         </MultiTrigger>
@@ -130,8 +130,8 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsChecked" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange}" />
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
                             <Setter TargetName="indeterminateMark" Property="Opacity" Value="0" />
                         </MultiTrigger>
@@ -142,7 +142,7 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -150,7 +150,7 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
 
 
@@ -167,7 +167,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            To="{StaticResource LUI.Color.Grayscale100}"
+                                            To="{StaticResource Lui.Color.Grayscale100}"
                                             Duration="0:0:0.25" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -178,7 +178,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            From="{StaticResource LUI.Color.Grayscale100}"
+                                            From="{StaticResource Lui.Color.Grayscale100}"
                                             Duration="0:0:0.25" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -198,7 +198,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            To="{StaticResource LUI.Color.Grayscale0}"
+                                            To="{StaticResource Lui.Color.Grayscale0}"
                                             Duration="0:0:0.25" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -209,7 +209,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            From="{StaticResource LUI.Color.Grayscale0}"
+                                            From="{StaticResource Lui.Color.Grayscale0}"
                                             Duration="0:0:0.25" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -227,14 +227,14 @@
                                 <Condition Property="IsChecked" Value="True" />
 
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                             <MultiTrigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            To="{StaticResource LUI.Color.GREEN}"
+                                            To="{StaticResource Lui.Color.Green}"
                                             Duration="0:0:0" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -248,14 +248,14 @@
                                 <Condition Property="IsChecked" Value="False" />
 
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                             <MultiTrigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation
                                             Storyboard.TargetName="checkBoxBorder"
                                             Storyboard.TargetProperty="BorderBrush.Color"
-                                            To="{StaticResource LUI.Color.RED}"
+                                            To="{StaticResource Lui.Color.Red}"
                                             Duration="0:0:0" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -268,22 +268,22 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale35}" />
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale35}" />
-                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale35}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale35}" />
+                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale90}" />
-                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale90}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale90}" />
+                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
 
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

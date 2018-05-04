@@ -25,7 +25,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Border
-        BorderBrush="{StaticResource LUI.Brush.Grayscale30}"
+        BorderBrush="{StaticResource Lui.Brush.Grayscale30}"
         CornerRadius="14">
         <Grid>
             <Grid.RowDefinitions>
@@ -40,32 +40,32 @@
             <Border
                 Grid.Row="0"
                 Grid.ColumnSpan="2"
-                Background="{StaticResource LUI.Brush.Grayscale30}" />
+                Background="{StaticResource Lui.Brush.Grayscale30}" />
             <Border
                 Grid.Row="1"
-                Background="{StaticResource LUI.Brush.Grayscale100}">
+                Background="{StaticResource Lui.Brush.Grayscale100}">
                 <controls:LuiIcon
                     Margin="15,0,0,0"
                     VerticalContentAlignment="Center"
-                    Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                    Foreground="{StaticResource Lui.Brush.Grayscale30}"
                     Icon="{Binding MessageIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
                     IconSize="Large" />
             </Border>
             <Border
                 Grid.Row="1"
                 Grid.Column="1"
-                Background="{StaticResource LUI.Brush.Grayscale100}">
+                Background="{StaticResource Lui.Brush.Grayscale100}">
                 <TextBlock
                     VerticalAlignment="Center"
                     FontFamily="{StaticResource QlikViewSans}"
-                    Foreground="{StaticResource LUI.Brush.Grayscale30}"
+                    Foreground="{StaticResource Lui.Brush.Grayscale30}"
                     Text="{Binding MessageText, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
                     TextWrapping="Wrap" />
             </Border>
             <Border
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
-                Background="{StaticResource LUI.Brush.Grayscale30}">
+                Background="{StaticResource Lui.Brush.Grayscale30}">
                 <StackPanel VerticalAlignment="Center">
                     <DockPanel LastChildFill="False">
                         <controls:LuiButton

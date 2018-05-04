@@ -54,20 +54,20 @@
         Color="#FF838383" />
 
     <LinearGradientBrush x:Key="LuiButton.Gradient" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale100}" />
-        <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale90}" />
+        <GradientStop Offset="0.0" Color="{StaticResource Lui.Color.Grayscale100}" />
+        <GradientStop Offset="1.0" Color="{StaticResource Lui.Color.Grayscale90}" />
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="LuiButton.Gradient_Darker" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale95}" />
-        <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale85}" />
+        <GradientStop Offset="0.0" Color="{StaticResource Lui.Color.Grayscale95}" />
+        <GradientStop Offset="1.0" Color="{StaticResource Lui.Color.Grayscale85}" />
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="LuiButton.Gradient.Dark" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale45}" />
-        <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale35}" />
+        <GradientStop Offset="0.0" Color="{StaticResource Lui.Color.Grayscale45}" />
+        <GradientStop Offset="1.0" Color="{StaticResource Lui.Color.Grayscale35}" />
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="LuiButton.Gradient.Dark_lighter" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Offset="0.0" Color="{StaticResource LUI.Color.Grayscale55}" />
-        <GradientStop Offset="1.0" Color="{StaticResource LUI.Color.Grayscale45}" />
+        <GradientStop Offset="0.0" Color="{StaticResource Lui.Color.Grayscale55}" />
+        <GradientStop Offset="1.0" Color="{StaticResource Lui.Color.Grayscale45}" />
     </LinearGradientBrush>
     <Style
         x:Key="LuiButtonStyle"
@@ -153,9 +153,9 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -163,9 +163,9 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -174,9 +174,9 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale60}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale60}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -184,9 +184,9 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -196,8 +196,8 @@
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" Value="{StaticResource LuiButton.Gradient}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -206,8 +206,8 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" Value="{StaticResource LuiButton.Gradient_Darker}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -217,8 +217,8 @@
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" Value="{StaticResource LuiButton.Gradient.Dark}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -227,8 +227,8 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" Value="{StaticResource LuiButton.Gradient.Dark_lighter}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -236,18 +236,18 @@
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Info" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.BLUE}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Blue}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Info" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.BLUE_lighten_15}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE_lighten_15}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Blue_lighten_15}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue_lighten_15}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -255,18 +255,18 @@
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Error" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.RED}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.RED}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Red}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Red}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Error" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.RED_lighten_15}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.RED_lighten_15}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Red_lighten_15}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Red_lighten_15}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -274,18 +274,18 @@
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Warning" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Warning" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.ORANGE_lighten_15}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE_lighten_15}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Orange_lighten_15}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange_lighten_15}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -293,18 +293,18 @@
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Success" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.GREEN}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.GREEN}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Green}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Green}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Success" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.GREEN_lighten_15}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.GREEN_lighten_15}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Green_lighten_15}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Green_lighten_15}" />
                         </MultiTrigger>
 
 
@@ -313,20 +313,20 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsPressed" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsPressed" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale5}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
 
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                         </Trigger>
                         <Trigger Property="attachedP:ThemeProperties.Rounded" Value="True">
                             <Setter TargetName="border" Property="CornerRadius" Value="14" />

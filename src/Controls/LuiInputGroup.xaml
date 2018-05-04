@@ -29,7 +29,7 @@
             FontFamily="{StaticResource QlikViewSans}"
             FontSize="14"
             FontWeight="Thin"
-            Foreground="{StaticResource LUI.Brush.Grayscale30}"
+            Foreground="{StaticResource Lui.Brush.Grayscale30}"
             Text="{Binding ElementName=control, Path=LabelText}">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
@@ -71,10 +71,10 @@
                                 <Setter Property="Visibility" Value="Collapsed" />
                             </DataTrigger>
                             <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                                <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
+                                <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale5}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -105,11 +105,11 @@
                         TargetType="local:LuiButton">
                         <Style.Triggers>
                             <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                                <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
-                                <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                                <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale5}" />
+                                <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -119,7 +119,7 @@
                 <Style TargetType="Grid">
                     <Style.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>

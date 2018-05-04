@@ -19,7 +19,7 @@
                 <ControlTemplate TargetType="{x:Type Separator}">
                     <Rectangle
                         Height="{TemplateBinding Height}"
-                        Fill="{StaticResource LUI.Brush.Grayscale30}" />
+                        Fill="{StaticResource Lui.Brush.Grayscale30}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

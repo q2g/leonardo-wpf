@@ -67,7 +67,7 @@
                                     VerticalAlignment="Center"
                                     Cursor="IBeam"
                                     FontStyle="Italic"
-                                    Foreground="{StaticResource LUI.Brush.Grayscale80}"
+                                    Foreground="{StaticResource Lui.Brush.Grayscale80}"
                                     Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HintText}">
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
@@ -101,22 +101,22 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale80}" />
-                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
-                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -124,24 +124,24 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale50}" />
-                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter TargetName="label" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter TargetName="label" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale80}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
                         </MultiTrigger>
 
                         <Trigger Property="controls:LuiInput.LabelText" Value="">
@@ -149,11 +149,11 @@
                         </Trigger>
 
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource LUI.Brush.BLUE}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale90}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

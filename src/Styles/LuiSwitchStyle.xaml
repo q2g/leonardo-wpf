@@ -106,8 +106,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter TargetName="slide" Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
-                            <Setter TargetName="slide" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter TargetName="slide" Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter TargetName="slide" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale50}" />
                             <Setter TargetName="slider" Property="BorderBrush" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
@@ -121,13 +121,13 @@
                                     x:Name="OnChecking_BeginStoryboard"
                                     Storyboard="{StaticResource OnChecking}" />
                             </Trigger.EnterActions>
-                            <Setter TargetName="slide" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="slide" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="slide" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
+                            <Setter TargetName="slide" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="slider" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
+                            <Setter TargetName="slider" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />

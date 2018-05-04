@@ -82,7 +82,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}" />
         <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale30}" />
+        <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
@@ -111,7 +111,7 @@
                                     x:Name="optionMark"
                                     Width="10"
                                     Height="10"
-                                    Fill="{StaticResource LUI.Brush.Grayscale100}"
+                                    Fill="{StaticResource Lui.Brush.Grayscale100}"
                                     Opacity="0" />
                             </Grid>
                         </Border>
@@ -127,7 +127,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </Trigger>
 
                         <Trigger Property="HasContent" Value="true">
@@ -154,8 +154,8 @@
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -164,8 +164,8 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale60}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale60}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -175,8 +175,8 @@
                                 <Condition Property="IsEnabled" Value="false" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale90}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale90}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale90}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -185,8 +185,8 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="false" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale90}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale90}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale90}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale90}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -196,8 +196,8 @@
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -206,8 +206,8 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -217,9 +217,9 @@
                                 <Condition Property="IsEnabled" Value="false" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale35}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale35}" />
-                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale35}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale35}" />
+                            <Setter TargetName="optionMark" Property="Fill" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -228,8 +228,8 @@
                                 <Condition Property="IsChecked" Value="False" />
                                 <Condition Property="IsEnabled" Value="false" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale35}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale35}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale35}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale35}" />
                         </MultiTrigger>
 
                         <!--<MultiTrigger>
@@ -238,7 +238,7 @@
                                 <Condition Property="IsEnabled" Value="false" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -247,7 +247,7 @@
                                 <Condition Property="IsEnabled" Value="true" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.ORANGE}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>-->
 
 
@@ -257,16 +257,16 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="false" />
                                 <Condition Property="IsPressed" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale30}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale30}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale30}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="true" />
                                 <Condition Property="IsPressed" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource LUI.Brush.Grayscale20}" />
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Grayscale20}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -274,14 +274,14 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="false" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale0}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="true" />
                                 <Condition Property="IsMouseOver" Value="true" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource LUI.Brush.Grayscale100}" />
+                            <Setter TargetName="radioButtonBorder" Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

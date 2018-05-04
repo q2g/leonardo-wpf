@@ -35,8 +35,8 @@
                 <Style TargetType="local:LuiIcon">
                     <Style.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Foreground" Value="{StaticResource LUI.Brush.Grayscale100}" />
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -74,10 +74,10 @@
                     TargetType="local:LuiButton">
                     <Style.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale5}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale5}" />
                         </Trigger>
                         <DataTrigger
                             Binding="{Binding Text, ElementName=maininput}"
@@ -92,7 +92,7 @@
             <Style TargetType="Grid">
                 <Style.Triggers>
                     <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
-                        <Setter Property="Background" Value="{StaticResource LUI.Brush.Grayscale50}" />
+                        <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
                     </Trigger>
                 </Style.Triggers>
             </Style>
