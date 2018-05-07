@@ -29,8 +29,12 @@
         lui_icon_descending,
         lui_icon_person,
         lui_icon_edit,
-        lui_icon_tick
-
+        lui_icon_tick,
+        lui_icon_back,
+        lui_icon_forward,
+        lui_icon_indent,
+        lui_icon_undent,
+        lui_icon_more
     }
 
     public static class LuiIconsEnumExtensions
@@ -123,6 +127,21 @@
                     break;
                 case LuiIconsEnum.lui_icon_tick:
                     icontext = "m";
+                    break;
+                case LuiIconsEnum.lui_icon_back:
+                    icontext = "B";
+                    break;
+                case LuiIconsEnum.lui_icon_forward:
+                    icontext = "C";
+                    break;
+                case LuiIconsEnum.lui_icon_indent:
+                    icontext = "À";
+                    break;
+                case LuiIconsEnum.lui_icon_undent:
+                    icontext = "Ã";
+                    break;
+                case LuiIconsEnum.lui_icon_more:
+                    icontext = "¥";
                     break;
                 default:
                     icontext = "";
