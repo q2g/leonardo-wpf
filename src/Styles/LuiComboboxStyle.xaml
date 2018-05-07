@@ -263,7 +263,7 @@
                         <DataTrigger
                             Binding="{Binding IsFocused, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}"
                             Value="true">
-                            <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource Lui.Brush.BLUE}" />
+                            <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
                         </DataTrigger>
 
                         <!--<MultiDataTrigger>
