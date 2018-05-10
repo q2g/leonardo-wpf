@@ -4,7 +4,8 @@
     {
         Default,
         Large,
-        ExtraLarge
+        ExtraLarge,
+        Custom
     }
     public static class LuiButtonSizeEnumExtensions
     {

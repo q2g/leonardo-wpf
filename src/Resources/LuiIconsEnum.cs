@@ -34,7 +34,13 @@
         lui_icon_forward,
         lui_icon_indent,
         lui_icon_undent,
-        lui_icon_more
+        lui_icon_more,
+        lui_icon_comment,
+        lui_icon_selectiontool,
+        lui_icon_clear_selection,
+        lui_icon_selection_back,
+        lui_icon_selection_forward,
+        lui_icon_remove
     }
 
     public static class LuiIconsEnumExtensions
@@ -142,6 +148,24 @@
                     break;
                 case LuiIconsEnum.lui_icon_more:
                     icontext = "¥";
+                    break;
+                case LuiIconsEnum.lui_icon_comment:
+                    icontext = "…";
+                    break;
+                case LuiIconsEnum.lui_icon_clear_selection:
+                    icontext = ":";
+                    break;
+                case LuiIconsEnum.lui_icon_selectiontool:
+                    icontext = "9";
+                    break;
+                case LuiIconsEnum.lui_icon_selection_back:
+                    icontext = "<";
+                    break;
+                case LuiIconsEnum.lui_icon_selection_forward:
+                    icontext = "=";
+                    break;
+                case LuiIconsEnum.lui_icon_remove:
+                    icontext = "E";
                     break;
                 default:
                     icontext = "";
