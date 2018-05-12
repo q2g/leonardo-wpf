@@ -40,7 +40,12 @@
         lui_icon_clear_selection,
         lui_icon_selection_back,
         lui_icon_selection_forward,
-        lui_icon_remove
+        lui_icon_remove,
+        lui_icon_lock,
+        lui_icon_unlock,
+        lui_icon_select_all,
+        lui_icon_excluded,
+        lui_icon_export
     }
 
     public static class LuiIconsEnumExtensions
@@ -166,6 +171,21 @@
                     break;
                 case LuiIconsEnum.lui_icon_remove:
                     icontext = "E";
+                    break;
+                case LuiIconsEnum.lui_icon_lock:
+                    icontext = "[";
+                    break;
+                case LuiIconsEnum.lui_icon_unlock:
+                    icontext = "\\";
+                    break;
+                case LuiIconsEnum.lui_icon_select_all:
+                    icontext = "|";
+                    break;
+                case LuiIconsEnum.lui_icon_excluded:
+                    icontext = "x";
+                    break;
+                case LuiIconsEnum.lui_icon_export:
+                    icontext = "I";
                     break;
                 default:
                     icontext = "";

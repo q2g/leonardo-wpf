@@ -23,8 +23,6 @@
         </ResourceDictionary>
     </Button.Resources>
     <Button.Style>
-        <Style
-            BasedOn="{StaticResource LuiButtonStyle}"
-            TargetType="Button" />
+        <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="Button" />
     </Button.Style>
 </Button>

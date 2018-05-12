@@ -28,9 +28,10 @@
         <local:LuiIcon
             x:Name="mainicon"
             Grid.Column="0"
+            Margin="5"
             VerticalAlignment="Center"
             Icon="lui_icon_search"
-            IconSize="Large">
+            IconSize="Normal">
             <local:LuiIcon.Style>
                 <Style TargetType="local:LuiIcon">
                     <Style.Triggers>
@@ -69,9 +70,7 @@
             CommandParameter="{Binding CommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}}"
             PreviewMouseLeftButtonDown="mainbutton_PreviewMouseLeftButtonDown">
             <local:LuiButton.Style>
-                <Style
-                    BasedOn="{StaticResource LuiButtonStyle}"
-                    TargetType="local:LuiButton">
+                <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="local:LuiButton">
                     <Style.Triggers>
                         <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
                             <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
@@ -79,9 +78,7 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale5}" />
                         </Trigger>
-                        <DataTrigger
-                            Binding="{Binding Text, ElementName=maininput}"
-                            Value="">
+                        <DataTrigger Binding="{Binding Text, ElementName=maininput}" Value="">
                             <Setter Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                     </Style.Triggers>
