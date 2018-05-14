@@ -8,7 +8,7 @@
     using System.Windows.Markup;
     using System.Windows.Controls;
     using System.Collections.Generic;
-    using leonardo.AttachedProperties; 
+    using leonardo.AttachedProperties;
     #endregion
 
     /// <summary>
@@ -23,7 +23,7 @@
         public LuiButtonGroup()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         public static readonly DependencyProperty ItemsSourceProperty =

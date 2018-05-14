@@ -11,9 +11,7 @@
     SizeChanged="control_SizeChanged"
     mc:Ignorable="d">
     <Grid>
-        <ItemsControl
-            Name="_itemsControl"
-            ItemsSource="{Binding ItemsSource, ElementName=control}">
+        <ItemsControl x:Name="_itemsControl" ItemsSource="{Binding ItemsSource, ElementName=control}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />

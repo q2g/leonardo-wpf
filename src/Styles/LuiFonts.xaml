@@ -1,0 +1,12 @@
+﻿
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <FontFamily x:Key="QlikViewSans">
+        pack://application:,,,/qlik-resources;component/#QlikView Sans
+    </FontFamily>
+    <FontFamily x:Key="QlikIcons">
+        pack://application:,,,/qlik-resources;component/#LUIicons
+    </FontFamily>
+</ResourceDictionary>
