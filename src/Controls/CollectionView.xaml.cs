@@ -43,7 +43,7 @@
         public CollectionView()
         {
             InitializeComponent();
-            
+
             #endregion SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
         }
 
@@ -51,7 +51,7 @@
         {
             try
             {
-                switch(e.Action)
+                switch (e.Action)
                 {
                     case NotifyCollectionChangedAction.Add:
                         foreach (var item in e.NewItems)
@@ -370,6 +370,10 @@
         private object SortCollection(ObservableCollection<object> list)
         {
             if (collectionViewComparer == null)
+            {
+                return null;
+            }
+            if (list == null)
             {
                 return null;
             }
