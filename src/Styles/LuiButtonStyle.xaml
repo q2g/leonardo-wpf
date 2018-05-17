@@ -79,7 +79,7 @@
                             </Grid.ColumnDefinitions>
                             <controls:LuiIcon
                                 Grid.Column="0"
-                                Margin="10,0,0,0"
+                                Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(attachedP:ThemeProperties.ButtonLeftIconMargin)}"
                                 VerticalAlignment="Center"
                                 Icon="{Binding Path=(attachedP:ThemeProperties.IconLeft), RelativeSource={RelativeSource AncestorType={x:Type ButtonBase}}}" />
                             <ContentPresenter
@@ -312,8 +312,10 @@
                         <Trigger Property="attachedP:ThemeProperties.Rounded" Value="True">
                             <Setter TargetName="border" Property="CornerRadius" Value="14" />
                         </Trigger>
-
-
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale60}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Lui.Brush.Grayscale60}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

@@ -5,21 +5,17 @@
     xmlns:controls="clr-namespace:leonardo.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />       
+        <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
     </FontFamily>
 
-    <Style
-        x:Key="LuiSeparatorStyle"
-        TargetType="Separator">
+    <Style x:Key="LuiSeparatorStyle" TargetType="Separator">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Separator}">
-                    <Rectangle
-                        Height="{TemplateBinding Height}"
-                        Fill="{StaticResource Lui.Brush.Grayscale30}" />
+                    <Rectangle Height="{TemplateBinding Height}" Fill="{StaticResource Lui.Brush.Grayscale30}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

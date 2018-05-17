@@ -107,108 +107,42 @@
         #44751d
     </c:Color>
 
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale100"
-        Color="{StaticResource Lui.Color.Grayscale100}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale98"
-        Color="{StaticResource Lui.Color.Grayscale98}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale95"
-        Color="{StaticResource Lui.Color.Grayscale95}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale90"
-        Color="{StaticResource Lui.Color.Grayscale90}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale85"
-        Color="{StaticResource Lui.Color.Grayscale85}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale80"
-        Color="{StaticResource Lui.Color.Grayscale80}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale75"
-        Color="{StaticResource Lui.Color.Grayscale75}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale70"
-        Color="{StaticResource Lui.Color.Grayscale70}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale65"
-        Color="{StaticResource Lui.Color.Grayscale65}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale60"
-        Color="{StaticResource Lui.Color.Grayscale60}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale55"
-        Color="{StaticResource Lui.Color.Grayscale55}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale50"
-        Color="{StaticResource Lui.Color.Grayscale50}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale45"
-        Color="{StaticResource Lui.Color.Grayscale45}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale40"
-        Color="{StaticResource Lui.Color.Grayscale40}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale35"
-        Color="{StaticResource Lui.Color.Grayscale35}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale30"
-        Color="{StaticResource Lui.Color.Grayscale30}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale28"
-        Color="{StaticResource Lui.Color.Grayscale28}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale25"
-        Color="{StaticResource Lui.Color.Grayscale25}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale20"
-        Color="{StaticResource Lui.Color.Grayscale20}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale15"
-        Color="{StaticResource Lui.Color.Grayscale15}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale10"
-        Color="{StaticResource Lui.Color.Grayscale10}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale5"
-        Color="{StaticResource Lui.Color.Grayscale5}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Grayscale0"
-        Color="{StaticResource Lui.Color.Grayscale0}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale100" Color="{StaticResource Lui.Color.Grayscale100}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale98" Color="{StaticResource Lui.Color.Grayscale98}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale95" Color="{StaticResource Lui.Color.Grayscale95}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale90" Color="{StaticResource Lui.Color.Grayscale90}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale85" Color="{StaticResource Lui.Color.Grayscale85}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale80" Color="{StaticResource Lui.Color.Grayscale80}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale75" Color="{StaticResource Lui.Color.Grayscale75}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale70" Color="{StaticResource Lui.Color.Grayscale70}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale65" Color="{StaticResource Lui.Color.Grayscale65}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale60" Color="{StaticResource Lui.Color.Grayscale60}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale55" Color="{StaticResource Lui.Color.Grayscale55}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale50" Color="{StaticResource Lui.Color.Grayscale50}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale45" Color="{StaticResource Lui.Color.Grayscale45}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale40" Color="{StaticResource Lui.Color.Grayscale40}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale35" Color="{StaticResource Lui.Color.Grayscale35}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale30" Color="{StaticResource Lui.Color.Grayscale30}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale28" Color="{StaticResource Lui.Color.Grayscale28}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale25" Color="{StaticResource Lui.Color.Grayscale25}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale20" Color="{StaticResource Lui.Color.Grayscale20}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale15" Color="{StaticResource Lui.Color.Grayscale15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale10" Color="{StaticResource Lui.Color.Grayscale10}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale5" Color="{StaticResource Lui.Color.Grayscale5}" />
+    <SolidColorBrush x:Key="Lui.Brush.Grayscale0" Color="{StaticResource Lui.Color.Grayscale0}" />
 
-    <SolidColorBrush
-        x:Key="Lui.Brush.Blue"
-        Color="{StaticResource Lui.Color.Blue}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Blue_lighten_15"
-        Color="{StaticResource Lui.Color.Blue_lighten_15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Blue" Color="{StaticResource Lui.Color.Blue}" />
+    <SolidColorBrush x:Key="Lui.Brush.Blue_lighten_15" Color="{StaticResource Lui.Color.Blue_lighten_15}" />
 
-    <SolidColorBrush
-        x:Key="Lui.Brush.Red"
-        Color="{StaticResource Lui.Color.Red}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Red_lighten_15"
-        Color="{StaticResource Lui.Color.Red_lighten_15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Red" Color="{StaticResource Lui.Color.Red}" />
+    <SolidColorBrush x:Key="Lui.Brush.Red_lighten_15" Color="{StaticResource Lui.Color.Red_lighten_15}" />
 
-    <SolidColorBrush
-        x:Key="Lui.Brush.Orange"
-        Color="{StaticResource Lui.Color.Orange}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Orange_lighten_15"
-        Color="{StaticResource Lui.Color.Orange_lighten_15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Orange" Color="{StaticResource Lui.Color.Orange}" />
+    <SolidColorBrush x:Key="Lui.Brush.Orange_lighten_15" Color="{StaticResource Lui.Color.Orange_lighten_15}" />
 
-    <SolidColorBrush
-        x:Key="Lui.Brush.Green"
-        Color="{StaticResource Lui.Color.Green}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Green_lighten_15"
-        Color="{StaticResource Lui.Color.Green_lighten_15}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Green_darken_15"
-        Color="{StaticResource Lui.Color.Green_darken_15}" />
-    <SolidColorBrush
-        x:Key="Lui.Brush.Green_darken_30"
-        Color="{StaticResource Lui.Color.Green_darken_30}" />
+    <SolidColorBrush x:Key="Lui.Brush.Green" Color="{StaticResource Lui.Color.Green}" />
+    <SolidColorBrush x:Key="Lui.Brush.Green_lighten_15" Color="{StaticResource Lui.Color.Green_lighten_15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Green_darken_15" Color="{StaticResource Lui.Color.Green_darken_15}" />
+    <SolidColorBrush x:Key="Lui.Brush.Green_darken_30" Color="{StaticResource Lui.Color.Green_darken_30}" />
 
 </ResourceDictionary>

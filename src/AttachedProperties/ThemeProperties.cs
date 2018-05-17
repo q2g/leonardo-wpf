@@ -164,7 +164,7 @@ namespace leonardo.AttachedProperties
                 new FrameworkPropertyMetadata(new CornerRadius(3), FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
-        #region BorderThickness AP
+        #region BorderThickness AP 
         public static Thickness GetBorderThickness(DependencyObject obj)
         {
             return (Thickness)obj.GetValue(BorderThicknessProperty);
@@ -181,6 +181,26 @@ namespace leonardo.AttachedProperties
                 typeof(Thickness),
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(new Thickness(1), FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
+
+        #region ButtonLeftIconMargin AP 
+
+        public static Thickness GetButtonLeftIconMargin(DependencyObject obj)
+        {
+            return (Thickness)obj.GetValue(ButtonLeftIconMarginProperty);
+        }
+
+        public static void SetButtonLeftIconMargin(DependencyObject obj, Thickness value)
+        {
+            obj.SetValue(ButtonLeftIconMarginProperty, value);
+        }
+
+        public static readonly DependencyProperty ButtonLeftIconMarginProperty =
+            DependencyProperty.RegisterAttached(
+                "ButtonLeftIconMargin",
+                typeof(Thickness),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(new Thickness(10, 0, 0, 0), FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
         #region LuiTextboxSize AP
