@@ -5,7 +5,7 @@
     using System;
     using System.Windows;
     using System.Windows.Input;
-    using System.Windows.Controls; 
+    using System.Windows.Controls;
     #endregion
 
     /// <summary>
@@ -19,7 +19,7 @@
         public LuiSearch()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         #region SearchText - DP        
@@ -73,6 +73,7 @@
                     else
                     {
                         SearchText = "";
+                        e.Handled = true;
                     }
                 }
             }
@@ -85,7 +86,7 @@
         private void mainbutton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SearchText = "";
-        } 
+        }
         #endregion
 
         #region SearchCommand - DP        
@@ -110,7 +111,7 @@
          "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-       
+
 
         #region HintText - DP        
         public string HintText
