@@ -5,7 +5,8 @@
     using System;
     using System.Windows;
     using leonardo.Resources;
-    using System.Windows.Media; 
+    using System.Windows.Media;
+    using System.Windows.Interop;
     #endregion
 
     /// <summary>
@@ -19,10 +20,10 @@
         public LuiMessageBox()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
-        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none)
+        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none, IntPtr? ownerPtr = null)
         {
             bool returnvalue = false;
             try
@@ -34,11 +35,14 @@
                     WindowStyle = WindowStyle.None,
                     AllowsTransparency = true,
                     Background = new SolidColorBrush(Colors.Transparent),
-                    Owner = null,//Application.Current.MainWindow,
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     MessageText = text
                 };
-                if (Application.Current.MainWindow != null)
+
+                if (ownerPtr.HasValue)
+                    new WindowInteropHelper(dialog).Owner = ownerPtr.Value;
+
+                if (Application.Current != null && Application.Current.MainWindow != null)
                 {
                     Application.Current.MainWindow.Opacity = 0.5;
                 }
@@ -46,7 +50,7 @@
                 bool? result = dialog.ShowDialog();
                 returnvalue = (result.HasValue && result.Value);
 
-                if (Application.Current.MainWindow != null)
+                if (Application.Current != null && Application.Current.MainWindow != null)
                 {
                     Application.Current.MainWindow.Opacity = 1;
                 }
