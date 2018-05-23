@@ -2,6 +2,7 @@
 {
     #region Usings
     using GongSolutions.Wpf.DragDrop;
+    using leonardo.AttachedProperties;
     using leonardo.Resources;
     using NLog;
     using System;
@@ -48,7 +49,7 @@
             DependencyPropertyDescriptor
                        .FromProperty(LuiAccordion.ItemsSourceProperty, typeof(LuiAccordion))
                        .AddValueChanged(this, ItemsSourceChanged);
-        } 
+        }
 
         #endregion
 
@@ -190,8 +191,15 @@
 
         }
 
+        private bool itemHeightRead;
+        private double itemHeight = ThemeProperties.DEFAULTITEMHEIGHT;
         private void IsExpandedChanged(object sender, EventArgs e)
         {
+            if (!itemHeightRead)
+            {
+                itemHeight = (double)GetValue(ThemeProperties.ItemheightProperty);
+                itemHeightRead = true;
+            }
             if (sender is LuiAccordionItem accitem)
             {
 
@@ -202,7 +210,7 @@
                     {
                         if (Items.Count > 0)
                         {
-                            accitem.Height = Math.Max(ActualHeight - ((Items.Count - 1) * 39), 39);
+                            accitem.Height = Math.Max(ActualHeight - ((Items.Count - 1) * itemHeight), itemHeight);
                         }
                     }
                 }
@@ -210,7 +218,7 @@
                 {
                     if (!IsItemsStretchEnabled)
                     {
-                        accitem.Height = 39;
+                        accitem.Height = ThemeProperties.DEFAULTITEMHEIGHT;
                     }
                 }
             }

@@ -297,6 +297,26 @@ namespace leonardo.AttachedProperties
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
+
+        #region Itemheight AP
+        public const double DEFAULTITEMHEIGHT = 39.0;
+        public static double GetItemheight(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ItemheightProperty);
+        }
+
+        public static void SetItemheight(DependencyObject obj, double value)
+        {
+            obj.SetValue(ItemheightProperty, value);
+        }
+
+        public static readonly DependencyProperty ItemheightProperty =
+            DependencyProperty.RegisterAttached(
+                "Itemheight",
+                typeof(double),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(DEFAULTITEMHEIGHT, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }

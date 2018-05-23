@@ -45,7 +45,8 @@
         lui_icon_unlock,
         lui_icon_select_all,
         lui_icon_excluded,
-        lui_icon_export
+        lui_icon_export,
+        lui_icon_database
     }
 
     public static class LuiIconsEnumExtensions
@@ -186,6 +187,9 @@
                     break;
                 case LuiIconsEnum.lui_icon_export:
                     icontext = "I";
+                    break;
+                case LuiIconsEnum.lui_icon_database:
+                    icontext = "H";
                     break;
                 default:
                     icontext = "";

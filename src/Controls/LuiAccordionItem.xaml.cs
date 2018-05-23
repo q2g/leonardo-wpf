@@ -4,7 +4,7 @@
     using NLog;
     using System;
     using System.Windows;
-    using System.Windows.Controls; 
+    using System.Windows.Controls;
     #endregion
 
     /// <summary>
@@ -19,7 +19,7 @@
         {
             InitializeComponent();
             DataContext = this;
-        } 
+        }
         #endregion
 
         #region IsExpanded - DP
@@ -31,6 +31,17 @@
 
         public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(
          "IsExpanded", typeof(bool), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region HeaderTemplate - DP
+        public DataTemplate HeaderTemplate
+        {
+            get { return (DataTemplate)this.GetValue(HeaderTemplateProperty); }
+            set { this.SetValue(HeaderTemplateProperty, value); }
+        }
+
+        public static readonly DependencyProperty HeaderTemplateProperty = DependencyProperty.Register(
+         "HeaderTemplate", typeof(DataTemplate), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region Index - DP

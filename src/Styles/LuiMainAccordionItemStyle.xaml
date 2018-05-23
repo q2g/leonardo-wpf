@@ -71,7 +71,7 @@
                                 <Line
                                     StrokeThickness="5"
                                     Y1="0"
-                                    Y2="39">
+                                    Y2="{Binding Path=(attachedP:ThemeProperties.Itemheight)}">
                                     <Line.Style>
                                         <Style TargetType="Line">
                                             <Style.Triggers>
@@ -87,7 +87,7 @@
                                 </Line>
                                 <ToggleButton
                                     x:Name="HeaderSite"
-                                    Height="39"
+                                    Height="{Binding Path=(attachedP:ThemeProperties.Itemheight)}"
                                     MinWidth="0"
                                     MinHeight="0"
                                     Margin="0"
