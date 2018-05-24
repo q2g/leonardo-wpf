@@ -202,9 +202,9 @@
             }
             if (sender is LuiAccordionItem accitem)
             {
-
                 if (accitem.IsExpanded == true)
                 {
+                    ExpandedItemIndex = ItemContainerGenerator.IndexFromContainer(accitem);
                     CollapseAllItems(accitem);
                     if (!IsItemsStretchEnabled)
                     {
@@ -338,6 +338,17 @@
 
         public static readonly DependencyProperty IsDragDropEnabledProperty = DependencyProperty.Register(
          "IsDragDropEnabled", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region ExpandedItemIndex DP
+        public int ExpandedItemIndex
+        {
+            get { return (int)this.GetValue(ExpandedItemIndexProperty); }
+            set { this.SetValue(ExpandedItemIndexProperty, value); }
+        }
+
+        public static readonly DependencyProperty ExpandedItemIndexProperty = DependencyProperty.Register(
+         "ExpandedItemIndex", typeof(int), typeof(LuiAccordion), new FrameworkPropertyMetadata(-1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region IsItemsStretchEnabled DP
