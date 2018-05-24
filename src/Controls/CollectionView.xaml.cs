@@ -44,8 +44,9 @@
         {
             InitializeComponent();
 
-            #endregion SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
+            SetValue(ProcessedCollectionProperty, new ObservableCollection<object>());
         }
+        #endregion
 
         private void ProcessedCollectionChanged_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
