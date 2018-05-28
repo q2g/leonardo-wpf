@@ -4,14 +4,19 @@
     using System.Linq;
     using System.ComponentModel;
     using System.Collections.Generic;
-    using System.Runtime.CompilerServices; 
+    using System.Runtime.CompilerServices;
     #endregion
+
 
     public class DimensionMeasure
     {
         private string text;
         private bool? dimension;
         private string libID;
+        private string formula;
+        private string dimensionField;
+        private bool isDrillDown;
+        private string[] fieldList;
 
         public string Text
         {
@@ -21,6 +26,54 @@
                 if (text != value)
                 {
                     text = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public string DimensionField
+        {
+            get => dimensionField;
+            set
+            {
+                if (dimensionField != value)
+                {
+                    dimensionField = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public bool IsDrillDown
+        {
+            get => isDrillDown;
+            set
+            {
+                if (isDrillDown != value)
+                {
+                    isDrillDown = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public string[] FieldList
+        {
+            get => fieldList;
+            set
+            {
+                if (fieldList != value)
+                {
+                    fieldList = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public string Formula
+        {
+            get => formula;
+            set
+            {
+                if (formula != value)
+                {
+                    formula = value;
                     RaisePropertyChanged();
                 }
             }
