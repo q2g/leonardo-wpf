@@ -149,6 +149,7 @@
             return retval;
         }
 
+        LuiAccordionItem expandedItem;
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             try
@@ -160,6 +161,10 @@
                         DependencyPropertyDescriptor
                         .FromProperty(LuiAccordionItem.IsExpandedProperty, typeof(LuiAccordionItem))
                         .AddValueChanged(accordionitem, IsExpandedChanged);
+                    }
+                    if (accordionitem.IsExpanded)
+                    {
+                        expandedItem = accordionitem;
                     }
                     return true;
                 }
@@ -633,6 +638,10 @@
 
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {
+            if (expandedItem != null)
+            {
+                IsExpandedChanged(expandedItem, null);
+            }
             return;
 
             //if (customerView == null && Sorter != null)
