@@ -12,4 +12,5 @@
     dd:DragDrop.IsDragSource="{Binding RelativeSource={RelativeSource Self}, Path=IsDragDropEnabled}"
     dd:DragDrop.IsDropTarget="{Binding RelativeSource={RelativeSource Self}, Path=IsDragDropEnabled}"
     Loaded="ItemsControl_Loaded"
+    SizeChanged="ItemsControl_SizeChanged"
     mc:Ignorable="d" />

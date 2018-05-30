@@ -672,6 +672,26 @@
             //}
 
         }
+
+        private void ItemsControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (!itemHeightRead)
+            {
+                itemHeight = (double)GetValue(ThemeProperties.ItemheightProperty);
+                itemHeightRead = true;
+            }
+            foreach (var item in Items)
+            {
+                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem accitem)
+                {
+                    if (!IsItemsStretchEnabled && accitem.IsExpanded)
+                    {
+                        accitem.Height = Math.Max(ActualHeight - ((Items.Count - 1) * itemHeight), itemHeight);
+                    }
+
+                }
+            }
+        }
     }
 
 

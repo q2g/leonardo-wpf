@@ -24,9 +24,7 @@
             <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
         </ResourceDictionary>
     </Window.Resources>
-    <Border
-        BorderBrush="{StaticResource Lui.Brush.Grayscale30}"
-        CornerRadius="14">
+    <Border BorderBrush="{StaticResource Lui.Brush.Grayscale30}" CornerRadius="14">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="7" />
@@ -41,9 +39,7 @@
                 Grid.Row="0"
                 Grid.ColumnSpan="2"
                 Background="{StaticResource Lui.Brush.Grayscale30}" />
-            <Border
-                Grid.Row="1"
-                Background="{StaticResource Lui.Brush.Grayscale100}">
+            <Border Grid.Row="1" Background="{StaticResource Lui.Brush.Grayscale100}">
                 <controls:LuiIcon
                     Margin="15,0,0,0"
                     VerticalContentAlignment="Center"
