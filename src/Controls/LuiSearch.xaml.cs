@@ -76,6 +76,13 @@
                         e.Handled = true;
                     }
                 }
+                if (e.Key == Key.Enter)
+                {
+                    if (AcceptCommand != null)
+                    {
+                        AcceptCommand.Execute(maininput.Text);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +118,17 @@
          "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region AcceptCommand - DP        
+        public ICommand AcceptCommand
+        {
+            get { return (ICommand)this.GetValue(AcceptCommandProperty); }
+            set { this.SetValue(AcceptCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty AcceptCommandProperty = DependencyProperty.Register(
+         "AcceptCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
 
 
         #region HintText - DP        
@@ -123,5 +141,10 @@
         public static readonly DependencyProperty HintTextProperty = DependencyProperty.Register(
          "HintText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("Search...", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            maininput.Focus();
+        }
     }
 }
