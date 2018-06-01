@@ -55,6 +55,17 @@
          "CommandParameter", typeof(object), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region Autofocus - DP        
+        public bool Autofocus
+        {
+            get { return (bool)this.GetValue(AutofocusProperty); }
+            set { this.SetValue(AutofocusProperty, value); }
+        }
+
+        public static readonly DependencyProperty AutofocusProperty = DependencyProperty.Register(
+         "Autofocus", typeof(bool), typeof(LuiSearch), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
 
         #region Events
         private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -144,7 +155,8 @@
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            maininput.Focus();
+            if (Autofocus)
+                maininput.Focus();
         }
     }
 }
