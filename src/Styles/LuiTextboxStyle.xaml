@@ -139,6 +139,10 @@
                         <Trigger Property="controls:LuiInput.LabelText" Value="">
                             <Setter TargetName="label" Property="Visibility" Value="Collapsed" />
                         </Trigger>
+                        <Trigger Property="attachedP:ThemeProperties.InputLabelForegroundWhite" Value="True">
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                        </Trigger>
+
 
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />

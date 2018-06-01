@@ -317,6 +317,25 @@ namespace leonardo.AttachedProperties
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(DEFAULTITEMHEIGHT, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
+
+        #region InputLabelForegroundWhite AP
+        public static bool GetInputLabelForegroundWhite(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(InputLabelForegroundWhiteProperty);
+        }
+
+        public static void SetInputLabelForegroundWhite(DependencyObject obj, bool value)
+        {
+            obj.SetValue(InputLabelForegroundWhiteProperty, value);
+        }
+
+        public static readonly DependencyProperty InputLabelForegroundWhiteProperty =
+            DependencyProperty.RegisterAttached(
+                "InputLabelForegroundWhite",
+                typeof(bool),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }

@@ -25,65 +25,67 @@
         </ResourceDictionary>
     </Window.Resources>
     <Border BorderBrush="{StaticResource Lui.Brush.Grayscale30}" CornerRadius="14">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="7" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="24" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Border
-                Grid.Row="0"
-                Grid.ColumnSpan="2"
-                Background="{StaticResource Lui.Brush.Grayscale30}" />
-            <Border Grid.Row="1" Background="{StaticResource Lui.Brush.Grayscale100}">
-                <controls:LuiIcon
-                    Margin="15,0,0,0"
-                    VerticalContentAlignment="Center"
-                    Foreground="{StaticResource Lui.Brush.Grayscale30}"
-                    Icon="{Binding MessageIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
-                    IconSize="Large" />
-            </Border>
-            <Border
-                Grid.Row="1"
-                Grid.Column="1"
-                Background="{StaticResource Lui.Brush.Grayscale100}">
-                <TextBlock
-                    VerticalAlignment="Center"
-                    FontFamily="{StaticResource QlikViewSans}"
-                    Foreground="{StaticResource Lui.Brush.Grayscale30}"
-                    Text="{Binding MessageText, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
-                    TextWrapping="Wrap" />
-            </Border>
-            <Border
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
-                Background="{StaticResource Lui.Brush.Grayscale30}">
-                <StackPanel VerticalAlignment="Center">
-                    <DockPanel LastChildFill="False">
-                        <controls:LuiButton
-                            Height="18"
-                            Margin="0,0,10,0"
-                            HorizontalAlignment="Right"
-                            attached:ThemeProperties.Inverted="True"
-                            Click="LuiButton_Click"
-                            Content="OK"
-                            DockPanel.Dock="Right"
-                            IsDefault="True" />
-                        <controls:LuiButton
-                            Height="18"
-                            Margin="0,0,10,0"
-                            HorizontalAlignment="Right"
-                            attached:ThemeProperties.Inverted="True"
-                            Content="Abbrechen"
-                            DockPanel.Dock="Right"
-                            IsCancel="True" />
-                    </DockPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
+        <Border BorderBrush="{StaticResource Lui.Brush.Grayscale30}" BorderThickness="1,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource Lui.Brush.Grayscale30}" />
+                <Border Grid.Row="1" Background="{StaticResource Lui.Brush.Grayscale100}">
+                    <controls:LuiIcon
+                        Margin="15,0,0,0"
+                        VerticalContentAlignment="Center"
+                        Foreground="{StaticResource Lui.Brush.Grayscale30}"
+                        Icon="{Binding MessageIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
+                        IconSize="Large" />
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Background="{StaticResource Lui.Brush.Grayscale100}">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource QlikViewSans}"
+                        Foreground="{StaticResource Lui.Brush.Grayscale30}"
+                        Text="{Binding MessageText, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}}"
+                        TextWrapping="Wrap" />
+                </Border>
+                <Border
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Background="{StaticResource Lui.Brush.Grayscale30}">
+                    <StackPanel VerticalAlignment="Center">
+                        <DockPanel LastChildFill="False">
+                            <controls:LuiButton
+                                Height="18"
+                                Margin="0,0,10,0"
+                                HorizontalAlignment="Right"
+                                attached:ThemeProperties.Inverted="True"
+                                Click="LuiButton_Click"
+                                Content="OK"
+                                DockPanel.Dock="Right"
+                                IsDefault="True" />
+                            <controls:LuiButton
+                                Height="18"
+                                Margin="0,0,10,0"
+                                HorizontalAlignment="Right"
+                                attached:ThemeProperties.Inverted="True"
+                                Content="Abbrechen"
+                                DockPanel.Dock="Right"
+                                IsCancel="True" />
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
     </Border>
 </Window>

@@ -23,6 +23,12 @@
         </ResourceDictionary>
     </Button.Resources>
     <Button.Style>
-        <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="Button" />
+        <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{StaticResource Lui.Brush.Green_darken_30}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Button.Style>
 </Button>
