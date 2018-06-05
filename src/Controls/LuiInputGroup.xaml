@@ -34,9 +34,7 @@
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <Style.Triggers>
-                        <DataTrigger
-                            Binding="{Binding ElementName=control, Path=LabelText}"
-                            Value="">
+                        <DataTrigger Binding="{Binding ElementName=control, Path=LabelText}" Value="">
                             <Setter Property="Visibility" Value="Collapsed" />
                         </DataTrigger>
                     </Style.Triggers>
@@ -61,13 +59,9 @@
                 CommandParameter="{Binding LeftCommandParameter, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
                 Foreground="{Binding ElementName=control, Path=LeftCommandForeground}">
                 <local:LuiButton.Style>
-                    <Style
-                        BasedOn="{StaticResource LuiButtonStyle}"
-                        TargetType="local:LuiButton">
+                    <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="local:LuiButton">
                         <Style.Triggers>
-                            <DataTrigger
-                                Binding="{Binding LeftCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"
-                                Value="lui_icon_none">
+                            <DataTrigger Binding="{Binding LeftCommandIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}" Value="lui_icon_none">
                                 <Setter Property="Visibility" Value="Collapsed" />
                             </DataTrigger>
                             <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
@@ -87,7 +81,7 @@
                 attachedP:ThemeProperties.BorderThickness="1"
                 attachedP:ThemeProperties.CornerRadius="3,0,0,3"
                 IsEnabled="{Binding ElementName=control, Path=IsInputEnabled}"
-                Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}" />
+                Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}, UpdateSourceTrigger=PropertyChanged}" />
             <local:LuiButton
                 x:Name="mainbuttonRight"
                 Grid.Column="2"
@@ -100,9 +94,7 @@
                 Foreground="{Binding ElementName=control, Path=RightCommandForeground}">
                 <!--  Command="{Binding RightCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiInputGroup}}"  -->
                 <local:LuiButton.Style>
-                    <Style
-                        BasedOn="{StaticResource LuiButtonStyle}"
-                        TargetType="local:LuiButton">
+                    <Style BasedOn="{StaticResource LuiButtonStyle}" TargetType="local:LuiButton">
                         <Style.Triggers>
                             <Trigger Property="attachedP:ThemeProperties.Inverted" Value="True">
                                 <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />

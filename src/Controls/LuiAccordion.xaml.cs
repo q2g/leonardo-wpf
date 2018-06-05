@@ -210,7 +210,8 @@
                 if (accitem.IsExpanded == true)
                 {
                     ExpandedItemIndex = ItemContainerGenerator.IndexFromContainer(accitem);
-                    CollapseAllItems(accitem);
+                    if (collapseAllOnExpandSingle)
+                        CollapseAllItems(accitem);
                     if (!IsItemsStretchEnabled)
                     {
                         if (Items.Count > 0)
