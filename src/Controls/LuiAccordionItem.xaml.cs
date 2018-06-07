@@ -64,7 +64,7 @@
         }
 
         public static readonly DependencyProperty IndexProperty = DependencyProperty.Register(
-         "Index", typeof(int), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIndexChanged)));
+         "Index", typeof(int), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(-1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIndexChanged)));
 
 
         private static void OnIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

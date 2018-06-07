@@ -112,7 +112,8 @@
             int counter = 1;
             foreach (var item in ItemsSource)
             {
-                SetItemIndex(item, counter++);
+                if (GetItemIndex(item) < 1)
+                    SetItemIndex(item, counter++);
             }
         }
 
