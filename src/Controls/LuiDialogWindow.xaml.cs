@@ -128,7 +128,7 @@ namespace leonardo.Controls
         #endregion
 
         #region statics
-        public static void Show(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true)
+        public static bool Show(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false)
         {
             var wnd = new LuiDialogWindow()
             {
@@ -141,14 +141,24 @@ namespace leonardo.Controls
                 ShowOK = showOK,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner
             };
+            if (hwnd != -1)
+            {
+                new WindowInteropHelper(wnd).Owner = new IntPtr((int)hwnd);
+            }
 
-            new WindowInteropHelper(wnd).Owner = new IntPtr((int)hwnd);
 
-
-
-            wnd.OkCommand = new RelayCommand((o) => { wnd.Close(); });
-            wnd.CancelCommand = new RelayCommand((o) => { wnd.Close(); });
-            wnd.Show();
+            bool retval = false;
+            wnd.OkCommand = new RelayCommand((o) => { wnd.Close(); retval = true; });
+            wnd.CancelCommand = new RelayCommand((o) => { wnd.Close(); retval = false; });
+            if (modal)
+            {
+                wnd.ShowDialog();
+            }
+            else
+            {
+                wnd.Show();
+            }
+            return retval;
         }
     }
     #endregion

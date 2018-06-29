@@ -16,7 +16,7 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
     <Style x:Key="LuiTextboxStyle" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <!--<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />-->
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="BorderThickness" Value="1" />
@@ -40,7 +40,6 @@
                             Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />
                         <Border
                             x:Name="border"
-                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(attachedP:ThemeProperties.BorderThickness)}"
                             CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(attachedP:ThemeProperties.CornerRadius)}"
@@ -128,7 +127,7 @@
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale0}" />
                             <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
                             <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
                             <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
