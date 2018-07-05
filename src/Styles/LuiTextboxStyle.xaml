@@ -16,6 +16,157 @@
     <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
     <Style x:Key="LuiTextboxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AllowDrop" Value="true" />
+        <Setter Property="FontFamily" Value="{StaticResource QlikViewSans}" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <StackPanel>
+                        <TextBlock
+                            Name="label"
+                            Margin="0,0,0,7"
+                            FontSize="14"
+                            Foreground="white"
+                            Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=LabelText}" />
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(attachedP:ThemeProperties.BorderThickness)}"
+                            CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(attachedP:ThemeProperties.CornerRadius)}"
+                            SnapsToDevicePixels="True">
+                            <Grid>
+                                <ScrollViewer
+                                    x:Name="PART_ContentHost"
+                                    Grid.Column="1"
+                                    Focusable="false"
+                                    HorizontalScrollBarVisibility="Hidden"
+                                    VerticalScrollBarVisibility="Hidden" />
+                                <TextBlock
+                                    Name="hint"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Cursor="IBeam"
+                                    FontStyle="Italic"
+                                    Foreground="{StaticResource Lui.Brush.Grayscale80}"
+                                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HintText}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}" Value="" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="controls:LuiInput.LUIInputSize" Value="Default">
+                            <Setter TargetName="border" Property="Height" Value="28" />
+                        </Trigger>
+                        <Trigger Property="controls:LuiInput.LUIInputSize" Value="Large">
+                            <Setter TargetName="border" Property="Height" Value="38" />
+                            <Setter Property="FontSize" Value="20" />
+                            <Setter TargetName="label" Property="FontSize" Value="14" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
+                                <Condition Property="IsMouseOver" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="attachedP:ThemeProperties.Inverted" Value="False" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale0}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
+                                <Condition Property="IsMouseOver" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="attachedP:ThemeProperties.Inverted" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale50}" />
+                            <Setter Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                            <Setter TargetName="label" Property="Background" Value="{StaticResource Lui.Brush.Grayscale30}" />
+                            <Setter TargetName="hint" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale80}" />
+                        </MultiTrigger>
+
+                        <Trigger Property="controls:LuiInput.LabelText" Value="">
+                            <Setter TargetName="label" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="attachedP:ThemeProperties.InputLabelForegroundWhite" Value="True">
+                            <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+                        </Trigger>
+
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource Lui.Brush.Blue}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource Lui.Brush.Grayscale90}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true" />
+                    <Condition Property="IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LuiTextboxStyle_Cursor" TargetType="{x:Type TextBox}">
         <!--<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />-->
         <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />

@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attachedP="clr-namespace:leonardo.AttachedProperties"
+    xmlns:converter="clr-namespace:leonardo.Converter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:leonardo.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,8 +16,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
                 <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
+                <ResourceDictionary Source="../Styles/LuiTextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
+            <converter:DefaultConverter x:Key="DefaultConverter" DefaultValue="{StaticResource LuiTextboxStyle}" />
 
         </ResourceDictionary>
     </UserControl.Resources>
@@ -52,6 +54,7 @@
             attachedP:ThemeProperties.CornerRadius="0"
             HintText="{Binding HintText, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             PreviewKeyDown="maininput_PreviewKeyDown"
+            Style="{Binding InputBoxStyle, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}, Converter={StaticResource DefaultConverter}}"
             Text="{Binding SearchText, RelativeSource={RelativeSource FindAncestor, AncestorType=local:LuiSearch}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <local:LuiInput.InputBindings>
                 <KeyBinding

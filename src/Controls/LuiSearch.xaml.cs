@@ -140,6 +140,17 @@
          "AcceptCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region InputBoxStyle - DP        
+        public Style InputBoxStyle
+        {
+            get { return (Style)this.GetValue(InputBoxStyleProperty); }
+            set { this.SetValue(InputBoxStyleProperty, value); }
+        }
+
+        public static readonly DependencyProperty InputBoxStyleProperty = DependencyProperty.Register(
+         "InputBoxStyle", typeof(Style), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
 
 
         #region HintText - DP        

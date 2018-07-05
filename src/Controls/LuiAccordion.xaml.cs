@@ -369,17 +369,6 @@
          "IsItemsStretchEnabled", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region Sorter DP
-        public IComparer Sorter
-        {
-            get { return (IComparer)this.GetValue(SorterProperty); }
-            set { this.SetValue(SorterProperty, value); }
-        }
-
-        public static readonly DependencyProperty SorterProperty = DependencyProperty.Register(
-         "Sorter", typeof(IComparer), typeof(LuiAccordion), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion
-
         #region IndexProvider DP
         public IIndexProvider IndexProvider
         {
@@ -389,48 +378,6 @@
 
         public static readonly DependencyProperty IndexProviderProperty = DependencyProperty.Register(
          "IndexProvider", typeof(IIndexProvider), typeof(LuiAccordion), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion
-
-        #region SortPropertyName DP
-        private string sortPropertyName = "";
-        internal string SortPropertyName_Internal
-        {
-            get { return sortPropertyName; }
-            set
-            {
-                if (sortPropertyName != value)
-                {
-                    sortPropertyName = value;
-                }
-            }
-        }
-        public string SortPropertyName
-        {
-            get { return (string)this.GetValue(SortPropertyNameProperty); }
-            set { this.SetValue(SortPropertyNameProperty, value); }
-        }
-
-        public static readonly DependencyProperty SortPropertyNameProperty = DependencyProperty.Register(
-         "SortPropertyName", typeof(string), typeof(LuiAccordion), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSortPropertyNameChanged)));
-
-
-        private static void OnSortPropertyNameChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            try
-            {
-                if (d is LuiAccordion obj)
-                {
-                    if (e.NewValue is string newvalue)
-                    {
-                        obj.SortPropertyName_Internal = newvalue;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-        }
         #endregion
 
         #region IsDragDropChangesUnderlyingCollection DP
@@ -645,52 +592,21 @@
                 IsExpandedChanged(expandedItem, null);
             }
             return;
-
-            //if (customerView == null && Sorter != null)
-            //{
-
-            //    if (ItemsSource != null)
-            //    {
-            //        customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(ItemsSource);
-            //    }
-            //    else
-            //    {
-            //        customerView = (ListCollectionView)CollectionViewSource.GetDefaultView(Items);
-            //    }
-            //    //customerView.SortDescriptions.Add(new SortDescription(sortPropertyName, ListSortDirection.Ascending));
-
-            //    if (Sorter != null)
-            //    {
-            //        customerView.CustomSort = Sorter;
-            //    }
-            //    //if (sortPropertyName == "ColumnOrderIndex")
-            //    //{
-            //    //    //customerView.CustomSort = new ColumnOrderIndexSorter();
-            //    //}
-            //    //if (sortPropertyName == "SortOrderIndex")
-            //    //{
-            //    //    //customerView.CustomSort = new SortOrderIndexSorter();
-            //    //}
-            //}
-
         }
 
         private void ItemsControl_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (!itemHeightRead)
+            if (Items != null)
             {
-                itemHeight = (double)GetValue(ThemeProperties.ItemheightProperty);
-                itemHeightRead = true;
-            }
-            foreach (var item in Items)
-            {
-                if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem accitem)
+                foreach (var item in Items)
                 {
-                    if (!IsItemsStretchEnabled && accitem.IsExpanded)
+                    if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem accitem)
                     {
-                        accitem.Height = Math.Max(ActualHeight - ((Items.Count - 1) * itemHeight), itemHeight);
+                        if (accitem.IsExpanded)
+                        {
+                            IsExpandedChanged(accitem, null);
+                        }
                     }
-
                 }
             }
         }
