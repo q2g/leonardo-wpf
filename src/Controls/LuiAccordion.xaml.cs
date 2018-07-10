@@ -109,11 +109,15 @@
                 new_collectionchanged.CollectionChanged += ItemsSource_CollectionChanged;
                 lastItemssource = new_collectionchanged;
             }
-            int counter = 1;
-            foreach (var item in ItemsSource)
+
+            if (ItemsSource != null)
             {
-                if (GetItemIndex(item) < 1)
-                    SetItemIndex(item, counter++);
+                int counter = 1;
+                foreach (var item in ItemsSource)
+                {
+                    if (GetItemIndex(item) < 1)
+                        SetItemIndex(item, counter++);
+                }
             }
         }
 

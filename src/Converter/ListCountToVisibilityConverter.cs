@@ -13,12 +13,17 @@
         public int CountToMatch { get; set; }
         public Visibility CountMatchesVisibility { get; set; }
         public Visibility ElseVisibility { get; set; }
+        public bool IsExactMatch { get; set; }
+        public bool IsGreaterThanMatch { get; set; }
 
         public object Convert(object value, System.Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is ICollection col)
+            if (value is int count)
             {
-                return col.Count == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+                if (IsExactMatch)
+                    return count == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+                if (IsGreaterThanMatch)
+                    return count > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
             }
 
             return ElseVisibility;
