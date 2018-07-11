@@ -8,7 +8,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Styles/LuiPalette.xaml" />
         <ResourceDictionary Source="../Styles/LuiMainAccordionItemStyle.xaml" />
-        <ResourceDictionary Source="../Styles/LuiColumnOrderAccordionItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LuiPresentationAccordionItemStyle.xaml" />
         <ResourceDictionary Source="../Styles/LuiAccordionStyle.xaml" />
         <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
