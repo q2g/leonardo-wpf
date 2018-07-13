@@ -325,6 +325,8 @@
                 {
                     m_lastDragedOverElement.Opacity = 1;
                 }
+                if (DropCommand != null)
+                    DropCommand.Execute(new Tuple<object, object>(dropInfo.Data, dropInfo.TargetItem));
                 if (ItemContainerGenerator.ContainerFromItem(dropInfo.Data) is LuiAccordionItem sourceContainer)
                 {
                     if (ItemContainerGenerator.ContainerFromItem(dropInfo.TargetItem) is LuiAccordionItem targetContainer)
@@ -349,6 +351,17 @@
 
         public static readonly DependencyProperty IsDragDropEnabledProperty = DependencyProperty.Register(
          "IsDragDropEnabled", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        #region DropCommand DP
+        public ICommand DropCommand
+        {
+            get { return (ICommand)this.GetValue(DropCommandProperty); }
+            set { this.SetValue(DropCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty DropCommandProperty = DependencyProperty.Register(
+         "DropCommand", typeof(ICommand), typeof(LuiAccordion), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         #region ExpandedItemIndex DP

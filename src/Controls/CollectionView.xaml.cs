@@ -151,8 +151,6 @@
                     }
 
                     RefreshProcessedCollectionAsync();
-
-
                 }
             }
         }
