@@ -26,6 +26,15 @@
                     return count > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
             }
 
+            if (value is ICollection coll)
+            {
+                if (IsExactMatch)
+                    return coll.Count == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+                if (IsGreaterThanMatch)
+                    return coll.Count > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+            }
+
+
             return ElseVisibility;
         }
 
