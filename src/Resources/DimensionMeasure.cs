@@ -15,6 +15,7 @@
         private string libID;
         private string formula;
         private string dimensionField;
+        private bool isSingleFieldDimension;
         private bool isDrillDown;
         private string[] fieldList;
 
@@ -38,6 +39,18 @@
                 if (dimensionField != value)
                 {
                     dimensionField = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public bool IsSingleFieldDimension
+        {
+            get => isSingleFieldDimension;
+            set
+            {
+                if (isSingleFieldDimension != value)
+                {
+                    isSingleFieldDimension = value;
                     RaisePropertyChanged();
                 }
             }

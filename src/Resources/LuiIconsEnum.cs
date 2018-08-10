@@ -7,6 +7,7 @@
         lui_icon_calendar,
         lui_icon_menu,
         lui_icon_table,
+        lui_icon_pivot_table,
         lui_icon_triangle_bottom,
         lui_icon_triangle_right,
         lui_icon_triangle_left,
@@ -72,6 +73,9 @@
                     break;
                 case LuiIconsEnum.lui_icon_table:
                     icontext = "'";
+                    break;
+                case LuiIconsEnum.lui_icon_pivot_table:
+                    icontext = "(";
                     break;
                 case LuiIconsEnum.lui_icon_triangle_bottom:
                     icontext = "S";

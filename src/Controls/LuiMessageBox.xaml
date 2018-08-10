@@ -6,11 +6,15 @@
     xmlns:controls="clr-namespace:leonardo.Controls"
     xmlns:converter="clr-namespace:leonardo.Converter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:l="http://wpflocalizeextension.codeplex.com"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="300"
     Height="100"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    l:LocalizeDictionary.DesignCulture="de"
+    l:ResxLocalizationProvider.DefaultAssembly="qlik-resources"
+    l:ResxLocalizationProvider.DefaultDictionary="Translate_client"
     AllowsTransparency="True"
     Background="Transparent"
     WindowStartupLocation="CenterOwner"
@@ -71,7 +75,7 @@
                                 HorizontalAlignment="Right"
                                 attached:ThemeProperties.Inverted="True"
                                 Click="LuiButton_Click"
-                                Content="OK"
+                                Content="{l:Loc Translate_common:Common_OK}"
                                 DockPanel.Dock="Right"
                                 IsDefault="True" />
                             <controls:LuiButton
@@ -79,7 +83,7 @@
                                 Margin="0,0,10,0"
                                 HorizontalAlignment="Right"
                                 attached:ThemeProperties.Inverted="True"
-                                Content="Cancel"
+                                Content="{l:Loc Translate_common:Common_Cancel}"
                                 DockPanel.Dock="Right"
                                 IsCancel="True" />
                         </DockPanel>
