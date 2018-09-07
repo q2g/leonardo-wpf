@@ -82,6 +82,7 @@
 
         #region ProcessedCollection - DP
         private ObservableCollection<object> processedCollection;
+        private object processedCollectionLock = new object();
         internal ObservableCollection<object> ProcessedCollection_Internal
         {
             get { return processedCollection; }
@@ -245,131 +246,9 @@
                 logger.Error(Ex);
             }
         }
-
-        private async void RefreshProcessedCollectionAsync()
-        {
-            if (itemsSource == null)
-            {
-                return;
-            }
-            ObservableCollection<object> newlist = new ObservableCollection<object>();
-            try
-            {
-                //  newlist = await Task.Run<ObservableCollection<object>>(() =>
-                //{
-                try
-                {
-                    foreach (var item in itemsSource)
-                    {
-                        if (collectionViewFilter != null)
-                        {
-                            if (collectionViewFilter.Filter(item, (filterText + "")))
-                            {
-                                newlist.Add(item);
-                            }
-                        }
-                        else
-                        {
-                            newlist.Add(item);
-                        }
-                    }
-                    SortCollection(newlist);
-                }
-                catch (Exception ex)
-                {
-                    logger.Error(ex);
-                }
-                //return newlist;
-                //});
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-
-            ProcessedCollection = newlist;
-        }
-        private async void RefreshProcessedCollectionAsync2()
-        {
-            if (itemsSource == null)
-            {
-                return;
-            }
-            if (ProcessedCollection == null)
-            {
-                ProcessedCollection = new ObservableCollection<object>();
-            }
-            ObservableCollection<object> newlist = new ObservableCollection<object>();
-            try
-            {
-                try
-                {
-                    foreach (var item in itemsSource)
-                    {
-                        if (collectionViewFilter != null)
-                        {
-                            if (collectionViewFilter.Filter(item, (filterText + "")))
-                            {
-                                newlist.Add(item);
-                            }
-                        }
-                        else
-                        {
-                            newlist.Add(item);
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    logger.Error(ex);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-
-            MergeChanges(ProcessedCollection, newlist, collectionViewComparer);
-        }
-
-        object addRemoveObject = null;
-        private bool MergeChanges(IList MergeList, IList newList, IComparer comparison = null)
-        {
-            addRemoveObject = null;
-            var RemoveList = new List<object>();
-            foreach (var item in MergeList)
-                RemoveList.Add(item);
-
-            var AddList = new Dictionary<int, object>();
-
-            for (int i = 0; i < newList.Count; i++)
-            {
-                if (MergeList.Contains(newList[i]))
-                    RemoveList.Remove(newList[i]);
-                else
-                    AddList.Add(i, newList[i]);
-            }
-
-            foreach (var item in RemoveList)
-            {
-                addRemoveObject = item;
-                MergeList.Remove(item);
-                addRemoveObject = null;
-            }
-
-            foreach (var item in AddList)
-            {
-                addRemoveObject = item.Value;
-                MergeList.Insert(item.Key, item.Value);
-                addRemoveObject = null;
-            }
-            SortCollection(ProcessedCollection);
-            return RemoveList.Count > 0 | AddList.Count > 0;
-        }
-
         #endregion
+
+       
 
         #region CollectionViewFilter  IComparer
         private ICollectionViewFilter collectionViewFilter;
@@ -539,6 +418,131 @@
             {
                 logger.Error(Ex);
             }
+        }
+        #endregion
+
+        #region private Functions
+        private async void RefreshProcessedCollectionAsync()
+        {
+            if (itemsSource == null)
+            {
+                return;
+            }
+            ObservableCollection<object> newlist = new ObservableCollection<object>();
+            try
+            {
+                //  newlist = await Task.Run<ObservableCollection<object>>(() =>
+                //{
+                try
+                {
+                    foreach (var item in itemsSource)
+                    {
+                        if (collectionViewFilter != null)
+                        {
+                            if (collectionViewFilter.Filter(item, (filterText + "")))
+                            {
+                                newlist.Add(item);
+                            }
+                        }
+                        else
+                        {
+                            newlist.Add(item);
+                        }
+                    }
+                    SortCollection(newlist);
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+                //return newlist;
+                //});
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+            BindingOperations.EnableCollectionSynchronization(newlist, processedCollectionLock);
+            ProcessedCollection = newlist;
+        }
+        private async void RefreshProcessedCollectionAsync2()
+        {
+            if (itemsSource == null)
+            {
+                return;
+            }
+            if (ProcessedCollection == null)
+            {
+                ProcessedCollection = new ObservableCollection<object>();
+            }
+            ObservableCollection<object> newlist = new ObservableCollection<object>();
+            try
+            {
+                try
+                {
+                    foreach (var item in itemsSource)
+                    {
+                        if (collectionViewFilter != null)
+                        {
+                            if (collectionViewFilter.Filter(item, (filterText + "")))
+                            {
+                                newlist.Add(item);
+                            }
+                        }
+                        else
+                        {
+                            newlist.Add(item);
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+
+            MergeChanges(ProcessedCollection, newlist, collectionViewComparer);
+        }
+
+        object addRemoveObject = null;
+        private bool MergeChanges(IList MergeList, IList newList, IComparer comparison = null)
+        {
+            addRemoveObject = null;
+            var RemoveList = new List<object>();
+            foreach (var item in MergeList)
+                RemoveList.Add(item);
+
+            var AddList = new Dictionary<int, object>();
+
+            for (int i = 0; i < newList.Count; i++)
+            {
+                if (MergeList.Contains(newList[i]))
+                    RemoveList.Remove(newList[i]);
+                else
+                    AddList.Add(i, newList[i]);
+            }
+
+            foreach (var item in RemoveList)
+            {
+                addRemoveObject = item;
+                MergeList.Remove(item);
+                addRemoveObject = null;
+            }
+
+            foreach (var item in AddList)
+            {
+                addRemoveObject = item.Value;
+                MergeList.Insert(item.Key, item.Value);
+                addRemoveObject = null;
+            }
+            SortCollection(ProcessedCollection);
+            return RemoveList.Count > 0 | AddList.Count > 0;
         }
         #endregion
     }

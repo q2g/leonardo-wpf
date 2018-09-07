@@ -1,9 +1,9 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using System.Windows;
     using leonardo.Resources;
-    using System.Windows.Controls; 
+    using System.Windows;
+    using System.Windows.Controls;
     #endregion
 
     /// <summary>
@@ -15,7 +15,7 @@
         public LuiInput()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         #region LabelText - DP       
@@ -48,8 +48,24 @@
         }
 
         public static readonly DependencyProperty LUIInputSizeProperty = DependencyProperty.Register(
-         "LUIInputSize", typeof(LuiInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LuiInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));       
+         "LUIInputSize", typeof(LuiInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LuiInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
+        #region Autofocus - DP        
+        public bool Autofocus
+        {
+            get { return (bool)this.GetValue(AutofocusProperty); }
+            set { this.SetValue(AutofocusProperty, value); }
+        }
+
+        public static readonly DependencyProperty AutofocusProperty = DependencyProperty.Register(
+         "Autofocus", typeof(bool), typeof(LuiInput), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        #endregion
+
+        private void TextBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Autofocus)
+                (sender as TextBox).Focus();
+        }
     }
 }

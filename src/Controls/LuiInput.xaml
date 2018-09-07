@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Loaded="TextBox_Loaded"
     mc:Ignorable="d">
     <TextBox.Resources>
         <ResourceDictionary>
@@ -15,8 +16,6 @@
         </ResourceDictionary>
     </TextBox.Resources>
     <TextBox.Style>
-        <Style
-            BasedOn="{StaticResource LuiTextboxStyle}"
-            TargetType="TextBox" />
+        <Style BasedOn="{StaticResource LuiTextboxStyle}" TargetType="TextBox" />
     </TextBox.Style>
 </TextBox>

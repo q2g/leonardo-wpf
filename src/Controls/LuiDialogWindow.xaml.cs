@@ -128,7 +128,7 @@ namespace leonardo.Controls
         #endregion
 
         #region statics
-        public static bool Show(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false)
+        public static Window GetDialogWindow(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, Action<object> OKAction = null, Action<object> CancelAction = null)
         {
             var wnd = new LuiDialogWindow()
             {
@@ -145,11 +145,18 @@ namespace leonardo.Controls
             {
                 new WindowInteropHelper(wnd).Owner = new IntPtr((int)hwnd);
             }
-
-
+            if (OKAction != null)
+                wnd.okCommand = new RelayCommand(OKAction);
+            if (CancelAction != null)
+                wnd.CancelCommand = new RelayCommand(CancelAction);
+            return wnd;
+        }
+        public static bool Show(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, ICommand OKCommand = null)
+        {
             bool retval = false;
-            wnd.OkCommand = new RelayCommand((o) => { wnd.Close(); retval = true; });
-            wnd.CancelCommand = new RelayCommand((o) => { wnd.Close(); retval = false; });
+            Window wnd = null;
+            wnd = GetDialogWindow(headerText, hwnd, content, width, height, showOK, showCancel, modal, (o) => { wnd?.Close(); retval = true; }, (o) => { wnd?.Close(); retval = false; });
+
             if (modal)
             {
                 wnd.ShowDialog();
