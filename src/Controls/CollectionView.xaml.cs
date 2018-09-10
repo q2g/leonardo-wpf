@@ -82,7 +82,6 @@
 
         #region ProcessedCollection - DP
         private ObservableCollection<object> processedCollection;
-        private object processedCollectionLock = new object();
         internal ObservableCollection<object> ProcessedCollection_Internal
         {
             get { return processedCollection; }
@@ -248,7 +247,7 @@
         }
         #endregion
 
-       
+
 
         #region CollectionViewFilter  IComparer
         private ICollectionViewFilter collectionViewFilter;
@@ -462,7 +461,7 @@
             {
                 logger.Error(ex);
             }
-            BindingOperations.EnableCollectionSynchronization(newlist, processedCollectionLock);
+
             ProcessedCollection = newlist;
         }
         private async void RefreshProcessedCollectionAsync2()
