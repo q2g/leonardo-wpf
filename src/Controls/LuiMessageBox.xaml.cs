@@ -1,12 +1,12 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
+    using leonardo.Resources;
     using NLog;
     using System;
     using System.Windows;
-    using leonardo.Resources;
-    using System.Windows.Media;
     using System.Windows.Interop;
+    using System.Windows.Media;
     #endregion
 
     /// <summary>
@@ -23,7 +23,7 @@
         }
         #endregion
 
-        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none, IntPtr? ownerPtr = null)
+        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none, IntPtr? ownerPtr = null, double height = -1, double width = -1)
         {
             bool returnvalue = false;
             try
@@ -38,6 +38,10 @@
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     MessageText = text
                 };
+                if (height != -1)
+                    dialog.Height = height;
+                if (width != -1)
+                    dialog.Width = width;
 
                 if (ownerPtr.HasValue)
                     new WindowInteropHelper(dialog).Owner = ownerPtr.Value;
