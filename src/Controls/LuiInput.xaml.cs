@@ -59,7 +59,7 @@
         }
 
         public static readonly DependencyProperty AutofocusProperty = DependencyProperty.Register(
-         "Autofocus", typeof(bool), typeof(LuiInput), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+         "Autofocus", typeof(bool), typeof(LuiInput), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
         private void TextBox_Loaded(object sender, RoutedEventArgs e)
