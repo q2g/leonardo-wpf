@@ -1,9 +1,9 @@
 ﻿namespace leonardo.Resources
 {
     #region Usings
-    using System.Linq;
-    using System.ComponentModel;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
     #endregion
 
@@ -11,6 +11,7 @@
     public class DimensionMeasure
     {
         private string text;
+        private string grouping;
         private bool? dimension;
         private string libID;
         private string formula;
@@ -27,6 +28,18 @@
                 if (text != value)
                 {
                     text = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public string Grouping
+        {
+            get => grouping;
+            set
+            {
+                if (grouping != value)
+                {
+                    grouping = value;
                     RaisePropertyChanged();
                 }
             }
