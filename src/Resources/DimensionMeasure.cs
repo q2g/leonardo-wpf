@@ -19,6 +19,7 @@
         private bool isSingleFieldDimension;
         private bool isDrillDown;
         private string[] fieldList;
+        private string dimensionDimName;
 
         public string Text
         {
@@ -124,6 +125,19 @@
                 if (libID != value)
                 {
                     libID = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public string DimensionDimName
+        {
+            get => dimensionDimName;
+            set
+            {
+                if (dimensionDimName != value)
+                {
+                    dimensionDimName = value;
                     RaisePropertyChanged();
                 }
             }
