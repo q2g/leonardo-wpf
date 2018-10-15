@@ -63,11 +63,11 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="3.6.5">
+    <PackageReference Include="GitVersionTask" Version="4.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="gong-wpf-dragdrop" Version="1.1.0" />
-    <PackageReference Include="NLog" Version="4.5.9" />
+    <PackageReference Include="NLog" Version="4.5.10" />
     <PackageReference Include="qlik-resources" Version="4.86.9"></PackageReference>
     <PackageReference Include="WpfLocalizeExtension" Version="3.2.0" />
   </ItemGroup>
