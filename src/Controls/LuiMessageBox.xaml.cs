@@ -4,6 +4,8 @@
     using leonardo.Resources;
     using NLog;
     using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Media;
@@ -12,9 +14,17 @@
     /// <summary>
     /// Interaction logic for LuiMessageBox.xaml
     /// </summary>
-    public partial class LuiMessageBox : Window
+    public partial class LuiMessageBox : Window, INotifyPropertyChanged
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged([CallerMemberName] string caller = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
+        }
+        #endregion
 
         #region CTOR
         public LuiMessageBox()
@@ -23,7 +33,7 @@
         }
         #endregion
 
-        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none, IntPtr? ownerPtr = null, double height = -1, double width = -1)
+        public static bool ShowDialog(string text, LuiIconsEnum messageIcon = LuiIconsEnum.lui_icon_none, IntPtr? ownerPtr = null, double height = -1, double width = -1, bool showOK = true, bool showCancel = true)
         {
             bool returnvalue = false;
             try
@@ -36,7 +46,9 @@
                     AllowsTransparency = true,
                     Background = new SolidColorBrush(Colors.Transparent),
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                    MessageText = text
+                    MessageText = text,
+                    ShowOK = showOK,
+                    ShowCancel = showCancel
                 };
                 if (height != -1)
                     dialog.Height = height;
@@ -83,5 +95,32 @@
         public static readonly DependencyProperty MessageIconProperty = DependencyProperty.Register(
          "MessageIcon", typeof(LuiIconsEnum), typeof(LuiMessageBox), new PropertyMetadata(LuiIconsEnum.lui_icon_none));
         #endregion
+
+        private bool showOK = true;
+        public bool ShowOK
+        {
+            get { return showOK; }
+            set
+            {
+                if (showOK != value)
+                {
+                    showOK = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        private bool showCancel = true;
+        public bool ShowCancel
+        {
+            get { return showCancel; }
+            set
+            {
+                if (showCancel != value)
+                {
+                    showCancel = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
     }
 }
