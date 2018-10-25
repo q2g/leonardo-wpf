@@ -18,23 +18,19 @@
 
         public object Convert(object value, System.Type targetType, object parameter, CultureInfo culture)
         {
+            int listCount = -10;
             if (value is int count)
-            {
-                if (IsExactMatch)
-                    return count == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
-                if (IsGreaterThanMatch)
-                    return count > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
-            }
+                listCount = count;
 
             if (value is ICollection coll)
+                listCount = coll.Count;
+            if (listCount != -10)
             {
                 if (IsExactMatch)
-                    return coll.Count == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+                    return listCount == CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
                 if (IsGreaterThanMatch)
-                    return coll.Count > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
+                    return listCount > CountToMatch ? this.CountMatchesVisibility : this.ElseVisibility;
             }
-
-
             return ElseVisibility;
         }
 

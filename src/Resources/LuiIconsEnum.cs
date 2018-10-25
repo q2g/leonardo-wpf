@@ -49,7 +49,10 @@
         lui_icon_export,
         lui_icon_database,
         lui_icon_box,
-        lui_icon_drop
+        lui_icon_drop,
+        lui_icon_warning_triangle,
+        lui_icon_warning,
+        lui_icon_help
     }
 
     public static class LuiIconsEnumExtensions
@@ -202,6 +205,15 @@
                     break;
                 case LuiIconsEnum.lui_icon_drop:
                     icontext = "∑";
+                    break;
+                case LuiIconsEnum.lui_icon_warning_triangle:
+                    icontext = "è";
+                    break;
+                case LuiIconsEnum.lui_icon_warning:
+                    icontext = "ù";
+                    break;
+                case LuiIconsEnum.lui_icon_help:
+                    icontext = "D";
                     break;
                 default:
                     icontext = "";

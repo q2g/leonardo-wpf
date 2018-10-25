@@ -1,9 +1,9 @@
 ﻿namespace leonardo.Resources
 {
     #region Usings
-    using System.Linq;
-    using System.ComponentModel;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
     #endregion
 
@@ -11,6 +11,7 @@
     public class DimensionMeasure
     {
         private string text;
+        private string grouping;
         private bool? dimension;
         private string libID;
         private string formula;
@@ -18,6 +19,8 @@
         private bool isSingleFieldDimension;
         private bool isDrillDown;
         private string[] fieldList;
+        private string dimensionDimName;
+        private int belongsToHwnd;
 
         public string Text
         {
@@ -27,6 +30,18 @@
                 if (text != value)
                 {
                     text = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        public string Grouping
+        {
+            get => grouping;
+            set
+            {
+                if (grouping != value)
+                {
+                    grouping = value;
                     RaisePropertyChanged();
                 }
             }
@@ -111,6 +126,32 @@
                 if (libID != value)
                 {
                     libID = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public string DimensionDimName
+        {
+            get => dimensionDimName;
+            set
+            {
+                if (dimensionDimName != value)
+                {
+                    dimensionDimName = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public int BelongsToHwnd
+        {
+            get => belongsToHwnd;
+            set
+            {
+                if (belongsToHwnd != value)
+                {
+                    belongsToHwnd = value;
                     RaisePropertyChanged();
                 }
             }

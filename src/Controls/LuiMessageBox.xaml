@@ -25,7 +25,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/LuiButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <converter:BindingDiagConverter x:Key="BindingDiagConverter" />
+            <converter:BooleanToVisibilityConverter
+                x:Key="TrueIsvisible"
+                False="Collapsed"
+                True="Visible" />
         </ResourceDictionary>
     </Window.Resources>
     <Border BorderBrush="{StaticResource Lui.Brush.Grayscale30}" CornerRadius="14">
@@ -77,7 +80,8 @@
                                 Click="LuiButton_Click"
                                 Content="{l:Loc Translate_common:Common_OK}"
                                 DockPanel.Dock="Right"
-                                IsDefault="True" />
+                                IsDefault="True"
+                                Visibility="{Binding ShowOK, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}, Converter={StaticResource TrueIsvisible}}" />
                             <controls:LuiButton
                                 Height="18"
                                 Margin="0,0,10,0"
@@ -85,7 +89,8 @@
                                 attached:ThemeProperties.Inverted="True"
                                 Content="{l:Loc Translate_common:Common_Cancel}"
                                 DockPanel.Dock="Right"
-                                IsCancel="True" />
+                                IsCancel="True"
+                                Visibility="{Binding ShowCancel, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LuiMessageBox}, Converter={StaticResource TrueIsvisible}}" />
                         </DockPanel>
                     </StackPanel>
                 </Border>

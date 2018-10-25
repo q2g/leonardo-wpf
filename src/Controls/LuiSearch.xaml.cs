@@ -4,8 +4,8 @@
     using NLog;
     using System;
     using System.Windows;
-    using System.Windows.Input;
     using System.Windows.Controls;
+    using System.Windows.Input;
     #endregion
 
     /// <summary>
@@ -65,7 +65,6 @@
         public static readonly DependencyProperty AutofocusProperty = DependencyProperty.Register(
          "Autofocus", typeof(bool), typeof(LuiSearch), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
-
 
         #region Events
         private void maininput_PreviewKeyDown(object sender, KeyEventArgs e)
