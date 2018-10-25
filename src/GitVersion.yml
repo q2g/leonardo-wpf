@@ -1,0 +1,7 @@
+ignore:
+  sha:
+    - 8b50664eff0ecbd700271fe184b2c968b447949a
+    - 4ce6329ab0016298ff76884e2231b22c4908ca92
+    - 079d2dd810d1901cb0e6fbe8b1485f0afb1f0d3e
+    - d4715141fdc45ac0b811e5ba9bfae091d2e03a4b
+#  regex: dependabot

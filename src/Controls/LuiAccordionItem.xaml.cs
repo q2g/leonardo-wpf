@@ -34,7 +34,7 @@
         #endregion
 
         #region HeaderTemplate - DP
-        public DataTemplate HeaderTemplate
+        public new DataTemplate HeaderTemplate
         {
             get { return (DataTemplate)this.GetValue(HeaderTemplateProperty); }
             set { this.SetValue(HeaderTemplateProperty, value); }
