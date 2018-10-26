@@ -159,17 +159,15 @@
         {
             try
             {
-                if (e.Action == NotifyCollectionChangedAction.Add)
+                switch (e.Action)
                 {
-                    RefreshProcessedCollectionAsync();
-                }
-                if (e.Action == NotifyCollectionChangedAction.Remove)
-                {
-                    RefreshProcessedCollectionAsync();
-                }
-                if (e.Action == NotifyCollectionChangedAction.Reset)
-                {
-                    RefreshProcessedCollectionAsync();
+                    case NotifyCollectionChangedAction.Add:
+                    case NotifyCollectionChangedAction.Remove:
+                    case NotifyCollectionChangedAction.Reset:
+                        RefreshProcessedCollectionAsync();
+                        break;
+                    default:
+                        break;
                 }
             }
             catch (Exception ex)
