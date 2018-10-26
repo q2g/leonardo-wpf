@@ -20,7 +20,6 @@
         private bool isDrillDown;
         private string[] fieldList;
         private string dimensionDimName;
-        private int belongsToHwnd;
 
         public string Text
         {
@@ -139,19 +138,6 @@
                 if (dimensionDimName != value)
                 {
                     dimensionDimName = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public int BelongsToHwnd
-        {
-            get => belongsToHwnd;
-            set
-            {
-                if (belongsToHwnd != value)
-                {
-                    belongsToHwnd = value;
                     RaisePropertyChanged();
                 }
             }

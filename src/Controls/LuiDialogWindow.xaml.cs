@@ -128,7 +128,7 @@ namespace leonardo.Controls
         #endregion
 
         #region statics
-        public static Window GetDialogWindow(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, Action<object> OKAction = null, Action<object> CancelAction = null)
+        public static Window GetDialogWindow(string headerText, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, Action<object> OKAction = null, Action<object> CancelAction = null, int hwnd = 0)
         {
             var wnd = new LuiDialogWindow()
             {
@@ -141,7 +141,7 @@ namespace leonardo.Controls
                 ShowOK = showOK,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner
             };
-            if (hwnd != -1)
+            if (hwnd != 0)
             {
                 new WindowInteropHelper(wnd).Owner = new IntPtr((int)hwnd);
             }
@@ -151,11 +151,11 @@ namespace leonardo.Controls
                 wnd.CancelCommand = new RelayCommand(CancelAction);
             return wnd;
         }
-        public static bool Show(string headerText, int hwnd, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, ICommand OKCommand = null)
+        public static bool Show(string headerText, object content, int width = 300, int height = 300, bool showOK = true, bool showCancel = true, bool modal = false, ICommand OKCommand = null, int hwnd = 0)
         {
             bool retval = false;
             Window wnd = null;
-            wnd = GetDialogWindow(headerText, hwnd, content, width, height, showOK, showCancel, modal, (o) => { wnd?.Close(); retval = true; }, (o) => { wnd?.Close(); retval = false; });
+            wnd = GetDialogWindow(headerText, content, width, height, showOK, showCancel, modal, (o) => { wnd?.Close(); retval = true; }, (o) => { wnd?.Close(); retval = false; }, hwnd: hwnd);
 
             if (modal)
             {
