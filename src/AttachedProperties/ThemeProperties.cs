@@ -336,6 +336,25 @@ namespace leonardo.AttachedProperties
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
+
+        #region Hwnd AP
+        public static int GetHwnd(DependencyObject obj)
+        {
+            return (int)obj.GetValue(HwndProperty);
+        }
+
+        public static void SetHwnd(DependencyObject obj, int value)
+        {
+            obj.SetValue(HwndProperty, value);
+        }
+
+        public static readonly DependencyProperty HwndProperty =
+            DependencyProperty.RegisterAttached(
+                "Hwnd",
+                typeof(int),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
     }
 
 }
