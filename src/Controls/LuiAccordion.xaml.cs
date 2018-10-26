@@ -57,36 +57,39 @@
         {
             try
             {
-                if (e.Action == NotifyCollectionChangedAction.Add)
+                switch (e.Action)
                 {
-                    foreach (var item in e.NewItems)
-                    {
-                        if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
+                    case NotifyCollectionChangedAction.Add:
+                        foreach (var item in e.NewItems)
                         {
-                            itemContainer.Index = Items.Count;
-                        }
-                    }
-                }
-
-                if (e.Action == NotifyCollectionChangedAction.Remove)
-                {
-                    foreach (var item in e.OldItems)
-                    {
-                        Dictionary<int, LuiAccordionItem> indexDict = GetIndexDictionary();
-                        if (indexDict.Count != 0)
-                        {
-                            for (int i = 1; i <= Items.Count; i++)
+                            if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
                             {
-                                if (!indexDict.ContainsKey(i))
+                                itemContainer.Index = Items.Count;
+                            }
+                        }
+                        break;
+                    case NotifyCollectionChangedAction.Remove:
+                        foreach (var item in e.OldItems)
+                        {
+                            Dictionary<int, LuiAccordionItem> indexDict = GetIndexDictionary();
+                            if (indexDict.Count != 0)
+                            {
+                                for (int i = 1; i <= Items.Count; i++)
                                 {
-                                    foreach (var accitem in indexDict.Where(ele => ele.Key > i).Select(ele => ele.Value).ToList())
+                                    if (!indexDict.ContainsKey(i))
                                     {
-                                        accitem.Index--;
+                                        foreach (var accitem in indexDict.Where(ele => ele.Key > i).Select(ele => ele.Value).ToList())
+                                        {
+                                            accitem.Index--;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
+                        break;
+
+                    default:
+                        break;
                 }
             }
             catch (Exception ex)
