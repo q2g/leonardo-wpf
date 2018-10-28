@@ -99,7 +99,6 @@
                     {
                         notifyCollection_new.CollectionChanged += ProcessedCollectionChanged_CollectionChanged;
                     }
-
                 }
             }
         }
@@ -244,8 +243,6 @@
             }
         }
         #endregion
-
-
 
         #region CollectionViewFilter  IComparer
         private ICollectionViewFilter collectionViewFilter;
@@ -398,7 +395,6 @@
         public static readonly DependencyProperty SortDescendingProperty = DependencyProperty.Register(
          "SortDescending", typeof(bool), typeof(CollectionView), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSortDescendingChanged)));
 
-
         private static void OnSortDescendingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -428,8 +424,6 @@
             ObservableCollection<object> newlist = new ObservableCollection<object>();
             try
             {
-                //  newlist = await Task.Run<ObservableCollection<object>>(() =>
-                //{
                 try
                 {
                     foreach (var item in itemsSource)
@@ -452,8 +446,6 @@
                 {
                     logger.Error(ex);
                 }
-                //return newlist;
-                //});
             }
             catch (Exception ex)
             {
@@ -491,19 +483,16 @@
                             newlist.Add(item);
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
                     logger.Error(ex);
                 }
-
             }
             catch (Exception ex)
             {
                 logger.Error(ex);
             }
-
             MergeChanges(ProcessedCollection, newlist, collectionViewComparer);
         }
 

@@ -38,7 +38,6 @@
             bool returnvalue = false;
             try
             {
-
                 Window dialog = new LuiMessageBox()
                 {
                     MessageIcon = messageIcon,

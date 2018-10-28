@@ -66,7 +66,6 @@
         public static readonly DependencyProperty IndexProperty = DependencyProperty.Register(
          "Index", typeof(int), typeof(LuiAccordionItem), new FrameworkPropertyMetadata(-1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIndexChanged)));
 
-
         private static void OnIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -85,8 +84,5 @@
             }
         }
         #endregion
-
-
-
     }
 }
