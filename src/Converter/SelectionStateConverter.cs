@@ -18,6 +18,7 @@
     #region SelectionStateConverter<T>
     public class SelectionStateConverter<T> : IValueConverter
     {
+        #region Variables & Properties
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public T ALTERNATIVE { get; set; }
@@ -31,52 +32,44 @@
         public T SELECTED { get; set; }
 
         public T DEFAULT { get; set; }
+        #endregion
 
+        #region IValueConverter
         public object Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             try
             {
+                T ValueOrDefault(T Value)
+                {
+                    if (value != null)
+                        return Value;
+
+                    return DEFAULT;
+                }
+
                 var state = (int)value;
                 if (targetType == typeof(T))
                 {
                     switch (state)
                     {
                         case /*StateEnumType.ALTERNATIVE*/ 4:
-                            if (ALTERNATIVE != null)
-                                return ALTERNATIVE;
-                            break;
+                            return ValueOrDefault(ALTERNATIVE);
                         case /*StateEnumType.DESELECTED*/ 3:
-                            if (DESELECTED != null)
-                                return DESELECTED;
-                            break;
+                            return ValueOrDefault(DESELECTED);
                         case /*StateEnumType.EXCL_LOCKED*/ 7:
-                            if (EXCL_LOCKED != null)
-                                return EXCL_LOCKED;
-                            break;
+                            return ValueOrDefault(EXCL_LOCKED);
                         case /*StateEnumType.EXCL_SELECTED*/ 6:
-                            if (EXCL_SELECTED != null)
-                                return EXCL_SELECTED;
-                            break;
+                            return ValueOrDefault(EXCL_SELECTED);
                         case /*StateEnumType.EXCLUDED*/ 5:
-                            if (EXCLUDED != null)
-                                return EXCLUDED;
-                            break;
+                            return ValueOrDefault(EXCLUDED);
                         case /*StateEnumType.LOCKED*/ 0:
-                            if (LOCKED != null)
-                                return LOCKED;
-                            break;
+                            return ValueOrDefault(LOCKED);
                         case /*StateEnumType.NSTATES*/ 8:
-                            if (NSTATES != null)
-                                return NSTATES;
-                            break;
+                            return ValueOrDefault(NSTATES);
                         case /*StateEnumType.OPTION*/ 2:
-                            if (OPTION != null)
-                                return OPTION;
-                            break;
+                            return ValueOrDefault(OPTION);
                         case /*StateEnumType.SELECTED*/ 1:
-                            if (SELECTED != null)
-                                return SELECTED;
-                            break;
+                            return ValueOrDefault(SELECTED);
                     }
                     return DEFAULT;
                 }
@@ -92,7 +85,8 @@
         public object ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return Convert(value, targetType, parameter, culture);
-        }
+        } 
+        #endregion
     }
     #endregion
 }
