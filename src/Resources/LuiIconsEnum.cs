@@ -58,168 +58,114 @@
     public static class LuiIconsEnumExtensions
     {
         public static string GetIconText(this LuiIconsEnum icon)
-        {
-            string icontext = "";
+        {            
             switch (icon)
             {
                 case LuiIconsEnum.lui_icon_none:
-                    icontext = "";
-                    break;
+                    return "";
                 case LuiIconsEnum.lui_icon_calendar:
-                    icontext = "G";
-                    break;
+                    return "G";
                 case LuiIconsEnum.lui_icon_plus:
-                    icontext = "P";
-                    break;
+                    return "P";
                 case LuiIconsEnum.lui_icon_menu:
-                    icontext = "o";
-                    break;
+                    return "o";
                 case LuiIconsEnum.lui_icon_table:
-                    icontext = "'";
-                    break;
+                    return "'";
                 case LuiIconsEnum.lui_icon_pivot_table:
-                    icontext = "(";
-                    break;
+                    return "(";
                 case LuiIconsEnum.lui_icon_triangle_bottom:
-                    icontext = "S";
-                    break;
+                    return "S";
                 case LuiIconsEnum.lui_icon_triangle_right:
-                    icontext = "U";
-                    break;
+                    return "U";
                 case LuiIconsEnum.lui_icon_triangle_left:
-                    icontext = "T";
-                    break;
+                    return "T";
                 case LuiIconsEnum.lui_icon_info:
-                    icontext = "]";
-                    break;
+                    return "]";
                 case LuiIconsEnum.lui_icon_expression:
-                    icontext = "3";
-                    break;
+                    return "3";
                 case LuiIconsEnum.lui_icon_bin:
-                    icontext = "Ö";
-                    break;
+                    return "Ö";
                 case LuiIconsEnum.lui_icon_link:
-                    icontext = "é";
-                    break;
+                    return "é";
                 case LuiIconsEnum.lui_icon_search:
-                    icontext = "F";
-                    break;
+                    return "F";
                 case LuiIconsEnum.lui_icon_cross:
-                    icontext = "‰";
-                    break;
+                    return "‰";
                 case LuiIconsEnum.lui_icon_select_alternative:
-                    icontext = "ö";
-                    break;
+                    return "ö";
                 case LuiIconsEnum.lui_icon_sheet:
-                    icontext = "4";
-                    break;
+                    return "4";
                 case LuiIconsEnum.lui_icon_stream:
-                    icontext = "ã";
-                    break;
+                    return "ã";
                 case LuiIconsEnum.lui_icon_arrow_down:
-                    icontext = "¯";
-                    break;
+                    return "¯";
                 case LuiIconsEnum.lui_icon_arrow_up:
-                    icontext = "˜";
-                    break;
+                    return "˜";
                 case LuiIconsEnum.lui_icon_arrow_left:
-                    icontext = "ê";
-                    break;
+                    return "ê";
                 case LuiIconsEnum.lui_icon_arrow_right:
-                    icontext = "ë";
-                    break;
+                    return "ë";
                 case LuiIconsEnum.lui_icon_grid:
-                    icontext = "ì";
-                    break;
+                    return "ì";
                 case LuiIconsEnum.lui_icon_list:
-                    icontext = "î";
-                    break;
+                    return "î";
                 case LuiIconsEnum.lui_icon_ascending:
-                    icontext = "≈";
-                    break;
+                    return "≈";
                 case LuiIconsEnum.lui_icon_descending:
-                    icontext = "∆";
-                    break;
+                    return "∆";
                 case LuiIconsEnum.lui_icon_person:
-                    icontext = "y";
-                    break;
+                    return "y";
                 case LuiIconsEnum.lui_icon_edit:
-                    icontext = "@";
-                    break;
+                    return "@";
                 case LuiIconsEnum.lui_icon_tick:
-                    icontext = "m";
-                    break;
+                    return "m";
                 case LuiIconsEnum.lui_icon_back:
-                    icontext = "B";
-                    break;
+                    return "B";
                 case LuiIconsEnum.lui_icon_forward:
-                    icontext = "C";
-                    break;
+                    return "C";
                 case LuiIconsEnum.lui_icon_indent:
-                    icontext = "À";
-                    break;
+                    return "À";
                 case LuiIconsEnum.lui_icon_undent:
-                    icontext = "Ã";
-                    break;
+                    return "Ã";
                 case LuiIconsEnum.lui_icon_more:
-                    icontext = "¥";
-                    break;
+                    return "¥";
                 case LuiIconsEnum.lui_icon_comment:
-                    icontext = "…";
-                    break;
+                    return "…";
                 case LuiIconsEnum.lui_icon_clear_selection:
-                    icontext = ":";
-                    break;
+                    return ":";
                 case LuiIconsEnum.lui_icon_selectiontool:
-                    icontext = "9";
-                    break;
+                    return "9";
                 case LuiIconsEnum.lui_icon_selection_back:
-                    icontext = "<";
-                    break;
+                    return "<";
                 case LuiIconsEnum.lui_icon_selection_forward:
-                    icontext = "=";
-                    break;
+                    return "=";
                 case LuiIconsEnum.lui_icon_remove:
-                    icontext = "E";
-                    break;
+                    return "E";
                 case LuiIconsEnum.lui_icon_lock:
-                    icontext = "[";
-                    break;
+                    return "[";
                 case LuiIconsEnum.lui_icon_unlock:
-                    icontext = "\\";
-                    break;
+                    return "\\";
                 case LuiIconsEnum.lui_icon_select_all:
-                    icontext = "|";
-                    break;
+                    return "|";
                 case LuiIconsEnum.lui_icon_excluded:
-                    icontext = "x";
-                    break;
+                    return "x";
                 case LuiIconsEnum.lui_icon_export:
-                    icontext = "I";
-                    break;
+                    return "I";
                 case LuiIconsEnum.lui_icon_database:
-                    icontext = "H";
-                    break;
+                    return "H";
                 case LuiIconsEnum.lui_icon_box:
-                    icontext = "ò";
-                    break;
+                    return "ò";
                 case LuiIconsEnum.lui_icon_drop:
-                    icontext = "∑";
-                    break;
+                    return "∑";
                 case LuiIconsEnum.lui_icon_warning_triangle:
-                    icontext = "è";
-                    break;
+                    return "è";
                 case LuiIconsEnum.lui_icon_warning:
-                    icontext = "ù";
-                    break;
+                    return "ù";
                 case LuiIconsEnum.lui_icon_help:
-                    icontext = "D";
-                    break;
+                    return "D";
                 default:
-                    icontext = "";
-                    break;
+                    return "";                                        
             }
-            return icontext;
         }
     }
 }
