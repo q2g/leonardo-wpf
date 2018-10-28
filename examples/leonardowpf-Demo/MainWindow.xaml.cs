@@ -25,13 +25,12 @@ namespace leonardowpf_Demo
     public partial class MainWindow : Window
     {
         public testclass SingleText { get; set; } = new testclass();
-        public ObservableCollection<object> TextList { get; set;}
+        public ObservableCollection<object> TextList { get; set; }
         public ObservableCollection<LuiAccordionItem> ItemList { get; set; }
         public ICommand TestCommand { get; set; } = new RelayCommand((s) => true, (o) =>
              {
                  object tt = o;
              });
-
 
         public MainWindow()
         {
@@ -49,13 +48,11 @@ namespace leonardowpf_Demo
                 new LuiAccordionItem(){ Header="Item2", Content=new testclass(){HeaderText="Item2" } }
             };
 
-           
-           
+
+
             InitializeComponent();
 
             DataContext = this;
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,29 +63,22 @@ namespace leonardowpf_Demo
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             TextList.Add(new testclass() { HeaderText = "Item neu" });
-            
-            
-
         }
 
         private void Button_Loaded(object sender, RoutedEventArgs e)
         {
-
         }
     }
 
-
-
-
-    public class testclass:INotifyPropertyChanged
+    public class testclass : INotifyPropertyChanged
     {
         private string text;
         private Timer timer;
         public testclass()
         {
-            timer = new Timer(new TimerCallback(HandleTimer), null,0, 1000);
+            timer = new Timer(new TimerCallback(HandleTimer), null, 0, 1000);
         }
-        private  void HandleTimer(object o)
+        private void HandleTimer(object o)
         {
             //Application.Current.Dispatcher.Invoke(new Action(() => { Text = DateTime.Now.ToLongTimeString(); }));
             Text = DateTime.Now.ToLongTimeString();
@@ -98,9 +88,9 @@ namespace leonardowpf_Demo
         public string HeaderText { get; set; }
         public string Text
         {
-            get { return text; }            
+            get { return text; }
             set
-            {               
+            {
                 text = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Text"));
             }
