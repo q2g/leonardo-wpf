@@ -7,7 +7,6 @@
     using System.Runtime.CompilerServices;
     #endregion
 
-
     public class DimensionMeasure
     {
         private string text;
@@ -162,6 +161,4 @@
             return defaultValue;
         }
     }
-
-
 }

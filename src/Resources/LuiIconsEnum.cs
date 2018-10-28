@@ -220,7 +220,6 @@
                     break;
             }
             return icontext;
-
         }
     }
 }

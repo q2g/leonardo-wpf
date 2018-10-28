@@ -98,7 +98,6 @@
             }
         }
 
-
         private INotifyCollectionChanged lastItemssource = null;
         private void ItemsSourceChanged(object sender, EventArgs e)
         {
@@ -123,8 +122,6 @@
                 }
             }
         }
-
-
 
         private void Delete(object toDelete)
         {
@@ -201,7 +198,6 @@
                 logger.Error(ex);
             }
             return retval;
-
         }
 
         private bool itemHeightRead;
@@ -242,7 +238,6 @@
         {
             foreach (var item in Items)
             {
-
                 if (item != sender.DataContext)
                 {
                     if (ItemContainerGenerator.ContainerFromItem(item) is LuiAccordionItem itemContainer)
@@ -274,7 +269,6 @@
 
         public static readonly DependencyProperty CollapseAllOnExpandSingleProperty = DependencyProperty.Register(
          "CollapseAllOnExpandSingle", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCollapseAllOnExpandSingleChanged)));
-
 
         private static void OnCollapseAllOnExpandSingleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -423,7 +417,6 @@
         public static readonly DependencyProperty IsDragDropChangesUnderlyingCollectionProperty = DependencyProperty.Register(
          "IsDragDropChangesUnderlyingCollection", typeof(bool), typeof(LuiAccordion), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIsDragDropChangesUnderlyingChanged)));
 
-
         private static void OnIsDragDropChangesUnderlyingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -468,7 +461,6 @@
                         return viewlist;
                     }
                 }
-
             }
             else
             {
@@ -499,27 +491,7 @@
                         list.Insert(targetIndex, valueToMove);
                     }
 
-
-                    foreach (var listitem in list)
-                    {
-                        if (ItemContainerGenerator.ContainerFromItem(listitem) is LuiAccordionItem itemContainer)
-                        {
-                            if (sortindexsource > sortindextarget)
-                            {
-                                if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
-                                {
-                                    itemContainer.Index++;
-                                }
-                            }
-                            if (sortindexsource < sortindextarget)
-                            {
-                                if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
-                                {
-                                    itemContainer.Index--;
-                                }
-                            }
-                        }
-                    }
+                    AdjustIndexes(list, sortindexsource, sortindextarget);
 
                     if (ItemContainerGenerator.ContainerFromItem(valueToMove) is LuiAccordionItem movedItemContainer)
                     {
@@ -529,30 +501,35 @@
             }
             else
             {
-                foreach (var listitem in list)
-                {
-                    if (ItemContainerGenerator.ContainerFromItem(listitem) is LuiAccordionItem itemContainer)
-                    {
-                        if (sortindexsource > sortindextarget)
-                        {
-                            if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
-                            {
-                                itemContainer.Index++;
-                            }
-                        }
-                        if (sortindexsource < sortindextarget)
-                        {
-                            if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
-                            {
-                                itemContainer.Index--;
-                            }
-                        }
-                    }
-                }
-
+                AdjustIndexes(list, sortindexsource, sortindextarget);
                 source.Index = sortindextarget;
             }
         }
+
+        private void AdjustIndexes(System.Collections.IList list, int sortindexsource, int sortindextarget)
+        {
+            foreach (var listitem in list)
+            {
+                if (ItemContainerGenerator.ContainerFromItem(listitem) is LuiAccordionItem itemContainer)
+                {
+                    if (sortindexsource > sortindextarget)
+                    {
+                        if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
+                        {
+                            itemContainer.Index++;
+                        }
+                    }
+                    if (sortindexsource < sortindextarget)
+                    {
+                        if (IsInbitween(itemContainer.Index, sortindexsource, sortindextarget))
+                        {
+                            itemContainer.Index--;
+                        }
+                    }
+                }
+            }
+        }
+
         private bool IsInbitween(int index, int bound1, int bound2)
         {
             if (bound1 == bound2)
@@ -631,11 +608,4 @@
             }
         }
     }
-
-
-
-
-
-
 }
-

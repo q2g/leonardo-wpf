@@ -1,11 +1,11 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
+    using leonardo.Resources;
     using NLog;
     using System;
     using System.Windows;
-    using leonardo.Resources;
-    using System.Windows.Controls; 
+    using System.Windows.Controls;
     #endregion
 
     /// <summary>
@@ -22,8 +22,7 @@
         {
             InitializeComponent();
             mainText.Text = DEFAULT.GetIconText();
-
-        } 
+        }
         #endregion
 
         #region Icon - DP
@@ -35,7 +34,6 @@
 
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
          "Icon", typeof(LuiIconsEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(DEFAULT, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconChanged)));
-
 
         private static void OnIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -81,8 +79,6 @@
                 {
                     iconsize = value;
                     mainText.FontSize = value.GetFontSize();
-
-
                 }
             }
         }
@@ -94,7 +90,6 @@
 
         public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
          "IconSize", typeof(LuiFontSizeEnum), typeof(LuiIcon), new FrameworkPropertyMetadata(LuiFontSizeEnum.Normal, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIconSizeChanged)));
-
 
         private static void OnIconSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -113,7 +108,6 @@
                 logger.Error(ex);
             }
         }
-
 
         #endregion
 
@@ -141,7 +135,6 @@
         public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
          "CornerRadius", typeof(CornerRadius), typeof(LuiIcon), new FrameworkPropertyMetadata(new CornerRadius(1.01), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnCornerRadiusChanged)));
 
-
         private static void OnCornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -159,7 +152,6 @@
                 logger.Error(ex);
             }
         }
-
 
         private void SetCornerRadius()
         {

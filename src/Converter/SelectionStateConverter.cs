@@ -41,17 +41,43 @@
                 {
                     switch (state)
                     {
-                        case /*StateEnumType.ALTERNATIVE*/ 4: if (ALTERNATIVE != null) return ALTERNATIVE; break;
-                        case /*StateEnumType.DESELECTED*/ 3: if (DESELECTED != null) return DESELECTED; break;
-                        case /*StateEnumType.EXCL_LOCKED*/ 7: if (EXCL_LOCKED != null) return EXCL_LOCKED; break;
-                        case /*StateEnumType.EXCL_SELECTED*/ 6: if (EXCL_SELECTED != null) return EXCL_SELECTED; break;
-                        case /*StateEnumType.EXCLUDED*/ 5: if (EXCLUDED != null) return EXCLUDED; break;
-                        case /*StateEnumType.LOCKED*/ 0: if (LOCKED != null) return LOCKED; break;
-                        case /*StateEnumType.NSTATES*/ 8: if (NSTATES != null) return NSTATES; break;
-                        case /*StateEnumType.OPTION*/ 2: if (OPTION != null) return OPTION; break;
-                        case /*StateEnumType.SELECTED*/ 1: if (SELECTED != null) return SELECTED; break;
+                        case /*StateEnumType.ALTERNATIVE*/ 4:
+                            if (ALTERNATIVE != null)
+                                return ALTERNATIVE;
+                            break;
+                        case /*StateEnumType.DESELECTED*/ 3:
+                            if (DESELECTED != null)
+                                return DESELECTED;
+                            break;
+                        case /*StateEnumType.EXCL_LOCKED*/ 7:
+                            if (EXCL_LOCKED != null)
+                                return EXCL_LOCKED;
+                            break;
+                        case /*StateEnumType.EXCL_SELECTED*/ 6:
+                            if (EXCL_SELECTED != null)
+                                return EXCL_SELECTED;
+                            break;
+                        case /*StateEnumType.EXCLUDED*/ 5:
+                            if (EXCLUDED != null)
+                                return EXCLUDED;
+                            break;
+                        case /*StateEnumType.LOCKED*/ 0:
+                            if (LOCKED != null)
+                                return LOCKED;
+                            break;
+                        case /*StateEnumType.NSTATES*/ 8:
+                            if (NSTATES != null)
+                                return NSTATES;
+                            break;
+                        case /*StateEnumType.OPTION*/ 2:
+                            if (OPTION != null)
+                                return OPTION;
+                            break;
+                        case /*StateEnumType.SELECTED*/ 1:
+                            if (SELECTED != null)
+                                return SELECTED;
+                            break;
                     }
-
                     return DEFAULT;
                 }
 
