@@ -356,5 +356,4 @@ namespace leonardo.AttachedProperties
                 new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
     }
-
 }

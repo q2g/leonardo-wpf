@@ -3,8 +3,8 @@
     #region Usings
     using NLog;
     using System;
+    using System.Globalization;
     using System.Windows.Data;
-    using System.Globalization; 
     #endregion
 
     [ValueConversion(typeof(bool), typeof(object))]
@@ -65,6 +65,5 @@
 
             return false;
         }
-
     }
 }

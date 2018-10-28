@@ -150,8 +150,6 @@
          "InputBoxStyle", typeof(Style), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-
-
         #region HintText - DP        
         public string HintText
         {
