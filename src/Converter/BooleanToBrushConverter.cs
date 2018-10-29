@@ -3,14 +3,13 @@
     #region Usings
     using System;
     using System.Globalization;
-    using System.Windows;
     using System.Windows.Data;
     #endregion
 
-    public class BooleanToVisibilityConverter : IValueConverter
+    public class BooleanToBrushConverter : IValueConverter
     {
-        public Visibility True { get; set; }
-        public Visibility False { get; set; }
+        public System.Windows.Media.Brush True { get; set; }
+        public System.Windows.Media.Brush False { get; set; }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -25,10 +24,10 @@
             throw new NotImplementedException();
         }
 
-        public BooleanToVisibilityConverter()
+        public BooleanToBrushConverter()
         {
-            True = Visibility.Visible;
-            False = Visibility.Collapsed;
+            True = null;
+            False = null;
         }
     }
 }

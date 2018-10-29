@@ -1,14 +1,14 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
+    using leonardo.AttachedProperties;
     using NLog;
     using System;
-    using System.Windows;
     using System.Collections;
-    using System.Windows.Markup;
-    using System.Windows.Controls;
     using System.Collections.Generic;
-    using leonardo.AttachedProperties;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Markup;
     #endregion
 
     /// <summary>
@@ -28,7 +28,6 @@
 
         public static readonly DependencyProperty ItemsSourceProperty =
        ItemsControl.ItemsSourceProperty.AddOwner(typeof(LuiButtonGroup));
-
 
         public IEnumerable ItemsSource
         {
@@ -107,7 +106,6 @@
         public static readonly DependencyProperty RoundedProperty = DependencyProperty.Register(
          "Rounded", typeof(bool), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnRoundedChanged)));
 
-
         private static void OnRoundedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -172,9 +170,7 @@
                 {
                     if (li[i] is FrameworkElement between)
                     {
-
                         between.SetValue(ThemeProperties.CornerRadiusProperty, new CornerRadius(0, 0, 0, 0));
-
                     }
                 }
             }
@@ -204,7 +200,6 @@
 
         public static readonly DependencyProperty IsLooseProperty = DependencyProperty.Register(
          "IsLoose", typeof(bool), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnIsLooseChanged)));
-
 
         private static void OnIsLooseChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -259,7 +254,6 @@
         public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register(
          "SelectedIndex", typeof(int), typeof(LuiButtonGroup), new FrameworkPropertyMetadata(-1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedIndexChanged)));
 
-
         private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
@@ -290,7 +284,6 @@
                         SelectedIndex = index;
                     }
                     tbutton.IsChecked = tbutton == toCheck;
-
                 }
                 index++;
             }

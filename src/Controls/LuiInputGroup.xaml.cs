@@ -1,14 +1,14 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
+    using leonardo.AttachedProperties;
+    using leonardo.Resources;
     using NLog;
     using System;
     using System.Windows;
-    using leonardo.Resources;
+    using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Controls;
-    using leonardo.AttachedProperties; 
     #endregion
 
     /// <summary>
@@ -22,7 +22,7 @@
         public LuiInputGroup()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         #region Text - DP        
@@ -116,7 +116,6 @@
 
         public static readonly DependencyProperty LeftCommandIconProperty = DependencyProperty.Register(
          "LeftCommandIcon", typeof(LuiIconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnLeftCommandIconChanged)));
-
 
         private static void OnLeftCommandIconChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
