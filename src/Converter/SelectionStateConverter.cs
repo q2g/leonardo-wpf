@@ -41,7 +41,7 @@
             {
                 T ValueOrDefault(T Value)
                 {
-                    if (value != null)
+                    if (Value != null)
                         return Value;
 
                     return DEFAULT;
