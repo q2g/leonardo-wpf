@@ -60,7 +60,7 @@
     <PackageReference Include="gong-wpf-dragdrop" Version="1.1.0" />
     <PackageReference Include="NLog" Version="4.5.10" />
     <PackageReference Include="qlik-resources" Version="4.86.9" />
-    <PackageReference Include="WpfLocalizeExtension" Version="3.3.0" />
+    <PackageReference Include="WpfLocalizeExtension" Version="3.3.1" />
   </ItemGroup>
 
   <ItemGroup>
