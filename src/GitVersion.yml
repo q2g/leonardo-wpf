@@ -4,4 +4,6 @@ ignore:
     - 4ce6329ab0016298ff76884e2231b22c4908ca92
     - 079d2dd810d1901cb0e6fbe8b1485f0afb1f0d3e
     - d4715141fdc45ac0b811e5ba9bfae091d2e03a4b
+    - c336e298203e9961e36c0c662db56fbadfd73f60
+    - 36e9362c5b3155c2f8045b51a9b5ca5fa858f4a6
 #  regex: dependabot
