@@ -9,7 +9,6 @@
     <PackageId>leonardo-wpf</PackageId>
     <Product>leonardo</Product>
     <Version>$(GitVersion_NuGetVersion)</Version>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
