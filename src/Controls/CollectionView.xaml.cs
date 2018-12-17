@@ -339,31 +339,24 @@
             //BubbleSort FTW!
             for (int i = 0; i < list.Count; i++)
             {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - 1; j++)
                 {
-                    if (i != j)
+                    if (!sortDescending)
                     {
-                        if (!sortDescending)
+                        if (collectionViewComparer.Compare(list[j], list[j + 1]) > 0)
                         {
-                            if (collectionViewComparer.Compare(list[i], list[j]) > 0)
-                            {
-                                list.Move(j, i);
-                            }
-                            if (collectionViewComparer.Compare(list[i], list[j]) < 0)
-                            {
-                                list.Move(i, j);
-                            }
+                            var temp = list[j + 1];
+                            list[j + 1] = list[j];
+                            list[j] = temp;
                         }
-                        else
+                    }
+                    else
+                    {
+                        if (collectionViewComparer.Compare(list[j], list[j + 1]) < 0)
                         {
-                            if (collectionViewComparer.Compare(list[i], list[j]) < 0)
-                            {
-                                list.Move(j, i);
-                            }
-                            if (collectionViewComparer.Compare(list[i], list[j]) > 0)
-                            {
-                                list.Move(i, j);
-                            }
+                            var temp = list[j + 1];
+                            list[j + 1] = list[j];
+                            list[j] = temp;
                         }
                     }
                 }

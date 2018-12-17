@@ -94,6 +94,9 @@
         #fab761
     </c:Color>
 
+    <c:Color x:Key="Lui.Color.Green_special">
+        #52CC52
+    </c:Color>
     <c:Color x:Key="Lui.Color.Green">
         #61a729
     </c:Color>
@@ -141,6 +144,7 @@
     <SolidColorBrush x:Key="Lui.Brush.Orange_lighten_15" Color="{StaticResource Lui.Color.Orange_lighten_15}" />
 
     <SolidColorBrush x:Key="Lui.Brush.Green" Color="{StaticResource Lui.Color.Green}" />
+    <SolidColorBrush x:Key="Lui.Brush.Green_special" Color="{StaticResource Lui.Color.Green_special}" />
     <SolidColorBrush x:Key="Lui.Brush.Green_lighten_15" Color="{StaticResource Lui.Color.Green_lighten_15}" />
     <SolidColorBrush x:Key="Lui.Brush.Green_darken_15" Color="{StaticResource Lui.Color.Green_darken_15}" />
     <SolidColorBrush x:Key="Lui.Brush.Green_darken_30" Color="{StaticResource Lui.Color.Green_darken_30}" />
