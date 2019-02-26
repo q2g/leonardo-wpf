@@ -313,7 +313,7 @@
                             scrollUp = true;
                         }
 
-                        if (Math.Abs(relativeLocation.Y) >= scroller.ActualHeight - itemHeight * 1.5)
+                        if (Math.Abs(relativeLocation.Y) >= (scroller.ActualHeight - (itemHeight * 1.5)))
                         {
                             if (scrollUp == true)
                             {
