@@ -16,6 +16,7 @@
     using System.Windows.Controls;
     using System.Windows.Data;
     using System.Windows.Input;
+    using System.Windows.Media;
     #endregion
 
     /// <summary>
@@ -296,6 +297,39 @@
         {
             try
             {
+                if (ItemContainerGenerator.ContainerFromItem(dropInfo.TargetItem) is LuiAccordionItem itemContainer)
+                {
+                    ScrollViewer scroller = null;
+                    if (this.Parent is ScrollViewer sc)
+                        scroller = sc;
+
+                    if (scroller != null)
+                    {
+                        Point relativeLocation = scroller.TranslatePoint(new Point(0, 0), itemContainer);
+
+                        bool? scrollUp = null;
+                        if (Math.Abs(relativeLocation.Y) < itemHeight)
+                        {
+                            scrollUp = true;
+                        }
+
+                        if (Math.Abs(relativeLocation.Y) >= (scroller.ActualHeight - (itemHeight * 1.5)))
+                        {
+                            if (scrollUp == true)
+                            {
+                                scrollUp = null;
+                            }
+                            else
+                            {
+                                scrollUp = false;
+                            }
+                        }
+                        if (scrollUp == true)
+                            scroller.ScrollToVerticalOffset(scroller.VerticalOffset - 5);
+                        if (scrollUp == false)
+                            scroller.ScrollToVerticalOffset(scroller.VerticalOffset + 5);
+                    }
+                }
                 dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
                 dropInfo.Effects = DragDropEffects.Move;
                 if (dropInfo.VisualTargetItem != null)
