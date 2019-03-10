@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace leonardo.Converter
+﻿namespace leonardo.Converter
 {
-    #region usings
+    #region Usings
     using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Data;
     #endregion
@@ -19,7 +15,7 @@ namespace leonardo.Converter
     {
         /// <summary>
         /// Store the key type.
-        /// Setting this property is needed if your key is an enum and  
+        /// Setting this property is needed if your key is an enum and
         /// </summary>
         public Type KeyType { get; set; }
 

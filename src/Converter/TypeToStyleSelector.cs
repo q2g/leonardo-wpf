@@ -1,10 +1,10 @@
 ﻿namespace leonardo.Converter
 {
     #region Usings
-    using NLog;
     using System;
     using System.Windows;
-    using System.Windows.Controls; 
+    using System.Windows.Controls;
+    using NLog;
     #endregion
 
     public class TypeToStyleSelector : StyleSelector
@@ -20,7 +20,6 @@
         public Style ItemStyle4 { get; set; }
         public Type ItemType4 { get; set; }
         public Style DefaultStyle { get; set; }
-
 
         public override Style SelectStyle(object item, DependencyObject container)
         {

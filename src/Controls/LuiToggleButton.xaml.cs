@@ -1,12 +1,12 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using NLog;
     using System;
     using System.Windows;
-    using leonardo.Resources;
+    using System.Windows.Controls.Primitives;
     using leonardo.AttachedProperties;
-    using System.Windows.Controls.Primitives; 
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     /// <summary>
@@ -20,7 +20,7 @@
         public LuiToggleButton()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
 
         private LuiIconsEnum savedLeftIcon { get; set; }
@@ -72,7 +72,7 @@
             {
                 logger.Error(ex);
             }
-        } 
+        }
         #endregion
     }
 }

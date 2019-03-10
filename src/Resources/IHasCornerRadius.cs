@@ -1,10 +1,10 @@
 ﻿namespace leonardo.Resources
 {
     #region Usings
-    using System.Windows; 
+    using System.Windows;
     #endregion
 
-    public interface  IHasCornerRadius
+    public interface IHasCornerRadius
     {
         CornerRadius CornerRadius { get; set; }
     }

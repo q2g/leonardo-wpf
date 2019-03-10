@@ -125,9 +125,6 @@
                             <Setter Property="Height" Value="54" />
                         </Trigger>
 
-
-
-
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.ButtonScheme" Value="Default" />

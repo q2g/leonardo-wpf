@@ -1,14 +1,14 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using leonardo.Resources;
-    using NLog;
     using System;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Media;
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     /// <summary>

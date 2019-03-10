@@ -1,6 +1,6 @@
 ﻿namespace leonardo.Converter
 {
-    #region Usings   
+    #region Usings
     using System.Windows.Data;
     #endregion
 

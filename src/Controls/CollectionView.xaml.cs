@@ -1,8 +1,6 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using leonardo.Resources;
-    using NLog;
     using System;
     using System.Collections;
     using System.Collections.Generic;
@@ -22,6 +20,8 @@
     using System.Windows.Media.Imaging;
     using System.Windows.Navigation;
     using System.Windows.Shapes;
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     /// <summary>
@@ -202,7 +202,7 @@
         }
         #endregion
 
-        #region FilterText - DP   
+        #region FilterText - DP
         private string filterText;
         internal string FilterText_Internal
         {
@@ -285,7 +285,7 @@
         }
         #endregion
 
-        #region CollectionViewComparer  
+        #region CollectionViewComparer
         private IComparer collectionViewComparer;
         internal IComparer CollectionViewComparer_Internal
         {
@@ -365,7 +365,7 @@
         }
         #endregion
 
-        #region SortDescending - DP   
+        #region SortDescending - DP
         private bool sortDescending = false;
         internal bool SortDescending_Internal
         {

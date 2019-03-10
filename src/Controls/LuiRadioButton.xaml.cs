@@ -1,7 +1,7 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using System.Windows.Controls; 
+    using System.Windows.Controls;
     #endregion
 
     /// <summary>
@@ -14,6 +14,6 @@
         {
             InitializeComponent();
         }
-    } 
+    }
     #endregion
 }

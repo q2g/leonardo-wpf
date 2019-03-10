@@ -1,10 +1,10 @@
 ﻿namespace leonardo.Converter
 {
     #region Usings
-    using NLog;
     using System;
     using System.Globalization;
     using System.Windows.Data;
+    using NLog;
     #endregion
 
     [ValueConversion(typeof(bool), typeof(object))]
