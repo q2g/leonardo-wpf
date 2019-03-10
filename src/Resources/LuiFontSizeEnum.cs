@@ -6,6 +6,7 @@
         Normal,
         Large
     }
+
     public static class LuiFontSizeEnumExtensions
     {
         public static double GetFontSize(this LuiFontSizeEnum i_iconsize)

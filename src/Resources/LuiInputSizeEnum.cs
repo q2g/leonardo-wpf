@@ -7,6 +7,7 @@
         Custom
 
     }
+
     public static class LuiInputSizeEnumExtensions
     {
         public static double GetInputSize(this LuiInputSizeEnum i_inputsize)

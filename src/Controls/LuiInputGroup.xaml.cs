@@ -1,14 +1,14 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using leonardo.AttachedProperties;
-    using leonardo.Resources;
-    using NLog;
     using System;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Media;
+    using leonardo.AttachedProperties;
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     /// <summary>
@@ -25,7 +25,7 @@
         }
         #endregion
 
-        #region Text - DP        
+        #region Text - DP
         public string Text
         {
             get { return (string)this.GetValue(TextProperty); }
@@ -36,7 +36,7 @@
          "Text", typeof(string), typeof(LuiInputGroup), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LabelText - DP        
+        #region LabelText - DP
         public string LabelText
         {
             get { return (string)this.GetValue(LabelTextProperty); }
@@ -47,7 +47,7 @@
          "LabelText", typeof(string), typeof(LuiInputGroup), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LeftCommand - DP        
+        #region LeftCommand - DP
         public ICommand LeftCommand
         {
             get { return (ICommand)this.GetValue(LeftCommandProperty); }
@@ -58,7 +58,7 @@
          "LeftCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LeftCommandParameter - DP        
+        #region LeftCommandParameter - DP
         public object LeftCommandParameter
         {
             get { return (object)this.GetValue(LeftCommandParameterProperty); }
@@ -69,7 +69,7 @@
          "LeftCommandParameter", typeof(object), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region RightCommand - DP        
+        #region RightCommand - DP
         public ICommand RightCommand
         {
             get { return (ICommand)this.GetValue(RightCommandProperty); }
@@ -80,7 +80,7 @@
          "RightCommand", typeof(ICommand), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region RightCommandParameter - DP        
+        #region RightCommandParameter - DP
         public object RightCommandParameter
         {
             get { return (object)this.GetValue(RightCommandParameterProperty); }
@@ -91,7 +91,7 @@
          "RightCommandParameter", typeof(object), typeof(LuiInputGroup), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LeftCommandIcon - DP 
+        #region LeftCommandIcon - DP
         private LuiIconsEnum leftCommandIcon = LuiIconsEnum.lui_icon_none;
         internal LuiIconsEnum LeftCommandIcon_Internal
         {
@@ -136,7 +136,7 @@
         }
         #endregion
 
-        #region RightCommandIcon - DP        
+        #region RightCommandIcon - DP
         public LuiIconsEnum RightCommandIcon
         {
             get { return (LuiIconsEnum)this.GetValue(RightCommandIconProperty); }
@@ -147,7 +147,7 @@
          "RightCommandIcon", typeof(LuiIconsEnum), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiIconsEnum.lui_icon_none, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region IsInputEnabled - DP        
+        #region IsInputEnabled - DP
         public bool IsInputEnabled
         {
             get { return (bool)this.GetValue(IsInputEnabledProperty); }
@@ -158,7 +158,7 @@
          "IsInputEnabled", typeof(bool), typeof(LuiInputGroup), new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region RightCommandForeground - DP        
+        #region RightCommandForeground - DP
         public Brush RightCommandForeground
         {
             get { return (Brush)this.GetValue(RightCommandForegroundProperty); }
@@ -169,7 +169,7 @@
          "RightCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LeftCommandForeground - DP        
+        #region LeftCommandForeground - DP
         public Brush LeftCommandForeground
         {
             get { return (Brush)this.GetValue(LeftCommandForegroundProperty); }
@@ -178,6 +178,6 @@
 
         public static readonly DependencyProperty LeftCommandForegroundProperty = DependencyProperty.Register(
          "LeftCommandForeground", typeof(Brush), typeof(LuiInputGroup), new FrameworkPropertyMetadata(LuiPalette.Brushes.GRAYSCALE30, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-        #endregion        
+        #endregion
     }
 }

@@ -58,7 +58,7 @@
     public static class LuiIconsEnumExtensions
     {
         public static string GetIconText(this LuiIconsEnum icon)
-        {            
+        {
             switch (icon)
             {
                 case LuiIconsEnum.lui_icon_none:
@@ -164,7 +164,7 @@
                 case LuiIconsEnum.lui_icon_help:
                     return "D";
                 default:
-                    return "";                                        
+                    return "";
             }
         }
     }

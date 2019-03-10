@@ -1,11 +1,11 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using NLog;
     using System;
     using System.Windows;
     using System.Windows.Controls;
-    using leonardo.AttachedProperties; 
+    using leonardo.AttachedProperties;
+    using NLog;
     #endregion
 
     /// <summary>
@@ -21,7 +21,7 @@
             InitializeComponent();
         }
 
-        #region LabelText - DP  
+        #region LabelText - DP
         private string labelText;
         internal string LabelText_Internal
         {

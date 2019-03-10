@@ -1,10 +1,6 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using GongSolutions.Wpf.DragDrop;
-    using leonardo.AttachedProperties;
-    using leonardo.Resources;
-    using NLog;
     using System;
     using System.Collections;
     using System.Collections.Generic;
@@ -17,6 +13,10 @@
     using System.Windows.Data;
     using System.Windows.Input;
     using System.Windows.Media;
+    using GongSolutions.Wpf.DragDrop;
+    using leonardo.AttachedProperties;
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     /// <summary>

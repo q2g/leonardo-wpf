@@ -1,10 +1,10 @@
 ﻿namespace leonardo.Converter
 {
     #region Usings
-    using leonardo.Resources;
-    using NLog;
     using System;
     using System.Windows.Data;
+    using leonardo.Resources;
+    using NLog;
     #endregion
 
     #region Implementation of generic SelectionStateConverter<T>
@@ -85,7 +85,7 @@
         public object ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return Convert(value, targetType, parameter, culture);
-        } 
+        }
         #endregion
     }
     #endregion

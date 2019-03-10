@@ -1,9 +1,9 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using leonardo.Resources;
     using System.Windows;
     using System.Windows.Controls;
+    using leonardo.Resources;
     #endregion
 
     /// <summary>
@@ -18,7 +18,7 @@
         }
         #endregion
 
-        #region LabelText - DP       
+        #region LabelText - DP
         public string LabelText
         {
             get { return (string)this.GetValue(LabelTextProperty); }
@@ -29,7 +29,7 @@
          "LabelText", typeof(string), typeof(LuiInput), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region HintText - DP       
+        #region HintText - DP
         public string HintText
         {
             get { return (string)this.GetValue(HintTextProperty); }
@@ -40,7 +40,7 @@
          "HintText", typeof(string), typeof(LuiInput), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region LUIInputSize - DP       
+        #region LUIInputSize - DP
         public LuiInputSizeEnum LUIInputSize
         {
             get { return (LuiInputSizeEnum)this.GetValue(LUIInputSizeProperty); }
@@ -51,7 +51,7 @@
          "LUIInputSize", typeof(LuiInputSizeEnum), typeof(LuiInput), new FrameworkPropertyMetadata(LuiInputSizeEnum.Default, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region Autofocus - DP        
+        #region Autofocus - DP
         public bool Autofocus
         {
             get { return (bool)this.GetValue(AutofocusProperty); }
