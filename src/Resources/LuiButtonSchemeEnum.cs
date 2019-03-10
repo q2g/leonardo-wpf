@@ -9,5 +9,5 @@
         Warning,
         Success,
         InvertedSearchbox
-    }    
+    }
 }

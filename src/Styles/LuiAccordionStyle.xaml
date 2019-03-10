@@ -10,6 +10,4 @@
     <FontFamily x:Key="QlikViewSans">
         pack://application:,,,/qlik-resources;component/#QlikView Sans
     </FontFamily>
-
-
 </ResourceDictionary>

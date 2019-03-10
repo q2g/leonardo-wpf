@@ -1,11 +1,11 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using NLog;
     using System;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
+    using NLog;
     #endregion
 
     /// <summary>
@@ -22,7 +22,7 @@
         }
         #endregion
 
-        #region SearchText - DP        
+        #region SearchText - DP
         public string SearchText
         {
             get { return (string)this.GetValue(SearchTextProperty); }
@@ -33,7 +33,7 @@
          "SearchText", typeof(string), typeof(LuiSearch), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region Command - DP        
+        #region Command - DP
         public ICommand Command
         {
             get { return (ICommand)this.GetValue(CommandProperty); }
@@ -44,7 +44,7 @@
          "Command", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region CommandParameter - DP        
+        #region CommandParameter - DP
         public object CommandParameter
         {
             get { return (object)this.GetValue(CommandParameterProperty); }
@@ -55,7 +55,7 @@
          "CommandParameter", typeof(object), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region Autofocus - DP        
+        #region Autofocus - DP
         public bool Autofocus
         {
             get { return (bool)this.GetValue(AutofocusProperty); }
@@ -106,7 +106,7 @@
         }
         #endregion
 
-        #region SearchCommand - DP        
+        #region SearchCommand - DP
         public ICommand SearchCommand
         {
             get { return (ICommand)this.GetValue(SearchCommandProperty); }
@@ -117,7 +117,7 @@
          "SearchCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region CancelCommand - DP        
+        #region CancelCommand - DP
         public ICommand CancelCommand
         {
             get { return (ICommand)this.GetValue(CancelCommandProperty); }
@@ -128,7 +128,7 @@
          "CancelCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region AcceptCommand - DP        
+        #region AcceptCommand - DP
         public ICommand AcceptCommand
         {
             get { return (ICommand)this.GetValue(AcceptCommandProperty); }
@@ -139,7 +139,7 @@
          "AcceptCommand", typeof(ICommand), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region InputBoxStyle - DP        
+        #region InputBoxStyle - DP
         public Style InputBoxStyle
         {
             get { return (Style)this.GetValue(InputBoxStyleProperty); }
@@ -150,7 +150,7 @@
          "InputBoxStyle", typeof(Style), typeof(LuiSearch), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         #endregion
 
-        #region HintText - DP        
+        #region HintText - DP
         public string HintText
         {
             get { return (string)this.GetValue(HintTextProperty); }

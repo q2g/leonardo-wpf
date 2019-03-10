@@ -221,9 +221,6 @@
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
                             <Setter TargetName="radioButtonBorder" Property="Background" Value="{StaticResource Lui.Brush.Orange}" />
                         </MultiTrigger>-->
-
-
-
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="attachedP:ThemeProperties.Inverted" Value="false" />

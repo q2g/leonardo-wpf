@@ -1,7 +1,7 @@
 ﻿namespace leonardo.Resources
 {
     #region Usings
-    using System.Windows.Media; 
+    using System.Windows.Media;
     #endregion
 
     public class LuiPalette
@@ -31,7 +31,7 @@
             public static readonly Brush GRAYSCALE10 = new SolidColorBrush(Colors.GRAYSCALE10);
             public static readonly Brush GRAYSCALE5 = new SolidColorBrush(Colors.GRAYSCALE5);
             public static readonly Brush GRAYSCALE0 = new SolidColorBrush(Colors.GRAYSCALE0);
-            
+
             public static readonly Brush BLUE = new SolidColorBrush(Colors.BLUE);
 
             public static readonly Brush RED = new SolidColorBrush(Colors.RED);
@@ -42,7 +42,7 @@
         }
         public class Colors
         {
-            public static readonly Color GRAYSCALE100 =  (Color)ColorConverter.ConvertFromString("#FFFFFF");
+            public static readonly Color GRAYSCALE100 = (Color)ColorConverter.ConvertFromString("#FFFFFF");
             public static readonly Color GRAYSCALE98 = (Color)ColorConverter.ConvertFromString("#FBFBFB");
             public static readonly Color GRAYSCALE95 = (Color)ColorConverter.ConvertFromString("#F2F2F2");
             public static readonly Color GRAYSCALE90 = (Color)ColorConverter.ConvertFromString("#E6E6E6");
@@ -65,7 +65,7 @@
             public static readonly Color GRAYSCALE10 = (Color)ColorConverter.ConvertFromString("#1A1A1A");
             public static readonly Color GRAYSCALE5 = (Color)ColorConverter.ConvertFromString("#0D0D0D");
             public static readonly Color GRAYSCALE0 = (Color)ColorConverter.ConvertFromString("#000000");
-                        
+
             public static readonly Color BLUE = (Color)ColorConverter.ConvertFromString("#52a2cc");
 
             public static readonly Color RED = (Color)ColorConverter.ConvertFromString("#f05555");
@@ -76,5 +76,5 @@
         }
     }
 
-    
+
 }

@@ -1,15 +1,17 @@
-﻿using leonardo.Controls;
-using leonardo.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-
-namespace leonardo.AttachedProperties
+﻿namespace leonardo.AttachedProperties
 {
+    #region Usings
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows;
+    using System.Windows.Media;
+    using leonardo.Controls;
+    using leonardo.Resources;
+    #endregion
+
     public static class ThemeProperties
     {
         #region Inverted AP
@@ -164,7 +166,7 @@ namespace leonardo.AttachedProperties
                 new FrameworkPropertyMetadata(new CornerRadius(3), FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
-        #region BorderThickness AP 
+        #region BorderThickness AP
         public static Thickness GetBorderThickness(DependencyObject obj)
         {
             return (Thickness)obj.GetValue(BorderThicknessProperty);
@@ -183,7 +185,7 @@ namespace leonardo.AttachedProperties
                 new FrameworkPropertyMetadata(new Thickness(1), FrameworkPropertyMetadataOptions.Inherits));
         #endregion
 
-        #region ButtonLeftIconMargin AP 
+        #region ButtonLeftIconMargin AP
 
         public static Thickness GetButtonLeftIconMargin(DependencyObject obj)
         {

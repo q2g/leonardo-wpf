@@ -7,6 +7,7 @@
         ExtraLarge,
         Custom
     }
+
     public static class LuiButtonSizeEnumExtensions
     {
         public static double GetButtonSize(this LuiButtonSizeEnum i_iconsize)

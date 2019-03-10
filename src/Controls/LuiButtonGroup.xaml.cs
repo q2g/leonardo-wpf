@@ -1,14 +1,14 @@
 ﻿namespace leonardo.Controls
 {
     #region Usings
-    using leonardo.AttachedProperties;
-    using NLog;
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Markup;
+    using leonardo.AttachedProperties;
+    using NLog;
     #endregion
 
     /// <summary>

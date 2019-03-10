@@ -2,7 +2,7 @@
 {
     #region Usings
     using System;
-    using System.Windows.Input; 
+    using System.Windows.Input;
     #endregion
 
     /// <summary>
@@ -12,7 +12,7 @@
     {
         #region Constructor
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command that can always execute.
         /// </summary>
         /// <param name="execute">
@@ -21,7 +21,7 @@
         public RelayCommand(Action<object> execute) : base(execute) { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command that can always execute.
         /// </summary>
         /// <param name="execute">
@@ -30,7 +30,7 @@
         public RelayCommand(Action execute) : base((o) => { execute(); }) { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command.
         /// </summary>
         /// <param name="execute">
@@ -42,7 +42,7 @@
         public RelayCommand(Action<object> execute, Predicate<object> canExecute) : base(execute, canExecute) { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command.
         /// </summary>
         /// <param name="execute">
@@ -58,7 +58,7 @@
     /// <summary>
     /// A generic version of the RelayCommand class used in Microsoft
     /// examples such as MyActivityLibrary.
-    /// 
+    ///
     /// Relays Execute and CanExecute to other objects using delegates.
     /// The default return value of CanExecute is 'true'.
     /// </summary>
@@ -79,7 +79,7 @@
 
         #region Constructor
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command that can always execute.
         /// </summary>
         /// <param name="execute">
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RelayCommand"/> class. 
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
         /// Creates a new command.
         /// </summary>
         /// <param name="execute">
