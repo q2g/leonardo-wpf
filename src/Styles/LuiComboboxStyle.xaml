@@ -385,6 +385,10 @@
                 <Setter TargetName="opaqueRect" Property="Canvas.Top" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}" />
                 <Setter TargetName="opaqueRect" Property="Canvas.Left" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}" />
             </Trigger>
+
+            <Trigger Property="attachedP:ThemeProperties.InputLabelForegroundWhite" Value="True">
+                <Setter TargetName="label" Property="Foreground" Value="{StaticResource Lui.Brush.Grayscale100}" />
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <SolidColorBrush x:Key="TextBox.Static.Background" Color="#FFFFFFFF" />
