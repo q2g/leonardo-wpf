@@ -1,6 +1,8 @@
 ﻿namespace leonardo.AttachedProperties
 {
     #region Usings
+    using leonardo.Controls;
+    using leonardo.Resources;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -8,8 +10,7 @@
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
-    using leonardo.Controls;
-    using leonardo.Resources;
+    using System.Windows.Threading;
     #endregion
 
     public static class ThemeProperties
@@ -356,6 +357,25 @@
                 typeof(int),
                 typeof(ThemeProperties),
                 new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.Inherits));
+        #endregion
+
+        #region Dispatcher AP
+        public static int GetDispatcher(DependencyObject obj)
+        {
+            return (int)obj.GetValue(DispatcherProperty);
+        }
+
+        public static void SetDispatcher(DependencyObject obj, int value)
+        {
+            obj.SetValue(DispatcherProperty, value);
+        }
+
+        public static readonly DependencyProperty DispatcherProperty =
+            DependencyProperty.RegisterAttached(
+                "Dispatcher",
+                typeof(Dispatcher),
+                typeof(ThemeProperties),
+                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
         #endregion
     }
 }

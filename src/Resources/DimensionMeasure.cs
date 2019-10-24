@@ -5,10 +5,12 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
+    using System.Windows.Threading;
     #endregion
 
     public class DimensionMeasure
     {
+        public Dispatcher Dispatcher { get; set; }
         private string text;
         private string grouping;
         private bool? dimension;

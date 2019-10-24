@@ -46,12 +46,12 @@
 		<Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
 	</ItemGroup>
 
-	<Target Name="PublishToNugetWithAPIKey" AfterTargets="GenerateNuspec">
+	<!--<Target Name="PublishToNugetWithAPIKey" AfterTargets="GenerateNuspec">
 		<ReadLinesFromFile File="$(SolutionDir)\..\..\nugetapikey.txt">
 			<Output TaskParameter="Lines" PropertyName="NugetAPIKey" />
 		</ReadLinesFromFile>
 		<Exec WorkingDirectory="$(BaseDir)" Command="dotnet nuget push $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg -k $(NugetAPIKey) -s https://api.nuget.org/v3/index.json" />
-	</Target>
+	</Target>-->
 
 	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0" PrivateAssets="All" />
